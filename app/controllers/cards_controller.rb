@@ -4,6 +4,7 @@ class CardsController < ApplicationController
 
 	def new
 		@card = @topic.cards.build
+		3.times { @card.assets.build }
 	end
 
 	def create

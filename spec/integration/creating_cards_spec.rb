@@ -25,11 +25,15 @@ feature "Creating cards" do
 	scenario "Creating a card with an attachment" do
 		fill_in "Title", :with => "Evidence for rad"
 		fill_in "Description", :with => "Check out my cat pics for your catbates"
-		attach_file "File", "spec/fixtures/cats.txt"
+		attach_file "File #1", "spec/fixtures/cats.txt"
+		attach_file "File #2", "spec/fixtures/cutecats.txt"
+		attach_file "File #3", "spec/fixtures/hamsters.txt"
 		click_button "Create Card"
 		page.should have_content("Evidence Card has been created.")
-		within("#card .asset") do
+		within("#card .assets") do
 			page.should have_content("cats.txt")
+			page.should have_content("cutecats.txt")
+			page.should have_content("hamsters.txt")
 		end
 	end
 
