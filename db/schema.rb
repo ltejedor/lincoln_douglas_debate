@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(:version => 20130826200301) do
 
   add_index "cards", ["topic_id"], :name => "index_cards_on_topic_id"
 
+  create_table "pages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "topics", :force => true do |t|
     t.string   "name"
     t.string   "description"

@@ -10,3 +10,12 @@
 	<br>
 
 <%= link_to "New Evidence Card", new_topic_card_path(@topic) %>
+
+<ul id="cards">
+	<% @topic.cards.each do |card| %>
+		<li>
+			#<%= card.id %> -
+			<%= link_to card.title, [@topic, card] %>
+		</li>
+	<% end %>
+</ul>
