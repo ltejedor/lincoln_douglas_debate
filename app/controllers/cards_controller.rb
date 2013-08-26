@@ -35,6 +35,12 @@ class CardsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@card.destroy
+		flash[:notice] = "Evidence Card has been deleted."
+		redirect_to @topic
+	end
+
 	private
 		def find_topic
 			@topic = Topic.find(params[:topic_id])
