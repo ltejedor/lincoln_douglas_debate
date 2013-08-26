@@ -15,3 +15,7 @@
 //= require_tree .
 //= require twitter/bootstrap
 
+// TODO: Prevent Navbar overlap on div below.
+// (Navbar currently overlaps content while changing in size)
+// Use jQuery solution: http://stackoverflow.com/questions/11920846/prevent-a-div-to-overlap-over-a-fixed-one
+ 
