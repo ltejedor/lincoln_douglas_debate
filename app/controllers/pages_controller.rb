@@ -3,12 +3,8 @@ class PagesController < ApplicationController
     
   end
   
-  def contact
+  def home
     
   end
   
-  def terms
-    
-  end
-
 end

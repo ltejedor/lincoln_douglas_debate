@@ -1,5 +1,5 @@
 Lincolndouglas::Application.routes.draw do
-  root :to => "topics#index"
+  root :to => "pages#home"
 
   resources :tournaments
   resources :topics
