@@ -1,7 +1,10 @@
 <div id="card">
 	<h2><%= @card.title %></h2>
-	<p><%= link_to "Edit Evidence Card", [:edit, @topic, @card] %></p>
-	<p><%= link_to "Delete Evidence Card", [@topic, @card], :method => :delete, :confirm => "Are you sure you want to delete this evidence card?" %></p>
+	<p><%= link_to "Edit Evidence Card", [:edit, @topic, @card] %> or
+	<%= link_to "Delete Evidence Card", [@topic, @card], :method => :delete, :confirm => "Are you sure you want to delete this evidence card?" %></p>
 	<%= simple_format(@card.description) %>
+
+	<br>
+	<%= link_to "Back to all Evidence Cards", [@topic, @cards] %>
 </div>
 
