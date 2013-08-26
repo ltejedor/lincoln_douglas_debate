@@ -1,7 +1,9 @@
 Lincolndouglas::Application.routes.draw do
-  resources :topics
   root :to => "topics#index"
 
+  resources :tournaments
+  resources :topics
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
