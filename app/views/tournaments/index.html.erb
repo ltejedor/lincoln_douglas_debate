@@ -1,34 +1,31 @@
 
 <%= render 'tournaments_carousel' %>
-<h1>Listing tournaments</h1>
 
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    <h4 class="list-group-item-heading">Epic Tournament of Epicness</h4>
-    <p class="list-group-item-text">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum libero at enim commodo, non dapibus sapien cursus. Pellentesque consectetur dictum eros, quis pulvinar odio porta commodo. Curabitur ultricies dapibus convallis. Ut volutpat elementum laoreet. Donec iaculis risus nisl, a aliquet libero ultricies quis. Etiam laoreet massa nulla, sit amet tempor turpis cursus a. Fusce tempor tristique diam, eget pellentesque velit ullamcorper a.
-	</p>
-  </a>
-  <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Another Great LD Tournament</h4>
-          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        </a>
-  <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Another Great LD Tournament</h4>
-          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        </a>
+<hr class="featurette-divider">
 
-  <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Another Great LD Tournament</h4>
-          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        </a>
+<!-- TODO: Replace dummy links -->
+	
+<div class="row" id="tournament-list">
 
-  <a href="#" class="list-group-item">
-          <h4 class="list-group-item-heading">Another Great LD Tournament</h4>
-          <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        </a>
-
+<!-- TODO: Link to Tournament objects -->
+	
+<% 9.times do %>
+<% @tournaments.each do |tournament| %>
+  <div class="col-sm-6 col-md-3 tournament-item">
+    <div class="thumbnail">
+      <h4 class="tournament-date">August 28 - August 29</h4>
+      <%= link_to image_tag(tournament.image, :class => "tournament-image"), tournament_path(tournament) %>
+      <div class="caption">
+        <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>
+        <p><%= tournament.description %></p>
+        <p><a href="#" class="btn btn-primary">Debate</a> <a href="#" class="btn btn-default">Judge</a></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 </div>
+	
 
 
 
