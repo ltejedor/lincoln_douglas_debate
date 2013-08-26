@@ -21,6 +21,20 @@ class CardsController < ApplicationController
 
 	end
 
+	def edit
+
+	end
+
+	def update
+		if @card.update_attributes(params[:card])
+			flash[:notice] = "Evidence Card has been updated."
+			redirect_to [@topic, @card]
+		else
+			flash[:alert] = "Evidence Card has not been updated."
+			render :action => "edit"
+		end
+	end
+
 	private
 		def find_topic
 			@topic = Topic.find(params[:topic_id])
