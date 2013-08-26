@@ -1,6 +1,7 @@
 <h2>New Debate Topic</h2>
 
 <%= form_for(@topic) do |f| %>
+<%= f.error_messages %>
 
 	<p>
 		<%= f.label :name %><br />

@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
 	def index
-
+		@topics = Topic.all
 	end
 
 	def new
@@ -14,7 +14,8 @@ class TopicsController < ApplicationController
 			flash[:notice] = "Debate Topic has been added."
 			redirect_to @topic
 		else
-# nothing, yet
+			flash[:alert] = "Debate Topic has not been added."
+			render :action => "new"
 		end
 	end
 
