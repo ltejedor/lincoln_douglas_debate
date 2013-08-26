@@ -2,12 +2,35 @@
 <html>
 <head>
   <title>Lincoln Douglas Debate</title>
+<<<<<<< HEAD
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!-- CUSTOM STYLES FOR CAROUSEL TEMPLATE; goes after all other CSS files-->
+  <link href="/assets/carousel.css" rel="stylesheet">
+  <style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style>
+  <link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
+  <script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script>
+  <!-- end -->
+  
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/assets/html5shiv.js"></script>
+      <script src="/assets/twitter/bootstrap/respond.min.js"></script>
+    <![endif]-->
+    
 </head>
-<body>
+<body style screen_captured_injected="true">
 
+	<%= render 'navbar' %>
+	
+	<%= render 'carousel' %>
+
+<<<<<<< HEAD
+   <!-- TODO: if new visitor / non-signed in user, routes to about div -->
+   <%= render 'about' %>
+=======
 <% flash.each do |key, value| %>
 	<div class='flash' id='<%= key %>'>
 		<%= value %>
@@ -15,6 +38,18 @@
 <% end %>
 
 <%= yield %>
+>>>>>>> 8826f2f5df1d6ea3e4c197478d8d3f15429b655a
 
+  
+  <%= yield %>
+
+  <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <!-- TODO: Replace footer dummy links -->
+        <p>© 2013 LincolnDouglasDebate.com · Created by <a href="#">Amy Hua</a> and <a href="#">Leandra Tejedora</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>
+      
+  <!-- Place Javascript last so the pages load faster -->
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
