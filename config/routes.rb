@@ -4,6 +4,10 @@ Lincolndouglas::Application.routes.draw do
   resources :tournaments
   resources :topics
   
+  # Render routes for static pages
+  
+  get '/about', :to => "pages#about", :as => 'about'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

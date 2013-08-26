@@ -13,7 +13,9 @@
  */
 
 // can override vars to twitter boostrap here
-
+.empty-space {
+    height: 20px;
+}
 
 // import original bootstrap
 @import "twitter/bootstrap";

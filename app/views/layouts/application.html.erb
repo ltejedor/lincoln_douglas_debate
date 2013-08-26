@@ -6,12 +6,6 @@
   
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  <!-- CUSTOM STYLES FOR CAROUSEL TEMPLATE; goes after all other CSS files-->
-  <link href="/assets/carousel.css" rel="stylesheet">
-  <style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style>
-  <link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
-  <script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script>
-  <!-- end -->
   
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,18 +24,20 @@
 		</div>
 	<% end %>
 
+<!-- add empty space underneath nav bar to avoid overlapping content -->
+	<div class="empty-space"></div>
+
+<!-- TODO: if new visitor / non-signed in user, routes to the following --
+
+   render 'carousel'
+
+   render 'about'
+
+-- end conditional route -->
 
 
-
-<!-- TODO: if new visitor / non-signed in user, routes to the following -->
-
-   <%= render 'carousel' %>
-
-   <%= render 'about' %>
 
 	<%= yield %>
-
-<!-- end conditional route -->
 
   <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
