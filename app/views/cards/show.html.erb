@@ -5,6 +5,18 @@
 	<%= simple_format(@card.description) %>
 
 	<br>
+
+	<% if @card.asset.exists? %>
+		<h3>Attached File</h3>
+		<div class="asset">
+			<p>
+				<%= link_to File.basename(@card.asset.path),
+						@card.asset.url %>
+			</p>
+			<p><small><%= number_to_human_size(@card.asset.size) %>
+					(<%= @card.asset.content_type %>)</small></p> </div>
+			<% end %>
+
 	<%= link_to "Back to all Evidence Cards", [@topic, @cards] %>
 </div>
 

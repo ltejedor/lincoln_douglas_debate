@@ -21,4 +21,16 @@ feature "Creating cards" do
 		page.should have_content("Title can't be blank")
 		page.should have_content("Description can't be blank")
 	end
+
+	scenario "Creating a card with an attachment" do
+		fill_in "Title", :with => "Evidence for rad"
+		fill_in "Description", :with => "Check out my cat pics for your catbates"
+		attach_file "File", "spec/fixtures/cats.txt"
+		click_button "Create Card"
+		page.should have_content("Evidence Card has been created.")
+		within("#card .asset") do
+			page.should have_content("cats.txt")
+		end
+	end
+
 end
