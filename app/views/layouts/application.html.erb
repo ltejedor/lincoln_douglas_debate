@@ -6,6 +6,7 @@
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
+
   <!-- CUSTOM STYLES FOR CAROUSEL TEMPLATE; goes after all other CSS files-->
   <link href="/assets/carousel.css" rel="stylesheet">
   <style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style>
@@ -30,19 +31,13 @@
 		</div>
 	<% end %>
 
-
-
-
-<!-- TODO: if new visitor / non-signed in user, routes to the following -->
-
-   <%= render 'carousel' %>
-
-   <%= render 'about' %>
+<!-- TODO: Currently using empty-space div to avoid content overlap
+	  with navbar, but will eventually need a jQuery solution.
+	  See to-do under application.js to fix overlapping navbar  -->
+	<div id="empty-space" style="height: 50px;"></div>
 
 
 	<%= yield %>
-
-<!-- end conditional route -->
 
   <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
