@@ -1,0 +1,6 @@
+<div id="card">
+	<h2><%= @card.title %></h2>
+	<p><%= link_to "Edit Evidence Card", [:edit, @topic, @card] %></p>
+	<%= simple_format(@card.description) %>
+</div>
+

@@ -3,21 +3,28 @@
 <head>
   <title>Lincoln Douglas Debate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
-  
+
+  <!-- CUSTOM STYLES FOR CAROUSEL TEMPLATE; goes after all other CSS files-->
+  <link href="/assets/carousel.css" rel="stylesheet">
+  <style id="holderjs-style" type="text/css">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style>
+  <link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css">
+  <script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script>
+  <!-- end -->
+
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="/assets/html5shiv.js"></script>
       <script src="/assets/twitter/bootstrap/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 <body style screen_captured_injected="true">
 
 	<%= render 'navbar' %>
-	
+
 	<% flash.each do |key, value| %>
 		<div class='flash' id='<%= key %>'>
 			<%= value %>
@@ -29,6 +36,7 @@
 	  See to-do under application.js to fix overlapping navbar  -->
 	<div id="empty-space" style="height: 50px;"></div>
 
+
 	<%= yield %>
 
   <footer>
@@ -36,7 +44,7 @@
         <!-- TODO: Replace footer dummy links -->
         <p>© 2013 LincolnDouglasDebate.com · Created by <a href="#">Amy Hua</a> and <a href="#">Leandra Tejedora</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
       </footer>
-      
+
   <!-- Place Javascript last so the pages load faster -->
   <%= javascript_include_tag "application" %>
 </body>

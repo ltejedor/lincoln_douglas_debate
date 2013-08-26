@@ -2,12 +2,18 @@ Lincolndouglas::Application.routes.draw do
   root :to => "pages#home"
 
   resources :tournaments
-  resources :topics
-  
+
+
+  resources :topics do
+    resources :cards
+  end
+
+
   # Render routes for static pages
-  
+
   get '/about', :to => "pages#about", :as => 'about'
-  
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
