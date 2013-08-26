@@ -1,3 +1,3 @@
 class Tournament < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :description, :image, :name
 end
