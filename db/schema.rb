@@ -11,6 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130826220628) do
+=======
 ActiveRecord::Schema.define(:version => 20130826200301) do
 
   create_table "cards", :force => true do |t|
@@ -22,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130826200301) do
   end
 
   add_index "cards", ["topic_id"], :name => "index_cards_on_topic_id"
+>>>>>>> 0167e18a3a4e097c5481fa7c8ff234cfabd89997
 
   create_table "pages", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -36,8 +40,11 @@ ActiveRecord::Schema.define(:version => 20130826200301) do
   end
 
   create_table "tournaments", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
