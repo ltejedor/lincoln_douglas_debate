@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.14'
 
+gem 'dynamic_form', '1.1.4'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -46,4 +48,5 @@ end
 
 group :test do
 	gem 'capybara', '1.1.2'
+	gem 'factory_girl', '2.6.4'
 end

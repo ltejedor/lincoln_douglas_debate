@@ -1,0 +1,15 @@
+<h2>New Debate Topic</h2>
+
+<%= form_for(@topic) do |f| %>
+<%= f.error_messages %>
+
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :description %><br />
+		<%= f.text_field :description %><br />
+
+	<%= f.submit %>
+	<% end %>
