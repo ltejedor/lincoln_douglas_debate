@@ -1,4 +1,5 @@
-<%= form_for [@topic, @card] do |f| %>
+<%= form_for [@topic, @card],
+			:html => { :multipart => true } do |f| %>
 	<%= f.error_messages %>
 	<p>
 		<%= f.label :title %><br>
@@ -8,6 +9,14 @@
 		<%= f.label :description %><br>
 		<%= f.text_area :description %>
 	</p>
+	<p>
+		<% number = 0 %>
+		<%= f.fields_for :assets do |asset| %>
+		<p>
+			<%= asset.label :asset, "File ##{number += 1}" %>
+			<%= asset.file_field :asset %>
+		</p>
+		<% end %>
 	<%= f.submit %>
 
 <% end %>

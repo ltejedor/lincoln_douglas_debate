@@ -4,6 +4,8 @@ gem 'rails', '3.2.14'
 
 gem 'dynamic_form', '1.1.4'
 
+gem 'paperclip', '2.7.0'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

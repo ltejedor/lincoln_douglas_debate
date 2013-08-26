@@ -4,6 +4,7 @@ class CardsController < ApplicationController
 
 	def new
 		@card = @topic.cards.build
+		3.times { @card.assets.build }
 	end
 
 	def create
@@ -33,6 +34,12 @@ class CardsController < ApplicationController
 			flash[:alert] = "Evidence Card has not been updated."
 			render :action => "edit"
 		end
+	end
+
+	def destroy
+		@card.destroy
+		flash[:notice] = "Evidence Card has been deleted."
+		redirect_to @topic
 	end
 
 	private

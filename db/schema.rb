@@ -11,10 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130826220628) do
-=======
-ActiveRecord::Schema.define(:version => 20130826200301) do
+ActiveRecord::Schema.define(:version => 20130826232435) do
+
+  create_table "assets", :force => true do |t|
+    t.string   "asset_file_name"
+    t.integer  "asset_file_size"
+    t.string   "asset_content_type"
+    t.datetime "asset_updated_at"
+    t.integer  "card_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "cards", :force => true do |t|
     t.string   "title"
@@ -25,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20130826200301) do
   end
 
   add_index "cards", ["topic_id"], :name => "index_cards_on_topic_id"
->>>>>>> 0167e18a3a4e097c5481fa7c8ff234cfabd89997
 
   create_table "pages", :force => true do |t|
     t.datetime "created_at", :null => false
