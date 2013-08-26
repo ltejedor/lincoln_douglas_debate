@@ -24,8 +24,10 @@
 		</div>
 	<% end %>
 
-<!-- add empty space underneath nav bar to avoid overlapping content -->
-	<div class="empty-space"></div>
+<!-- TODO: Currently using empty-space div to avoid content overlap
+	  with navbar, but will eventually need a jQuery solution.
+	  See to-do under application.js to fix overlapping navbar  -->
+	<div id="empty-space" style="height: 50px;"></div>
 
 	<%= yield %>
 
