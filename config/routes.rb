@@ -3,6 +3,7 @@ Lincolndouglas::Application.routes.draw do
 
   resources :tournaments
 
+  resources :resolutions
 
   resources :topics do
     resources :cards
@@ -12,13 +13,13 @@ Lincolndouglas::Application.routes.draw do
   # Render routes for static pages
 
   get '/about', :to => "pages#about", :as => 'about'
-  
+
   # Sign in, Sign out
-  
+
   match 'auth/google_oauth2/callback', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'auth/failure', to: redirect('/')
-  
+
 
 
   # The priority is based upon order of creation:

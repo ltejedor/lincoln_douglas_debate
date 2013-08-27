@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20130827203116) do
     t.integer "tournament_id"
     t.integer "order"
   end
+  create_table "resolutions", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.boolean  "current"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "topics", :force => true do |t|
     t.string   "name"
@@ -80,8 +87,12 @@ ActiveRecord::Schema.define(:version => 20130827203116) do
     t.string   "name"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
   end
 
   create_table "users", :force => true do |t|

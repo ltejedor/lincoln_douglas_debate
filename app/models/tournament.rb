@@ -1,5 +1,6 @@
 class Tournament < ActiveRecord::Base
-  attr_accessible :description, :image, :name
+  attr_accessible :description, :image, :name, :asset
+  has_attached_file :asset
   
   belongs_to :organizer
   has_and_belongs_to_many :judges

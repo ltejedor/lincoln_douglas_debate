@@ -1,15 +1,77 @@
 <% if current_user %>
-  <h2>You're signed in! Homepage Content for signed in users go here.</h2>
-  <h3>User: <%= current_user.name %></h3>
-  <h3>Email: <%= current_user.email %></h3>
-  <h3>Picture: <%= current_user.image %></h3>
+	<div id="user_container">
+
+	<div id="profile">
+		<h4>Profile</h4>
+		<div class="home_border">
+		<img width = "100px" src= "<%= current_user.image %>" >
+				<p><%= current_user.name %><br>
+		<%= current_user.email %></p>
+		<b>CURRENT_POINTS</b><br> <b>2 Messages</b><br><br>
+
+
+		<p><b>BADGES</b></p>
+		<p><b>FRIENDS</b></p>
+	</div>
+
+	</div>
+
+	<div id="results">
+	<h4>Recent Tournament Results</h4>
+	<div id="results_inner">
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
+
+
+	</div>
+	</div>
+
+	<div id="latest_activity">
+		<h4>Latest Activity</h4>
+		<div class = "home_border">
+			<ul>
+			<li>A feed of latest activity</li>
+			<li>Can be made up if we run out of time</li>
+		</ul>
+		</div>
+	</div>
+
+	<div id="trending">
+				<h4>Trending</h4>
+		<div class = "home_border">
+			<ul>
+			<li>A feed of latest activity</li>
+			<li>Can be made up if we run out of time</li>
+		</ul>
+		</div>
+	</div>
+
+</div>
 <% else %>
+
+
+
+
   <%= render 'carousel' %>
   <h1>Some more home page content for unsigned-in users goes here (e.g., tournament news, etc)</h1>
   <hr class="featurette-divider">
-  <%= render 'about' %> 	
+  <%= render 'about' %>
 <% end %>
 
+=
 
 
 
