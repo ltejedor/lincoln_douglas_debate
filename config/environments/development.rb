@@ -34,4 +34,6 @@ Lincolndouglas::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  ENV['GOOGLE_SECRET'] = "Q1qfMIJFrFbwIthTFUeZW9aw"
+  ENV['GOOGLE_KEY'] = "593301061123.apps.googleusercontent.com"
 end

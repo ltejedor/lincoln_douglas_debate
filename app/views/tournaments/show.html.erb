@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<div class="starter-template">
+	<h2><%= @tournament.name %></h2>
+	
+	<p class="lead"><%= @tournament.description %></p>
+	
+</div>
 
 <%= link_to 'Edit', edit_tournament_path(@tournament) %> |
 <%= link_to 'Back', tournaments_path %>

@@ -12,6 +12,9 @@ Lincolndouglas::Application.routes.draw do
   # Render routes for static pages
 
   get '/about', :to => "pages#about", :as => 'about'
+  
+  match 'auth/google_oauth2/callback', to: 'sessions#create'
+  
 
 
   # The priority is based upon order of creation:

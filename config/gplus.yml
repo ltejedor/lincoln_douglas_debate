@@ -1,0 +1,11 @@
+development:
+  gplus_key: 593301061123.apps.googleusercontent.com
+  gplus_secret: Q1qfMIJFrFbwIthTFUeZW9aw
+
+test:
+  gplus_key: 593301061123.apps.googleusercontent.com
+  gplus_secret: Q1qfMIJFrFbwIthTFUeZW9aw
+
+production:
+  gplus_key: 23456
+  gplus_secret: bcdefg

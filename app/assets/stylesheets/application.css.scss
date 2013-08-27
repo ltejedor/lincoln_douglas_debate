@@ -13,6 +13,12 @@
  */
 
 // can override vars to twitter boostrap here
+.signinbutton {
+    height: 40px;
+}
+.signinbutton-lg {
+    height: 60px;
+} 
 
 // import original bootstrap
 @import "twitter/bootstrap";

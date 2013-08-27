@@ -11,7 +11,7 @@
 	
 <% 9.times do %>
 <% @tournaments.each do |tournament| %>
-  <div class="col-sm-6 col-md-3 tournament-item">
+  <div class="col-sm-3 col-md-3 tournament-item">
     <div class="thumbnail">
       <h4 class="tournament-date">August 28 - August 29</h4>
       <%= link_to image_tag(tournament.image, :class => "tournament-image"), tournament_path(tournament) %>
