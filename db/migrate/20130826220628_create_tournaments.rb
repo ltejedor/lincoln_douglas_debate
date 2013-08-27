@@ -4,6 +4,7 @@ class CreateTournaments < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :image
+      t.references :organizer
 
       t.timestamps
     end
