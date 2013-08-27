@@ -1,15 +1,48 @@
 <% if current_user %>
-  <h2>You're signed in! Homepage Content for signed in users go here.</h2>
-  <h3>User: <%= current_user.name %></h3>
-  <h3>Email: <%= current_user.email %></h3>
-  <h3>Picture: <%= current_user.image %></h3>
+	<div id="user_container">
+
+	<div id="profile">
+		<h4>Profile</h4>
+		<img width = "100px" src= "<%= current_user.image %>" >
+				<p><%= current_user.name %><br>
+		<%= current_user.email %></p>
+		<b>CURRENT_POINTS</b><br> <b>2 Messages</b><br><br>
+
+
+		<p><b>BADGES</b></p>
+		<p><b>FRIENDS</b></p>
+
+	</div>
+
+	<div id="results">
+	<h4>Tournament Results</h4>
+	<div id="results_inner">
+		<div class="ind_results"><img width = "70px" src= "<%= current_user.image %>" ></div>
+
+
+
+	</div>
+	</div>
+
+	<div id="latest_activity">
+	</div>
+
+	<div id="trending">
+	</div>
+
+</div>
 <% else %>
+
+
+
+
   <%= render 'carousel' %>
   <h1>Some more home page content for unsigned-in users goes here (e.g., tournament news, etc)</h1>
   <hr class="featurette-divider">
-  <%= render 'about' %> 	
+  <%= render 'about' %>
 <% end %>
 
+=
 
 
 

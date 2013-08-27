@@ -18,8 +18,42 @@
 }
 .signinbutton-lg {
     height: 60px;
-} 
+}
 
+.page_container{
+	margin: 70px;
+}
+
+.wht_txt a:link{
+	text-decoration: none;
+	color: white;
+}
+
+#user_container{
+	float: left;
+	margin: 45px;
+}
+
+#profile{
+	padding: 5px;
+	border:2px solid;
+	border-color: gray;
+	border-radius:5px;
+	width: 175px;
+	position: absolute;
+	float:left;
+
+}
+
+#results{
+	padding: 5px;
+	border:2px solid;
+	border-color: gray;
+	border-radius:5px;
+	position: absolute;
+	float:left;
+	margin-left: 210px;
+}
 
 footer {
   position: relative;
@@ -28,3 +62,4 @@ footer {
 }
 // import original bootstrap
 @import "twitter/bootstrap";
+

@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
               </button>
               <!-- TODO: Include a logo -->
-              
+
               <a class="navbar-brand" href="/">Logo Here</a>
             </div>
             <div class="navbar-collapse collapse">
@@ -32,7 +32,7 @@
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><a href="#">Cases</a></li>
                     <!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">Cards</a></li>
+                    <li><%= link_to "Cards", topics_path %></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <!-- TODO: Replace dummy links with links to pages -->
@@ -46,7 +46,7 @@
 				<% if current_user %>
                 <li class="dropdown" id="account-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  	
+
                   		<span id="current-user"><%= current_user.name %></span>
                   		<% if current_user.image.nil? %>
                   		<%= image_tag "empty_profile.png", class: "profile-thumbnail" %>
@@ -56,7 +56,7 @@
                   		 <b class="caret"></b>
                   		</a>
                   <ul class="dropdown-menu">
-                                      	
+
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><a href="#">My Profile</a></li>
                     <!-- TODO: Replace dummy links with links to pages -->
@@ -68,7 +68,7 @@
                     <li><a href="#">Account Settings</a></li>
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><a href="#">Privacy Settings</a></li>
-                    
+
                     <hr>
 
                     <!-- TODO: Replace dummy links with links to pages -->

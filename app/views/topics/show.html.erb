@@ -1,4 +1,4 @@
-<h2><%= @topic.name %></h2>
+<div class = "page_container"><h2><%= @topic.name %></h2>
 
 <%= link_to "Edit Debate Topic", edit_topic_path(@topic) %> or
 
@@ -9,7 +9,7 @@
 
 	<br>
 
-<%= link_to "New Evidence Card", new_topic_card_path(@topic) %>
+<button type="button" class="btn btn-default btn-sm wht_txt"><%= link_to "New Evidence Card", new_topic_card_path(@topic) %></button>
 
 <ul id="cards">
 	<% @topic.cards.each do |card| %>
@@ -21,3 +21,4 @@
 
 </ul>
 	<%= link_to "Back to Debate Topics", topics_path %>
+</div>
