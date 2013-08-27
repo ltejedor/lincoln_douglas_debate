@@ -1,0 +1,21 @@
+li a {
+    vertical-align: top;    
+  }
+.profile-thumbnail {
+  width: 30px;
+}
+#current-user {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#account-menu {
+	float:right;
+}
+#signin {
+	floath:right;
+}
+.navbar-nav {
+	float: right;
+	width: 80%;
+	
+}
