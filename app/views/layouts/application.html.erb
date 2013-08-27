@@ -19,16 +19,16 @@
 
 	<%= render 'navbar' %>
 
-	<% flash.each do |key, value| %>
-		<div class='flash' id='<%= key %>'>
-			<%= value %>
-		</div>
-	<% end %>
 
 <!-- TODO: Currently using empty-space div to avoid content overlap
 	  with navbar, but will eventually need a jQuery solution.
 	  See to-do under application.js to fix overlapping navbar  -->
 	<div id="empty-space" style="height: 50px;"></div>
+	<% flash.each do |key, value| %>
+		<div class='flash' id='<%= key %>'>
+			<%= value %>
+		</div>
+	<% end %>
 
 
 	<%= yield %>

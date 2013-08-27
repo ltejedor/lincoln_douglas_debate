@@ -1,8 +1,18 @@
-<!-- TODO: if new visitor / non-signed in user, routes to the following -->
 
-<%= render 'carousel' %>
 
-<!-- end conditional route -->
 
-<h1>Some more home page content goes here (e.g., tournament news, etc)</h1>
+<% if current_user %>
+  <h2>You're signed in! Homepage Content for signed in users go here.</h2>
+  <h3>User: <%= current_user.name %></h3>
+  <h3>Email: <%= current_user.email %></h3>
+  <h3>Picture: <%= current_user.image %></h3>
+<% else %>
+  <%= render 'carousel' %>
+  <h1>Some more home page content for unsigned-in users goes here (e.g., tournament news, etc)</h1>
+  <hr class="featurette-divider">
+  <%= render 'about' %> 	
+<% end %>
+
+
+
 

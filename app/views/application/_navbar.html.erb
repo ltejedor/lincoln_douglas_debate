@@ -18,25 +18,21 @@
               <ul class="nav navbar-nav">
               	<!-- TODO: Replace dummy links with links to pages -->
                 <li class="active"><a href="/">Home</a></li>
-                <li><%= link_to "About", about_path %></li>
+                <% if current_user.nil? %>
+	                <li><%= link_to "About", "/#about" %></li>
+                <% end %>
                 <!-- TODO: Replace dummy links with links to pages -->
                 <li><%= link_to "Tournaments", tournaments_path %></li>
                 <!-- TODO: Replace dummy links with links to pages -->
-                <li><a href="#">Forums</a></li>                
                 <!-- TODO: Replace dummy links with links to pages -->
-                <li><a href="#">Case Xchange</a></li>
-                <!-- TODO: Replace dummy links with links to pages -->
-                <li><a href="#">Evidence Xchange</a></li>
+                <li><a href="#">Forums</a></li>
                 <li class="dropdown">
-                	<!-- TODO: Do we need a dropdown at all? Keep template in case -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Example Dropdown <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exchanges <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                  	<!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">Action</a></li>
                     <!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Cases</a></li>
                     <!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Cards</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <!-- TODO: Replace dummy links with links to pages -->
@@ -45,8 +41,23 @@
                     <li><a href="#">One more separated link</a></li>
                   </ul>
                 </li>
-                <li>
-                	<%= link_to image_tag("signin_button.png", class: "signinbutton"), "/auth/google_oauth2" %>
+
+				<!-- TODO: SIGN IN -->
+				<% if current_user %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Signed in as <%= current_user.name %> <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Sign out", signout_path %></li>                  	
+                    <li class="dropdown-header">Account Settings</li>
+                    <!-- TODO: Replace dummy links with links to pages -->
+                    <li><a href="#">Settings</a></li>
+                    <!-- TODO: Replace dummy links with links to pages -->
+                    <li><a href="#">One more separated link</a></li>
+
+                  </ul>
+				<% else %>
+	              	<li><%= link_to image_tag("signin_button.png", class: "signinbutton"), "/auth/google_oauth2" %>
+				<% end %>
                 </li>
                 <!-- TODO: Replace dummy links with links to pages -->
               </ul>

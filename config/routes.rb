@@ -13,7 +13,11 @@ Lincolndouglas::Application.routes.draw do
 
   get '/about', :to => "pages#about", :as => 'about'
   
+  # Sign in, Sign out
+  
   match 'auth/google_oauth2/callback', to: 'sessions#create'
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'auth/failure', to: redirect('/')
   
 
 
