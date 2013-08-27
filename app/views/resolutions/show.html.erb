@@ -1,0 +1,14 @@
+<div class = "page_container"><h2><%= @resolution.name %></h2>
+
+	<p><%= @resolution.description %></p>
+
+	<% if @resolution.current == true %>
+	<p><b>This is the Current Resolution</b><p>
+	<% end %>
+
+<%= link_to "Edit Resolution", edit_resolution_path(@resolution) %> or
+
+<%= link_to "Delete Resolution",
+	resolution_path(@resolution),
+	:method => :delete,
+	:confirm => "Are you sure you want to delete this debate topic?" %>
