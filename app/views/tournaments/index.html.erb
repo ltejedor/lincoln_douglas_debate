@@ -8,12 +8,17 @@
 <div class="row" id="tournament-list">
 
 <!-- TODO: Link to Tournament objects -->
+
+<!-- TODO: fix the height of each tournament displayed -->
 	
 <% @tournaments.each do |tournament| %>
   <div class="col-sm-3 col-md-3 tournament-item">
     <div class="thumbnail">
-      <h4 class="tournament-date">August 28 - August 29</h4>
-      <%= link_to image_tag(tournament.image, :class => "tournament-image"), tournament_path(tournament) %>
+      <h4 class="tournament-date">
+      	<%= tournament.start_time %> to<br />
+      	<%= tournament.end_time %></h4>
+      <% @image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || "http://static.giantbomb.com/uploads/scale_small/0/2609/294926-pewter_trophy_lrg.jpg" %>
+      <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %>
       <div class="caption">
         <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>
         <p><%= tournament.description %></p>

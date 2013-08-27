@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus, 
                   :image, :last_name, :name, :provider, :uid, :verified_email
-  
+  # TODO: Set time zone settings in Account Settings
   belongs_to :userable, polymorphic: true
   
   belongs_to :debater
