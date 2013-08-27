@@ -30,15 +30,18 @@
 }
 
 #user_container{
-	float: left;
+	height: 500px;
 	margin: 45px;
 }
 
-#profile{
-	padding: 5px;
+.home_border{
+	padding: 10px;
 	border:2px solid;
 	border-color: gray;
 	border-radius:5px;
+}
+
+#profile{
 	width: 175px;
 	position: absolute;
 	float:left;
@@ -46,13 +49,39 @@
 }
 
 #results{
+
+	position: absolute;
+	float:left;
+	margin-left: 210px;
+}
+
+#results_inner{
 	padding: 5px;
 	border:2px solid;
 	border-color: gray;
 	border-radius:5px;
-	position: absolute;
+	float: left;
+
+}
+
+.ind_results{
 	float:left;
+	padding: 5px;
+	padding-right: 25px;
+	padding-left: 25px;
+}
+
+#latest_activity{
 	margin-left: 210px;
+	padding-top: 210px;
+	width: 250px;
+
+}
+
+#trending{
+	margin-left: 510px;
+	margin-top: -131px;
+	width: 250px;
 }
 
 footer {

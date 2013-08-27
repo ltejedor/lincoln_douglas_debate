@@ -3,6 +3,7 @@
 
 	<div id="profile">
 		<h4>Profile</h4>
+		<div class="home_border">
 		<img width = "100px" src= "<%= current_user.image %>" >
 				<p><%= current_user.name %><br>
 		<%= current_user.email %></p>
@@ -11,23 +12,51 @@
 
 		<p><b>BADGES</b></p>
 		<p><b>FRIENDS</b></p>
+	</div>
 
 	</div>
 
 	<div id="results">
-	<h4>Tournament Results</h4>
+	<h4>Recent Tournament Results</h4>
 	<div id="results_inner">
-		<div class="ind_results"><img width = "70px" src= "<%= current_user.image %>" ></div>
-
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
+		<div class="ind_results">
+			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
+			<p><b>Fake Name</b></p>
+			<p>Won for filler</p>
+		</div>
 
 
 	</div>
 	</div>
 
 	<div id="latest_activity">
+		<h4>Latest Activity</h4>
+		<div class = "home_border">
+			<ul>
+			<li>A feed of latest activity</li>
+			<li>Can be made up if we run out of time</li>
+		</ul>
+		</div>
 	</div>
 
 	<div id="trending">
+				<h4>Trending</h4>
+		<div class = "home_border">
+			<ul>
+			<li>A feed of latest activity</li>
+			<li>Can be made up if we run out of time</li>
+		</ul>
+		</div>
 	</div>
 
 </div>
