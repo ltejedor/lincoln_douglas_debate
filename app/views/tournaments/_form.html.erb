@@ -1,13 +1,17 @@
 <%= simple_form_for(@tournament) do |f| %>
+	<%= f.error_notification %>
 	<%= f.input :name %>
 
-	<%= f.input :description %>
+	<%= f.input :description, hint: "Max 500 characters" %>
 
 	<%= f.input :image %>
 
-  <div class="actions">
 
+	<%= f.error :base %>
+
+  <div class="actions">	
 	<%= f.button :submit %>
   </div>
+  
 <% end %>
 

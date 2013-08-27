@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827063338) do
+ActiveRecord::Schema.define(:version => 20130827203116) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -33,9 +33,40 @@ ActiveRecord::Schema.define(:version => 20130827063338) do
 
   add_index "cards", ["topic_id"], :name => "index_cards_on_topic_id"
 
+  create_table "debaters", :force => true do |t|
+    t.string   "side"
+    t.string   "level"
+    t.integer  "user_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "judges", :force => true do |t|
+    t.text     "paradigm"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "matches", :force => true do |t|
+    t.integer  "round_id"
+    t.datetime "start"
+    t.datetime "end"
+  end
+
+  create_table "organizers", :force => true do |t|
+    t.integer "user_id"
+  end
+
   create_table "pages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "rounds", :force => true do |t|
+    t.integer "tournament_id"
+    t.integer "order"
   end
 
   create_table "topics", :force => true do |t|
@@ -67,5 +98,8 @@ ActiveRecord::Schema.define(:version => 20130827063338) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  add_index "users", ["provider"], :name => "index_users_on_provider"
+  add_index "users", ["uid"], :name => "index_users_on_uid"
 
 end

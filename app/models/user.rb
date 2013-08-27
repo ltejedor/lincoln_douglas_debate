@@ -2,6 +2,15 @@ class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus, 
                   :image, :last_name, :name, :provider, :uid, :verified_email
   
+  belongs_to :userable, polymorphic: true
+  
+  belongs_to :debater
+  belongs_to :judge
+  belongs_to :organizer
+
+  belongs_to :author, polymorphic: true
+  
+  # --------------- OMNIAUTH -----------------------
   
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
@@ -23,11 +32,28 @@ class User < ActiveRecord::Base
       user.birthday = auth["extra"]["raw_info"]["birthday"]
     end
   end
+
+  # --------------- ORGANIZER -----------------------
+  # --------------- ORGANIZER -----------------------
+  # --------------- ORGANIZER -----------------------
   
-  private
+  # TODO: Include organizer-only functions, if any to be delegated
   
-  def signed_in?
-    return true if self.id == session[:user_id]
-  end
+
+
+  # --------------- DEBATER -----------------------
+  # --------------- DEBATER -----------------------
+  # --------------- DEBATER -----------------------
+  
+  # TODO: Include debater-only functions, if any to be delegated
+  
+
+
+  # --------------- JUDGE -----------------------
+  # --------------- JUDGE -----------------------
+  # --------------- JUDGE -----------------------
+  
+  # TODO: Include judge-only functions, if any, to be delegated
+  
   
 end
