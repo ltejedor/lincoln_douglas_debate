@@ -19,3 +19,7 @@ li a {
 	width: 80%;
 	
 }
+
+.dropdown-menu hr {
+	margin: 5px;
+}
