@@ -1,6 +1,7 @@
 class ResolutionsController < ApplicationController
 
 	def index
+		@resolutions = Resolution.all
 	end
 
 	def new
@@ -13,8 +14,13 @@ class ResolutionsController < ApplicationController
 				flash[:notice] = "Resolution has been created."
 				redirect_to resolutions_path
 			else
-				#nothing yet
+				flash[:alert] = "Resolution has not been added."
+				render :action => "new"
 			end
 		end
+
+	def show
+		@resolution = Resolution.find(params[:id])
+	end
 
 end
