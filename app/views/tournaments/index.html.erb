@@ -9,7 +9,6 @@
 
 <!-- TODO: Link to Tournament objects -->
 	
-<% 9.times do %>
 <% @tournaments.each do |tournament| %>
   <div class="col-sm-3 col-md-3 tournament-item">
     <div class="thumbnail">
@@ -23,7 +22,6 @@
     </div>
   </div>
   <% end %>
-<% end %>
 </div>
 	
 <%= link_to 'New Tournament', new_tournament_path %>
