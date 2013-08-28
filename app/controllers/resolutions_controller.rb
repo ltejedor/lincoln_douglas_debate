@@ -45,4 +45,5 @@ class ResolutionsController < ApplicationController
 		redirect_to resolutions_path
 	end
 
+
 end

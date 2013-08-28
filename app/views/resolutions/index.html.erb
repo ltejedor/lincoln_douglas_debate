@@ -1,16 +1,29 @@
 <div class = "container">
 	<h2>Current Resolution</h2>
 
-<button type="button" class="btn btn-default btn-sm wht_txt"><%= link_to "Add Resolution", new_resolution_path %></button>
+<ul>
+	<% @resolutions.each do |resolution| %>
+    <% if resolution.current == true %>
+    	<%= link_to resolution.name, resolution %>
+    <% end %>
+  <% end %>
+ </ul>
 
+
+
+<br><br>
+<h4>Past Resolutions</h4>
 <ul><% @resolutions.each do |resolution| %>
+	<% if resolution.current == false %>
     <li>
     	<%= link_to resolution.name, resolution %>
     	<br>
     	<%= resolution.description %>
 
       </li>
+       <% end %>
         <% end %>
       </ul>
 
+<button type="button" class="btn btn-default btn-sm wht_txt"><%= link_to "Add Resolution", new_resolution_path %></button>
   </div>
