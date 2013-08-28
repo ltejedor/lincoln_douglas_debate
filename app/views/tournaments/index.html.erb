@@ -1,7 +1,15 @@
 
 <%= render 'tournaments_carousel' %>
 
+
 <hr class="featurette-divider">
+
+<% if current_user %>
+	<a class="btn btn-large btn-primary create-tournament tournament-btn" href="<%= new_tournament_path%>">Organize a Tournament</a>
+<% else %>
+	Sign in to create a tournament
+<% end %>
+
 
 <!-- TODO: Replace dummy links -->
 	
@@ -10,24 +18,26 @@
 <!-- TODO: Link to Tournament objects -->
 
 <!-- TODO: fix the height of each tournament displayed -->
-	
+<h2 id="upcoming-header">Upcoming Tournaments</h2>
 <% @tournaments.each do |tournament| %>
-  <div class="col-sm-3 col-md-3 tournament-item">
+  <div class="col-sm-4 col-md-3 tournament-item">
     <div class="thumbnail">
       <h4 class="tournament-date">
-      	<%= tournament.start_time %> to<br />
-      	<%= tournament.end_time %></h4>
+      	<%= tournament.starttime.strftime("%a %b %d, %Y %I:%M%p") %> to<br />
+      	<%= tournament.endtime.strftime("%a %b %d, %Y %I:%M%p") %></h4>
+      	<!-- TODO: Scale image better -->
       <% @image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || "http://static.giantbomb.com/uploads/scale_small/0/2609/294926-pewter_trophy_lrg.jpg" %>
       <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %>
       <div class="caption">
         <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>
-        <p><%= tournament.description %></p>
-        <p><a href="#" class="btn btn-primary">Debate</a> <a href="#" class="btn btn-default">Judge</a></p>
+        <p><%= tournament.summary %></p>
+        <!-- TODO: dummy link -->
+        
+        
+        <p><a href="#" class="btn btn-primary tournament-btn">Attend</a></p>
       </div>
     </div>
   </div>
   <% end %>
 </div>
 	
-<%= link_to 'New Tournament', new_tournament_path %>
-

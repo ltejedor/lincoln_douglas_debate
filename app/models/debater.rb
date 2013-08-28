@@ -1,9 +1,15 @@
 class Debater < ActiveRecord::Base
   attr_accessible :level, :side
   belongs_to :user
-  
+
   has_and_belongs_to_many :matches
-  belongs_to :tournament
+  
+  has_and_belongs_to_many :tournaments
+
+  def self.create_debater(user)
+    @d = create! { |debater| debater.user = user}
+    @d
+  end
   
   # TODO: for any particular tournament, assign a starting side for their match in the 1st round
   

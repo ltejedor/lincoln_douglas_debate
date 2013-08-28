@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130827213936) do
+ActiveRecord::Schema.define(:version => 20130828015915) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(:version => 20130827213936) do
     t.string   "side"
     t.string   "level"
     t.integer  "user_id"
-    t.integer  "tournament_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "debaters_tournaments", :force => true do |t|
+    t.integer "debater_id"
+    t.integer "tournament_id"
   end
 
   create_table "judges", :force => true do |t|
@@ -47,6 +51,11 @@ ActiveRecord::Schema.define(:version => 20130827213936) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "judges_tournaments", :force => true do |t|
+    t.integer "judge_id"
+    t.integer "tournament_id"
   end
 
   create_table "matches", :force => true do |t|
@@ -86,8 +95,16 @@ ActiveRecord::Schema.define(:version => 20130827213936) do
 
   create_table "tournaments", :force => true do |t|
     t.string   "name"
+    t.text     "summary"
     t.text     "description"
+    t.text     "entry_info"
+    t.text     "divisions_info"
+    t.text     "rules_info"
+    t.text     "judges_info"
+    t.text     "additional_info"
     t.string   "image"
+    t.datetime "starttime"
+    t.datetime "endtime"
     t.integer  "organizer_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

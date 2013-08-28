@@ -3,5 +3,11 @@ class Judge < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :matches
   has_and_belongs_to_many :rounds
-  has_and_belongs_to_many :tournaments
+  has_many :tournaments, :through => :tournament_debaters
+  
+  def self.create_judge(user)
+    @j = create! { |judge| judge.user = user}
+    @j
+  end
+  
 end

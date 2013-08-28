@@ -2,7 +2,8 @@ class TournamentsController < ApplicationController
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.upcoming
+    @tournaments.sort! {|a,b| a.starttime <=> b.starttime }  
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,10 +42,11 @@ class TournamentsController < ApplicationController
   # POST /tournaments.json
   def create
     @tournament = Tournament.new(params[:tournament])
+    @tournament.organizer = current_user.as_organizer 
 
     respond_to do |format|
       if @tournament.save
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully created.' }
+        format.html { redirect_to @tournament, notice: 'Tournament was successfully created by organizer ' + @tournament.organizer.user.name }
         format.json { render json: @tournament, status: :created, location: @tournament }
       else
         format.html { render action: "new" }

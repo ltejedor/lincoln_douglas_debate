@@ -1,43 +1,82 @@
 
-<%= form_for [@tournament],
-			:html => { :multipart => true } do |f| %>
-	<%= f.error_messages %>
-	<p>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :start, "Start Date and Time" %><br>
-		<%= f.datetime_select :start, 
-			ampm: true,
-			start_year: Time.now.year,
-			:default => 14.days.from_now,			
-			:order => [:month, :day, :year, :hour],
-			:discard_minute => true %>
-	</p>
-	<p>
-		<%= f.label :end, "End Date and Time" %><br>
-		<%= f.datetime_select :end, 
-			ampm: true,
-			start_year: Time.now.year,
-			:default => 21.days.from_now,
-			:order => [:month, :day, :year, :hour],
-			:discard_minute => true %>
-	</p>
-	
-	<p>
-		<%= f.label :description %><br>
-		<%= f.text_area :description %><br>
-		<span class="hint">Max 500 Characters</span><br />
-	</p>
-	<p>
-		File Uploaded: <%= @tournament.asset_file_name %>
-	</p>
-	<p> <%= f.label :asset, "Upload a New Image" %>
-		<%= f.file_field :asset %>
-</p>
-<br>
-	<%= f.submit %>
+<!-- TODO: Format form -->
 
-<% end %>
+		<h3>Tournament Summary</h3>
+	  	<p>Summarize the main information of your tournament to show in the Tournament Listings.</p>
+		<p class="name">
+			<%= f.label :name %><br>
+			<%= f.text_field :name %>
+		</p>			
+		<p class="starttime">
+			<%= f.label :starttime, "Start" %><br>
+			<%= f.datetime_select :starttime, 
+				ampm: true,
+				starttime_year: Time.now.year,
+				:default => {:month => 7.days.from_now.month, :day => 7.days.from_now.day, :hour => 12, :minute => 00},		
+				:order => [:month, :day, :year, :hour] %>
+		</p>
+		<p class="endtime">
+			<%= f.label :endtime, "End" %><br>
+			<%= f.datetime_select :endtime, 
+				ampm: true,
+				starttime_year: Time.now.year,
+				:default => {:month => 14.days.from_now.month, :day => 14.days.from_now.day, :hour => 12, :minute => 00},
+				:order => [:month, :day, :year, :hour] %>
+		</p>
+		<p class="description">
+			<%= f.label :summary, "Summary" %><br>
+			<%= f.text_area :summary, :rows => 5 %><br>
+			<span class="hint">Max 500 Characters</span><br />
+		</p>
+		<p class="asset">
+			<%= f.label :asset, "Upload a New Image" %><br />
+			File Uploaded: <%= @tournament.asset_file_name || "none" %>
+			<%= f.file_field :asset %>
+		</p>
+		<a class="btn btn-large btn-primary" data-toggle="tab" href="#details">NEXT: Set Tournament Details</a>
+	  </div>
+	  
+	  <div class="tab-pane fade" id="details">
+	  	<h3>Tournament Details</h3>
+	  	<p>Give full tournament details for your prospective debaters and judges.</p>
+		<p class="description">
+			<%= f.label :description, "Tournament Overview" %><br>
+			<%= f.text_area :description %>
+		</p>			
+		<p class="entry_info">
+			<%= f.label :entry_info, "Entry" %><br>
+			<%= f.text_area :entry_info %>
+		</p>			
+		<p class="divisions_info">
+			<%= f.label :divisions_info, "Divisions" %><br>
+			<%= f.text_area :divisions_info %>
+		</p>			
+		<p class="judges_info">
+			<%= f.label :judges_info, "Judges" %><br>
+			<%= f.text_area :judges_info %>
+		</p>			
+		<p class="additional_info">
+			<%= f.label :additional_info, "Additional Information" %><br>
+			<%= f.text_area :additional_info %>
+		</p>			
 
+	  	<a class="btn btn-large btn-primary" data-toggle="tab" href="#rules">NEXT: Set Tournament Rules</a>
+	  </div>
+	  
+	  <div class="tab-pane fade" id="rules">
+		<p class="rules_info">
+			<%= f.label :rules_info, "Rules Description" %><br>
+			<%= f.text_area :rules_info %>
+		</p>			
+	  	<a class="btn btn-large btn-primary" data-toggle="tab" href="#confirmation">NEXT: View Confirmation Summary</a>
+	  </div>
+	  
+	  <div class="tab-pane fade" id="confirmation">
+	  	CONFIRMATion
+
+		<p class="submit">
+			<%= f.submit %>		
+		</p>
+
+	  </div>
+	</div>

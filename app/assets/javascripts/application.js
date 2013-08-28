@@ -15,7 +15,22 @@
 //= require_tree .
 //= require twitter/bootstrap
 
+
+$(document).ready(function() {
+
+	// Set up proper tab activation for buttons within multi-tab Tournament form
+		
+	$('a[data-toggle="tab"]').filter('.btn').on('click.showtab', function (e) {		
+		$('li').removeClass('active');
+		var tabref = $(this).attr('href');
+		$('a[href="'+tabref+'"]').filter('.tabBar').parent().addClass('active');
+		console.log('clicked');
+	})
+});
+
+
 // TODO: Prevent Navbar overlap on div below.
 // (Navbar currently overlaps content while changing in size)
 // Use jQuery solution: http://stackoverflow.com/questions/11920846/prevent-a-div-to-overlap-over-a-fixed-one
  
+

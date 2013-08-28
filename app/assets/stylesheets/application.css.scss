@@ -13,6 +13,7 @@
  */
 
 // can override vars to twitter boostrap here
+
 .signinbutton {
     height: 40px;
 }
@@ -131,6 +132,16 @@ footer {
   display: block;
   font-style: italic;
 }
+
+
+
 // import original bootstrap
 @import "twitter/bootstrap";
+
+
+// ***********TWITTER BOOTSTRAP OVERRIDES*************
+
+.carousel-indicators {
+    z-index: 14;
+}
 
