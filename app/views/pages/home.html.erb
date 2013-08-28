@@ -1,9 +1,10 @@
 <% if current_user %>
-	<div id="user_container">
+<%= render 'carousel' %>
+	<div class="container">
 
-	<div id="profile">
+	<div class="row">
+		<div class="col-xs-12 col-md-8">
 		<h4>Profile</h4>
-		<div class="home_border">
 		<img width = "100px" src= "<%= current_user.image %>" >
 				<p><%= current_user.name %><br>
 		<%= current_user.email %></p>
@@ -14,11 +15,9 @@
 		<p><b>FRIENDS</b></p>
 	</div>
 
-	</div>
+<div class="col-xs-6 col-md-4">
 
-	<div id="results">
 	<h4>Recent Tournament Results</h4>
-	<div id="results_inner">
 		<div class="ind_results">
 			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
 			<p><b>Fake Name</b></p>
@@ -36,7 +35,7 @@
 		</div>
 
 
-	</div>
+
 	</div>
 
 	<div id="latest_activity">
