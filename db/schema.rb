@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828175735) do
+ActiveRecord::Schema.define(:version => 20130828194959) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
 
   add_index "cases", ["resolution_id"], :name => "index_cases_on_resolution_id"
 
+  create_table "competitors", :force => true do |t|
+    t.integer "debater_id"
+    t.integer "tournament_id"
+    t.string  "division"
+  end
+
   create_table "critiques", :force => true do |t|
     t.string   "name"
     t.text     "body"
@@ -57,17 +63,10 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
   add_index "critiques", ["case_id"], :name => "index_critiques_on_case_id"
 
   create_table "debaters", :force => true do |t|
-    t.string   "side"
     t.string   "level"
     t.integer  "user_id"
-    t.integer  "tournament_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "debaters_tournaments", :force => true do |t|
-    t.integer "debater_id"
-    t.integer "tournament_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "judges", :force => true do |t|
@@ -75,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "levels"
+    t.string   "level"
   end
 
   create_table "judges_tournaments", :force => true do |t|
@@ -94,11 +93,6 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
   end
 
   create_table "pages", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "registrations", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -125,8 +119,17 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
 
   create_table "tournaments", :force => true do |t|
     t.string   "name"
+    t.text     "summary"
     t.text     "description"
+    t.text     "entry_info"
+    t.text     "divisions_info"
+    t.text     "rules_info"
+    t.text     "judges_info"
+    t.text     "additional_info"
     t.string   "image"
+    t.datetime "starttime"
+    t.datetime "endtime"
+    t.integer  "organizer_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "asset_file_name"

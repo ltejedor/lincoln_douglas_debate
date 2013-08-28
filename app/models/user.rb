@@ -55,6 +55,21 @@ class User < ActiveRecord::Base
   
 
 
+  # --------------- COMPETITIOR -----------------------
+  
+  def as_competitor(tourney)
+    @competitor = 
+    Competitor.where(tournament_id: tourney.id, 
+               debater_id: self.as_debater.id)
+    @competitor
+  end
+  
+ 
+
+  # TODO: Include competitor-only functions, if any to be delegated
+
+
+
   # --------------- JUDGE -----------------------
   
   def as_judge

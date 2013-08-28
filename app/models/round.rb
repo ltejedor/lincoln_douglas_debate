@@ -5,5 +5,5 @@ class Round < ActiveRecord::Base
   
   has_many :matches
   
-  has_and_belongs_to_many :judges
+  has_and_belongs_to_many :judges # TODO: Allow judges to judge specific rounds?
 end

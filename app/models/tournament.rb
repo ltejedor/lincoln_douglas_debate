@@ -5,15 +5,13 @@ class Tournament < ActiveRecord::Base
   
   belongs_to :organizer
   has_many :judges, :through => :tournament_judges
-  has_many :debaters, :through => :tournament_debaters
-  has_and_belongs_to_many :judges
-  has_and_belongs_to_many :debaters
+  has_many :competitors
   
   has_many :rounds
 
   validates :name, :summary, :presence => true  
   validates_length_of :summary, :maximum => 500, 
-      :message => "Summary should be less than 500 characters."
+      :message => "should be less than 500 characters."
   
   
   validate :ends_after_starting?
