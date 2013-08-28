@@ -1,5 +1,5 @@
 FactoryGirl.define do
 	factory :resolution do
-		name "Example ROBOT"
+		name "Catssss"
 	end
 end

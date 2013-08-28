@@ -3,8 +3,7 @@ require 'spec_helper'
 feature "Editing Resolutions" do
 	before do
 		Factory(:resolution, :name => "Blurp (alien)")
-		visit "/resolutions"
-		click_link "Blurp (alien)"
+		visit "/resolutions/1"
 		click_link "Edit Resolution"
 	end
 
