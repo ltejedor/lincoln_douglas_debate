@@ -7,10 +7,33 @@
 		<%= f.text_field :name %>
 	</p>
 	<p>
-		<%= f.label :description %><br>
-		<%= f.text_area :description %>
+		<%= f.label :start, "Start Date and Time" %><br>
+		<%= f.datetime_select :start, 
+			ampm: true,
+			start_year: Time.now.year,
+			:default => 14.days.from_now,			
+			:order => [:month, :day, :year, :hour],
+			:discard_minute => true %>
 	</p>
-	<p> <%= f.label :asset, "File" %><br>
+	<p>
+		<%= f.label :end, "End Date and Time" %><br>
+		<%= f.datetime_select :end, 
+			ampm: true,
+			start_year: Time.now.year,
+			:default => 21.days.from_now,
+			:order => [:month, :day, :year, :hour],
+			:discard_minute => true %>
+	</p>
+	
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_area :description %><br>
+		<span class="hint">Max 500 Characters</span><br />
+	</p>
+	<p>
+		File Uploaded: <%= @tournament.asset_file_name %>
+	</p>
+	<p> <%= f.label :asset, "Upload a New Image" %>
 		<%= f.file_field :asset %>
 </p>
 <br>
