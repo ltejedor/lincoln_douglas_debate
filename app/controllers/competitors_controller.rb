@@ -3,6 +3,8 @@ class CompetitorsController < ApplicationController
     @debater = current_user.as_debater
     @tournament = Tournament.find(params[:tournament_id])
     @competitor = (Competitor.where(debater_id: @debater.id, tournament_id: @tournament.id).first || Competitor.new(params[:competitor]))
+    @competitor.debater = @debater
+    @competitor.tournament = @tournament
     respond_to do |format|
       if @competitor.save
         @competitor.update_attributes(params[:competitor])

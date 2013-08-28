@@ -13,6 +13,7 @@ feature "Registering for tournaments" do
   scenario "register as debater" do
     select 'Novice', from: 'debater_level'
     click_link_or_button 'Register to Debate'  
+    page.should have_content('You successfully registered to debate in the Varsity division of this tournament!')
   end
   scenario "cannot RSVP if already RSVP'd" do
     
