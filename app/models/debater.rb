@@ -5,6 +5,8 @@ class Debater < ActiveRecord::Base
   has_and_belongs_to_many :matches
   
   has_and_belongs_to_many :tournaments
+  
+  validates :level, :presence => true
 
   def self.create_debater(user)
     @d = create! { |debater| debater.user = user}
