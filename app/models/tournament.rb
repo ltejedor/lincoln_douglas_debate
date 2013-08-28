@@ -5,9 +5,7 @@ class Tournament < ActiveRecord::Base
   
   belongs_to :organizer
   has_many :judges, :through => :tournament_judges
-  has_many :debaters, :through => :competitors
-  has_and_belongs_to_many :judges
-  has_and_belongs_to_many :debaters
+  has_many :competitors
   
   has_many :rounds
 

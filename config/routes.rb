@@ -1,4 +1,6 @@
 Lincolndouglas::Application.routes.draw do
+  get "competitors/create"
+
   get "debaters/create"
 
   get "debaters/destroy"
@@ -6,7 +8,7 @@ Lincolndouglas::Application.routes.draw do
   root :to => "pages#home"
 
   resources :tournaments do
-    resources :debaters
+    resources :competitors
     resources :judges
   end
 

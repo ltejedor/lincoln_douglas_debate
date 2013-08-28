@@ -1,12 +1,11 @@
 class Debater < ActiveRecord::Base
-  attr_accessible :level, :side, :rsvptournament_id, :user_id
+  attr_accessible :level
   belongs_to :user
 
   has_and_belongs_to_many :matches
   
-  has_many :tournaments, :through => competitors
+  has_many :tournaments, :through => :competitors
   
-  validates :level, presence: true
 
   def self.create_debater(user)
     @d = create! { |debater| debater.user = user}
@@ -22,4 +21,3 @@ class Debater < ActiveRecord::Base
   # TODO: Determine side, given match
 end
 
-user.as_debater

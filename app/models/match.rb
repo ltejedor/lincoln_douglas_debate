@@ -1,6 +1,6 @@
 class Match < ActiveRecord::Base
   attr_accessible :start, :end
-  has_many :debaters
+  has_many :competitors
   has_many :judges
   
   belongs_to :round
