@@ -4,7 +4,9 @@ Lincolndouglas::Application.routes.draw do
   resources :tournaments
 
   resources :resolutions do
-    resources :cases
+    resources :cases do
+      resources :critiques
+    end
   end
 
   resources :topics do
