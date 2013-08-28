@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20130828185611) do
 
   add_index "cases", ["resolution_id"], :name => "index_cases_on_resolution_id"
 
+  create_table "critiques", :force => true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.integer  "case_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "critiques", ["case_id"], :name => "index_critiques_on_case_id"
+
   create_table "debaters", :force => true do |t|
     t.string   "side"
     t.string   "level"
@@ -88,6 +98,11 @@ ActiveRecord::Schema.define(:version => 20130828185611) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "registrations", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "resolutions", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -110,17 +125,8 @@ ActiveRecord::Schema.define(:version => 20130828185611) do
 
   create_table "tournaments", :force => true do |t|
     t.string   "name"
-    t.text     "summary"
     t.text     "description"
-    t.text     "entry_info"
-    t.text     "divisions_info"
-    t.text     "rules_info"
-    t.text     "judges_info"
-    t.text     "additional_info"
     t.string   "image"
-    t.datetime "starttime"
-    t.datetime "endtime"
-    t.integer  "organizer_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "asset_file_name"

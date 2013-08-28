@@ -11,7 +11,9 @@ Lincolndouglas::Application.routes.draw do
   end
 
   resources :resolutions do
-    resources :cases
+    resources :cases do
+      resources :critiques
+    end
   end
 
   resources :topics do

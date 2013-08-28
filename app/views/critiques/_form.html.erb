@@ -1,0 +1,13 @@
+<%= simple_form_for [@resolution, @case, @critique] do |f| %>
+	<%= f.error_messages %>
+
+		<%= f.input :name %><br>
+
+		<%= f.input :body, label: 'Critique' %><br>
+
+
+		<br>
+	<%= f.button :submit %>
+
+<% end %>
+<br><br>
