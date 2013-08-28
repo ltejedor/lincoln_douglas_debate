@@ -1,0 +1,19 @@
+<%= simple_form_for [@resolution, @case] do |f| %>
+	<%= f.error_messages %>
+
+		<%= f.input :title %><br>
+
+		<%= f.input :description, label: 'Brief Description' %><br>
+
+
+		<%= f.input :content, input_html: { class: 'span12' } %><br>
+
+		<%= f.input :type, priority: [ "Affirmative" ], collection: [ "Affirmative", "Negative", "Kritik"] %><br>
+
+		<%= f.input :anon %><br>
+
+		<br>
+	<%= f.button :submit %>
+
+<% end %>
+<br><br>

@@ -4,7 +4,7 @@
 <ul>
 	<% @resolutions.each do |resolution| %>
     <% if resolution.current == true %>
-    	<%= link_to resolution.name, resolution %>
+    	<h4><%= resolution.name %></h4>
     <% end %>
   <% end %>
  </ul>

@@ -3,8 +3,7 @@
 	<% if @resolution.current == true %>
 	<p><b>This is the Current Resolution</b><p>
 	<% end %>
-
-	<p><%= @resolution.description %></p>
+	<%= link_to "Submit Case for Review", new_resolution_case_path(@resolution) %><br><br>
 
 
 <%= link_to "Edit Resolution", edit_resolution_path(@resolution) %> or
