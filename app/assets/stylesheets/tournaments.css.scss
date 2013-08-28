@@ -33,3 +33,42 @@
   -webkit-font-smoothing: antialiased;
   margin: 10px;
 }
+
+// TOURNAMENT SHOW PAGE AND RSVP
+
+.panel-group{
+  margin-bottom:15px;
+}
+
+.rsvp{
+    padding: 15px;
+    background-color: #ddd;
+    border: solid 1px #BBB;
+    border-radius: 4px;
+}
+
+
+.rsvp-tab {
+    background-color: #93D4FF;
+    color: #000;
+}
+.rsvp-tab:hover {
+    background-color: #B2DAFF;
+}
+.rsvp-content.tab-pane.active {
+  background-color: white;
+  border: solid 1px #ddd;
+  padding: 15px;
+  border-top-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tab-width{width:40%;}
+
+
+.input.select.optional.debater_level {
+    margin: 2.5em;
+}
+

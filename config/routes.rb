@@ -1,7 +1,10 @@
 Lincolndouglas::Application.routes.draw do
   root :to => "pages#home"
 
-  resources :tournaments
+  resources :tournaments do
+    resources :debaters
+    resources :judges
+  end
 
   resources :resolutions do
     resources :cases

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828023633) do
+ActiveRecord::Schema.define(:version => 20130828175735) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130828023633) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "levels"
   end
 
   create_table "judges_tournaments", :force => true do |t|
@@ -82,11 +83,6 @@ ActiveRecord::Schema.define(:version => 20130828023633) do
   end
 
   create_table "pages", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "registrations", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

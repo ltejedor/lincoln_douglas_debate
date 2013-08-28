@@ -37,3 +37,22 @@ Tournament.create!(
   starttime: 4.days.from_now, endtime: 7.days.from_now
 )
 
+
+User.delete_all
+
+User.create!(
+  provider: "google_oauth2",
+  uid: "12341234",
+  first_name: "Jane",
+  last_name: "Smith",
+  name: "Jane Smith",
+  email: "example@example.com",
+  image: "https://lh4.googleusercontent.com/-iXUenCqISpE/AAAAAAAAAAI/AAAAAAAAABk/mTPGOpNPqE4/photo.jpg",
+  googleplus: "https://plus.google.com/107239086148218711532",
+  verified_email: "example@example.com",
+  birthday: "0000-08-28")
+
+@u = User.limit(1).first
+
+@current_user = @u
+

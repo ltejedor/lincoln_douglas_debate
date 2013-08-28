@@ -11,7 +11,7 @@ class Tournament < ActiveRecord::Base
   
   has_many :rounds
 
-  validates :name, :summary, :description, :presence => true  
+  validates :name, :summary, :presence => true  
   validates_length_of :summary, :maximum => 500, 
       :message => "Summary should be less than 500 characters."
   
