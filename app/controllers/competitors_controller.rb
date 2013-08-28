@@ -15,6 +15,10 @@ class CompetitorsController < ApplicationController
         format.json { render json: @competitor.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def destroy
     
   end
+  
 end

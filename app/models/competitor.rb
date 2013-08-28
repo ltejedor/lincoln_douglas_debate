@@ -6,9 +6,9 @@ class Competitor < ActiveRecord::Base
   
   validates :division, :presence => true
   
-  def self.create_competitor(debater,tourney)
+  def self.create_competitor(user,tourney)
     @c = create! do |competitor|
-      competitor.debater = debater
+      competitor.debater = Debater.where(user_id: user.id).first
       competitor.tournament = tourney
     end
     @c

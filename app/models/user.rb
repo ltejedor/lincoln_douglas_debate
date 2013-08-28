@@ -60,9 +60,11 @@ class User < ActiveRecord::Base
   def as_competitor(tourney)
     @competitor = 
     Competitor.where(tournament_id: tourney.id, 
-               debater_id: self.as_debater.id) || Competitor.create_competitor(self.as_debater, tourney) 
+               debater_id: self.as_debater.id)
+    @competitor
   end
-
+  
+ 
 
   # TODO: Include competitor-only functions, if any to be delegated
 
