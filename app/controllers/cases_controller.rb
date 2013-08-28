@@ -21,6 +21,26 @@ class CasesController < ApplicationController
 
 	end
 
+	def edit
+
+	end
+
+	def update
+		if @case.update_attributes(params[:case])
+			flash[:notice] = "Case has been updated"
+			redirect_to [@resolution, @case]
+		else
+			flash[:alert] = "Case has not been updated"
+			render :action => "edit"
+		end
+	end
+
+	def destroy
+		@case.destroy
+		flash[:notice] = "Case has been deleted"
+		redirect_to resolutions_path
+	end
+
 private
 	def find_resolution
 		@resolution = Resolution.find(params[:resolution_id])

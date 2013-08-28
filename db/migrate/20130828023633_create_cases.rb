@@ -4,7 +4,7 @@ class CreateCases < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.text :content
-      t.string :type
+      t.string :response_type
       t.boolean :anon
       t.references :resolution
 

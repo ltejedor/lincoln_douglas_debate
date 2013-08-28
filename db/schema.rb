@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130828023633) do
     t.string   "title"
     t.string   "description"
     t.text     "content"
-    t.string   "type"
+    t.string   "response_type"
     t.boolean  "anon"
     t.integer  "resolution_id"
     t.datetime "created_at",    :null => false
