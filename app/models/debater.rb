@@ -4,7 +4,7 @@ class Debater < ActiveRecord::Base
 
   has_and_belongs_to_many :matches
   
-  has_and_belongs_to_many :tournaments
+  has_many :tournaments, :through => competitors
   
   validates :level, presence: true
 
@@ -21,3 +21,5 @@ class Debater < ActiveRecord::Base
   
   # TODO: Determine side, given match
 end
+
+user.as_debater

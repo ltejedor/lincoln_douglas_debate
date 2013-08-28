@@ -6,6 +6,7 @@ feature "Registering for tournaments" do
   
   before do
     current_user = user
+    # TODO: restrict permissions for signed-in users only; test with signed in Omniauth user (how?)
     visit tournament_path(tournament)
   end
   

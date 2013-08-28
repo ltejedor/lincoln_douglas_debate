@@ -115,6 +115,7 @@
 		  			Please follow all Entry guidelines and follow through on your RSVP.
 		  		</div>
 		  		<%= f.hidden_field :rsvptournament_id, value: @tournament.id %>
+		  		<%= f.hidden_field :user_id, value: current_user.id %>
 		  		<%= f.button :submit, value: 'Register to Debate', class: 'btn btn-primary tournament-btn' %>
 		  	<% end %>
 		  </div>
