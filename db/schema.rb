@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828175735) do
+ActiveRecord::Schema.define(:version => 20130828185611) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
     t.string   "title"
     t.string   "description"
     t.text     "content"
-    t.string   "response_type"
+    t.string   "type"
     t.boolean  "anon"
     t.integer  "resolution_id"
     t.datetime "created_at",    :null => false
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
     t.string   "side"
     t.string   "level"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "rsvptournament_id"
   end
 
   create_table "debaters_tournaments", :force => true do |t|
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20130828175735) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "levels"
+    t.string   "level"
   end
 
   create_table "judges_tournaments", :force => true do |t|

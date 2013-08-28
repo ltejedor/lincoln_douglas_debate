@@ -13,7 +13,7 @@ class Tournament < ActiveRecord::Base
 
   validates :name, :summary, :presence => true  
   validates_length_of :summary, :maximum => 500, 
-      :message => "Summary should be less than 500 characters."
+      :message => "should be less than 500 characters."
   
   
   validate :ends_after_starting?

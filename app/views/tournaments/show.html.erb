@@ -1,17 +1,17 @@
 <div class="tournament-detail">
 
-<% if current_user.as_organizer == @tournament.organizer %>
-	<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-<% end %>
 
 <div class="tournament-summary col-md-12">
 	<h2><%= @tournament.name %></h2>	
 	<p class="organizer">Organized by <a href="#">
 		<% if @tournament.organizer.nil? %>
-		<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-		<% else %>
-		<!-- TODO: dummy link to organizer's profile -->
-		 <%= @tournament.organizer.user.name %>
+			<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+			<% else %>
+			<!-- TODO: dummy link to organizer's profile -->
+			 <%= @tournament.organizer.user.name %>
+			 <% if current_user.as_organizer == @tournament.organizer %>
+				<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+			<% end %>
 		 <% end %>
 	</p>
 	<p class="lead"><%= @tournament.summary %></p>
@@ -114,19 +114,20 @@
 		  		<div><b>Honor your RSVP. </b>Note that No-Shows may hinder your ability to attend future tournaments. 
 		  			Please follow all Entry guidelines and follow through on your RSVP.
 		  		</div>
-		  		<%= f.button :submit, value: 'Register to Attend', class: 'btn btn-primary tournament-btn' %>
+		  		<%= f.hidden_field :rsvptournament_id, value: @tournament.id %>
+		  		<%= f.button :submit, value: 'Register to Debate', class: 'btn btn-primary tournament-btn' %>
 		  	<% end %>
 		  </div>
 		  <div class="rsvp-content tab-pane" id="judge">
 		  	<%= simple_form_for [@tournament, Judge.new] do |f| %>
 		  	<% @levels = ['Novice','Novice or Varsity']%>
 		  	<!-- TODO: eventually make @levels dynamic acc to organizer tournament settings -->
-		  		<div class="division-field"><%= f.input :levels, label: "Choose which Division to Judge: ", collection: @levels %></div>
+		  		<div class="division-field"><%= f.input :level, label: "Choose which Division to Judge: ", collection: @levels %></div>
 		  		<hr style="margin-top: 4em; margin-bottom: 2em;">
 		  		<div><b>Honor your RSVP. </b>Note that No-Shows may hinder your ability to attend future tournaments. 
 		  			Please follow all Entry guidelines and follow through on your RSVP.
 		  		</div>
-		  		<%= f.button :submit, value: 'Register to Attend', class: 'btn btn-primary tournament-btn' %>
+		  		<%= f.button :submit, value: 'Register to Judge', class: 'btn btn-primary tournament-btn' %>
 		  	<% end %>
 		  	
 		  	</div>
