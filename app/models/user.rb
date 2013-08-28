@@ -34,24 +34,33 @@ class User < ActiveRecord::Base
   end
 
   # --------------- ORGANIZER -----------------------
-  # --------------- ORGANIZER -----------------------
-  # --------------- ORGANIZER -----------------------
   
+  def as_organizer
+    @organizer = Organizer.where(user_id: self.id).first || Organizer.create_organizer(self)
+  end
+  
+
   # TODO: Include organizer-only functions, if any to be delegated
   
 
 
   # --------------- DEBATER -----------------------
-  # --------------- DEBATER -----------------------
-  # --------------- DEBATER -----------------------
+
+  def as_debater
+    @debater = Debater.where(user_id: self.id).first || Debater.create_debater(self)
+  end
+
   
   # TODO: Include debater-only functions, if any to be delegated
   
 
 
   # --------------- JUDGE -----------------------
-  # --------------- JUDGE -----------------------
-  # --------------- JUDGE -----------------------
+  
+  def as_judge
+    @judge = Judge.where(user_id: self.id).first || Judge.create_judge(self)
+  end
+
   
   # TODO: Include judge-only functions, if any, to be delegated
   

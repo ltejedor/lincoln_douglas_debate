@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#upcoming-header {
+    text-align: center;
+}
+
 .tournament-item {
     margin-bottom: 2%;
 }
@@ -10,4 +14,22 @@
 }
 .tournament-image {
     width: 100%;
+}
+
+.tournament-btn{
+  background-color: hsl(26, 97%, 28%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f16a03", endColorstr="#8c3e02");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f16a03), to(#8c3e02));
+  background-image: -moz-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -ms-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f16a03), color-stop(100%, #8c3e02));
+  background-image: -webkit-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -o-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: linear-gradient(#f16a03, #8c3e02);
+  border-color: #8c3e02 #8c3e02 hsl(26, 97%, 23%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+  margin: 10px;
 }

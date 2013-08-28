@@ -8,6 +8,7 @@ require 'rspec/autorun'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -35,4 +36,16 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+  
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+                                                              :provider => 'google',
+                                                              :uid => '1337',
+                                                              :info => {
+                                                                  'name' => 'JonnieHallman',
+                                                                  'email' => 'jon@test.com'
+                                                              }
+                                                          })
+  
 end

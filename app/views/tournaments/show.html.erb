@@ -1,9 +1,89 @@
-<div class="starter-template">
-	<h2><%= @tournament.name %></h2>
-	
-	<p class="lead"><%= @tournament.description %></p>
-	
+<div class="tournament-detail">
+
+<% if current_user.as_organizer == @tournament.organizer %>
+	<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+<% end %>
+
+<div class="tournament-summary">
+	<h2><%= @tournament.name %></h2>	
+	<p class="organizer">Organized by <a href="#"><%= @tournament.organizer.user.name %></a></p>
+	<p class="lead"><%= @tournament.summary %></p>
+	<!-- TODO: dummy link to organizer's profile -->
+	<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
+	<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
+	</div>
+
 </div>
 
-<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
-<%= link_to 'Back', tournaments_path %>
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Tournament Overview
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <%= @tournament.description %>
+      </div>
+    </div>
+  </div>
+  <% unless @tournament.entry_info.blank? &&
+  			@tournament.divisions_info.blank? &&
+  	 		@tournament.judges_info.blank? &&
+  			@tournament.rules_info.blank? &&
+  			@tournament.additional_info.blank?	%>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Entry, Divisions, Judges & Rules
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+		<% unless @tournament.entry_info.blank? %>
+	      	<h3>Entry</h3>
+	        <%= @tournament.entry_info %>
+        <% end %>
+		<% unless @tournament.divisions_info.blank? %>
+	        <h3>Divisions</h3>
+	        <%= @tournament.divisions_info %>
+        <% end %>
+		<% unless @tournament.judges_info.blank? %>        
+	        <h3>Judges</h3>
+	        <%= @tournament.judges_info %>
+        <% end %>
+		<% unless @tournament.rules_info.blank? %>        
+	        <h3>Rules</h3>
+	        <%= @tournament.rules_info %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% unless @tournament.additional_info.blank? %>      
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Additional Information
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+        <!-- TODO:  dummy link, 
+        			show attend button only if not attending -->
+        <p><a href="#" class="btn btn-primary tournament-btn">Attend</a></p>
+

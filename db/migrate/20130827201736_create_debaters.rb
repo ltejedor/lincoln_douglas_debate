@@ -4,7 +4,6 @@ class CreateDebaters < ActiveRecord::Migration
       t.string :side
       t.string :level
       t.references :user
-      t.references :tournament
 
       t.timestamps
     end
