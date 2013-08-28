@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828015915) do
+ActiveRecord::Schema.define(:version => 20130828023633) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(:version => 20130828015915) do
   end
 
   add_index "cards", ["topic_id"], :name => "index_cards_on_topic_id"
+
+  create_table "cases", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.text     "content"
+    t.string   "type"
+    t.boolean  "anon"
+    t.integer  "resolution_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "cases", ["resolution_id"], :name => "index_cases_on_resolution_id"
 
   create_table "debaters", :force => true do |t|
     t.string   "side"
@@ -69,6 +82,11 @@ ActiveRecord::Schema.define(:version => 20130828015915) do
   end
 
   create_table "pages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

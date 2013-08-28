@@ -1,10 +1,10 @@
 <div class = "page_container"><h2><%= @resolution.name %></h2>
 
-	<p><%= @resolution.description %></p>
-
 	<% if @resolution.current == true %>
 	<p><b>This is the Current Resolution</b><p>
 	<% end %>
+	<%= link_to "Submit Case for Review", new_resolution_case_path(@resolution) %><br><br>
+
 
 <%= link_to "Edit Resolution", edit_resolution_path(@resolution) %> or
 
