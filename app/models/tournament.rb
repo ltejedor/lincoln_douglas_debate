@@ -4,7 +4,7 @@ class Tournament < ActiveRecord::Base
   has_attached_file :asset
   
   belongs_to :organizer
-  has_many :judges, :through => :tournament_judges
+  has_many :judge_registrations
   has_many :competitors
   
   has_many :rounds

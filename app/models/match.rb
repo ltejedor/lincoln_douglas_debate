@@ -1,9 +1,7 @@
 class Match < ActiveRecord::Base
-  attr_accessible :start, :end
   has_many :competitors
   has_many :judges
-  
-  belongs_to :round
+  belongs_to :bracket
   
   def aff_debater
     self.debaters.where("side","Affirmative").first
