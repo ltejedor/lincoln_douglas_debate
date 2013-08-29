@@ -53,17 +53,19 @@
 
 <div class="row col-sm-3 col-md-3">
 <h4>Past Resolutions</h4>
+<select>
 <ul><% @resolutions.each do |resolution| %>
 	<% if resolution.current == false %>
-    <li>
+    <option value="#{resolution.name}">
     	<%= link_to resolution.name, resolution %>
     	<br>
     	<%= resolution.description %>
 
-      </li>
+      </option>
        <% end %>
         <% end %>
       </ul>
+  </select>
 
 <a class="btn btn-large btn-primary create-tournament tournament-btn"<%= link_to "Add Resolution", new_resolution_path %></button>
 
