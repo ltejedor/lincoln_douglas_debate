@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
 		@topic = Topic.new(params[:topic])
 		if @topic.save
 			flash[:notice] = "Debate Topic has been added."
-			redirect_to @topic
+			redirect_to topics_path
 		else
 			flash[:alert] = "Debate Topic has not been added."
 			render :action => "new"

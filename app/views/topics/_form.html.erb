@@ -1,14 +1,14 @@
-<%= form_for(@topic) do |f| %>
-<%= f.error_messages %>
+<%= simple_form_for [@topic] do |f| %>
+	<%= f.error_messages %>
 
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :description %><br />
-		<%= f.text_field :description %><br />
-<br>
-	<%= f.submit %>
-	<% end %>
-	<br><br>
+		<%= f.input :body %><br>
+
+
+		<%= f.input :source %><br>
+
+
+		<br>
+	<%= f.button :submit, "Create Card" %>
+
+<% end %>
+<br><br>

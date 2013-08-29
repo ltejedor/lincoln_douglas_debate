@@ -3,7 +3,7 @@
 
   <div class="container col-sm-12">
   <div class="row col-sm-12 col-md-12">
-    <h1>CASE CRITIQUES</h2>
+    <h1>CASE CRITIQUES</h1>
   </div>
   <div class="row col-sm-9 col-md-9">
 	<h2>Current Resolution</h2>
@@ -53,19 +53,19 @@
 
 <div class="row col-sm-3 col-md-3">
 <h4>Past Resolutions</h4>
-<select>
+
 <ul><% @resolutions.each do |resolution| %>
 	<% if resolution.current == false %>
-    <option value="#{resolution.name}">
+   <li>
     	<%= link_to resolution.name, resolution %>
     	<br>
     	<%= resolution.description %>
 
-      </option>
+      </li>
        <% end %>
         <% end %>
       </ul>
-  </select>
+
 
 <a class="btn btn-large btn-primary create-tournament tournament-btn"<%= link_to "Add Resolution", new_resolution_path %></button>
 

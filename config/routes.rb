@@ -26,6 +26,8 @@ Lincolndouglas::Application.routes.draw do
     resources :cards
   end
 
+  resources :users
+
 
   # Render routes for static pages
 
