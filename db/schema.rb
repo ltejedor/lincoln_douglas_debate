@@ -65,8 +65,9 @@ ActiveRecord::Schema.define(:version => 20130829024211) do
   create_table "debaters", :force => true do |t|
     t.string   "level"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "rsvptournament_id"
   end
 
   create_table "judge_registrations", :force => true do |t|
@@ -101,6 +102,11 @@ ActiveRecord::Schema.define(:version => 20130829024211) do
   end
 
   create_table "pages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

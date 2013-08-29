@@ -5,9 +5,8 @@
   <script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script>
   <!-- end -->
 
-
 <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
+      <!-- Indicagitors -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1" class=""></li>
@@ -19,12 +18,10 @@
           <div class="container">
             <div class="carousel-caption">
               <!-- TODO: replace dummy caption -->
-              <h1>Welcome to the massive online community of Lincoln Douglas Debaters.</h1>
+              <h1>Join this Featured upcoming Tournament!</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p>
-              	<%= link_to image_tag("signin_button.png", class: "signinbutton-lg"), "/auth/google_oauth2" %>
-			  </p>
-
+              <!-- TODO: replace dummy link to #signup -->
+              <p><a class="btn btn-large btn-primary" href="#">Sign up today</a></p>
             </div>
           </div>
         </div>
@@ -33,11 +30,10 @@
           <div class="container">
             <div class="carousel-caption">
             	<!-- TODO: replace dummy caption -->
-              <h1>Tournaments are Fun! Headline.</h1>
+              <h1>Join this Featured upcoming Tournament 2!</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p>
-              	<%= link_to image_tag("signin_button.png", class: "signinbutton-lg"), "/auth/google_oauth2" %>
-			  </p>
+              <!-- TODO: replace dummy link to #tournaments -->
+              <p><a class="btn btn-large btn-primary" href="#">Join a Tournament</a></p>
             </div>
           </div>
         </div>
@@ -46,11 +42,10 @@
           <div class="container">
             <div class="carousel-caption">
             	<!-- TODO: replace dummy caption -->
-              <h1>One more for good measure.</h1>
+              <h1>Join this Featured upcoming Tournament 3!</h1>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p>
-              	<%= link_to image_tag("signin_button.png", class: "signinbutton-lg"), "/auth/google_oauth2" %>
-			  </p>
+              <!-- TODO: replace dummy link to #forums -->
+              <p><a class="btn btn-large btn-primary" href="#">Join the Forums</a></p>
             </div>
           </div>
         </div>
@@ -58,4 +53,3 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-
