@@ -1,17 +1,57 @@
 
+
+
+  <div class="container col-sm-12">
+  <div class="row col-sm-12 col-md-12">
+    <h1>CASE CRITIQUES</h2>
+  </div>
+  <div class="row col-sm-9 col-md-9">
 	<h2>Current Resolution</h2>
 
 <ul>
 	<% @resolutions.each do |resolution| %>
     <% if resolution.current == true %>
-    	<h4><%= resolution.name %></h4>
+    	<h3 class="question"><%= resolution.name %></h3>
+        <ul>
+          <% resolution.cases.each do |c| %>
+          <% if c.response_type == "Affirmative" %>
+          <h4 class="text-success">Affirmative Cases</h4>
+          <li>
+            <h4><%= link_to c.title, [resolution, c] %></h4>
+            <%= c.description %>
+
+          </li>
+          <% end %>
+
+          <% if c.response_type == "Negative" %>
+          <h4 class="text-danger">Negative Cases</h4>
+          <li>
+            <h4><%= link_to c.title, [resolution, c] %></h4>
+            <%= c.description %>
+
+          </li>
+          <% end %>
+
+          <% if c.response_type == "Kritik" %>
+          <h4 class="text-info">Kritik Cases</h4>
+          <li>
+            <h4><%= link_to c.title, [resolution, c] %></h4>
+            <%= c.description %>
+
+          </li>
+          <% end %>
+
+
+          <% end %>
+        </ul><br>
+         <a class="btn btn-large btn-primary create-tournament tournament-btn"<%= link_to "Submit Case for Review", new_resolution_case_path("#{resolution.id}") %></button>
     <% end %>
   <% end %>
  </ul>
+</div>
 
 
-
-<br><br>
+<div class="row col-sm-3 col-md-3">
 <h4>Past Resolutions</h4>
 <ul><% @resolutions.each do |resolution| %>
 	<% if resolution.current == false %>
@@ -27,3 +67,5 @@
 
 <a class="btn btn-large btn-primary create-tournament tournament-btn"<%= link_to "Add Resolution", new_resolution_path %></button>
 
+</div>
+</div>
