@@ -15,11 +15,56 @@ li a {
 	floath:right;
 }
 .navbar-nav {
-	float: right;
-	width: 80%;
+	float: left;
 	
+}
+
+/* NAV BAR FIXES */
+
+.navbar-nav > li > a:hover {
+    background-color: inherit;
+    color: #ddd;
+}
+a:focus {
+    background-color: inherit;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: inherit;
+}
+.dropdown-menu {
+    background-color: #27282B;
+}
+.dropdown-menu > li > a {
+    color: white;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: inherit;
 }
 
 .dropdown-menu hr {
 	margin: 5px;
+}
+
+/* Sign-In Button or Account Menu */
+
+#signin-account {
+    position: absolute;
+    right: 40px;
+    top: 5px;
+}
+
+/* Logo */
+
+#logo {
+    color: white;
+    font-weight: bold;
+}
+#logo:hover {
+    color: #FF8F00;
+}
+
+/* Small screen menu icon bars */
+
+.icon-bar {
+    background-color: white;
 }

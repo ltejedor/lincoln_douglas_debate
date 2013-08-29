@@ -10,14 +10,12 @@
                 <span class="icon-bar"></span>
               </button>
               <!-- TODO: Include a logo -->
-
-              <a class="navbar-brand" href="/">Lincoln Doulgas Debate</a>
             </div>
             <div class="navbar-collapse collapse">
             	<!-- TODO: Change the "active" class each time a link is clicked-->
               <ul class="nav navbar-nav">
               	<!-- TODO: Replace dummy links with links to pages -->
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a id="logo" href="/"><%= image_tag "logo.png" %> LDD</a></li>
                 <% if current_user.nil? %>
 	                <li><%= link_to "About", "/#about" %></li>
                 <% end %>
@@ -27,7 +25,7 @@
                 <!-- TODO: Replace dummy links with links to pages -->
                 <li><a href="#">Forums</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exchanges <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exchange <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><%= link_to "Cases", resolutions_path %></li>
@@ -44,7 +42,7 @@
 
 				<!-- TODO: SIGN IN -->
 				<% if current_user %>
-                <li class="dropdown" id="account-menu">
+                <li class="dropdown" id="signin-account">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
                   		<span id="current-user"><%= current_user.name %></span>
@@ -74,10 +72,10 @@
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><%= link_to "Sign out", signout_path %></li>
 
-                  </ul>
-				<% else %>
-	              	<li><%= link_to image_tag("signin_button.png", class: "signinbutton", id: "signin"), "/auth/google_oauth2" %>
-				<% end %>
+                 </ul>
+					<% else %>
+	             <li id="signin-account"><%= link_to image_tag("signin_button.png", class: "signinbutton", id: "signin-account"), "/auth/google_oauth2" %>
+					<% end %>
                 </li>
                 <!-- TODO: Replace dummy links with links to pages -->
               </ul>
