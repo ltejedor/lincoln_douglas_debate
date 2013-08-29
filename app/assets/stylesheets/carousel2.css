@@ -127,8 +127,11 @@ body {
   }
 }
 
+.spacetop{
+    margin-bottom: -60px;
+}
+
 .signedin{
-  margin-bottom: -60px;
   width: 700px;
   background: rgba(59, 58, 64, 0.6);
 }

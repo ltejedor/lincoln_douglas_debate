@@ -1,5 +1,5 @@
 <% if current_user %>
-<center>
+
 
 
 	<div class="container col-sm-12">
@@ -7,31 +7,27 @@
 
 
 
-	<div class="row rowhome thumbnail">
-		<div class="col-sm-4 col-md-4 tournament-item">
+	<div class="row">
+		<div class="col-sm-2 col-md-2 thumbnail first">
 			<h4>Profile</h4>
 			<img width = "100px" src= "<%= current_user.image %>" >
-		</div>
-		<div class="col-sm-4 col-md-4 tournament-item">
+
 			<p><%= current_user.name %><br>
 			<%= current_user.email %></p>
-		</div>
-		<div class="col-sm-4 col-md-4 tournament-item">
+
+
 			<b>CURRENT_POINTS</b><br> <b>2 Messages</b><br><br>
 
 
 			<p><b>BADGES</b></p>
 			<p><b>FRIENDS</b></p>
 		</div>
-	</div>
-
-<br><br>
-	<div class="row rowhome">
 
 
 
 
-	<div class="col-sm-6 col-md-6 tournament-item thumbnail">
+
+	<div class="col-sm-4 col-md-4 thumbnail">
 		<h4>Latest Activity</h4>
 
 			<ul>
@@ -41,7 +37,9 @@
 
 	</div>
 
-		<div class="col-sm-6 col-md-6 tournament-item thumbnail">
+
+
+		<div class="col-sm-4 col-md-4 thumbnail">
 				<h4>Trending</h4>
 
 			<ul>
@@ -52,7 +50,7 @@
 
 
 </div>
-</center>
+
 <% else %>
 
 
