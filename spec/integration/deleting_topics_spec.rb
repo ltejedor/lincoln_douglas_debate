@@ -2,10 +2,9 @@ require 'spec_helper'
 
 feature "Deleting Topics" do
 	scenario "Deleting a topic" do
-		Factory(:topic, :name => "What happens on the night train?")
+		Factory(:topic, :body => "What happens on the night train?")
 		visit "/topics"
-		click_link "What happens on the night train?"
-		click_link "Delete Debate Topic"
+		click_link "Delete Card"
 		page.should have_content("Debate Topic has been deleted.")
 
 		visit "/topics"

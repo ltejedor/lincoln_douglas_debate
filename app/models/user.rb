@@ -1,23 +1,25 @@
 class User < ActiveRecord::Base
-  attr_accessible :birthday, :email, :first_name, :googleplus, 
+  attr_accessible :birthday, :email, :first_name, :googleplus,
                   :image, :last_name, :name, :provider, :uid, :verified_email
   # TODO: Set time zone settings in Account Settings
   belongs_to :userable, polymorphic: true
-  
+
   belongs_to :debater
   belongs_to :judge
   belongs_to :organizer
-  
+
 
   belongs_to :author, polymorphic: true
-  
+
+  has_many :cards
+
   # --------------- OMNIAUTH -----------------------
-  
+
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
-  
-  
+
+
   def self.create_from_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -35,14 +37,14 @@ class User < ActiveRecord::Base
   end
 
   # --------------- ORGANIZER -----------------------
-  
+
   def as_organizer
     Organizer.where(user_id: self.id).first || Organizer.create_organizer(self)
   end
-  
+
 
   # TODO: Include organizer-only functions, if any to be delegated
-  
+
 
 
   # --------------- DEBATER -----------------------
@@ -51,15 +53,15 @@ class User < ActiveRecord::Base
     Debater.where(user_id: self.id).first || Debater.create_debater(self)
   end
 
-  
+
   # TODO: Include debater-only functions, if any to be delegated
-  
+
 
 
   # --------------- COMPETITIOR -----------------------
-  
+
   def as_competitor(tourney)
-    Competitor.where(tournament_id: tourney.id, 
+    Competitor.where(tournament_id: tourney.id,
                debater_id: self.as_debater.id).first
   end
 
@@ -67,18 +69,18 @@ class User < ActiveRecord::Base
   # --------------- JUDGE -----------------------
 
   # TODO: how to model judges? Judge registration, rsvp
-  
+
   def as_judge
     Judge.where(user_id: self.id).first || Judge.create_judge(self)
   end
 
-  
+
   # TODO: Include judge-only functions, if any, to be delegated
-  
+
   # --------------- JUDGE REGISTRATION -----------------------
-  
+
   def as_judge_registration(tourney)
     JudgeRegistration.where(tournament_id: tourney.id, judge_id: self.as_judge.id).first
   end
-  
+
 end

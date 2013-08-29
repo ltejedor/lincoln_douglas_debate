@@ -4,4 +4,6 @@ class Topic < ActiveRecord::Base
   has_many :cards, :dependent => :delete_all
 
   validates :body, :presence => true
+
+  belongs_to :user
 end
