@@ -26,7 +26,8 @@
       	<%= tournament.starttime.strftime("%a %b %d, %Y %I:%M%p") %> to<br />
       	<%= tournament.endtime.strftime("%a %b %d, %Y %I:%M%p") %></h4>
       	<!-- TODO: Scale image better -->
-      <% @image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || "http://static.giantbomb.com/uploads/scale_small/0/2609/294926-pewter_trophy_lrg.jpg" %>
+      	<% default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"%>
+	      <% @image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || tournament.asset_url || default_image %>
       <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %>
       <div class="caption">
         <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>

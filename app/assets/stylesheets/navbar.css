@@ -49,9 +49,13 @@ a:focus {
 
 #signin-account {
     position: absolute;
-    right: 40px;
+    right: 30px;
+    top: 2px;
 }
 
+.signinbutton {
+    margin-top: 5px;
+}
 /* Logo */
 
 #logo {

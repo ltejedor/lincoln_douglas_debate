@@ -1,5 +1,5 @@
 class Tournament < ActiveRecord::Base
-  attr_accessible :description, :image, :name, :asset, :starttime, :endtime,
+  attr_accessible :description, :image, :name, :asset, :starttime, :endtime, :asset_url,
       :summary, :entry_info, :divisions_info, :rules_info, :judges_info, :additional_info
   has_attached_file :asset
   
