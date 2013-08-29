@@ -1,43 +1,48 @@
 
 <%= render 'tournaments_carousel' %>
 
-<% if current_user %>
-	<a class="btn btn-large btn-primary create-tournament tournament-btn" href="<%= new_tournament_path%>">Organize a Tournament</a>
-<% else %>
-	Sign in to create a tournament
-<% end %>
-
-
-<!-- TODO: Replace dummy links -->
+<div id="tournaments-index">
+	<% if current_user %>
+		<a class="btn btn-large btn-primary create-tournament tournament-btn" href="<%= new_tournament_path%>">Organize a Tournament</a>
+	<% else %>
+		Sign in to create a tournament
+	<% end %>
 	
-<div class="row" id="tournament-list">
+	
+	<!-- TODO: Replace dummy links -->
+		
+	<div class="row" id="tournament-list">
+	
+	<!-- TODO: Link to Tournament objects -->
+	
+	<!-- TODO: fix the height of each tournament displayed -->
+	<h2 id="upcoming-header">Upcoming Tournaments</h2>
+	<% @tournaments.each do |tournament| %>
+	  <div class="col-sm-4 col-md-3 tournament-item">
+	    <div class="thumbnail">
+	      	<!-- TODO: Scale image better -->
+	
+		     <% default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png" %>
+		     <%@image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || tournament.asset_url || default_image  %>
+	      	
+	      <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %>
+	      <div class="caption">
+	        <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>
+	      <div class="tournament-date">
+	      	<b>Starts </b><%= tournament.starttime.strftime("%a %B %-d at %I:%M%p") if tournament.starttime.year == Time.now.year || tournament.starttime.strftime("%a %B %-d, %Y at %I:%M%p") %><br />
+	      	<b>Ends </b><%= tournament.endtime.strftime("%a %B %-d at %I:%M%p") if tournament.endtime.year == Time.now.year || tournament.endtime.strftime("%a %B %-d, %Y at %I:%M%p") %>
+	      </div>
 
-<!-- TODO: Link to Tournament objects -->
-
-<!-- TODO: fix the height of each tournament displayed -->
-<h2 id="upcoming-header">Upcoming Tournaments</h2>
-<% @tournaments.each do |tournament| %>
-  <div class="col-sm-4 col-md-3 tournament-item">
-    <div class="thumbnail">
-      <h4 class="tournament-date">
-      	<%= tournament.starttime.strftime("%a %b %d, %Y %I:%M%p") %> to<br />
-      	<%= tournament.endtime.strftime("%a %b %d, %Y %I:%M%p") %></h4>
-      	<!-- TODO: Scale image better -->
-
-	     <% default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png" %>
-	     <%@image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || tournament.asset_url || default_image  %>
-      	
-      <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %>
-      <div class="caption">
-        <h3><%= link_to tournament.name, tournament_path(tournament) %></h3>
-        <p><%= tournament.summary %></p>
-        <!-- TODO: dummy link -->
-        
-        
-        <p><%= link_to 'Register', tournament_path(tournament)%></p>
-      </div>
-    </div>
-  </div>
-  <% end %>
+	        <p><%= tournament.summary %></p>
+	        <!-- TODO: dummy link -->
+	        
+	        
+	        <p><%= link_to 'Register', tournament_path(tournament)%></p>
+	      </div>
+	    </div>
+	  </div>
+	  <% end %>
+	</div>
+			
 </div>
-	
+
