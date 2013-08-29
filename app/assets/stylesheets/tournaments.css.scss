@@ -1,43 +1,29 @@
-/* line 5, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 2, ../../app/assets/stylesheets/tournaments.css.scss */
 #tournaments-index {
   margin: 3em;
 }
 
-/* line 8, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 7, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-detail {
   margin: 3em;
 }
 
-/* line 12, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 12, ../../app/assets/stylesheets/tournaments.css.scss */
 #upcoming-header {
   text-align: center;
 }
 
-/* line 16, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 17, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-item {
   margin-bottom: 3em;
 }
 
-/* line 19, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 22, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-date {
-    color: #838383;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  color: #838383;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-/* line 22, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 27, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-image {
   width: 100%;
 }
 
-/* line 26, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 32, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-btn {
   background-color: #8d3e02 !important;
   background-repeat: repeat-x;
@@ -56,14 +42,10 @@
   margin: 10px;
 }
 
-/* line 46, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 51, ../../app/assets/stylesheets/tournaments.css.scss */
 .panel-group {
   margin-bottom: 15px;
 }
 
-/* line 50, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 56, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp {
   padding: 15px;
   background-color: #ddd;
@@ -71,21 +53,15 @@
   border-radius: 4px;
 }
 
-/* line 58, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 64, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-tab {
   background-color: #93D4FF;
   color: #000;
 }
 
-/* line 62, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 70, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-tab:hover {
   background-color: #B2DAFF;
 }
 
-/* line 65, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 75, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-content.tab-pane.active {
   background-color: white;
   border: solid 1px #ddd;
@@ -95,15 +71,10 @@
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-
-/* line 75, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 86, ../../app/assets/stylesheets/tournaments.css.scss */
 .tab-width {
   width: 40%;
 }
 
-/* line 78, ../../app/assets/stylesheets/tournaments.css.scss */
-/* line 91, ../../app/assets/stylesheets/tournaments.css.scss */
 .input.select.optional.debater_level {
   margin: 2.5em;
 }

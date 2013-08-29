@@ -19,6 +19,8 @@
 <div class="row">
 	<div class="col-md-3">
 		<%= image_tag @image, class: "tournament-image" %>		
+		<div id="empty-space" style="height: 50px;"></div>
+
 	</div>
 	<div class="col-md-9">
 		<p class="lead"><%= @tournament.summary %></p>
@@ -29,7 +31,6 @@
 	</div>		
 </div>
 
-<div id="empty-space" style="height: 50px;"></div>
 
 <div class="row">
 	<div class="panel-group col-md-8" id="accordion">
