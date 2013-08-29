@@ -1,8 +1,9 @@
 class CompetitorsController < ApplicationController
+  
   def create
     @debater = current_user.as_debater
     @tournament = Tournament.find(params[:tournament_id])
-    @competitor = (Competitor.where(debater_id: @debater.id, tournament_id: @tournament.id).first || Competitor.new(params[:competitor]))
+    @competitor = Competitor.new(params[:competitor])
     @competitor.debater = @debater
     @competitor.tournament = @tournament
     respond_to do |format|
@@ -17,8 +18,12 @@ class CompetitorsController < ApplicationController
     end
   end
   
-  def destroy
+  def destroy           
+    @tournament = Tournament.find(params[:tournament_id])
     
+    @competitor = current_user.as_competitor(@tournament)
+    @competitor.destroy
+    redirect_to tournament_path(@tournament), notice: 'You successfully canceled your registration.'
   end
   
 end
