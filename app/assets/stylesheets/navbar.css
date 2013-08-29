@@ -11,9 +11,6 @@ li a {
 #account-menu {
 	float:right;
 }
-#signin {
-	floath:right;
-}
 .navbar-nav {
 	float: left;
 	
@@ -52,6 +49,13 @@ a:focus {
     right: 30px;
     top: 2px;
 }
+
+#profile-dropdown{
+	position: absolute;
+	right: 45px;
+	top: 2px
+}
+
 
 .signinbutton {
     margin-top: 5px;
