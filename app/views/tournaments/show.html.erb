@@ -3,28 +3,38 @@
 <div class="row">
 	<div class="tournament-summary col-md-12">
 		<h2><%= @tournament.name %></h2>	
-		<p class="organizer">Organized by <a href="#">
-			<% if @tournament.organizer.nil? %>
+		<p class="organizer">Organized by <a href="#"> <!-- TODO: Dummy -->
+		<% if @tournament.organizer.nil? %>
 				<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-				<% else %>
-				<!-- TODO: dummy link to organizer's profile -->
-				 <%= @tournament.organizer.user.name %>
-				 <% if current_user.as_organizer == @tournament.organizer %>
-					<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-				<% end %>
-			 <% end %>
+			<% else %>
+			<!-- TODO: dummy link to organizer's profile -->
+			 <%= @tournament.organizer.user.name %>
+			 <% if current_user.as_organizer == @tournament.organizer %>
+				<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+			<% end %>
+		 <% end %>
 		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @image, class: "tournament-image" %>		
+		<div id="empty-space" style="height: 50px;"></div>
+
+	</div>
+	<div class="col-md-9">
 		<p class="lead"><%= @tournament.summary %></p>
 	
 		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
 		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
-		</div>
-	
-	</div>	
+		
+	</div>		
 </div>
+
 
 <div class="row">
 	<div class="panel-group col-md-8" id="accordion">
+	<% unless @tournament.description.blank? %>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
@@ -35,11 +45,12 @@
 	    </div>
 	    <div id="collapseOne" class="panel-collapse collapse in">
 	      <div class="panel-body">
-	        <%= ("None" if @tournament.description.blank? )|| @tournament.description %>
+	        <%= @tournament.description %>
 	      </div>
 	    </div>
 	  </div>
-	  <% unless @tournament.entry_info.blank? &&
+	<% end %>
+	<% unless @tournament.entry_info.blank? &&
 	  			@tournament.divisions_info.blank? &&
 	  	 		@tournament.judges_info.blank? &&
 	  			@tournament.rules_info.blank? &&
@@ -119,7 +130,6 @@
 				  </div>
 				<% else %>
 				  <div class="rsvp-content tab-pane active" id="debate">
-				  	
 					Please sign in to register.
 				  </div>
 				  <div class="rsvp-content tab-pane" id="judge">

@@ -24,6 +24,7 @@
 	  with navbar, but will eventually need a jQuery solution.
 	  See to-do under application.js to fix overlapping navbar  -->
 	<div id="empty-space" style="height: 50px;"></div>
+	
 	<% flash.each do |key, value| %>
 		<div class='alert alert-info' id='<%= key %>'>
 			<%= value %>

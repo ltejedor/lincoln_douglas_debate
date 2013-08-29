@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Managing Tournament Permissions' do
+feature 'Organize a Tournament' do
 
   scenario 'cannot create a tournament without having signed in' do
     visit new_tournament_path

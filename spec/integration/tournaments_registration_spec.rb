@@ -1,12 +1,10 @@
-require 'spec_helper'
-
 
 
 # TODO: restrict permissions for signed-in users only; test with signed in Omniauth user (how?)
 # current_user not working
 
 
-feature "Registering for tournaments" do
+feature "Register for a Tournament" do
   let!(:tournament) { Factory(:tournament) }
   let!(:user) { Factory(:user) }
   

@@ -1,10 +1,10 @@
 class TournamentsController < ApplicationController
+  before_filter :find_tournament, :only => [:show, :update]
   # GET /tournaments
   # GET /tournaments.json
   def index
     @tournaments = Tournament.upcoming
     @tournaments.sort! {|a,b| a.starttime <=> b.starttime }  
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tournaments }
@@ -14,7 +14,8 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1
   # GET /tournaments/1.json
   def show
-    @tournament = Tournament.find(params[:id])
+    default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"
+    @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset_url || default_image
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +59,6 @@ class TournamentsController < ApplicationController
   # PUT /tournaments/1
   # PUT /tournaments/1.json
   def update
-    @tournament = Tournament.find(params[:id])
 
     respond_to do |format|
       if @tournament.update_attributes(params[:tournament])
@@ -81,5 +81,10 @@ class TournamentsController < ApplicationController
       format.html { redirect_to tournaments_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  def find_tournament
+    @tournament = Tournament.find(params[:id])
   end
 end
