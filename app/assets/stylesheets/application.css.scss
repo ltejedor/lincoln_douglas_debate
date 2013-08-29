@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -21,8 +23,26 @@
     height: 60px;
 }
 
+
+.row{
+margin-left:auto;
+margin-right:auto;
+width:70%;
+}
+
+.class{
+  margin-left:auto;
+margin-right:auto;
+width:70%;
+}
+
 .page_container{
 	margin: 70px;
+}
+
+#container2{
+  width: 940px;
+  margin: auto;
 }
 
 .wht_txt a:link{
@@ -42,28 +62,13 @@
 	border-radius:5px;
 }
 
-#profile{
-	width: 175px;
-	position: absolute;
-	float:left;
-
+.navbar-inner {
+  background-color: #27282B; /* place your solid color here */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
 }
 
-#results{
-
-	position: absolute;
-	float:left;
-	margin-left: 210px;
-}
-
-#results_inner{
-	padding: 5px;
-	border:2px solid;
-	border-color: gray;
-	border-radius:5px;
-	float: left;
-
-}
 
 .ind_results{
 	float:left;
@@ -72,18 +77,6 @@
 	padding-left: 25px;
 }
 
-#latest_activity{
-	margin-left: 210px;
-	padding-top: 210px;
-	width: 250px;
-
-}
-
-#trending{
-	margin-left: 510px;
-	margin-top: -131px;
-	width: 250px;
-}
 
 footer {
   position: relative;
@@ -139,9 +132,11 @@ footer {
 @import "twitter/bootstrap";
 
 
-// ***********TWITTER BOOTSTRAP OVERRIDES*************
 
 .carousel-indicators {
     z-index: 14;
 }
 
+body{
+  background-color: #E9ECF5;
+}
