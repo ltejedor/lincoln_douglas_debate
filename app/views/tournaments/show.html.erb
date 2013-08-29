@@ -1,126 +1,126 @@
 <div class="tournament-detail">
 
+<div class="row">
+	<div class="tournament-summary col-md-12">
+		<h2><%= @tournament.name %></h2>	
+		<p class="organizer">Organized by <a href="#">
+			<% if @tournament.organizer.nil? %>
+				<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+				<% else %>
+				<!-- TODO: dummy link to organizer's profile -->
+				 <%= @tournament.organizer.user.name %>
+				 <% if current_user.as_organizer == @tournament.organizer %>
+					<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+				<% end %>
+			 <% end %>
+		</p>
+		<p class="lead"><%= @tournament.summary %></p>
+	
+		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
+		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
+		</div>
+	
+	</div>	
+</div>
 
-<div class="tournament-summary col-md-12">
-	<h2><%= @tournament.name %></h2>	
-	<p class="organizer">Organized by <a href="#">
-		<% if @tournament.organizer.nil? %>
-			<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-			<% else %>
-			<!-- TODO: dummy link to organizer's profile -->
-			 <%= @tournament.organizer.user.name %>
-			 <% if current_user.as_organizer == @tournament.organizer %>
-				<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-			<% end %>
-		 <% end %>
-	</p>
-	<p class="lead"><%= @tournament.summary %></p>
-
-	<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
-	<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
+<div class="row">
+	<div class="panel-group col-md-8" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+	          Tournament Overview
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in">
+	      <div class="panel-body">
+	        <%= ("None" if @tournament.description.blank? )|| @tournament.description %>
+	      </div>
+	    </div>
+	  </div>
+	  <% unless @tournament.entry_info.blank? &&
+	  			@tournament.divisions_info.blank? &&
+	  	 		@tournament.judges_info.blank? &&
+	  			@tournament.rules_info.blank? &&
+	  			@tournament.additional_info.blank?	%>
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+	          Guidelines for Entry, Divisions, and Judges
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse">
+	      <div class="panel-body">
+			<% unless @tournament.entry_info.blank? %>
+		      	<h3>Entry</h3>
+		        <%= @tournament.entry_info %>
+	        <% end %>
+			<% unless @tournament.divisions_info.blank? %>
+		        <h3>Divisions</h3>
+		        <%= @tournament.divisions_info %>
+	        <% end %>
+			<% unless @tournament.judges_info.blank? %>        
+		        <h3>Judges</h3>
+		        <%= @tournament.judges_info %>
+	        <% end %>
+	      </div>
+	    </div>
+	  </div>
+	  <% end %>
+	  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>      
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+	          Rules and Additional Information
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThree" class="panel-collapse collapse">
+	      <div class="panel-body">
+			<% unless @tournament.rules_info.blank? %>        
+		        <h3>Rules</h3>
+		        <%= @tournament.rules_info %>
+	        <% end %>
+	        <% unless @tournament.additional_info.blank? %>
+		        <h3>Additional Information</h3>
+	    	    <%= @tournament.additional_info %>
+	        <% end %>
+	      </div>
+	    </div>
+	  </div>
+	  <% end %>
 	</div>
-
-</div>
-
-
-<div class="panel-group col-md-8" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Tournament Overview
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <%= ("None" if @tournament.description.blank? )|| @tournament.description %>
-      </div>
-    </div>
-  </div>
-  <% unless @tournament.entry_info.blank? &&
-  			@tournament.divisions_info.blank? &&
-  	 		@tournament.judges_info.blank? &&
-  			@tournament.rules_info.blank? &&
-  			@tournament.additional_info.blank?	%>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Guidelines for Entry, Divisions, and Judges
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-		<% unless @tournament.entry_info.blank? %>
-	      	<h3>Entry</h3>
-	        <%= @tournament.entry_info %>
-        <% end %>
-		<% unless @tournament.divisions_info.blank? %>
-	        <h3>Divisions</h3>
-	        <%= @tournament.divisions_info %>
-        <% end %>
-		<% unless @tournament.judges_info.blank? %>        
-	        <h3>Judges</h3>
-	        <%= @tournament.judges_info %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>      
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Rules and Additional Information
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-		<% unless @tournament.rules_info.blank? %>        
-	        <h3>Rules</h3>
-	        <%= @tournament.rules_info %>
-        <% end %>
-        <% unless @tournament.additional_info.blank? %>
-	        <h3>Additional Information</h3>
-    	    <%= @tournament.additional_info %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
-
-
-<!-- RSVP -->
-
-
-<div class="col-md-4">
-	<div class="rsvp">
-		<span class="lead">RSVP</span>
-		<ul class="nav nav-tabs">
-		  <li class="active tab-width"><a href="#debate" class="rsvp-tab" data-toggle="tab">Debate this Tournament</a></li>
-		  <li class="tab-width"><a href="#judge" class="rsvp-tab" data-toggle="tab">Judge this Tournament</a></li>
-		</ul>
-		
-		<div class="tab-content">
-		  <div class="rsvp-content tab-pane active" id="debate">
-		  	<!-- TODO: Switch to formtastic -->
-			<%= render 'if_not_rsvped', :form => 'competitor_rsvp' %>
-		  </div>
-		  <div class="rsvp-content tab-pane" id="judge">
-			<%= render 'if_not_rsvped', :form => 'judge_registration_rsvp' %>
-		  	</div>
-		</div>		
+	
+	
+	<!-- RSVP -->
+	
+	
+	<div class="col-md-4">
+		<div class="rsvp">
+			<span class="lead">Register</span>
+			<ul class="nav nav-tabs">
+			  <li class="active tab-width"><a href="#debate" class="rsvp-tab" data-toggle="tab">Debate this Tournament</a></li>
+			  <li class="tab-width"><a href="#judge" class="rsvp-tab" data-toggle="tab">Judge this Tournament</a></li>
+			</ul>
+			
+			<div class="tab-content">
+			  <div class="rsvp-content tab-pane active" id="debate">
+			  	<!-- TODO: Switch to formtastic -->
+				<%= render 'if_not_rsvped', :form => 'competitor_rsvp' %>
+			  </div>
+			  <div class="rsvp-content tab-pane" id="judge">
+				<%= render 'if_not_rsvped', :form => 'judge_registration_rsvp' %>
+			  	</div>
+			</div>		
+	
+		</div>
 	</div>
+	
+	
 </div>
 
-
-
-        <!-- TODO:  dummy link, 
-        			show attend button only if not attending -->
-        <p><a href="#" class="btn btn-primary tournament-btn">Attend</a></p>
 
