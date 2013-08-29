@@ -4,7 +4,6 @@
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
 }
 
 
@@ -126,3 +125,20 @@ body {
     margin-top: 120px;
   }
 }
+
+/* CAROUSEL IMAGES
+-------------------------------------------------- */
+
+#carousel-image-home-1{
+	background-image:url('http://nau.edu/uploadedImages/Administrative/Registrar/_Media/DSC_5086_720x350.jpg');
+}
+
+#carousel-image-home-2{
+	background-image:url('http://fineartamerica.com/images-simple-print/images-medium/abraham-lincoln-and-stephen-a-douglas-debating-at-charleston-robert-marshall-root.jpg');
+}
+
+
+#carousel-image-home-3{
+	background-image:url('http://www.empowernetwork.com/georgeb/files/2013/03/internet.jpg');
+}
+
