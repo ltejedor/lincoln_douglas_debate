@@ -1,52 +1,62 @@
 <% if current_user %>
-
+			<%= render "signedin_carousel" %>
 
 
 	<div class="container col-sm-12">
-			<%= render "signedin_carousel" %>
+
 
 
 
 	<div class="row">
-		<div class="col-sm-2 col-md-2 thumbnail first">
+		<div class="col-sm-2 col-md-2 first">
 			<h4>Profile</h4>
-			<img width = "100px" src= "<%= current_user.image %>" >
+			<div class="thumbnail"><img width = "150px" src= "<%= current_user.image %>" >
+			</div>
 
-			<p><%= current_user.name %><br>
-			<%= current_user.email %></p>
+			 <button class="btn btn-large btn-primary create-tournament tournament-btn">153 Points</button>
+			 <button class="btn btn-large btn-primary msg-btn">1 New Message</button>
+		</div>
+		<div class="col-sm-5 col-md-5"><br><br>
+			<h2><%= current_user.name %></h2>
+			<p><%= current_user.email %></p>
 
 
-			<b>CURRENT_POINTS</b><br> <b>2 Messages</b><br><br>
+			<p><img src="http://i.imgur.com/mVenBFn.png" width="70px">
 
+			<img src="http://i.imgur.com/Td7vreV.png" width="70px">
 
-			<p><b>BADGES</b></p>
-			<p><b>FRIENDS</b></p>
+			<img src="http://i.imgur.com/bPixPzK.png" width="70px"></p>
 		</div>
 
+</div>
 
 
-
-
-	<div Pclass="col-sm-4 col-md-4 thumbnail">
-		<h4>Latest Activity</h4>
+<br>
+<div class="row">
+	<div class="col-sm-1 col-md-1"></div>
+	<div class="col-sm-4 col-md-4 thumbnail">
+		<h3>Latest Activity</h3>
 
 			<ul>
-			<li>A feed of latest activity</li>
-			<li>Can be made up if we run out of time</li>
+			<li>Leandra just received the Debeggtor Badge! <img src="http://i.imgur.com/Td7vreV.png" width="70px"></li>
+			<li>New Tournament Added, Sign up now! <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlzjy7GHWAb4_priNMBwYxup-IIWb8S1OJ-P8B4kve57UZRPbETQ" width="60px"></li>
 		</ul>
 
 	</div>
 
+	<div class="col-sm-2 col-md-2"></div>
 
 
 		<div class="col-sm-4 col-md-4 thumbnail">
-				<h4>Trending</h4>
+				<h3>Trending</h3>
 
 			<ul>
-			<li>A feed of latest activity</li>
-			<li>Can be made up if we run out of time</li>
+			<li>#moraliy #lincoln @amyhua check out this new links!</li>
+			<li>Can't wait to start my new case #critiqueatme #Ilovelincoln</li>
+			<li>Love the new forum feature! @leandra and @amyhua are so cool!</li>
 		</ul>
 		</div>
+		<div class="col-sm-1 col-md-1"></div>
 
 
 </div>
