@@ -109,27 +109,10 @@
 		<div class="tab-content">
 		  <div class="rsvp-content tab-pane active" id="debate">
 		  	<!-- TODO: Switch to formtastic -->
- 			 <% if current_user.as_competitor(@tournament) %>
-			  	You already registered to attend this tournament as a competitor.
-			  	
-			 <% elsif current_user.as_judge(@tournament) %> <!-- TODO: #as_judge function -->
-				 You already registered to attend this tournament as a judge.
-			 <% else %>
-				 <%= render 'competitor_rsvp' %>
-			 <% end %>
+			<%= render 'if_not_rsvped', :form => 'competitor_rsvp' %>
 		  </div>
 		  <div class="rsvp-content tab-pane" id="judge">
-
- 			 <% if current_user.as_competitor(@tournament) %>
-			  	You already registered to attend this tournament as a competitor.
-			 <% elsif current_user.as_judge(@tournament) %> <!-- TODO: #as_judge function -->
-				You already registered to attend this tournament as a judge.			  	
-			 <% else %>
-			  	<%= render 'judge_rsvp' %>
-			 <% end %>
-
-
-		  	
+			<%= render 'if_not_rsvped', :form => 'judge_registration_rsvp' %>
 		  	</div>
 		</div>		
 	</div>

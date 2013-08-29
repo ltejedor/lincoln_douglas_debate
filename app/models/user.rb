@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :debater
   belongs_to :judge
   belongs_to :organizer
+  
 
   belongs_to :author, polymorphic: true
   
@@ -36,7 +37,7 @@ class User < ActiveRecord::Base
   # --------------- ORGANIZER -----------------------
   
   def as_organizer
-    @organizer = Organizer.where(user_id: self.id).first || Organizer.create_organizer(self)
+    Organizer.where(user_id: self.id).first || Organizer.create_organizer(self)
   end
   
 
@@ -47,7 +48,7 @@ class User < ActiveRecord::Base
   # --------------- DEBATER -----------------------
 
   def as_debater
-    @debater = Debater.where(user_id: self.id).first || Debater.create_debater(self)
+    Debater.where(user_id: self.id).first || Debater.create_debater(self)
   end
 
   
@@ -58,26 +59,26 @@ class User < ActiveRecord::Base
   # --------------- COMPETITIOR -----------------------
   
   def as_competitor(tourney)
-    @competitor = 
     Competitor.where(tournament_id: tourney.id, 
-               debater_id: self.as_debater.id)
-    @competitor
+               debater_id: self.as_debater.id).first
   end
-  
- 
-
-  # TODO: Include competitor-only functions, if any to be delegated
-
 
 
   # --------------- JUDGE -----------------------
+
+  # TODO: how to model judges? Judge registration, rsvp
   
   def as_judge
-    @judge = Judge.where(user_id: self.id).first || Judge.create_judge(self)
+    Judge.where(user_id: self.id).first || Judge.create_judge(self)
   end
 
   
   # TODO: Include judge-only functions, if any, to be delegated
   
+  # --------------- JUDGE REGISTRATION -----------------------
+  
+  def as_judge_registration(tourney)
+    JudgeRegistration.where(tournament_id: tourney.id, judge_id: self.as_judge.id).first
+  end
   
 end

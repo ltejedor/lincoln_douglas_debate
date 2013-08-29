@@ -1,0 +1,17 @@
+		  	<% competitor = true unless current_user.as_competitor(@tournament).blank? %>
+		  	<% judge_registration = true unless current_user.as_judge_registration(@tournament).blank? %> <!-- TODO: Fix judge -->
+
+ 			 <% if competitor %>
+ 			 	<% @competitor = current_user.as_competitor(@tournament) %>
+			  	You have registered to attend this tournament as a <%= @competitor.division %> debater.<br>
+			  	<%= link_to 'Cancel your Registration', [@tournament, @competitor], :method => :delete, 
+			  		:confirm => "Are you sure you want to cancel your registration?" %>
+			 <% elsif judge_registration %>
+			 	<% @judge_registration = current_user.as_judge_registration(@tournament) %>
+				 You have registered to attend this tournament as a <%= @judge_registration.division %> judge.<br>
+				 <!-- TODO: #cancel judge registration function -->
+			  	 <%= link_to 'Cancel your Registration', [@tournament, @judge_registration], :method => :delete, :confirm => "Are you sure you want to cancel your registration?" %>		  	
+			  	 				 
+			 <% else %>
+			 	<%= render form %>
+			 <% end %>

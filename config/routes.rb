@@ -1,4 +1,8 @@
 Lincolndouglas::Application.routes.draw do
+  get "judge_registrations/create"
+
+  get "judge_registrations/destroy"
+
   get "competitors/create"
 
   get "debaters/create"
@@ -9,7 +13,7 @@ Lincolndouglas::Application.routes.draw do
 
   resources :tournaments do
     resources :competitors
-    resources :judges
+    resources :judge_registrations
   end
 
   resources :resolutions do
