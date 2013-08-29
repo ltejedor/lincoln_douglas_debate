@@ -29,8 +29,11 @@
 	</div>		
 </div>
 
+<div id="empty-space" style="height: 50px;"></div>
+
 <div class="row">
 	<div class="panel-group col-md-8" id="accordion">
+	<% unless @tournament.description.blank? %>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
@@ -41,11 +44,12 @@
 	    </div>
 	    <div id="collapseOne" class="panel-collapse collapse in">
 	      <div class="panel-body">
-	        <%= ("None" if @tournament.description.blank? )|| @tournament.description %>
+	        <%= @tournament.description %>
 	      </div>
 	    </div>
 	  </div>
-	  <% unless @tournament.entry_info.blank? &&
+	<% end %>
+	<% unless @tournament.entry_info.blank? &&
 	  			@tournament.divisions_info.blank? &&
 	  	 		@tournament.judges_info.blank? &&
 	  			@tournament.rules_info.blank? &&
