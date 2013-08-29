@@ -30,7 +30,6 @@ Users can organize tournaments, or choose to participate as debators or judges.
 
 ## Information
 
-Screenshots of your application below:
 ![Screenshot 1](http://i.imgur.com/92EaAs9.png)
 ![Screenshot 2](http://i.imgur.com/0j1Hkvk.png)
 
