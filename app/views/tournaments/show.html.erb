@@ -3,24 +3,30 @@
 <div class="row">
 	<div class="tournament-summary col-md-12">
 		<h2><%= @tournament.name %></h2>	
-		<p class="organizer">Organized by <a href="#">
-			<% if @tournament.organizer.nil? %>
+		<p class="organizer">Organized by <a href="#"> <!-- TODO: Dummy -->
+		<% if @tournament.organizer.nil? %>
 				<%= link_to 'Example Organizer (Edit Tournament)', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-				<% else %>
-				<!-- TODO: dummy link to organizer's profile -->
-				 <%= @tournament.organizer.user.name %>
-				 <% if current_user.as_organizer == @tournament.organizer %>
-					<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
-				<% end %>
-			 <% end %>
+			<% else %>
+			<!-- TODO: dummy link to organizer's profile -->
+			 <%= @tournament.organizer.user.name %>
+			 <% if current_user.as_organizer == @tournament.organizer %>
+				<%= link_to 'Edit Your Tournament', edit_tournament_path(@tournament), :class => "btn btn-primary tournament-btn" %>
+			<% end %>
+		 <% end %>
 		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @image, class: "tournament-image" %>		
+	</div>
+	<div class="col-md-9">
 		<p class="lead"><%= @tournament.summary %></p>
 	
 		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
 		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
-		</div>
-	
-	</div>	
+		
+	</div>		
 </div>
 
 <div class="row">
