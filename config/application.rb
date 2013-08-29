@@ -58,5 +58,7 @@ module Lincolndouglas
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.autoload_paths += Dir["#{config.root}/app/models/**/"]
   end
 end

@@ -113,6 +113,12 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
+  
+  .caption-box{
+	background: rgba(59, 58, 64, 0.6);
+	padding: 2em;  	
+  }
+
 
   .featurette-heading {
     font-size: 50px;
