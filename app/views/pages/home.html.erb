@@ -1,29 +1,10 @@
 <% if current_user %>
 <center>
-	<%= render "signedin_carousel" %>
+
 
 	<div class="container col-sm-12">
+			<%= render "signedin_carousel" %>
 
-	<div class="row">
-		<div class="col-sm-4 col-md-3 tournament-item">
-			<h4>Recent Tournament Results</h4>
-		</div>
-		<div class="col-sm-4 col-md-3 tournament-item">
-			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
-			<p><b>Fake Name</b></p>
-			<p>Won for filler</p>
-		</div>
-		<div class="col-sm-4 col-md-3 tournament-item">
-			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
-			<p><b>Fake Name</b></p>
-			<p>Won for filler</p>
-		</div>
-		<div class="col-sm-4 col-md-3 tournament-item">
-			<p><img width = "70px" src= "<%= current_user.image %>" ></p>
-			<p><b>Fake Name</b></p>
-			<p>Won for filler</p>
-		</div>
-	</div>
 
 
 	<div class="row thumbnail">
@@ -44,13 +25,13 @@
 		</div>
 	</div>
 
-
+<br><br>
 	<div class="row">
 
 
 
 
-	<div class="col-sm-6 col-md-6 tournament-item">
+	<div class="col-sm-6 col-md-6 tournament-item thumbnail">
 		<h4>Latest Activity</h4>
 
 			<ul>
@@ -60,7 +41,7 @@
 
 	</div>
 
-		<div class="col-sm-6 col-md-6 tournament-item">
+		<div class="col-sm-6 col-md-6 tournament-item thumbnail">
 				<h4>Trending</h4>
 
 			<ul>
