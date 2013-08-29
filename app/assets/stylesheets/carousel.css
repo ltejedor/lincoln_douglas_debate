@@ -113,10 +113,10 @@ body {
     font-size: 21px;
     line-height: 1.4;
   }
-  
+
   .caption-box{
 	background: rgba(59, 58, 64, 0.6);
-	padding: 2em;  	
+	padding: 2em;
   }
 
 
@@ -147,6 +147,10 @@ body {
 
 #carousel-image-home-3{
 	background-image:url('http://www.empowernetwork.com/georgeb/files/2013/03/internet.jpg');
+}
+
+#carousel-image-home-5{
+  background-image:url('http://www.liberty.edu/media/1232/Debate_Team_Picture_April_2012.JPG');
 }
 .carousel-inner>.item {
 	background-size: auto 100%;
