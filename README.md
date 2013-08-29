@@ -5,7 +5,7 @@
 
 -->
 
-By [Leandra Tejedor](https://github.com/ltejedor).
+By [Leandra Tejedor](https://github.com/ltejedor) and [Amy Hua](https://github.com/amyhua)
 
 
 ## Description
