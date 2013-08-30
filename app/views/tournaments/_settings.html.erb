@@ -12,16 +12,14 @@
 	<div class="set-divisions">
 		<h3>Tournament Divisions</h3>
 		<fieldset id="divisions">
-			<ul>
+			<div class="divisions-form">
 				<%= f.simple_fields_for :divisions do |division| %>
-					<%= render 'division_fields', f: division %>
-				<% end %>				
-			</ul>
-				<%= link_to_add_association 'Add Division', f, :divisions, 
-				    'data-association-insertion-node' => "#divisions ul", 
-				    'data-association-insertion-method' => "append", 
-				    :wrap_object => Proc.new {|division| @tournament.divisions.build; division } %> 
-			
+					<fieldset>
+						<%= render 'division_fields', f: division %>
+					</fieldset>
+
+				<% end %>								
+			</div>
 		</fieldset>
 
 	</div>

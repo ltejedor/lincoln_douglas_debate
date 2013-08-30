@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830051604) do
+ActiveRecord::Schema.define(:version => 20130830061840) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -79,14 +79,9 @@ ActiveRecord::Schema.define(:version => 20130830051604) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
-<<<<<<< HEAD
     t.integer  "tournament_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-=======
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
->>>>>>> 9fcad1e5e8a3c77ab0e707f457978e05e57b9996
   end
 
   create_table "judge_registrations", :force => true do |t|
@@ -138,11 +133,10 @@ ActiveRecord::Schema.define(:version => 20130830051604) do
   end
 
   create_table "rounds", :force => true do |t|
-    t.integer "tournament_id"
     t.integer "order"
+    t.integer "division_id"
     t.string  "type"
     t.string  "subtype"
-    t.integer "division_id"
   end
 
   create_table "topics", :force => true do |t|
@@ -153,6 +147,12 @@ ActiveRecord::Schema.define(:version => 20130830051604) do
     t.string   "source"
     t.string   "body"
     t.boolean  "starred"
+  end
+
+  create_table "tournament_divisions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tournaments", :force => true do |t|

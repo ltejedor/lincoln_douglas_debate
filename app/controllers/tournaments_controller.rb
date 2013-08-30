@@ -43,7 +43,12 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(params[:tournament])
     @tournament.organizer = current_user.as_organizer
-    @tournament.divisions.build(:name => "Novice", :name => "Varsity")
+    @tournament.divisions.build(:name => "Novice LD")
+    @tournament.divisions.build(:name => "Varsity LD")
+    2.times do
+      @tournament.divisions.build
+    end
+
     # TODO: Eventually change division default names as we expand 
 
     respond_to do |format|

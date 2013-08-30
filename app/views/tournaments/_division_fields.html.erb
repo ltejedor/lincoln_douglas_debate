@@ -1,4 +1,7 @@
-<li>
-	<%= f.input :name, label: "Division" %>
-	<%= link_to_remove_association "Remove", f %>
-</li>
+<div class="division-name-field">
+	<%= f.input :name, label: "Division"%>	
+</div>
+<div class="division-destroy-field">
+	<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Remove']%>	
+</div>
+	
