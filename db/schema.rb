@@ -79,9 +79,14 @@ ActiveRecord::Schema.define(:version => 20130830051604) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
+<<<<<<< HEAD
     t.integer  "tournament_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+=======
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+>>>>>>> 9fcad1e5e8a3c77ab0e707f457978e05e57b9996
   end
 
   create_table "judge_registrations", :force => true do |t|
@@ -133,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20130830051604) do
   end
 
   create_table "rounds", :force => true do |t|
+    t.integer "tournament_id"
     t.integer "order"
     t.string  "type"
     t.string  "subtype"
