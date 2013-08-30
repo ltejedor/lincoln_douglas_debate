@@ -7,7 +7,7 @@ class Tournament < ActiveRecord::Base
   has_many :judge_registrations
   has_many :competitors
   
-  has_many :rounds
+  has_many :divisions
 
   validates :name, :summary, :presence => true  
   validates_length_of :summary, :maximum => 500, 

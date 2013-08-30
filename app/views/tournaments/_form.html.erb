@@ -30,6 +30,8 @@
 		</p>
 		<p class="asset">
 			<%= f.label :asset, "Upload a New Image" %><br />
+			We strongly recommend using a <b>square</b> image sized <b>224px by 224px</b> or greater.
+			A tall images will automatically have its bottom cropped out in listings.<br>
 			File Uploaded: <%= @tournament.asset_file_name || "none" %>
 			<%= f.file_field :asset %>
 		</p>

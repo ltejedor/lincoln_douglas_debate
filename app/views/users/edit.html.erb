@@ -1,0 +1,28 @@
+
+<!-- TODO: EDIT THIS -->
+<div class="user" id="user-<% @user.id %>">
+<div class="row">
+	<div class="col-md-2">
+		<!-- TODO: User attributes -->
+	</div>
+	<div class="col-md-7">
+		<div "user-image">
+			<%= image_tag(@user.image) %>
+		</div>
+		<div class="user-summary">
+			<h4>Self-Summary</h4>
+			<%= simple_format(@user.summary) %>			
+		</div>
+		<% unless @user.judge.paradigm.blank? %>
+			<div class="user-paradigm">
+				<h4>Judging Paradigm</h4>
+				<%= simple_format(@user.judge.paradigm) %>
+			</div>
+		<% end %>
+	</div>
+	<div class="col-md-3">
+		<h4>Recent Activity</h4>
+		<!-- TODO: recent activity for user -->
+	</div>
+</div>
+</div>

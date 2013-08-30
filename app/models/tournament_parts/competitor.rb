@@ -15,4 +15,23 @@ class Competitor < ActiveRecord::Base
     @c    
   end
   
+  def self.pair(config) # config = random or powered (competitors with similar records get paired)
+    num_competitors = Competitors.length
+    num_matches = (num_competitors / 2).ceil
+    matches = []
+    num_matches.times do
+      match = Match.new
+      # create matches related to tournament
+      # load into an array
+    end
+    
+    if config == "random"
+      
+    elsif config == "powered"
+      #
+    else
+      raise ArgumentError
+    end
+  end
+  
 end

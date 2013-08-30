@@ -2,6 +2,7 @@
   margin: 3em;
 }
 
+
 .tournament-detail {
   margin: 3em;
 }
@@ -9,6 +10,8 @@
 #upcoming-header {
   text-align: center;
 }
+
+// Tournament Listings
 
 .tournament-item {
   margin-bottom: 3em;
@@ -21,7 +24,13 @@
 }
 
 .tournament-image {
-  width: 100%;
+    width: 100%;
+    margin: 0;  
+}
+
+.crop {
+    width: 100%;
+    overflow: hidden;
 }
 
 .tournament-btn {
@@ -95,3 +104,13 @@
 .input.select.optional.debater_level {
   margin: 2.5em;
 }
+
+// TOURNAMENT DASHBOARD
+
+
+.tournament-dashboard {
+    background-color: #ddd;
+    padding: 1em;
+}
+
+

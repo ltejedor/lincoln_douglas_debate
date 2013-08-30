@@ -26,6 +26,14 @@ $(document).ready(function() {
 		$('a[href="'+tabref+'"]').filter('.tabBar').parent().addClass('active');
 		console.log('clicked');
 	})
+	
+	// square off image on tournament during page refresh
+	// TODO: allow dynamic resizing
+	var cw = $('.tournament-image').width();
+	var w = cw + 'px';
+	$('.crop').css('height',w);  
+	
+
 });
 
 
