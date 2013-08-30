@@ -68,13 +68,27 @@ textarea {
 }
 
 .cancel-round {
-    float: left;
+    float: right;
     font-weight: normal;    
     margin-right: 2em;
     margin-left: 0.5em;
+    position: relative;
+    left: -16em;
 }
 .round-field {
     float: left;
     margin-right: 2em;
     margin-bottom: 1em;
+}
+
+.remove_fields.cancel-round-link {
+    position: relative;
+    left: 16em;
+}
+.add_fields {
+    width: 100%;
+    position: absolute;
+}
+.new-division {
+    margin-bottom: 4em;
 }

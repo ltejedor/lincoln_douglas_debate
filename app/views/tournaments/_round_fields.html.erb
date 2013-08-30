@@ -1,9 +1,18 @@
-  cancel
+<fieldset>
+
+<li>
 		<span class="cancel-round">
-		<%= f.input :kind, label: false, :collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'] %>
+		<%= f.input :kind, label: false, 
+		:collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'],
+		:error => false %>
 		</span>		
 
 		<span class="cancel-round">
-			<%= f.input :_destroy, label: false, :as => :boolean %>
-		</span>		
+			<%= f.hidden_field :_destroy %>
+		
+		  <%= link_to 'cancel', '#', class: 'remove_fields cancel-round-link' %>
+		  </span>			
+</li>
+</fieldset>
+
 		

@@ -12,16 +12,16 @@
 	</div>
 	<hr class="field-divider">
 	<div class="set-divisions">
-		<fieldset id="divisions">
 			<div class="divisions-form">
 				<%= f.simple_fields_for :divisions do |division| %>
-					<fieldset>
 						<%= render 'division_fields', f: division %>
-					</fieldset>
+				<% end %>
 
-				<% end %>								
+				<div class="new-division">
+					<%= link_to_add_fields 'Add a New Division', f, :divisions%>												
+				</div>			
+
 			</div>
-		</fieldset>
 	</div>
 	<div class="set-brackets">
 		

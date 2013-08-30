@@ -1,25 +1,26 @@
+<fieldset>
 <div class="division-form">
-	<div class="division-name-field">
-		<h4><%= f.input :name, label: false %></h4>	
-	</div>
-	
-<h4>Rounds</h4>
-	<div class="round-form">
-		<div class="set-rounds">
-			<fieldset id="rounds">
-				<ol>
-					<%= f.simple_fields_for :rounds do |round| %>
-					<li>
-						<fieldset>
-								<%= render 'round_fields', f: round %>								
-						</fieldset>						
-					</li>
-					<% end %>								
-				</ol>
-			</fieldset>
+		<div class="division-name-field">
+			<h4><%= f.input :name, label: false, placeholder: 'Division Name' %></h4>	
 		</div>	
-	</div>
-	<div class="division-destroy-field">
-			<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Cancel entire division and all of its rounds']%>	
-	</div>	
+		<h4>Rounds</h4>
+		<div class="round-form">
+			<div class="set-rounds">
+			<ol>
+						<%= f.simple_fields_for :rounds do |round| %>
+									<%= render 'round_fields', f: round %>
+						<% end %>
+						<!--TODO: Fix cancellation link movement; Be able to indicate when a round is over/ still going on. 
+							You should not be able to edit a done /existing round? -->
+							
+							
+				<%= link_to_add_fields 'Add round', f, :rounds %>			
+			</ol>
+			</div>	
+		</div>
+		<div class="division-destroy-field">
+				<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Cancel entire division and all of its rounds']%>	
+		</div>	
+		
 </div>
+</fieldset>
