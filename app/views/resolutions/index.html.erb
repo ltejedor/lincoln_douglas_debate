@@ -19,36 +19,43 @@
           :method => :delete,
           :confirm => "Are you sure you want to delete this card?" %><br>
         <ul>
-          <% resolution.cases.each do |c| %>
-          <% if c.response_type == "Affirmative" %>
           <h4 class="text-success">Affirmative Cases</h4>
-          <li>
-            <h4><%= link_to c.title, [resolution, c] %></h4>
-            <%= c.description %>
+          <% resolution.cases.each do |c| %>
 
-          </li><br>
-          <% end %>
+          <% if c.response_type == "Affirmative" %>
 
-          <% if c.response_type == "Negative" %>
-          <h4 class="text-danger">Negative Cases</h4>
           <li>
             <h4><%= link_to c.title, [resolution, c] %></h4>
             <%= c.description %>
 
           </li>
           <% end %>
+        <% end %>
+        <h4 class="text-danger">Negative Cases</h4>
+          <% resolution.cases.each do |c| %>
+          <% if c.response_type == "Negative" %>
 
-          <% if c.response_type == "Kritik" %>
+          <li>
+            <h4><%= link_to c.title, [resolution, c] %></h4>
+            <%= c.description %>
+
+          </li>
+          <% end %>
+        <% end %>
           <h4 class="text-info">Kritik Cases</h4>
+          <% resolution.cases.each do |c| %>
+          <% if c.response_type == "Kritik" %>
+
           <li>
             <h4><%= link_to c.title, [resolution, c] %></h4>
             <%= c.description %>
 
           </li><br>
           <% end %>
+        <% end %>
 
 
-          <% end %>
+
         </ul><br>
          <a class="btn btn-large btn-primary create-tournament tournament-btn"<%= link_to "Submit Case for Review", new_resolution_case_path("#{resolution.id}") %></button>
     <% end %>
