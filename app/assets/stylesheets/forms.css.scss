@@ -73,8 +73,6 @@ textarea {
     font-weight: normal;    
     margin-right: 2em;
     margin-left: 0.5em;
-    position: relative;
-    left: -16em;
 }
 .round-field {
     float: left;
@@ -82,10 +80,6 @@ textarea {
     margin-bottom: 1em;
 }
 
-.remove_fields.cancel-round-link {
-    position: relative;
-    left: 16em;
-}
 .add_fields {
     width: 100%;
     position: absolute;
@@ -100,3 +94,8 @@ textarea {
   margin-bottom: 2em;
   margin-top: 2em;
 }
+
+.division-name-field h4 > div > div > input {
+    width: 14em;
+}
+

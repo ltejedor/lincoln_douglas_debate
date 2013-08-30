@@ -1,0 +1,10 @@
+<fieldset>
+	<li>
+	<%= f.input :name, label: 'Bracket Name', error: false %><br>
+	<%= f.input :starttime, label: 'Starts',
+		:order => [:month, :day, :year, :hour],
+		ampm: true, error: false  %><br>
+		<%= f.hidden_field :_destroy %>
+		<%= link_to "remove", '#', class: "remove_fields" %>
+	</li>
+</fieldset>

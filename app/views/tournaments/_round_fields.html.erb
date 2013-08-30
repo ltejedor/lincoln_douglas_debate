@@ -1,17 +1,21 @@
 <fieldset>
 
-<li>
-		<span class="cancel-round">
-		<%= f.input :kind, label: false, 
+<li class="cancel-round"><h4>Round</h4>
+		<h4><%= f.input :kind, label: false, 
 		:collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'],
-		:error => false %>
-		</span>		
-
-		<span class="cancel-round">
+		:error => false %></h4>
 			<%= f.hidden_field :_destroy %>
 		
-		  <%= link_to 'cancel', '#', class: 'remove_fields cancel-round-link' %>
-		  </span>			
+		  <%= link_to 'Cancel round', '#', class: 'remove_fields' %><br>
+		  <ul class="brackets">
+				<%= f.simple_fields_for :brackets do |bracket| %>
+						<%= render 'bracket_fields', f: bracket %>
+				<% end %>		  	
+		  <%= link_to_add_fields 'Add bracket', f, :brackets %><br>
+				<!-- TODO: Fix funny form behavior when adding brackets.
+					E.g., jQuery solution: adding a round adds a bracket -->
+		  </ul>
+		  <br>
 </li>
 </fieldset>
 
