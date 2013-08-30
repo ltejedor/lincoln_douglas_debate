@@ -11,6 +11,8 @@ gem 'paperclip', '2.7.0'
 
 gem 'sqlite3'
 gem 'simple_form'
+gem 'ui_datepicker-rails3'
+gem 'cocoon'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 

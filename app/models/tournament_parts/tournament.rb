@@ -1,13 +1,15 @@
 class Tournament < ActiveRecord::Base
   attr_accessible :description, :image, :name, :asset, :starttime, :endtime, :asset_url,
-      :summary, :entry_info, :divisions_info, :rules_info, :judges_info, :additional_info
+      :summary, :entry_info, :divisions_info, :rules_info, :judges_info, :additional_info,
+      :divisions_attributes
   has_attached_file :asset
   
   belongs_to :organizer
-  has_many :judge_registrations
-  has_many :competitors
+  has_many :judge_registrations, :dependent => :delete_all
+  has_many :competitors, :dependent => :delete_all  
+  has_many :divisions, :dependent => :delete_all
   
-  has_many :divisions
+  accepts_nested_attributes_for :divisions, :reject_if => lambda {|d| d[:name].blank? }
 
   validates :name, :summary, :presence => true  
   validates_length_of :summary, :maximum => 500, 
