@@ -13,8 +13,6 @@ gem "heroku"
 
 
 gem 'simple_form'
-gem 'ui_datepicker-rails3'
-gem 'cocoon'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
