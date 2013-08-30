@@ -19,7 +19,9 @@ Run the following command to use:
 
 ```console
 rake db:migrate
+rake db:seed # run seed data for testing
 ```
+You will need to refresh the server each time you move your models so they can load properly.
 
 ## Usage
 

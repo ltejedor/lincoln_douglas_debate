@@ -32,7 +32,7 @@
                 <li class="dropdown" id="profile-dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                  		<span id="current-user"><%= current_user.name %></span>
+                  		<span id="current-user"><%= current_user.name %> · <b style="color: #FD9800;"><%= current_user.points || 0 %> pts</b></span>
                   		<% if current_user.image.nil? %>
                   		<%= image_tag "empty_profile.png", class: "profile-thumbnail" %>
                   		<% else %>
@@ -41,11 +41,11 @@
                   		 <b class="caret"></b>
                   		</a>
                   <ul class="dropdown-menu">
-
+                  	<li><a href="<%= user_path(current_user) %>">View Profile</a></li>
+                    <li><a href="<%= edit_user_path(current_user) %>">Edit Profile</a></li>
+                    
                     <!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">My Profile</a></li>
-                    <!-- TODO: Replace dummy links with links to pages -->
-                    <li><a href="#">My Tournaments</a></li>
+                    <li><a href="#">View Tournaments</a></li>
 
                     <hr>
 

@@ -1,4 +1,14 @@
 Lincolndouglas::Application.routes.draw do
+  get "users/index"
+
+  get "users/edit"
+
+  get "users/update"
+
+  get "users/show"
+
+  get "users/destroy"
+
   get "judge_registrations/create"
 
   get "judge_registrations/destroy"

@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829210609) do
+
+ActiveRecord::Schema.define(:version => 20130830015022) do
+
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -78,8 +80,14 @@ ActiveRecord::Schema.define(:version => 20130829210609) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
+<<<<<<< HEAD
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+=======
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+>>>>>>> a03cd8d73e819fe34210bccab3ff1cd4f8d1cdda
   end
 
   create_table "judge_registrations", :force => true do |t|
@@ -130,8 +138,10 @@ ActiveRecord::Schema.define(:version => 20130829210609) do
   end
 
   create_table "rounds", :force => true do |t|
-    t.integer "tournament_id"
     t.integer "order"
+    t.integer "division_id"
+    t.string  "type"
+    t.string  "subtype"
   end
 
   create_table "topics", :force => true do |t|
@@ -181,6 +191,8 @@ ActiveRecord::Schema.define(:version => 20130829210609) do
     t.string   "birthday"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.text     "summary"
+    t.integer  "points"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"

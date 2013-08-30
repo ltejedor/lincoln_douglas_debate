@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_filter :find_tournament, :only => [:show, :update]
+  before_filter :find_tournament, :only => [:show, :edit, :update]
   # GET /tournaments
   # GET /tournaments.json
   def index
@@ -36,7 +36,6 @@ class TournamentsController < ApplicationController
 
   # GET /tournaments/1/edit
   def edit
-    @tournament = Tournament.find(params[:id])
   end
 
   # POST /tournaments
