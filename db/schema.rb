@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829163319) do
+ActiveRecord::Schema.define(:version => 20130829210609) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(:version => 20130829163319) do
     t.integer  "card_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "brackets", :force => true do |t|
+    t.datetime "starttime"
+    t.string   "name"
+    t.integer  "round_id"
   end
 
   create_table "cards", :force => true do |t|
@@ -70,6 +76,12 @@ ActiveRecord::Schema.define(:version => 20130829163319) do
     t.integer  "rsvptournament_id"
   end
 
+  create_table "divisions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
@@ -92,9 +104,7 @@ ActiveRecord::Schema.define(:version => 20130829163319) do
   end
 
   create_table "matches", :force => true do |t|
-    t.integer  "round_id"
-    t.datetime "start"
-    t.datetime "end"
+    t.integer "bracket_id"
   end
 
   create_table "organizers", :force => true do |t|

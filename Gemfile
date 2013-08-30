@@ -6,10 +6,12 @@ gem 'dynamic_form', '1.1.4'
 
 gem 'paperclip', '2.7.0'
 
+gem "heroku"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
@@ -47,8 +49,13 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # To use debugger
 # gem 'debugger'
 
+group :production, :staging do
+	gem 'pg'
+end
+
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
+	gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
 end
 
 group :test do
