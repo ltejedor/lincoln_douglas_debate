@@ -3,7 +3,8 @@
 <% unless @tournament.organizer.nil? %>
 	<div class="row">
 		<div class="tournament-dashboard col-md-12">
-			<h3>Tournament Settings</h3>
+			<h3>Organizer Dashboard</h3>
+			<%= link_to 'Edit Your Tournament Description and Guidelines', edit_tournament_path(@tournament) %>
 			<%= render 'settings' %>
 		</div>
 	</div>
