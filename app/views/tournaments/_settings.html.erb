@@ -1,14 +1,29 @@
 <%= simple_form_for @tournament do |f| %>
+<% if @tournament.errors.any? %>
+  <div id="error_explanation">
+   <div class="alert custom-alert">
+     The form contains <%= pluralize(@tournament.errors.count, "error") %>.
+	  <ul>
+	   <% @tournament.errors.full_messages.each do |msg| %>
+	    <li>* <%= msg %></li>
+	   <% end %>
+	 </ul>
+
+   </div>
+</div>
+<% end %>
+
+
 <!-- TODO: Fix how validation errors are handled. Messes up form. -->
 	<div class="set-basics">
 		<h4>Basic Settings</h4>
-		<%= f.input :name, label: 'Name' %><br>
+		<%= f.input :name, label: 'Name', error: false %><br>
 		<%= f.input :starttime, label: 'Starts',
 		:order => [:month, :day, :year, :hour],
-		ampm: true  %><br>
+		ampm: true, error: false  %><br>
 		<%= f.input :endtime, label: 'Ends',
 		:order => [:month, :day, :year, :hour],
-		ampm: true  %>
+		ampm: true, error: false  %>
 	</div>
 	<hr class="field-divider">
 	<div class="set-divisions">

@@ -60,6 +60,7 @@ textarea {
 .division-form {
     width: 100%;
     float: left;
+    margin-bottom: 4em;
 }
 .division-destroy-field {
     float: right;
@@ -91,4 +92,11 @@ textarea {
 }
 .new-division {
     margin-bottom: 4em;
+}
+.alert.custom-alert {
+    color: red;
+}
+.remove-division{
+  margin-bottom: 2em;
+  margin-top: 2em;
 }

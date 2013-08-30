@@ -46,6 +46,7 @@ class Tournament < ActiveRecord::Base
     elsif self.endtime < Time.now
       errors.add(:endtime, "End time of your tournament must be in the future")
     end
+    # TODO: Fix error messages as they appear
   end
   
   def self.upcoming

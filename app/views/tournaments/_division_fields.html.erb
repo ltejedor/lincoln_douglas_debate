@@ -1,7 +1,10 @@
 <fieldset>
 <div class="division-form">
 		<div class="division-name-field">
-			<h4><%= f.input :name, label: false, placeholder: 'Division Name' %></h4>	
+			<h4><%= f.input :name, label: false, placeholder: 'Division Name', error: false %></h4>
+			<%= f.hidden_field :_destroy %>
+<%= link_to 'Cancel this division and all of its rounds', '#', class: 'remove_fields remove-division' %>
+	
 		</div>	
 		<h4>Rounds</h4>
 		<div class="round-form">
@@ -17,10 +20,8 @@
 				<%= link_to_add_fields 'Add round', f, :rounds %>			
 			</ol>
 			</div>	
-		</div>
-		<div class="division-destroy-field">
-				<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Cancel entire division and all of its rounds']%>	
-		</div>	
-		
+		</div>		
+
 </div>
+
 </fieldset>
