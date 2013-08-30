@@ -5,8 +5,8 @@ class Tournament < ActiveRecord::Base
   has_attached_file :asset
   
   belongs_to :organizer
-  has_many :judge_registrations, :dependent => :delete_all
-  has_many :competitors, :dependent => :delete_all  
+  has_many :judge_registrations # TODO: Figure out cancelation
+  has_many :competitors #TODO: Figure out cancelation  
   has_many :divisions, :dependent => :delete_all
   
   accepts_nested_attributes_for :divisions, 
