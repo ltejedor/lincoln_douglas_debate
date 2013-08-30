@@ -14,9 +14,8 @@ textarea {
 }
 
 .simple_form div.boolean, .simple_form input[type='submit'] {
-  margin-left: 120px;
+  margin-left: 0px;
 }
-
 .simple_form div.boolean label, .simple_form label.collection_radio {
   float: none;
   margin: 0;
@@ -66,4 +65,16 @@ textarea {
     float: right;
     margin-bottom: 3em;
     margin-top: 2em;    
+}
+
+.cancel-round {
+    float: left;
+    font-weight: normal;    
+    margin-right: 2em;
+    margin-left: 0.5em;
+}
+.round-field {
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 1em;
 }

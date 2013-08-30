@@ -1,7 +1,9 @@
-<li class="round-times-field">
-		<%= f.input :kind, label: false, :collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'] %>		
-<div class="round-destroy-field">
-	<%= f.input :_destroy, label: false, :as => :check_boxes, :collection => ['Cancel Round']%>	
-</div>
+  cancel
+		<span class="cancel-round">
+		<%= f.input :kind, label: false, :collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'] %>
+		</span>		
+
+		<span class="cancel-round">
+			<%= f.input :_destroy, label: false, :as => :boolean %>
+		</span>		
 		
-</li>

@@ -36,15 +36,15 @@ class Tournament < ActiveRecord::Base
   
   def ends_after_starting?
     if self.starttime > self.endtime || ((self.endtime - self.starttime) / 60) < 5
-      errors.add(:starttime, "your tournament reasonably earlier than it ends")
+      errors.add(:starttime, "Start your tournament reasonably earlier than it ends")
     end 
   end
   
   def starts_and_ends_in_future?
     if self.starttime < Time.now
-      errors.add(:starttime, "your tournament in the future")
+      errors.add(:starttime, "Start time of your tournament must be in the future")
     elsif self.endtime < Time.now
-      errors.add(:endtime, "your tournament in the future")
+      errors.add(:endtime, "End time of your tournament must be in the future")
     end
   end
   

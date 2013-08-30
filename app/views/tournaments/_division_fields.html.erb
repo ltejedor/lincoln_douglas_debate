@@ -9,15 +9,17 @@
 			<fieldset id="rounds">
 				<ol>
 					<%= f.simple_fields_for :rounds do |round| %>
+					<li>
 						<fieldset>
 								<%= render 'round_fields', f: round %>								
-						</fieldset>
+						</fieldset>						
+					</li>
 					<% end %>								
 				</ol>
 			</fieldset>
 		</div>	
 	</div>
 	<div class="division-destroy-field">
-			<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Remove Entire Division and its Rounds']%>	
+			<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Cancel entire division and all of its rounds']%>	
 	</div>	
 </div>

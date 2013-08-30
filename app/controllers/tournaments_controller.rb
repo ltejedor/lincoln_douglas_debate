@@ -69,7 +69,7 @@ class TournamentsController < ApplicationController
         format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "show" }
         format.json { render json: @tournament.errors, status: :unprocessable_entity }
       end
     end
