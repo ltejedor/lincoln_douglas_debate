@@ -6,10 +6,12 @@ gem 'dynamic_form', '1.1.4'
 
 gem 'paperclip', '2.7.0'
 
+gem "heroku"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'simple_form'
 gem 'ui_datepicker-rails3'
 gem 'cocoon'
@@ -19,7 +21,7 @@ gem 'omniauth-google-oauth2'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -27,7 +29,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-end
+
 
 gem 'jquery-rails'
 
@@ -49,8 +51,13 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # To use debugger
 # gem 'debugger'
 
+group :production, :staging do
+	gem 'pg'
+end
+
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
+	gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
 end
 
 group :test do
