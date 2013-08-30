@@ -10,7 +10,6 @@ class Tournament < ActiveRecord::Base
   has_many :divisions, :dependent => :delete_all
   
   accepts_nested_attributes_for :divisions, 
-  :reject_if => lambda {|d| d[:name].blank? },
   allow_destroy: true
 
   validates :name, :summary, :presence => true  

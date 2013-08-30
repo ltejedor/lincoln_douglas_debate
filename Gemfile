@@ -13,6 +13,7 @@ gem "heroku"
 
 
 gem 'simple_form'
+gem 'formtastic'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 

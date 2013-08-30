@@ -1,7 +1,23 @@
-<div class="division-name-field">
-	<%= f.input :name, label: "Division"%>	
-</div>
-<div class="division-destroy-field">
-	<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Remove']%>	
-</div>
+<div class="division-form">
+	<div class="division-name-field">
+		<h4><%= f.input :name, label: false %></h4>	
+	</div>
 	
+<h4>Rounds</h4>
+	<div class="round-form">
+		<div class="set-rounds">
+			<fieldset id="rounds">
+				<ol>
+					<%= f.simple_fields_for :rounds do |round| %>
+						<fieldset>
+								<%= render 'round_fields', f: round %>								
+						</fieldset>
+					<% end %>								
+				</ol>
+			</fieldset>
+		</div>	
+	</div>
+	<div class="division-destroy-field">
+			<%= f.input :_destroy, label: '', :as => :check_boxes, :collection => ['Remove Entire Division and its Rounds']%>	
+	</div>	
+</div>

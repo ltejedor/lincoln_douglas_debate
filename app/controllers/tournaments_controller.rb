@@ -27,7 +27,6 @@ class TournamentsController < ApplicationController
   # GET /tournaments/new.json
   def new
     @tournament = Tournament.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tournament }
@@ -43,11 +42,10 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(params[:tournament])
     @tournament.organizer = current_user.as_organizer
-    @tournament.divisions.build(:name => "Novice LD")
-    @tournament.divisions.build(:name => "Varsity LD")
-    2.times do
-      @tournament.divisions.build
-    end
+    varsity = @tournament.divisions.build(:name => "Novice LD")
+    build_default_rounds(varsity)
+    novice = @tournament.divisions.build(:name => "Varsity LD")
+    build_default_rounds(novice)
 
     # TODO: Eventually change division default names as we expand 
 
@@ -92,5 +90,18 @@ class TournamentsController < ApplicationController
   private
   def find_tournament
     @tournament = Tournament.find(params[:id])
+  end
+  
+  def build_default_rounds(div)
+    3.times do
+      div.rounds.build(:kind => "Unpowered Prelim")      
+    end
+    2.times do
+      div.rounds.build(:kind => "Powered Prelim")
+    end
+    div.rounds.build(:kind => "Octofinals")
+    div.rounds.build(:kind => "Quarterfinals")
+    div.rounds.build(:kind => "Semifinals")
+    div.rounds.build(:kind => "Finals")    
   end
 end

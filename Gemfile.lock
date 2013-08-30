@@ -64,6 +64,8 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     ffi (1.9.0)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     hashie (2.0.5)
     heroku (2.40.0)
       heroku-api (~> 0.3.7)
@@ -199,6 +201,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   dynamic_form (= 1.1.4)
   factory_girl (= 2.6.4)
+  formtastic
   heroku
   jquery-rails
   launchy
