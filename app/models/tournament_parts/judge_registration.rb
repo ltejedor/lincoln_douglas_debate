@@ -1,9 +1,7 @@
 class JudgeRegistration < ActiveRecord::Base
-  attr_accessible :division
   belongs_to :judge
   belongs_to :tournament
-  
-  validates :division, :presence => true
+  belongs_to :division
 
 
   def self.create_judge_registration(user,tourney,division)

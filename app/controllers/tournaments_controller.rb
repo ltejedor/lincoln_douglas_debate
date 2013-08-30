@@ -42,7 +42,9 @@ class TournamentsController < ApplicationController
   # POST /tournaments.json
   def create
     @tournament = Tournament.new(params[:tournament])
-    @tournament.organizer = current_user.as_organizer 
+    @tournament.organizer = current_user.as_organizer
+    @tournament.divisions.build(:name => "Novice", :name => "Varsity")
+    # TODO: Eventually change division default names as we expand 
 
     respond_to do |format|
       if @tournament.save
