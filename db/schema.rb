@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
     t.integer "debater_id"
     t.integer "tournament_id"
     t.string  "division"
-    t.integer "division_id"
   end
 
   create_table "critiques", :force => true do |t|
@@ -79,17 +78,16 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
-    t.integer  "tournament_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
+    t.string   "division"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "division_id"
   end
 
   create_table "judges", :force => true do |t|
@@ -132,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
   end
 
   create_table "rounds", :force => true do |t|
+    t.integer "tournament_id"
     t.integer "order"
     t.integer "division_id"
     t.string  "kind"
