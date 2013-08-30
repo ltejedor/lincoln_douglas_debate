@@ -44,11 +44,11 @@
 <div class="row">
 					<%= form_for [topic] do |f| %>
 								<%= f.label :starred %>
-								<%= f.check_box :starred %><br>-
+								<%= f.check_box :starred %><br>
 
 
 				<% if topic.starred == true %>
-					 <%= f.submit "Unstar Card"%>
+					<%= f.submit "Unstar Card"%>
 				<% else %>
 					<%= f.submit "Star Card"%>
 					<% end %>
