@@ -11,10 +11,10 @@ class TopicsController < ApplicationController
 	def create
 		@topic = Topic.new(params[:topic])
 		if @topic.save
-			flash[:notice] = "Debate Topic has been added."
+			flash[:notice] = "Card has been added."
 			redirect_to topics_path
 		else
-			flash[:alert] = "Debate Topic has not been added."
+			flash[:alert] = "Card has not been added."
 			render :action => "new"
 		end
 	end
@@ -30,10 +30,10 @@ class TopicsController < ApplicationController
 	def update
 		@topic = Topic.find(params[:id])
 		if @topic.update_attributes(params[:topic])
-			flash[:notice] = "Debate Topic has been updated."
+			flash[:notice] = "Card has been updated."
 			redirect_to topics_path
 		else
-			flash[:alert] = "Debate Topic has not been updated."
+			flash[:alert] = "Card has not been updated."
 			render :action => "edit"
 		end
 	end
@@ -41,7 +41,7 @@ class TopicsController < ApplicationController
 	def destroy
 		@topic = Topic.find(params[:id])
 		@topic.destroy
-		flash[:notice] = "Debate Topic has been deleted."
+		flash[:notice] = "Card has been deleted."
 		redirect_to topics_path
 	end
 

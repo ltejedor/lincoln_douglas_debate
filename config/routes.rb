@@ -42,6 +42,8 @@ Lincolndouglas::Application.routes.draw do
   # Render routes for static pages
 
   get '/about', :to => "pages#about", :as => 'about'
+  get '/privacy', :to => "pages#privacy", :as => 'privacy'
+  get '/terms', :to => "pages#terms", :as => 'terms'
 
   # Sign in, Sign out
 
