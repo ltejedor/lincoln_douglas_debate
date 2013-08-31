@@ -1,28 +1,67 @@
-<fieldset>
-<div class="division-form">
-		<div class="division-name-field">
-			<h4><%= f.input :name, label: false, placeholder: 'Division Name', error: false %></h4>
-			<%= f.hidden_field :_destroy %>
-<%= link_to 'Cancel this division and all of its rounds', '#', class: 'remove_fields remove-division' %>
-	
-		</div>	
-		<p>Rounds must have 1 or more brackets.</p>
+		<fieldset>
 
-		<div class="round-form">
-			<div class="set-rounds">
-			<ol>
-						<%= f.simple_fields_for :rounds do |round| %>
-									<%= render 'round_fields', f: round %>
+	  <div class="panel panel-default">
+
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%=f.object.id%>">
+	          <%= f.object.name %>
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapse-<%=f.object.id%>" class="panel-collapse collapse">
+	      <div class="panel-body">
+	      	r cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+	      	<%= f.input :name, label: 'Rename:', placeholder: 'Division Name', error: false %></h4><br>
+					<%= f.hidden_field :_destroy %>
+
+
+   <% num_brackets = set_num_brackets(f) %>
+
+    	Time Zone: <!-- TODO: set and then display time zone here -->
+					<table class="table table-hover table-responsive">
+						<tr>
+							<th>#</th>
+							<th>Round</th>
+			<% if num_brackets <= 1 %>
+							<th>Start Time</th>
+			<% else %>
+				<% for i in (1..num_brackets) %>
+							<th><%=i.ordinalize%> Bracket</th>
+				<% end %>
+			<% end %>
+					</tr>
+					<fieldset>
+
+						<% f.object.rounds.each.with_index do |round, index| %>
+
+							<%= f.simple_fields_for :rounds, round do |fr| %>
+								<%= render 'round_fields', f: fr, num_brackets: num_brackets, index: index %>
+							<% end %>
+
 						<% end %>
-						<!--TODO: Fix cancellation link movement; Be able to indicate when a round is over/ still going on. 
-							You should not be able to edit a done /existing round? -->
-							
-							
-				<%= link_to_add_fields 'Add round', f, :rounds %>			
-			</ol>
-			</div>	
-		</div>		
+					</fieldset>
+					<tr class="row-count">
+						<td></td>
+						<td><%= link_to_add_fields '+ Round', f, :rounds %><td>
+						<% (num_brackets -1).times do %>
+							<td></td>
+						<% end %>
+					</tr>
+					</table>
 
-</div>
 
-</fieldset>
+<br><br>
+					<h5 class="cancellation"><%= link_to 'Cancel this division and all of its rounds, debater registrations, and judge registrations.', '#', class: 'remove_fields cancellation-link' %><h5><br>
+
+					<a class="btn" data-toggle="collapse" data-target="#collapse-<%= f.object.id %>">
+			  		Collapse
+					</a>
+
+	      </div>
+	    </div>
+	  </div>
+
+
+
+		</fieldset>

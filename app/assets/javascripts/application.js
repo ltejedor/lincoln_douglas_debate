@@ -20,20 +20,20 @@
 $(document).ready(function() {
 
 	// Set up proper tab activation for buttons within multi-tab Tournament form
-		
-	$('a[data-toggle="tab"]').filter('.btn').on('click.showtab', function (e) {		
+
+	$('a[data-toggle="tab"]').filter('.btn').on('click.showtab', function (e) {
 		$('li').removeClass('active');
 		var tabref = $(this).attr('href');
 		$('a[href="'+tabref+'"]').filter('.tabBar').parent().addClass('active');
 		console.log('clicked');
 	})
-	
+
 	// square off image on tournament during page refresh
 	// TODO: allow dynamic resizing
 	var cw = $('.tournament-image').width();
 	var w = cw + 'px';
-	$('.crop').css('height',w);  
-	
+	$('.crop').css('height',w);
+
 
 });
 
@@ -43,32 +43,8 @@ function remove_fields(link) {
   $(link).previous("input[type=hidden]").value = "1";
   $(link).up(".fields").hide();
 }
-
-function add_fields(link, association, content) {
-  var new_id = new Date().getTime();
-  var regexp = new RegExp("new_" + association, "g")
-  $(link).up().insert({
-    before: content.replace(regexp, new_id)
-  });
-  ('form').on('click', '.remove_fields', function(event) {
-    $(this).prev('input[type=hidden]').val('1');
-    $(this).closest('fieldset').hide();
-    return event.preventDefault();
-  });
-  return $('form').on('click', '.add_fields', function(event) {
-    var regexp, time;
-    time = new Date().getTime();
-    regexp = new RegExp($(this).data('id'), 'g');
-    $(this).before($(this).data('fields').replace(regexp, time));
-    return event.preventDefault();
-  });
-}
-
-
-
-
 // TODO: Prevent Navbar overlap on div below.
 // (Navbar currently overlaps content while changing in size)
 // Use jQuery solution: http://stackoverflow.com/questions/11920846/prevent-a-div-to-overlap-over-a-fixed-one
- 
+
 

@@ -4,7 +4,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments.json
   def index
     @tournaments = Tournament.upcoming
-    @tournaments.sort! {|a,b| a.starttime <=> b.starttime }  
+    @tournaments.sort! {|a,b| a.starttime <=> b.starttime }
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tournaments }
@@ -47,7 +47,7 @@ class TournamentsController < ApplicationController
     novice = @tournament.divisions.build(:name => "Varsity LD")
     build_default_rounds(novice)
 
-    # TODO: Eventually change division default names as we expand 
+    # TODO: Eventually change division default names as we expand
 
     respond_to do |format|
       if @tournament.save
@@ -86,15 +86,15 @@ class TournamentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
   def find_tournament
     @tournament = Tournament.find(params[:id])
   end
-  
+
   def build_default_rounds(div)
     3.times do
-      div.rounds.build(:kind => "Unpowered Prelim")      
+      div.rounds.build(:kind => "Unpowered Prelim")
     end
     2.times do
       div.rounds.build(:kind => "Powered Prelim")
@@ -102,6 +102,6 @@ class TournamentsController < ApplicationController
     div.rounds.build(:kind => "Octofinals")
     div.rounds.build(:kind => "Quarterfinals")
     div.rounds.build(:kind => "Semifinals")
-    div.rounds.build(:kind => "Finals")    
+    div.rounds.build(:kind => "Finals")
   end
 end

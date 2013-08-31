@@ -12,7 +12,7 @@
 
 <div class="row">
 	<div class="tournament-summary col-md-12">
-		<h2><%= @tournament.name %></h2>	
+		<h2><%= @tournament.name %></h2>
 		<p class="organizer">Organized by <a href="#"> <!-- TODO: Dummy -->
 		<% if @tournament.organizer.nil? %>
 			<a href="#">Example Organizer</a>
@@ -24,17 +24,17 @@
 </div>
 <div class="row">
 	<div class="col-md-3 col-sm-3">
-		<%= image_tag @image, class: "tournament-image" %>		
+		<%= image_tag @image, class: "tournament-image" %>
 		<div id="empty-space" style="height: 50px;"></div>
 
 	</div>
 	<div class="col-md-9 col-sm-9">
 		<p class="lead"><%= @tournament.summary %></p>
-	
+
 		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
-		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>	
-		
-	</div>		
+		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>
+
+	</div>
 </div>
 
 
@@ -79,7 +79,7 @@
 		        <h3>Divisions</h3>
 		        <%= @tournament.divisions_info %>
 	        <% end %>
-			<% unless @tournament.judges_info.blank? %>        
+			<% unless @tournament.judges_info.blank? %>
 		        <h3>Judges</h3>
 		        <%= @tournament.judges_info %>
 	        <% end %>
@@ -87,7 +87,7 @@
 	    </div>
 	  </div>
 	  <% end %>
-	  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>      
+	  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
@@ -98,7 +98,7 @@
 	    </div>
 	    <div id="collapseThree" class="panel-collapse collapse">
 	      <div class="panel-body">
-			<% unless @tournament.rules_info.blank? %>        
+			<% unless @tournament.rules_info.blank? %>
 		        <h3>Rules</h3>
 		        <%= @tournament.rules_info %>
 	        <% end %>
@@ -111,11 +111,11 @@
 	  </div>
 	  <% end %>
 	</div>
-	
-	
+
+
 	<!-- RSVP -->
-	
-	
+
+
 	<div class="col-md-4">
 		<div class="rsvp">
 			<span class="lead">Register</span>
@@ -123,7 +123,7 @@
 			  <li class="active tab-width"><a href="#debate" class="rsvp-tab" data-toggle="tab">Debate this Tournament</a></li>
 			  <li class="tab-width"><a href="#judge" class="rsvp-tab" data-toggle="tab">Judge this Tournament</a></li>
 			</ul>
-			
+
 			<div class="tab-content">
 				<% if current_user %>
 				  <div class="rsvp-content tab-pane active" id="debate">
@@ -142,13 +142,13 @@
 					Please sign in to register.
 				  	</div>
 				  </div>
-				
-				<% end %>		
-	
+
+				<% end %>
+
 		</div>
 	</div>
-	
-	
+
+
 </div>
 
 

@@ -1,4 +1,6 @@
 <%= simple_form_for @tournament do |f| %>
+
+<!-- Errors -->
 <% if @tournament.errors.any? %>
   <div id="error_explanation">
    <div class="alert custom-alert">
@@ -14,7 +16,9 @@
 <% end %>
 
 
-<!-- TODO: Fix how validation errors are handled. Messes up form. -->
+
+
+<!-- Basic Settings -->
 	<div class="set-basics">
 		<h4>Basic Settings</h4>
 		<%= f.input :name, label: 'Name', error: false %><br>
@@ -26,34 +30,30 @@
 		ampm: true, error: false  %>
 	</div>
 	<hr class="field-divider">
+
+	<!-- Scheduling -->
+
 	<h3>Scheduling</h3>
 		  	<p>
-			  	Allow all debaters and judges to start their rounds at the same time, <em>or</em> 
+			  	Allow all debaters and judges to start their rounds at the same time, <em>or</em>
 			  	assign multiple <b>brackets</b> so
 			  	that competitors and judges can attend to their rounds at different times
 			  	of the tournament. All rounds must have at least 1 bracket, which would assign
-			  	a time that all debaters and judges would attend their rounds.		  		
+			  	a time that all debaters and judges would attend their rounds.
 		  	</p>
 
-	
-	<div class="set-divisions">
-			<div class="divisions-form">
-				<%= f.simple_fields_for :divisions do |division| %>
-						<%= render 'division_fields', f: division %>
-				<% end %>
 
-				<div class="new-division">
-					<%= link_to_add_fields 'Add a New Division', f, :divisions%>												
-				</div>			
 
-			</div>
-	</div>
-	<div class="set-brackets">
-		
-	</div>
-	<div class="set-matches">
-		
-	</div>
+<!-- Scheduling: All Divisions -->
+<div class="panel-group" id="accordion">
+  	<%= f.simple_fields_for :divisions do |division| %>
+	 		<%= render 'division_fields', f: division %>
+	  <% end %>
+  	<%= link_to_add_fields 'Add a Division', f, :divisions %>
+</div>
 
-<%= f.button :submit %>
+
+
+<%= f.button :submit, :class => 'btn-danger', :id => 'update-tournament' %>
+<!-- TODO: Add a primary class to button-->
 <% end %>
