@@ -1,6 +1,6 @@
 class Bracket < ActiveRecord::Base
   attr_accessible :name
-  has_many :rounds, :through => :round_brackets
+  belongs_to :division
 
   def start_time
     # TODO: Localize
