@@ -1,7 +1,6 @@
 class Bracket < ActiveRecord::Base
-  attr_accessible :starttime, :name
-  has_many :matches
-  belongs_to :round
+  attr_accessible :name
+  has_many :rounds, :through => :round_brackets
 
   def start_time
     # TODO: Localize
