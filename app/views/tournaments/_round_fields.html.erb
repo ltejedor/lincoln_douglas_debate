@@ -14,11 +14,28 @@
 						<% end %>
 	</tr>
 	<tr id="round-<%=f.object.id%>" class="collapse">
+
 		<td><!-- row index --></td>
-		<td><%= f.select :kind %></td>
-	<% num_brackets.times do %>
-		<td>Bracket</td>
-	<% end %>
+
+		<td><%= f.input :kind, label: false,
+		:collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'],
+		:error => false %></td>
+
+		<%= f.simple_fields_for :brackets do |bracket| %>
+			<%= render 'bracket_fields', f: bracket %>
+		<% end %>
+		<td><%= link_to_add_fields 'Add bracket', f, :brackets %></td>
 	</tr>
 
-</a>
+	<tr>
+		<td><!-- row index --></td>
+	</tr>
+
+	<tr>
+		<td>
+			<%= f.hidden_field :_destroy %>
+			<%= link_to 'Delete Round', '#', class: 'remove_fields' %>
+		</td>
+	</tr>
+
+
