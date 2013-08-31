@@ -2,15 +2,27 @@
   color: #ddd;
   font-style: italic;
 }
-
+.info{
+  font-size:11px;
+  color:#A2A2A2;
+  font-style:italic;
+  float:right;
+}
 .cancellation {
   text-align: right;
 }
 .cancellation-link {
   color: #CEABAB;
+  float:right;
+  font-size: 12px;
+  min-width: 11em;
 }
 .cancellation-link:hover {
     color: red;
+}
+.division-name label{
+    position: relative;
+    left: -3em;
 }
 .start-time {
   color: #CC1E1E;
@@ -31,6 +43,7 @@ table {
 
 .row-count {
     counter-increment: rowNumber;
+    cursor: pointer;
 }
 
 table tr td:first-child::before {

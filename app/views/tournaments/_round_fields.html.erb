@@ -1,19 +1,24 @@
-<!-- round -->
-<tr class="row-count">
-							<td></td>
-						<!-- TODO: Order New Rounds correctly -->
+
+	<tr class="row-count" data-toggle="collapse" data-target="#round-<%=f.object.id%>">
+							<td><!-- row index --></td>
 							<td><b><%= f.object.kind %></b></td>
 						<% num_brackets_in_round = f.object.brackets.length %>
 						<% num_fillers = num_brackets.zero? ? 1 : num_brackets - num_brackets_in_round %>
-						<%= f.simple_fields_for :brackets do |bracket| %>
+						<% f.object.brackets.each do |bracket| %>
 							<td>
-								<span class="start-date"><%= bracket.object.start_date %></span>
-								<span class="start-time"><%= bracket.object.start_time %></span></td>
+								<span class="start-date"><%= bracket.start_date %></span>
+								<span class="start-time"><%= bracket.start_time %></span></td>
 						<% end %>
 						<% num_fillers.times do %>
 							<td class="bracket-filler">None Assigned</td>
 						<% end %>
-					</tr>
-<!-- end round -->
+	</tr>
+	<tr id="round-<%=f.object.id%>" class="collapse">
+		<td><!-- row index --></td>
+		<td><%= f.select :kind %></td>
+	<% num_brackets.times do %>
+		<td>Bracket</td>
+	<% end %>
+	</tr>
 
-
+</a>
