@@ -47,12 +47,12 @@ jQuery ->
 # Hiding or showing +Round table based on Division Name blank or not
 
   $('form').on 'click', '.new-division-link', (event) ->
-    $(this).parent().parent().next().children().children('table').addClass('hide-table')
+    $(this).parent().parent().next().children().children('table').addClass('hide-table') if $(this).parent().parent().next().children().children('.row').children('.division-name').children('.tournament_divisions_name').children('div').children().val() == ""
 
   $("form").on "keyup", "input[placeholder=\"Division Name\"]", (event) ->
-    $(this).first().parent().parent().parent().parent().next().next().removeClass "hide-table"
-    time = new Date().getTime()
-    console.log('Keyed up ' + time)
+    $(this).first().parent().parent().parent().parent().next().next().removeClass("hide-table") if $(this).val() != ""
+    $(this).first().parent().parent().parent().parent().next().next().addClass("hide-table") if $(this).val() == ""
+
 
 # Bracket removal and addition based on round kind.
 # Deprecated feature. (Round kind now defaults to 'Unpowered Prelim')
