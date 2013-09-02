@@ -34,6 +34,17 @@ $(document).ready(function() {
 	var w = cw + 'px';
 	$('.crop').css('height',w);
 
+	// AJAX requests for organizer dashboard add_field links
+	constructRequest();
+
+	$('#datetimepicker-tournament-start').datetimepicker({
+		timeFormat: "hh:mm tt"
+	});
+
+	$('#datetimepicker-tournament-end').datetimepicker({
+		timeFormat: "hh:mm tt"
+	});
+
 
 });
 

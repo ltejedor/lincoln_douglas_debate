@@ -34,6 +34,18 @@
   width: 100%
 }
 
+.tournament_divisions_rounds__destroy label {
+    width: auto;
+    font-weight: normal;
+    margin-left: 0;
+}
+.small-text {
+  font-size:10px;
+}
+
+.hide-table {
+    display: none;
+}
 // Number the table rows
 
 
@@ -51,4 +63,12 @@ table tr td:first-child::before {
     min-width: 1em;
     margin-right: 0.5em;
 }
+.hide-this{
+  display: none;
+}
 
+.control-group.boolean.optional.tournament_divisions__destroy.single-checkbox {
+    float: right;
+    position: relative;
+    width: 240px;
+}

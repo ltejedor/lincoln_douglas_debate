@@ -1,5 +1,5 @@
 class Bracket < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :starttime
   belongs_to :division
 
   def start_time

@@ -19,6 +19,8 @@ module ApplicationHelper
   def link_to_add_fields(name, f, association)
     new_object = f.object.send(association).klass.new
     id = new_object.object_id
+
+    # fill in data-fields param
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
       if association == :rounds
         num_brackets = set_num_brackets(f)
@@ -28,11 +30,15 @@ module ApplicationHelper
         render(association.to_s.singularize + "_fields", f: builder)
       end
     end
+    # provide link with data-fields = fields, escaping new lines
     if association == :rounds
-      link_to(name, '#', class: "add_fields_to_table", data: {id: id, fields: fields.gsub("\n", "")})
+      link_to(name, '#', class: "add_fields_in_table", data: {id: id, fields: fields.gsub("\n", "")})
+    elsif association == :brackets
+      link_to(name, '#', class: "add_fields_in_row", data: {id: id, fields: fields.gsub("\n", "")})
     else
       link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
     end
+
   end
 
 end

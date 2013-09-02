@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831074545) do
+ActiveRecord::Schema.define(:version => 20130901190522) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(:version => 20130831074545) do
   end
 
   create_table "brackets", :force => true do |t|
-    t.string  "name"
-    t.integer "round_id"
+    t.string   "name"
+    t.integer  "round_id"
+    t.integer  "division_id"
+    t.datetime "starttime"
   end
 
   create_table "cards", :force => true do |t|

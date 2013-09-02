@@ -1,10 +1,9 @@
-<fieldset>
-	<td>
-
-	<%= f.input :starttime, label: 'Starts',
-		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false  %><br>
-		<%= f.hidden_field :_destroy %>
-		<%= link_to "remove", '#', class: "remove_fields" %>
-	</td>
-</fieldset>
+<td>
+  <fieldset> <!-- <fieldset><td> ignores last td -->
+  	<%= f.input :starttime, label: false,
+  		:order => [:month, :day, :year, :hour],
+  		ampm: true, error: false  %><br>
+  		<%= f.hidden_field :_destroy %>
+  		<%= link_to "Delete", '#', class: "remove_fields_brackets small-text" %>
+  </fieldset>
+</td>

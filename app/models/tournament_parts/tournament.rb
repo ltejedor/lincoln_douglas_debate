@@ -10,7 +10,7 @@ class Tournament < ActiveRecord::Base
   has_many :divisions, :dependent => :delete_all
 
   accepts_nested_attributes_for :divisions,
-  allow_destroy: true
+  allow_destroy: true, :reject_if => lambda { |d| d[:name].blank? }
 
   validates :name, :summary, :presence => true
   validates_length_of :summary, :maximum => 500,

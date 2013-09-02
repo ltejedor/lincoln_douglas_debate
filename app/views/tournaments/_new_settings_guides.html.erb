@@ -1,0 +1,47 @@
+      <h3>Tournament Settings and Guidelines</h3>
+        Set and describe the rules and guidelines for:
+        <br><br>
+          <ul>
+            <li><b>Entry</b>: What should judges and competitors do to enter the tournament?
+              Do you select judges and/or competitors in a certain way? How?
+            </li><br>
+            <li><b>Divisions</b>: Competitors compete against other competitors in their same division. Discribe what divisions your tournament will have. Divisions are normally
+              split by difficulty level (e.g., Novice, Varsity) and debate type (e.g., LD) and
+              are named according to both, e.g., "Varsity LD", "Novice LD", etc.
+            </li><br>
+            <li><b>Rounds</b>: For each division, how many prelim rounds and outrounds will you have? When do you power prelims (e.g., after the 3rd round)? Will you break at Octofinals, Quarterfinals, Semifinals, etc.?
+            </li><br>
+            <li><b>Brackets</b>: For each division, you can choose to group your competitors in one or more brackets. A division with just one bracket ensures that all competitors in that division start their rounds at the same time, while multiple brackets allows you to stagger the start times of each round: competitors in Bracket A start Round 1 at a different time than competitors in Bracket B start Round 1. Since competitors are paired to matches in their rounds before being assigned a bracket, each competitior in each round still stands an equal chance of competing against all other competitors in their division, despite brackets.
+            <br><br>
+            The use of multiple brackets therefore does not affect the competitiveness of the division. To ensure competitors compete in different groups instead, use <em>divisions</em>.
+            </li><br>
+            <li><b>Judges</b>: Are there any guidelines judges should follow? Will judges need to have prior debating experience or other qualifications in order to judge for your tournament or for certain divisions? You can choose to either allow anyone to register as a judge or put them through an approval process.
+            </li><br>
+            <li>Competition Rules
+            </li>
+          </ul>
+
+    <p class="entry_info">
+      <%= f.label :entry_info, "Entry" %><br>
+      <%= f.text_area :entry_info %>
+    </p>
+
+
+    <p class="divisions_info">
+      <%= f.label :divisions_info, "Divisions" %><br>
+      <%= f.text_area :divisions_info %>
+    </p>
+
+     <p class="rules_info">
+      <%= f.label :rules_info, "Rules" %><br>
+      <%= f.text_area :rules_info %>
+    </p>
+
+
+    <p class="judges_info">
+      <%= f.label :judges_info, "Judges" %><br>
+      <%= f.text_area :judges_info %>
+    </p>
+
+
+

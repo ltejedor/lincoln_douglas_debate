@@ -1,7 +1,13 @@
 
-	<tr class="row-count" data-toggle="collapse" data-target="#round-<%=f.object.id%>">
-							<td><!-- row index --></td>
-							<td><b><%= f.object.kind %></b></td>
+	<tr class="row-count round-row" data-toggle="collapse" data-target="#round-<%=f.object.id || 'dynamic_time' %>">
+							<td><!-- row index --><fieldset></td>
+							<% if f.object.kind %>
+							<td>
+								<b><%= f.object.kind %></b>
+							</td>
+							<% else %>
+							<td class="bracket-filler">Click to Add/Edit</td>
+							<% end %>
 						<% num_brackets_in_round = f.object.brackets.length %>
 						<% num_fillers = num_brackets.zero? ? 1 : num_brackets - num_brackets_in_round %>
 						<% f.object.brackets.each do |bracket| %>
@@ -13,29 +19,27 @@
 							<td class="bracket-filler">None Assigned</td>
 						<% end %>
 	</tr>
-	<tr id="round-<%=f.object.id%>" class="collapse">
+
+	<!-- Collapsed Edit Row -->
+	<tr id="round-<%=f.object.id || 'dynamic_time' %>" class="collapse" style="background-color: #ddd;">
 
 		<td><!-- row index --></td>
 
 		<td><%= f.input :kind, label: false,
-		:collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'],
-		:error => false %></td>
+		:collection => ['Unpowered Prelim', 'Powered Prelim','Octofinals','Quarterfinals','Semifinals','Finals'], default: 'Unpowered Prelim', :error => false, input_html: { class: 'round-kind'} %><br>
+		<%= f.input :_destroy, label: 'Delete Round', as: :boolean, wrapper_html: { class: 'single-checkbox'} %>
 
-		<%= f.simple_fields_for :brackets do |bracket| %>
-			<%= render 'bracket_fields', f: bracket %>
-		<% end %>
-		<td><%= link_to_add_fields 'Add bracket', f, :brackets %></td>
-	</tr>
 
-	<tr>
-		<td><!-- row index --></td>
-	</tr>
-
-	<tr>
-		<td>
-			<%= f.hidden_field :_destroy %>
-			<%= link_to 'Delete Round', '#', class: 'remove_fields' %>
+			<%= f.simple_fields_for :brackets do |bracket| %>
+				<%= render 'bracket_fields', f: bracket %>
+			<% end %>
+		</td>
+		<td class="new-bracket-link hide-this">
+			<%= link_to_add_fields '+Bracket', f, :brackets %></fieldset>
 		</td>
 	</tr>
+
+<!-- TODO: Fix -->
+
 
 

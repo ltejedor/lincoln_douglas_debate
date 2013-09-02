@@ -22,12 +22,17 @@
 	<div class="set-basics">
 		<h4>Basic Settings</h4>
 		<%= f.input :name, label: 'Name', error: false %><br>
+
 		<%= f.input :starttime, label: 'Starts',
 		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false  %><br>
+		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-start' } %><br>
+		<!-- TODO: Datetime pickers -->
+
 		<%= f.input :endtime, label: 'Ends',
 		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false  %>
+		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-end' } %>
+
+		<!-- TODO: Datetime pickers -->
 	</div>
 	<hr class="field-divider">
 
@@ -49,7 +54,7 @@
   	<%= f.simple_fields_for :divisions do |division| %>
 	 		<%= render 'division_fields', f: division %>
 	  <% end %>
-  	<%= link_to_add_fields 'Add a Division', f, :divisions %>
+  	<%= link_to_add_fields '+New Division', f, :divisions %>
 </div><br><br>
 
 

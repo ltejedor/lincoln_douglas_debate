@@ -1,22 +1,25 @@
 		<fieldset>
 
-	  <div class="panel panel-default">
+	  <div class="panel panel-default <%= "new-division" if f.object.name.blank? %>">
 
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
-	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%=f.object.id%>">
-	          <%= f.object.name || 'New Division' %>
+	        <a class="accordion-toggle <%= "new-division-link" if f.object.name.blank? %>" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%=f.object.id || 'dynamic_time' %>">
+	          <%= (f.object.name unless f.object.name.blank?) || 'New Division' %>
 	        </a>
 	      </h4>
 	    </div>
-	    <div id="collapse-<%=f.object.id%>" class="panel-collapse collapse">
+
+	    <div id="collapse-<%=f.object.id || 'dynamic_time' %>" class="panel-collapse collapse">
 	      <div class="panel-body">
 	      	<div class="row">
 					  <div class="col-md-7 division-name">
-			      	<%= f.input :name, label: 'Rename:', placeholder: 'Division Name', error: false %></h4><br>
+			      	<%= f.input :name, label: '(Re)name:', placeholder: 'Division Name', error: false %></h4><br>
 							<%= f.hidden_field :_destroy %>
 					  </div>
-						<div class="col-md-5 cancellation"><%= link_to 'Delete entire division, registrations, and rounds.', '#', class: 'remove_fields cancellation-link' %><br>
+						<div class="col-md-5 cancellation cancellation-link">
+							<%= link_to 'Delete entire division, registrations, and rounds.', '#', :class => 'remove_fields_division' %><br>
+							<%= f.input :_destroy, label: 'Are you sure?', as: :boolean, wrapper_html: { class: 'single-checkbox hide-this'}, label_html: { class: 'are-you-sure' } %>
 						</div>
 	      	</div>
 
@@ -38,8 +41,6 @@
 				<% end %>
 			<% end %>
 					</tr>
-					<fieldset>
-
 						<% f.object.rounds.each.with_index do |round, index| %>
 
 							<%= f.simple_fields_for :rounds, round do |fr| %>
@@ -47,24 +48,31 @@
 							<% end %>
 
 						<% end %>
-					</fieldset>
 					<tr class="row-count">
-						<td></td>
-						<td><%= link_to_add_fields '+New Round', f, :rounds %><td>
-						<% (num_brackets -1).times do %>
+						<td><!-- row index --></td>
+						<td>
+							<%= link_to_add_fields '+New Round', f, :rounds %>
+							<!-- TODO: For New Divisions, +New Round duplicates time value on #round-{dynamic_time} and therefore does not do the slide down correctly. Fix this! -->
+						</td>
+						<% if num_brackets > 0 %>
+							<% num_brackets.times do %>
+								<td></td>
+							<% end %>
+						<% else %>
 							<td></td>
 						<% end %>
 					</tr>
 					</table>
 
 
-<br>
-					<a class="btn" data-toggle="collapse" data-target="#collapse-<%= f.object.id %>">
+					<br>
+					<a class="btn" data-toggle="collapse" data-target="#collapse-<%= f.object.id || 'dynamic_time' %>">
 			  		Collapse
 					</a>
 
 	      </div>
 	    </div>
+
 	  </div>
 
 
