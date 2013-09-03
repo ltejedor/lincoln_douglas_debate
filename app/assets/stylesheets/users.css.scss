@@ -3,6 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// ************* High Level *************
+.user-profile {
+    background-image: url('http://www.userlogos.org/files/backgrounds/macleod.mac/slate.jpg');
+    position: relative;
+    top: -3.5em;
+    background-position: center top;
+    background-attachment: fixed;
+    padding-bottom: 5em;
+}
+
+.user-panel {
+    float: left;
+}
+.middle-user-panel {
+    border-left: solid 1em;
+    border-right: solid 1em;
+    padding-left: 1em;
+    padding-right: 3em;
+    padding-bottom: 5em;
+    padding-top: 1em;
+}
+
+// *********** Center *******************
+
 .user-field{
   float: left;
   margin-bottom: 1em;
@@ -38,15 +62,26 @@
 
 .row.user {
     border: solid 1px #ddd;
+    position: relative;
+    top: 3em;
+    background-color: #FFF;
 }
 
-.middle-user-panel {
-    border-left: solid 1em;
-    border-right: solid 1em;
-    padding-left: 1em;
-    padding-right: 3em;
-    padding-bottom: 5em;
-    padding-top: 1em;
+// ********* Right Panel ********
+
+.right-user-panel {
+  padding: 1em;
+  padding-top: 2em;
+}
+.icon {
+  width: 2em;
+  margin-right: 1em;
+}
+.user-social {
+  line-height: 2.5em;
+}
+.social-field {
+    width: 100%;
 }
 
 // ********* Edit User Profile ****************

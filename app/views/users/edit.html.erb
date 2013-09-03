@@ -1,6 +1,6 @@
 <%= render 'profile_ctr_1' %>
-			<%= simple_form_for @user do |f| %>
-			<%= f.text_area :summary, label: false, rows: '10' %>
+<%= simple_form_for @user do |f| %>
+	<%= f.text_area :summary, label: false, rows: '10' %>
 
 		</div>
 
@@ -14,7 +14,19 @@
 				  <% end %>
 			</div>
 		<% end %>
-<%= f.button :submit, :class => 'user-field btn-info', :id => 'update-tournament' %>
+	<%= f.button :submit, :class => 'user-field btn-info', :id => 'update-tournament' %>
 
-<%= render 'profile_rt_1' %>
+	<%= render 'profile_rt_1' %>
+
+	<%= f.input :googleplus, input_html: {class: 'social-field'} %>
+	<%= f.input :facebook, input_html: {class: 'social-field'}  %>
+	<%= f.input :twitter, input_html: {class: 'social-field'}  %>
+	<%= f.input :social_email, input_html: {class: 'social-field'}  %>
+	<%= f.input :website, input_html: {class: 'social-field'}  %>
+
 <% end %>
+
+  </section>
+</div>
+</div>
+

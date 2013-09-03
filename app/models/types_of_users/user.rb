@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus,
                   :image, :last_name, :name, :provider, :uid, :verified_email,
-                  :summary, :points, :judge_attributes
+                  :summary, :points, :judge_attributes,
+                  :facebook, :twitter, :social_email, :website
   # TODO: Set time zone settings in Account Settings
   belongs_to :userable, polymorphic: true
 
