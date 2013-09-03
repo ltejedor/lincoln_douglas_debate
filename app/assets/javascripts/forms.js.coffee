@@ -57,9 +57,15 @@ jQuery ->
     $(this).parent().before($(this).data('fields').replace(regexp, time).replace(/dynamic_time/g,time))
     event.preventDefault()
 
-# Bracket time live-update to "Update Found" -- IN PROGRESS
+# Bracket time -- check valid datetime format
 
-  $('form').on 'change', '.bracket-time', () ->
+  $("form").on "keyup", "input.bracket-time", ->
+    re = /\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}(am|AM|pm|PM)/
+    if $(this).val().match(re)
+      $(this).parent().parent().next().addClass "hide-this"
+    else
+      $(this).parent().parent().next().removeClass "hide-this"
+
 
 
 # Hiding or showing +Round table based on Division Name blank or not

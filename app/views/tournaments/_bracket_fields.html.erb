@@ -1,7 +1,8 @@
 <td>
   <fieldset> <!-- <fieldset><td> ignores last td -->
 
-    <%= f.input :start_time_string, label: false, placeholder: 'E.g., 08/28/2014 10:30am', error: false, hint: 'MM/DD/YYYY HH:MM(am/pm)', input_html: { class: 'bracket-time', maxlength: 18, size: '25'} %>
+    <%= f.input :start_time_string, label: false, placeholder: 'E.g. 08/28/2014 10:30am', error: false, hint: 'MM/DD/YYYY HH:MM(am/pm)', input_html: { class: 'bracket-time', maxlength: 18, size: '25'} %>
+    <b class="hide-this" style="color:red">Invalid Date Format</b>
       <br>
   		<%= f.hidden_field :_destroy %>
   		<%= link_to "Delete", '#', class: "remove_fields_brackets small-text" %>

@@ -5,12 +5,12 @@ class Bracket < ActiveRecord::Base
 
   def start_time
     # TODO: Localize
-    self.starttime.strftime("%I:%M %p") if self.starttime
+    self.starttime.strftime("%l:%M %P") if self.starttime
   end
 
   def start_date
     # TODO: Localize
-    self.starttime.strftime("%a %b %d") if self.starttime
+    self.starttime.strftime("%a %b %-d") if self.starttime
   end
 
 
