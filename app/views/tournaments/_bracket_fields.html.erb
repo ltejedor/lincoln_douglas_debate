@@ -2,7 +2,7 @@
   <fieldset> <!-- <fieldset><td> ignores last td -->
   	<%= f.input :starttime, label: false,
   		:order => [:month, :day, :year, :hour],
-  		ampm: true, error: false  %><br>
+  		ampm: true, error: false , input_html: { class: 'bracket-time'} %><br>
   		<%= f.hidden_field :_destroy %>
   		<%= link_to "Delete", '#', class: "remove_fields_brackets small-text" %>
   </fieldset>
