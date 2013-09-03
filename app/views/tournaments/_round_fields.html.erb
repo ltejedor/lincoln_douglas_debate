@@ -6,7 +6,7 @@
 								<b><%= f.object.kind %></b>
 							</td>
 							<% else %>
-							<td class="bracket-filler">Click to Add/Edit</td>
+							<td><b class="bracket-filler">Click to Add/Edit</b></td>
 							<% end %>
 						<% num_brackets_in_round = f.object.brackets.length %>
 						<% num_fillers = num_brackets.zero? ? 1 : num_brackets - num_brackets_in_round %>

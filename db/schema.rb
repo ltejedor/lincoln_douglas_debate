@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130901190522) do
+ActiveRecord::Schema.define(:version => 20130903075906) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130901190522) do
     t.integer  "round_id"
     t.integer  "division_id"
     t.datetime "starttime"
+    t.string   "start_time_string"
   end
 
   create_table "cards", :force => true do |t|

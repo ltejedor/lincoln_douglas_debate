@@ -1,4 +1,4 @@
-jQuery(document).ready ($) ->
+jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
     $(this).closest('fieldset').hide()
@@ -47,7 +47,7 @@ jQuery(document).ready ($) ->
 # Round editing live-update
 
   $('form').on 'change', '.round-kind', (event) ->
-    $(this).last().parent().parent().parent().parent().prev().children().children('b').text($(this).val())
+    $(this).parent().parent().parent().parent().prev().children().first().next().removeClass('bracket-filler').html('<b>'+$(this).val()+'</b>')
 
 # +Bracket
 
@@ -57,13 +57,17 @@ jQuery(document).ready ($) ->
     $(this).parent().before($(this).data('fields').replace(regexp, time).replace(/dynamic_time/g,time))
     event.preventDefault()
 
+# Bracket time live-update to "Update Found" -- IN PROGRESS
+
+  $('form').on 'change', '.bracket-time', () ->
+
 
 # Hiding or showing +Round table based on Division Name blank or not
 
-  $('form').on 'click', '.new-division-link', (event) ->
+  $('form').on 'click', '.new-division-link', () ->
     $(this).parent().parent().next().children().children('table').addClass('hide-table') if $(this).parent().parent().next().children().children('.row').children('.division-name').children('.tournament_divisions_name').children('div').children().val() == ""
 
-  $("form").on "keyup", "input[placeholder=\"Division Name\"]", (event) ->
+  $("form").on "keyup", "input[placeholder=\"Division Name\"]", () ->
 
     # Unhide or hide Rounds table
 
@@ -81,10 +85,10 @@ jQuery(document).ready ($) ->
 # Bracket removal and addition based on round kind.
 # Deprecated feature. (Round kind now defaults to 'Unpowered Prelim')
 
-  $('form').on 'click', '.round-row', (event) ->
+  $('form').on 'click', '.round-row', () ->
     $(this).next().children('td').last().removeClass('hide-this') if $(this).next().children().first().next().children('.select').children().children().val()!= ""
 
-  $('form').on 'change', '.round-kind', (event) ->
+  $('form').on 'change', '.round-kind', () ->
     $(this).parent().parent().parent().parent().children('.new-bracket-link').removeClass('hide-this') if $(this).val() != ""
     $(this).parent().parent().parent().parent().children('.new-bracket-link').addClass('hide-this') if $(this).val() == ""
     $(this).parent().parent().parent().parent().children('td').children('fieldset').hide() if $(this).val() == ""
