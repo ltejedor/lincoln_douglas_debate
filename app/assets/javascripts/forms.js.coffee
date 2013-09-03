@@ -31,9 +31,19 @@ jQuery ->
 
   $('form').on 'click', '.add_fields_in_table', (event) ->
     time = new Date().getTime()
+    num = $(this).last().parent().parent().index()
+    uniqueID = time + '-' + num
     regexp = new RegExp($(this).data('id'), 'g')
-    $(this).parent().parent().before($(this).data('fields').replace(regexp, time).replace(/dynamic_time/g,time))
+    $(this).parent().parent().before($(this).data('fields').replace(regexp, uniqueID).replace(/dynamic_time/g,uniqueID))
     event.preventDefault()
+
+# Round collapse, unique ID fix for +Rounds in New Divisions
+
+  $('form').on 'click', '.round-row', (event) ->
+    time = new Date().getTime()
+    $(this).attr('data-target','#round-'+time)
+    $(this).next().attr('id','round-'+time)
+
 
 # +Bracket
 
@@ -64,7 +74,3 @@ jQuery ->
     $(this).parent().parent().parent().parent().children('.new-bracket-link').removeClass('hide-this') if $(this).val() != ""
     $(this).parent().parent().parent().parent().children('.new-bracket-link').addClass('hide-this') if $(this).val() == ""
     $(this).parent().parent().parent().parent().children('td').children('fieldset').hide() if $(this).val() == ""
-
-
-
-
