@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.user-field{
+  float: left;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1.5em;
+  width: 100%;
+}
 .user{
   width: 90%;
   margin-left: auto;
@@ -24,7 +33,6 @@
 }
 .user-summary {
     width: 100%;
-    float: left;
     margin-left: 1em;
 }
 
@@ -41,3 +49,13 @@
     padding-top: 1em;
 }
 
+// ********* Edit User Profile ****************
+
+.user-field textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.float-right {
+  float: right;
+}

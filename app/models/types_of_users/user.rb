@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus,
                   :image, :last_name, :name, :provider, :uid, :verified_email,
-                  :summary, :points
+                  :summary, :points, :judge_attributes
   # TODO: Set time zone settings in Account Settings
   belongs_to :userable, polymorphic: true
 
   belongs_to :debater
-  belongs_to :judge
+  has_one :judge
+  accepts_nested_attributes_for :judge
   belongs_to :organizer
+
 
 
   belongs_to :author, polymorphic: true
