@@ -16,12 +16,14 @@ class TournamentsController < ApplicationController
   def show
     default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"
     @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset_url || default_image
+    # sort rounds by first bracket start time
     # sort brackets chronologically
     for division in @tournament.divisions
       for round in division.rounds
-        round.brackets.sort! {|a,b| a.starttime <=> b.starttime}
+        round.brackets.sort! {|a,b| a.starttime <=> b.starttime} unless round.brackets.all? {|b| b.starttime.nil? }
       end
     end
+
 
     respond_to do |format|
       format.html # show.html.erb

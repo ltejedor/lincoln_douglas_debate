@@ -4,8 +4,9 @@ jQuery ->
     $(this).closest('fieldset').hide()
     event.preventDefault()
 
+# - Division
   $('form').on 'click', '.remove_fields_division', (event) ->
-    $(this).next().next().removeClass('hide-this')
+    $(this).next().next().next().removeClass('hide-this')
     event.preventDefault()
 
 # - Bracket

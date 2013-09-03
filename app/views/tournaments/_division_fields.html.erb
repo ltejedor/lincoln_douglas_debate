@@ -15,10 +15,10 @@
 	      	<div class="row">
 					  <div class="col-md-7 division-name">
 			      	<%= f.input :name, label: '(Re)name:', placeholder: 'Division Name', error: false, hint: 'Unnamed divisions will be deleted upon updating tournament, including their rounds and any division registrations for judges and competitors.' %></h4><br><!-- TODO: should registrations be deleted also? Or kept somehow and managed? -->
-							<%= f.hidden_field :_destroy %>
 					  </div>
 						<div class="col-md-5 cancellation cancellation-link">
 							<%= link_to 'Delete entire division, registrations, and rounds.', '#', :class => 'remove_fields_division' %><br>
+							<%= f.hidden_field :_destroy %>
 							<%= link_to 'Are you sure? Click here to confirm.', '#', :class => 'remove_fields hide-this are-you-sure' %>
 						</div>
 	      	</div>
