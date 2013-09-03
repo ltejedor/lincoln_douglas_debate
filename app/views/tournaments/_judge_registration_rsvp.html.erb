@@ -1,11 +1,11 @@
 		  	<%= simple_form_for [@tournament, JudgeRegistration.new] do |f| %>
-		  	<% @divisions = @tournament.divisions %>
+
 		  	<!-- TODO: eventually make @levels dynamic acc to organizer tournament settings -->
 		  		<div class="division-field">
-		  			<%= f.association :division, label: "Choose which Division to Judge: ", collection: @divisions %>
+		  			<%= f.association :division, label: "Choose which Division to Judge: ", collection: @tournament.divisions %>
 		  			</div>
 		  		<hr style="margin-top: 4em; margin-bottom: 2em;">
-		  		<div><b>Honor your RSVP. </b>Note that No-Shows may hinder your ability to attend future tournaments. 
+		  		<div><b>Honor your RSVP. </b>Note that No-Shows may hinder your ability to attend future tournaments.
 		  			Please follow all Entry guidelines and follow through on your RSVP.
 		  		</div>
 		  		<%= f.button :submit, value: 'Register to Judge', class: 'btn btn-primary tournament-btn' %>

@@ -4,7 +4,7 @@ class Round < ActiveRecord::Base
   belongs_to :division
   has_many :round_brackets
   has_many :brackets, :through => :round_brackets, :dependent => :delete_all
-  accepts_nested_attributes_for :brackets, allow_destroy: true
+  accepts_nested_attributes_for :brackets, allow_destroy: true, :reject_if => lambda { |d| d[:start_time_string].blank? }
 
   # TODO: be able to add a round out of order and place in order.
 
