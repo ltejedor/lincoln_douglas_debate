@@ -60,8 +60,13 @@ jQuery ->
     $(this).parent().parent().next().children().children('table').addClass('hide-table') if $(this).parent().parent().next().children().children('.row').children('.division-name').children('.tournament_divisions_name').children('div').children().val() == ""
 
   $("form").on "keyup", "input[placeholder=\"Division Name\"]", (event) ->
+    # Unhide or hide Rounds table
     $(this).first().parent().parent().parent().parent().next().next().removeClass("hide-table") if $(this).val() != ""
     $(this).first().parent().parent().parent().parent().next().next().addClass("hide-table") if $(this).val() == ""
+    # Update Division name in Header
+    $(this).last().parent().parent().parent().parent().parent().parent().prev().children('h4').children('a').text('Unnamed Division (will be deleted)') if $(this).val() == ""
+    $(this).last().parent().parent().parent().parent().parent().parent().prev().children('h4').children('a').text($(this).val()) if $(this).val() != ""
+
 
 
 # Bracket removal and addition based on round kind.
