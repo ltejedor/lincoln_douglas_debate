@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @image = "empty_profile.png" if @user.image.blank?
   end
 
   def update
@@ -21,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @image = "empty_profile.png" if @user.image.blank?
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

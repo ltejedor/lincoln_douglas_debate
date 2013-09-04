@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require gplus
-//= require tree .
+//= require_tree .
 //= require twitter/bootstrap
 
 
