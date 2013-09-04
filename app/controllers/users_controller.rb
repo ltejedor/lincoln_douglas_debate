@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @image = "empty_profile.png" if @user.image.blank?
+    @image = ("empty_profile.png" if @user.image.blank?) || @user.image
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

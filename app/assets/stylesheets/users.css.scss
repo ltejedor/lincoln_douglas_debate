@@ -32,11 +32,6 @@
     box-shadow: 10px 10px 10px #608799;
 }
 
-.user-panel {
-    float: left;
-    padding: 1em;
-    padding-top: 2em;
-}
 .middle-user-panel {
     border-left: solid 1px #ddd;
     border-right: solid 1px #ddd;
@@ -50,6 +45,14 @@
   margin-bottom: 3em;
   float: left;
   width: 100%;
+}
+
+.user-panel {
+    float: left;
+    padding: 1em;
+    padding-top: 2em;
+    height: 73em;
+    overflow: auto;
 }
 
 
