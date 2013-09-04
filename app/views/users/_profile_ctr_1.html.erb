@@ -1,16 +1,8 @@
-<div id="user-<%= @user.id %>" class="user-profile">
-<div class="row user">
-  <section class="col-md-4 left-user-panel user-panel">
-    <!-- TODO: User attributes -->
-  </section>
-  <section class="col-md-6 middle-user-panel user-panel">
+
     <div class="user-image">
       <%= image_tag(@user.image) %>
     </div>
     <div class="user-basics">
       <h3><%= @user.name %></h3>
-      <h4><b style="color: #FD9800;font-size:36px;"><%= @user.points || 0 %></b>  points</h4>
-    </div>
 
-    <div class="user-field user-summary">
-      <h4>Self-Summary</h4>
+    </div>

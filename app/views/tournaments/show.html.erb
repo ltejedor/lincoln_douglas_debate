@@ -29,7 +29,7 @@
 
 	</div>
 	<div class="col-md-9 col-sm-9">
-		<p class="lead"><%= @tournament.summary %></p>
+		<p class="lead"><%= simple_format @tournament.summary %></p>
 
 		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
 		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>
@@ -51,7 +51,7 @@
 	    </div>
 	    <div id="collapseOne" class="panel-collapse collapse in">
 	      <div class="panel-body">
-	        <%= @tournament.description %>
+	        <%= simple_format(@tournament.description) %>
 	      </div>
 	    </div>
 	  </div>
@@ -73,15 +73,15 @@
 	      <div class="panel-body">
 			<% unless @tournament.entry_info.blank? %>
 		      	<h3>Entry</h3>
-		        <%= @tournament.entry_info %>
+		        <%= simple_format(@tournament.entry_info) %>
 	        <% end %>
 			<% unless @tournament.divisions_info.blank? %>
 		        <h3>Divisions</h3>
-		        <%= @tournament.divisions_info %>
+		        <%= simple_format @tournament.divisions_info %>
 	        <% end %>
 			<% unless @tournament.judges_info.blank? %>
 		        <h3>Judges</h3>
-		        <%= @tournament.judges_info %>
+		        <%= simple_format @tournament.judges_info %>
 	        <% end %>
 	      </div>
 	    </div>
@@ -100,11 +100,11 @@
 	      <div class="panel-body">
 			<% unless @tournament.rules_info.blank? %>
 		        <h3>Rules</h3>
-		        <%= @tournament.rules_info %>
+		        <%= simple_format @tournament.rules_info %>
 	        <% end %>
 	        <% unless @tournament.additional_info.blank? %>
 		        <h3>Additional Information</h3>
-	    	    <%= @tournament.additional_info %>
+	    	    <%= simple_format @tournament.additional_info %>
 	        <% end %>
 	      </div>
 	    </div>

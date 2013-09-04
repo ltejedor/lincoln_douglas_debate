@@ -1,5 +1,34 @@
 <% if current_user %>
-			<%= render "signedin_carousel" %>
+	<%= render "dashboard_carousel" %>
+
+	<div class="row center">
+		<div class="col-md-3">
+			<div class="dashboard-container border">
+	  		<% if current_user.image.nil? %>
+					<%= image_tag "empty_profile.png", class: "profile-thumbnail-lg" %>
+	      <% else %>
+	      	<%= image_tag current_user.image, class: "profile-thumbnail-lg" %>
+	    	<% end %>
+
+		      <p class="lead"><%= @user.name %></p>
+
+
+				Edit Profile
+				No. Points
+				Recent Achievements
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="dashboard-container">
+				News Feed
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="dashboard-container border">
+				Trending and Others
+			</div>
+		</div>
+	</div>
 
 
 	<div class="container col-sm-12">

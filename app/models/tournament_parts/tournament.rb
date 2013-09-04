@@ -27,11 +27,11 @@ class Tournament < ActiveRecord::Base
   # TODO: Localize the datetime of Start and End according to Time Zone
 
   def start_time
-    self.starttime.strftime("%a %b %d, %Y at %l:%M %p") if self.starttime
+    self.starttime.strftime("%a %b %-d, %Y at %l:%M%p") if self.starttime
   end
 
   def end_time
-    self.endtime.strftime("%a %b %d, %Y at %l:%M %p") if self.endtime
+    self.endtime.strftime("%a %b %-d, %Y at %l:%M%p") if self.endtime
   end
 
   def ends_after_starting?

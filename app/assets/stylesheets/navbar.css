@@ -1,5 +1,5 @@
 li a {
-    vertical-align: top;    
+    vertical-align: top;
   }
 .profile-thumbnail {
   width: 30px;
@@ -13,7 +13,7 @@ li a {
 }
 .navbar-nav {
 	float: left;
-	
+
 }
 
 /* NAV BAR FIXES */
@@ -74,4 +74,21 @@ a:focus {
 
 .icon-bar {
     background-color: white;
+}
+
+.messages-btn {
+    position: relative;
+    top: 1em;
+    background-color:  inherit;
+    color:  white;
+    border: none;
+    color: #428BCA;
+}
+.messages-btn:hover {
+    color: #FF8F00;
+}
+#messages-icon {
+    position: absolute;
+    right: 234px;
+    top: 5px;
 }

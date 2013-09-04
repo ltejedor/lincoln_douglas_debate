@@ -1,15 +1,23 @@
-<%= render 'profile_ctr_1' %>
-			<%= simple_format(@user.summary) %>
-		</div>
+<div id="user-<%= @user.id %>" class="user-profile">
+  <div class="row user">
+    <section class="col-md-4 left-user-panel user-panel">
 
-		<% unless (Judge.where(user_id: current_user.id).first.nil? || @user.as_judge.paradigm.blank?) %>
-			<div class="user-field user-paradigm">
-				<h4>Judging Paradigm</h4>
-				<%= simple_format(@user.judge.paradigm) %>
-			</div>
-		<% end %>
-<%= link_to 'Edit Your Profile', edit_user_path(@user), class: 'float-right' if @user==current_user %>
-<%= render 'profile_rt_1' %>
-  </section>
-</div>
+    <%= render 'profile_lt_1' %>
+    </section>
+    <section class="col-md-8 middle-user-panel user-panel">
+      <%= render 'profile_ctr_1' %>
+      <div class="user-field user-summary">
+        <h4>Self-Summary</h4>
+    			<%= simple_format(@user.summary) %>
+      </div>
+    		<% unless (Judge.where(user_id: current_user.id).first.nil? || @user.as_judge.paradigm.blank?) %>
+        <hr class="divider">
+    			<div class="user-field user-paradigm">
+    				<h4>Judging Paradigm</h4>
+    				<%= simple_format(@user.judge.paradigm) %>
+    			</div>
+    		<% end %>
+    <%= link_to 'Edit Your Profile', edit_user_path(@user), class: 'float-right' if @user==current_user %>
+      </section>
+  </div>
 </div>

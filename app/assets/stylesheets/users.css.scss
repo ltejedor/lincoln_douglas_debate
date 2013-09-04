@@ -4,25 +4,90 @@
 
 
 // ************* High Level *************
+.divider {
+  width: 100%;
+  float: left;
+}
 .user-profile {
-    background-image: url('http://www.userlogos.org/files/backgrounds/macleod.mac/slate.jpg');
     position: relative;
     top: -3.5em;
     background-position: center top;
     background-attachment: fixed;
     padding-bottom: 5em;
+    background: rgb(222,239,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(222,239,255,1) 0%, rgba(152,190,222,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,239,255,1)), color-stop(100%,rgba(152,190,222,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede',GradientType=0 ); /* IE6-9 */
+}
+
+.row.user {
+    border: solid 1px #ddd;
+    position: relative;
+    top: 3em;
+    background-color: #FFF;
+    box-shadow: 10px 10px 10px #608799;
 }
 
 .user-panel {
     float: left;
+    padding: 1em;
+    padding-top: 2em;
 }
 .middle-user-panel {
-    border-left: solid 1em;
-    border-right: solid 1em;
+    border-left: solid 1px #ddd;
+    border-right: solid 1px #ddd;
     padding-left: 1em;
     padding-right: 3em;
     padding-bottom: 5em;
     padding-top: 1em;
+}
+
+.user-container {
+  margin-bottom: 3em;
+  float: left;
+  width: 100%;
+}
+
+
+// *********** Left Panel ***************
+
+.achievement-icon {
+  margin: 5px;
+}
+
+.points-bar{
+  width: 100%;
+  overflow: auto;
+  padding-left: 9px;
+  border-radius: 8px;
+}
+
+.icon {
+  width: 2em;
+  margin-right: 1em;
+}
+.user-social {
+  line-height: 2.5em;
+  width: 50%;
+  float: left;
+}
+.social-field {
+    width: 60%;
+    float: right;
+}
+
+// **** Left: Edit ****
+
+.social-fields {
+    float: left;
+}
+.social-input {
+    float: left;
+    margin-bottom: 1em;
 }
 
 // *********** Center *******************
@@ -60,29 +125,7 @@
     margin-left: 1em;
 }
 
-.row.user {
-    border: solid 1px #ddd;
-    position: relative;
-    top: 3em;
-    background-color: #FFF;
-}
 
-// ********* Right Panel ********
-
-.right-user-panel {
-  padding: 1em;
-  padding-top: 2em;
-}
-.icon {
-  width: 2em;
-  margin-right: 1em;
-}
-.user-social {
-  line-height: 2.5em;
-}
-.social-field {
-    width: 100%;
-}
 
 // ********* Edit User Profile ****************
 
