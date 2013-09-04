@@ -6,8 +6,6 @@ gem 'dynamic_form', '1.1.4'
 
 gem 'paperclip', '2.7.0'
 
-gem "heroku"
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -51,7 +49,7 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # gem 'debugger'
 
 group :production, :staging do
-	gem 'pg'
+
 end
 
 group :test, :development do
