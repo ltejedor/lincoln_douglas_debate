@@ -1,0 +1,28 @@
+  </section>
+  <section class="col-md-2 right-user-panel user-panel">
+    <p class="lead">Contact</p>
+    <% unless @user.googleplus.nil? %>
+      <a href="<%= @user.googleplus%>">
+        <span class="user-social"><%= image_tag 'googleplus_icon_black.png', class: 'icon' %>Google+</span>
+      </a><br>
+    <% end %>
+    <% unless @user.facebook.nil? %>
+      <a href="<%= @user.facebook%>">
+        <span class="user-social"><%= image_tag 'facebook_icon_black.png', class: 'icon' %>Facebook</span>
+        </a><br>
+    <% end %>
+    <% unless @user.twitter.nil? %>
+      <a href="<%= @user.twitter%>">
+        <span class="user-social"><%= image_tag 'twitter_icon_black.png', class: 'icon' %>Twitter</span>
+      </a><br><br>
+    <% end %>
+    <% unless @user.social_email.nil? %>
+      <a href="mailto:<%= @user.social_email%>">
+        <span class="user-social"><%= image_tag 'email_icon_black.png', class: 'icon' %>Email</span>
+      </a><br>
+    <% end %>
+    <% unless @user.website.nil? %>
+      <a href="<%= @user.website%>">
+        <span class="user-social"><%= image_tag 'website_icon_black.png', class: 'icon' %>My Website</span>
+      </a>
+    <% end %>

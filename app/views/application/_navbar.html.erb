@@ -27,8 +27,8 @@
                 <li><%= link_to "Cases", resolutions_path %></li>
                 <li><%= link_to "Cards", topics_path %></li>
 
-				<!-- TODO: SIGN IN -->
 				<% if current_user %>
+                <li id="messages-icon"><button type="button" class="messages-btn"><span class="glyphicon glyphicon-comment"></span> Messages</button> · </li>
                 <li class="dropdown" id="profile-dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
@@ -43,7 +43,7 @@
                   <ul class="dropdown-menu">
                   	<li><a href="<%= user_path(current_user) %>">View Profile</a></li>
                     <li><a href="<%= edit_user_path(current_user) %>">Edit Profile</a></li>
-                    
+
                     <!-- TODO: Replace dummy links with links to pages -->
                     <li><a href="#">View Tournaments</a></li>
 

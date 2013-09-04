@@ -1,101 +1,77 @@
-textarea {
-  width: 80%;
-  height: 8em;
-}
-
-.button.btn.btn-primary.tournament-btn {
-    margin-left: 0;
-    position: relative;
-    left: 25%;
-}
-
-.simple_form div.input {
-  margin-bottom: 10px;
-}
-
-.simple_form div.boolean, .simple_form input[type='submit'] {
-  margin-left: 0px;
-}
-.simple_form div.boolean label, .simple_form label.collection_radio {
-  float: none;
-  margin: 0;
-}
-
-.simple_form label.collection_radio {
-  margin-right: 10px;
-  margin-left: 2px;
-}
-
-.simple_form .error {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #D00;
-  display: block;
-}
-
-.simple_form .hint {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #555;
-  display: block;
+.bracket-filler {
+  color: #ddd;
   font-style: italic;
+  font-weight: normal;
 }
-
-.simple_form label {
-  width:auto;
+.info{
+  font-size:11px;
+  color:#A2A2A2;
+  font-style:italic;
+  float:right;
 }
-
-// NESTED TOURNAMENT FORM
-
-.round-times-field .control-group {
-    padding-left: 3em;
-    float: left;
+.cancellation {
+  text-align: right;
 }
-
-.divisions-form {
-    width: 0;
+.cancellation-link {
+  color: #CEABAB;
+  float:right;
+  font-size: 12px;
+  min-width: 11em;
 }
-.division-form {
-    width: 100%;
-    float: left;
-    margin-bottom: 4em;
-}
-.division-destroy-field {
-    float: right;
-    margin-bottom: 3em;
-    margin-top: 2em;    
-}
-
-.cancel-round {
-    float: right;
-    font-weight: normal;    
-    margin-right: 2em;
-    margin-left: 0.5em;
-}
-.round-field {
-    float: left;
-    margin-right: 2em;
-    margin-bottom: 1em;
-}
-
-.add_fields {
-    width: 100%;
-    position: absolute;
-}
-.new-division {
-    margin-bottom: 4em;
-}
-.alert.custom-alert {
+.cancellation-link:hover {
     color: red;
 }
-.remove-division{
-  margin-bottom: 2em;
-  margin-top: 2em;
+.division-name label{
+    position: relative;
+}
+.start-time {
+  color: #CC1E1E;
+}
+.start-date {
+  color: #000;
+}
+#update-tournament {
+  width: 100%;
+  height: 4em;
 }
 
-.division-name-field h4 > div > div > input {
-    width: 14em;
+.tournament_divisions_rounds__destroy label {
+    width: auto;
+    font-weight: normal;
+    margin-left: 0;
+}
+.small-text {
+  font-size:10px;
 }
 
+.hide-table {
+    display: none;
+}
+// Number the table rows
+
+
+table {
+    counter-reset: rowNumber;
+}
+
+.row-count {
+    counter-increment: rowNumber;
+    cursor: pointer;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber) - 1;
+    min-width: 1em;
+    margin-right: 0.5em;
+}
+.hide-this{
+  display: none;
+}
+.remove_fields.are-you-sure {
+    color: red;
+}
+.control-group.boolean.optional.tournament_divisions__destroy.single-checkbox {
+    float: right;
+    position: relative;
+    width: 240px;
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830085517) do
+ActiveRecord::Schema.define(:version => 20130903205725) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -24,9 +24,11 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
   end
 
   create_table "brackets", :force => true do |t|
-    t.datetime "starttime"
     t.string   "name"
     t.integer  "round_id"
+    t.integer  "division_id"
+    t.datetime "starttime"
+    t.string   "start_time_string"
   end
 
   create_table "cards", :force => true do |t|
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
     t.integer "debater_id"
     t.integer "tournament_id"
     t.string  "division"
+    t.integer "division_id"
   end
 
   create_table "critiques", :force => true do |t|
@@ -78,16 +81,17 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
-    t.string   "division"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "division_id"
   end
 
   create_table "judges", :force => true do |t|
@@ -104,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
   end
 
   create_table "matches", :force => true do |t|
-    t.integer "bracket_id"
   end
 
   create_table "organizers", :force => true do |t|
@@ -129,8 +132,13 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "round_brackets", :force => true do |t|
+    t.datetime "starttime"
+    t.integer  "round_id"
+    t.integer  "bracket_id"
+  end
+
   create_table "rounds", :force => true do |t|
-    t.integer "tournament_id"
     t.integer "order"
     t.integer "division_id"
     t.string  "kind"
@@ -186,6 +194,10 @@ ActiveRecord::Schema.define(:version => 20130830085517) do
     t.datetime "updated_at",     :null => false
     t.text     "summary"
     t.integer  "points"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "social_email"
+    t.string   "website"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"

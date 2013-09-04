@@ -7,36 +7,37 @@
 		<% if f.error_messages.match("error") %>
 			<div class="alert alert-danger"><%= f.error_messages %></div>
 		<% end %>
-	
-	
+
+
 		<ul class="nav nav-tabs">
 		  <li class="active"><a href="#intro" class="tabBar" data-toggle="tab" id="introTab">Introduction</a></li>
-		  <li><a href="#summary" class="tabBar" data-toggle="tab" id="summaryTab">Tournament Summary</a></li>
-		  <li><a href="#details" class="tabBar" data-toggle="tab" id="detailsTab">Tournament Details</a></li>
-		  <li><a href="#rules" class="tabBar" data-toggle="tab" id="rulesTab">Tournament Rules</a></li>
-		  <li><a href="#confirmation" class="tabBar" data-toggle="tab" id="confirmTab">Final Confirmation</a></li>
+		  <li><a href="#summary" class="tabBar" data-toggle="tab" id="summaryTab">Basic Settings</a></li>
+
+		  <li><a href="#overview" class="tabBar" data-toggle="tab" id="overviewTab">Overview</a></li>
+
+		  <li><a href="#settings-guides" class="tabBar" data-toggle="tab" id="settingsTab"> Settings and Guidelines</a></li>
+
+		  <li><a href="#final-confirmation" class="tabBar" data-toggle="tab" id="confirmTab">Final Confirmation</a></li>
 		</ul>
-		
+
 		<!-- TODO: Use EmberJS to provide a LivePreview of final details in a Preview tab (last tab) before submitting -->
-		
-		<div class="tab-content">  
-	
+
+		<div class="tab-content">
+
 		  <div class="tab-pane fade active in" id="intro">
-		 	<h2>Info on what it takes to organize a tournament, how it works, etc.</h2>	
+		 	<h2>Info on what it takes to organize a tournament, how it works, etc.</h2>
 			<p>
 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 			</p>
-			
-			<a class="tab-summary btn btn-large btn-primary" data-toggle="tab" href="#summary">Start Organizing your Tournament</a> 	
+
+			<a class="tab-summary btn btn-large btn-primary" data-toggle="tab" href="#summary">Start Organizing your Tournament</a>
 		  </div>
-		<div class="tab-pane fade" id="summary">
-		  
-		<%= render 'form', :f => f  %>
-	
-		<% end %>
 
-	<% else %>
+		  <div class="tab-pane fade" id="summary">
 
+		  <%= render 'form', :f => f  %>
+
+	<% end %>
+<% else %>
 	<h3>Sign in to create a tournament</h3>
-	
 <% end %>

@@ -6,8 +6,6 @@ gem 'dynamic_form', '1.1.4'
 
 gem 'paperclip', '2.7.0'
 
-gem "heroku"
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -27,7 +25,6 @@ gem 'omniauth-google-oauth2'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
 
 
 gem 'jquery-rails'
@@ -51,7 +48,8 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # gem 'debugger'
 
 group :production, :staging do
-	gem 'pg'
+  gem 'activerecord-mysql2-adapter'
+  gem 'mysql2'
 end
 
 group :test, :development do

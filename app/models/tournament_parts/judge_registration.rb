@@ -1,5 +1,5 @@
 class JudgeRegistration < ActiveRecord::Base
-  attr_accessible :division
+  attr_accessible :division_id
   belongs_to :judge
   belongs_to :tournament
   belongs_to :division
@@ -12,5 +12,5 @@ class JudgeRegistration < ActiveRecord::Base
       jr.division = division
     end
   end
-    
+
 end

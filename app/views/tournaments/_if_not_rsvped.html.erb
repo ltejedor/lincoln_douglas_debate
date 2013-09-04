@@ -3,16 +3,16 @@
 
  			 <% if competitor %>
  			 	<% @competitor = current_user.as_competitor(@tournament) %>
-			  	You have registered to attend this tournament as a <%= @competitor.division %> debater!
+			  	You have registered to attend this tournament as a <b><%= @competitor.division.name %> debater</b>!
 			  	Check back during the tournament to see where you need to go, or<br>
-			  	<%= link_to 'cancel your registration', [@tournament, @competitor], :method => :delete, 
+			  	<%= link_to 'cancel your registration', [@tournament, @competitor], :method => :delete,
 			  		:confirm => "Are you sure you want to cancel your registration?" %>.
 			 <% elsif judge_registration %>
 			 	<% @judge_registration = current_user.as_judge_registration(@tournament) %>
-				 You have registered to attend this tournament as a <%= @judge_registration.division %> judge!
+				 You have registered to attend this tournament as a <b><%= @judge_registration.division.name %> judge</b>!
 				 Check back during the tournament to see where you need to go, or<br>
-			  	 <%= link_to 'cancel your registration', [@tournament, @judge_registration], :method => :delete, :confirm => "Are you sure you want to cancel your registration?" %>.		  	
-			  	 				 
+			  	 <%= link_to 'cancel your registration', [@tournament, @judge_registration], :method => :delete, :confirm => "Are you sure you want to cancel your registration?" %>.
+
 			 <% else %>
 			 	<%= render form %>
 			 <% end %>

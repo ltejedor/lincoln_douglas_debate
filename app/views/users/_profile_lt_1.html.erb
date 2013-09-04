@@ -1,0 +1,54 @@
+    <div class="user-container">
+      <div class="points-bar btn-info"><h4><b style="color: #FFF;font-size:36px;"><%= (@user.points.to_s unless @user.points.blank?) || 0 %>
+      </b>  points</h4></div>
+    </div>
+    <div class="user-container">
+      <p class="lead">Achievements</p>
+
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/goblet.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="Nuts for the Negative"><%= image_tag 'symbly_gamification_badges/acorn.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="Midnight Researcher"><%= image_tag 'symbly_gamification_badges/coffee.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="Top Question Contributor"><%= image_tag 'symbly_gamification_badges/lightbulb.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/goblet.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/badge.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/badge.png', class: 'achievement-icon' %></span>
+      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/badge.png', class: 'achievement-icon' %></span>
+    </div>
+    <hr class="divider">
+    <div class="recent-activity">
+
+      <p class="lead">Recent Activity</p>
+      <p>asdfasdfadsfadsfads asd;flkjasdl;fjaf </p>
+    </div>
+    <hr class="divider">
+    <div class="user-container">
+
+      <% unless @user.googleplus.nil? %>
+        <a href="<%= @user.googleplus%>">
+          <span class="user-social"><%= image_tag 'googleplus_icon_black.png', class: 'icon' %>Google+</span>
+        </a>
+      <% end %>
+      <% unless @user.facebook.nil? %>
+        <a href="<%= @user.facebook%>">
+          <span class="user-social"><%= image_tag 'facebook_icon_black.png', class: 'icon' %>Facebook</span>
+          </a>
+      <% end %>
+      <% unless @user.twitter.nil? %>
+        <a href="<%= @user.twitter%>">
+          <span class="user-social"><%= image_tag 'twitter_icon_black.png', class: 'icon' %>Twitter</span>
+        </a>
+      <% end %>
+      <% unless @user.social_email.nil? %>
+        <a href="mailto:<%= @user.social_email%>">
+          <span class="user-social"><%= image_tag 'email_icon_black.png', class: 'icon' %>Email</span>
+        </a>
+      <% end %>
+      <% unless @user.website.nil? %>
+        <a href="<%= @user.website%>">
+          <span class="user-social"><%= image_tag 'website_icon_black.png', class: 'icon' %>My Website</span>
+        </a>
+      <% end %>
+    </div>
+
+
+    <!-- TODO: User attributes -->

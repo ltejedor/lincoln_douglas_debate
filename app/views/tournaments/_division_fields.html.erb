@@ -1,28 +1,80 @@
-<fieldset>
-<div class="division-form">
-		<div class="division-name-field">
-			<h4><%= f.input :name, label: false, placeholder: 'Division Name', error: false %></h4>
-			<%= f.hidden_field :_destroy %>
-<%= link_to 'Cancel this division and all of its rounds', '#', class: 'remove_fields remove-division' %>
-	
-		</div>	
-		<p>Rounds must have 1 or more brackets.</p>
+		<fieldset>
 
-		<div class="round-form">
-			<div class="set-rounds">
-			<ol>
-						<%= f.simple_fields_for :rounds do |round| %>
-									<%= render 'round_fields', f: round %>
+	  <div class="panel panel-default <%= "new-division" if f.object.name.blank? %>">
+
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle <%= "new-division-link" if f.object.name.blank? %>" data-toggle="collapse" data-parent="#accordion" href="#collapse-<%=f.object.id || 'dynamic_time' %>">
+	          <%= (f.object.name unless f.object.name.blank?) || 'New Division' %>
+	        </a>
+	      </h4>
+	    </div>
+
+	    <div id="collapse-<%=f.object.id || 'dynamic_time' %>" class="panel-collapse collapse">
+	      <div class="panel-body">
+	      	<div class="row">
+					  <div class="col-md-7 division-name">
+			      	<%= f.input :name, label: '(Re)name:', placeholder: 'Division Name', error: false, hint: 'Unnamed divisions will be deleted upon updating tournament, including their rounds and any division registrations for judges and competitors.' %></h4><br><!-- TODO: should registrations be deleted also? Or kept somehow and managed? -->
+					  </div>
+						<div class="col-md-5 cancellation cancellation-link">
+							<%= link_to 'Delete entire division, registrations, and rounds.', '#', :class => 'remove_fields_division' %><br>
+							<%= f.hidden_field :_destroy %>
+							<%= link_to 'Are you sure? Click here to confirm.', '#', :class => 'remove_fields hide-this are-you-sure' %>
+						</div>
+	      	</div>
+
+<!-- TODO: AJAXy division naming updates panel heading as well. Same with round kinds and bracket times -->
+
+   <% num_brackets = set_num_brackets(f) %>
+
+
+    	<span class="info">Click to edit.</span>
+					<table class="table table-hover table-responsive">
+						<tr>
+							<th>#</th>
+							<th>Round</th>
+			<% if num_brackets <= 1 %>
+							<th>Start Time</th>
+			<% else %>
+				<% for i in (1..num_brackets) %>
+							<th><%=i.ordinalize%> Bracket</th>
+				<% end %>
+			<% end %>
+					</tr>
+						<% f.object.rounds.each.with_index do |round, index| %>
+
+							<%= f.simple_fields_for :rounds, round do |fr| %>
+								<%= render 'round_fields', f: fr, num_brackets: num_brackets, index: index %>
+							<% end %>
+
 						<% end %>
-						<!--TODO: Fix cancellation link movement; Be able to indicate when a round is over/ still going on. 
-							You should not be able to edit a done /existing round? -->
-							
-							
-				<%= link_to_add_fields 'Add round', f, :rounds %>			
-			</ol>
-			</div>	
-		</div>		
+					<tr class="row-count">
+						<td><!-- row index --></td>
+						<td>
+							<%= link_to_add_fields '+New Round', f, :rounds %>
+							<!-- TODO: For New Divisions, +New Round duplicates time value on #round-{dynamic_time} and therefore does not do the slide down correctly. Fix this! -->
+						</td>
+						<% if num_brackets > 0 %>
+							<% num_brackets.times do %>
+								<td></td>
+							<% end %>
+						<% else %>
+							<td></td>
+						<% end %>
+					</tr>
+					</table>
 
-</div>
 
-</fieldset>
+					<br>
+					<a class="btn" data-toggle="collapse" data-target="#collapse-<%= f.object.id || 'dynamic_time' %>">
+			  		Collapse
+					</a>
+
+	      </div>
+	    </div>
+
+	  </div>
+
+
+
+		</fieldset>

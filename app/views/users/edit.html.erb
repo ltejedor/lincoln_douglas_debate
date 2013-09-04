@@ -1,28 +1,36 @@
+<div id="user-<%= @user.id %>" class="user-profile">
+	<div class="row user">
 
-<!-- TODO: EDIT THIS -->
-<div class="user" id="user-<% @user.id %>">
-<div class="row">
-	<div class="col-md-2">
-		<!-- TODO: User attributes -->
-	</div>
-	<div class="col-md-7">
-		<div "user-image">
-			<%= image_tag(@user.image) %>
+		<section class="col-md-4 left-user-panel user-panel">
+			<%= render 'profile_lt_1' %>
+			<%= simple_form_for @user do |f| %>
+			<div class="social-fields">
+				<%= f.input :googleplus, label: 'Google+', input_html: {class: 'social-field'}, wrapper_html: {class: 'social-input'} %>
+				<%= f.input :facebook, input_html: {class: 'social-field'}, wrapper_html: {class: 'social-input'}  %>
+				<%= f.input :twitter, input_html: {class: 'social-field'}, wrapper_html: {class: 'social-input'}  %>
+				<%= f.input :social_email, input_html: {class: 'social-field'}, wrapper_html: {class: 'social-input'}%>
+				<%= f.input :website, input_html: {class: 'social-field'}, wrapper_html: {class: 'social-input'}  %>
 		</div>
-		<div class="user-summary">
-			<h4>Self-Summary</h4>
-			<%= simple_format(@user.summary) %>			
-		</div>
-		<% unless @user.judge.paradigm.blank? %>
-			<div class="user-paradigm">
-				<h4>Judging Paradigm</h4>
-				<%= simple_format(@user.judge.paradigm) %>
+		</section>
+		<section class="col-md-8 middle-user-panel user-panel">
+			<%= render 'profile_ctr_1' %>
+	    <div class="user-field user-summary">
+	      <h4>Self-Summary</h4>
+					<%= f.text_area :summary, label: false, rows: '10' %>
 			</div>
-		<% end %>
-	</div>
-	<div class="col-md-3">
-		<h4>Recent Activity</h4>
-		<!-- TODO: recent activity for user -->
+			<% unless Judge.where(user_id: current_user.id).first.nil? %>
+			<hr class="divider">
+			<div class="user-field user-paradigm">
+				<h4>Judging Paradigm</h4>
+			  	<%= f.simple_fields_for :judge do |j| %>
+			  		<%= j.text_area :paradigm, label: false, rows: '10',
+					  		placeholder: 'Describe your judging preferences and how you evaluate debaters as a judge.' %>
+				  <%  end %>
+			</div>
+			<% end %>
+				<%= f.button :submit, :class => 'user-field btn-primary', :id => 'update-tournament' %>
+			<% end %>
+	  </section>
 	</div>
 </div>
-</div>
+
