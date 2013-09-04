@@ -1,6 +1,6 @@
 <div class="tournament-detail">
 
-<% unless @tournament.organizer.nil? %>
+<% unless @tournament.organizer.nil? || @tournament.organizer.user != current_user %>
 	<div class="row">
 		<div class="tournament-dashboard col-md-12">
 			<h3>Organizer Dashboard</h3>
