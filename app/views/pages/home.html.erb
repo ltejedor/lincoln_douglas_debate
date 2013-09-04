@@ -100,8 +100,16 @@
 						<!-- TODO: Infinite Scroll -->
 					</ul>
 					<a class="float-right" href="#">See all cards.</a><br>
-					<h3 class="lead">Connections</h3>
-					None
+					<div class="connections-container">
+						<h3 class="lead">Connections</h3>
+						<!-- TODO: Filter for friends -->
+						<% User.all.each do |user| %>
+						<% user_image = ("empty_profile.png" if user.image.blank?) || user.image %>
+							<span class="connection" data-toggle="tooltip" data-placement="bottom" data-original-title="<%= user.name %>">
+								<%= link_to image_tag(user_image, alt: user.name, class: 'profile-thumbnail-md'), user_path(user) %>
+							</span>
+						<% end %>
+					</div>
 				</div>
 			</div>
 		</div>

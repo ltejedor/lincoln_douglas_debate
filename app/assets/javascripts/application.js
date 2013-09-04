@@ -43,8 +43,9 @@ function remove_fields(link) {
   $(link).up(".fields").hide();
 }
 
-// Tooltips over badges (achievements)
+// Tooltips
 $('.achievement').tooltip()
+$('.connection').tooltip()
 
 // TODO: Prevent Navbar overlap on div below.
 // (Navbar currently overlaps content while changing in size)
