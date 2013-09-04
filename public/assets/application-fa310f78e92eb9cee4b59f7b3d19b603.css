@@ -2933,8 +2933,8 @@ input[type="button"].btn-block {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(/assets/twitter/glyphicons-halflings-regular.eot);
-  src: url(/assets/twitter/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(/assets/twitter/glyphicons-halflings-regular.woff) format("woff"), url(/assets/twitter/glyphicons-halflings-regular.ttf) format("truetype"), url(/assets/twitter/glyphicons-halflings-regular.svg#glyphicons-halflingsregular) format("svg");
+  src: url(/assets/twitter/glyphicons-halflings-regular-a976b4f46980969d9792e0ff9f3afc17.eot);
+  src: url(/assets/twitter/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(/assets/twitter/glyphicons-halflings-regular-c866ecc8bb1c848e2a8557b67499891d.woff) format("woff"), url(/assets/twitter/glyphicons-halflings-regular-b7248b70474d970f596df264c4f9b5ab.ttf) format("truetype"), url(/assets/twitter/glyphicons-halflings-regular.svg#glyphicons-halflingsregular) format("svg");
 }
 
 /* line 21, ../../../../../.rvm/gems/ruby-2.0.0-p247/gems/anjlab-bootstrap-rails-3.0.0.2/app/assets/stylesheets/twitter/bootstrap/_glyphicons.scss */
