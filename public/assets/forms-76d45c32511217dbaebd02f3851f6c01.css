@@ -1,0 +1,105 @@
+/* line 1, ../../app/assets/stylesheets/forms.css.scss */
+.bracket-filler {
+  color: #ddd;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* line 6, ../../app/assets/stylesheets/forms.css.scss */
+.info {
+  font-size: 11px;
+  color: #A2A2A2;
+  font-style: italic;
+  float: right;
+}
+
+/* line 12, ../../app/assets/stylesheets/forms.css.scss */
+.cancellation {
+  text-align: right;
+}
+
+/* line 15, ../../app/assets/stylesheets/forms.css.scss */
+.cancellation-link {
+  color: #CEABAB;
+  float: right;
+  font-size: 12px;
+  min-width: 11em;
+}
+
+/* line 21, ../../app/assets/stylesheets/forms.css.scss */
+.cancellation-link:hover {
+  color: red;
+}
+
+/* line 24, ../../app/assets/stylesheets/forms.css.scss */
+.division-name label {
+  position: relative;
+}
+
+/* line 27, ../../app/assets/stylesheets/forms.css.scss */
+.start-time {
+  color: #CC1E1E;
+}
+
+/* line 30, ../../app/assets/stylesheets/forms.css.scss */
+.start-date {
+  color: #000;
+}
+
+/* line 33, ../../app/assets/stylesheets/forms.css.scss */
+#update-tournament {
+  width: 100%;
+  height: 4em;
+}
+
+/* line 38, ../../app/assets/stylesheets/forms.css.scss */
+.tournament_divisions_rounds__destroy label {
+  width: auto;
+  font-weight: normal;
+  margin-left: 0;
+}
+
+/* line 43, ../../app/assets/stylesheets/forms.css.scss */
+.small-text {
+  font-size: 10px;
+}
+
+/* line 47, ../../app/assets/stylesheets/forms.css.scss */
+.hide-table {
+  display: none;
+}
+
+/* line 53, ../../app/assets/stylesheets/forms.css.scss */
+table {
+  counter-reset: rowNumber;
+}
+
+/* line 57, ../../app/assets/stylesheets/forms.css.scss */
+.row-count {
+  counter-increment: rowNumber;
+  cursor: pointer;
+}
+
+/* line 62, ../../app/assets/stylesheets/forms.css.scss */
+table tr td:first-child::before {
+  content: counter(rowNumber)-1;
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+/* line 67, ../../app/assets/stylesheets/forms.css.scss */
+.hide-this {
+  display: none;
+}
+
+/* line 70, ../../app/assets/stylesheets/forms.css.scss */
+.remove_fields.are-you-sure {
+  color: red;
+}
+
+/* line 73, ../../app/assets/stylesheets/forms.css.scss */
+.control-group.boolean.optional.tournament_divisions__destroy.single-checkbox {
+  float: right;
+  position: relative;
+  width: 240px;
+}

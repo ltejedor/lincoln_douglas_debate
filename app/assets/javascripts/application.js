@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require forms
 //= require gplus
+//= require tree .
 //= require twitter/bootstrap
 
 

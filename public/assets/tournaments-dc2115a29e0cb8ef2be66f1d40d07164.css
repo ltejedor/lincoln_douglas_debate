@@ -1,0 +1,139 @@
+/* line 1, ../../app/assets/stylesheets/tournaments.css.scss */
+#tournaments-index {
+  margin: 3em;
+}
+
+/* line 6, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-detail {
+  margin: 3em;
+}
+
+/* line 10, ../../app/assets/stylesheets/tournaments.css.scss */
+#upcoming-header {
+  text-align: center;
+}
+
+/* line 16, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-item {
+  margin-bottom: 3em;
+  height: 750px;
+  overflow: auto;
+}
+
+/* line 22, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-date {
+  color: #838383;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+/* line 28, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-image {
+  width: 100%;
+  margin: 0;
+}
+
+/* line 33, ../../app/assets/stylesheets/tournaments.css.scss */
+.crop {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 38, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-btn {
+  background-color: #8d3e02 !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f16a03", endColorstr="#8c3e02");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f16a03), to(#8c3e02));
+  background-image: -moz-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -ms-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f16a03), color-stop(100%, #8c3e02));
+  background-image: -webkit-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: -o-linear-gradient(top, #f16a03, #8c3e02);
+  background-image: linear-gradient(#f16a03, #8c3e02);
+  border-color: #8c3e02 #8c3e02 #743302;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+  margin: 10px;
+}
+
+/* line 55, ../../app/assets/stylesheets/tournaments.css.scss */
+.msg-btn {
+  background-color: #0C5BC9 !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0C5BC9", endColorstr="#19437D");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#0c5bc9), to(#19437d));
+  background-image: -moz-linear-gradient(top, #0c5bc9, #19437d);
+  background-image: -ms-linear-gradient(top, #0c5bc9, #19437d);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0c5bc9), color-stop(100%, #19437d));
+  background-image: -webkit-linear-gradient(top, #0c5bc9, #19437d);
+  background-image: -o-linear-gradient(top, #0c5bc9, #19437d);
+  background-image: linear-gradient(#0c5bc9, #19437d);
+  border-color: #19437D #19437D #0C5BC9;
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased;
+  margin: 10px;
+}
+
+/* line 73, ../../app/assets/stylesheets/tournaments.css.scss */
+.panel-group {
+  margin-bottom: 15px;
+}
+
+/* line 77, ../../app/assets/stylesheets/tournaments.css.scss */
+.rsvp {
+  padding: 15px;
+  background-color: #ddd;
+  border: solid 1px #BBB;
+  border-radius: 4px;
+}
+
+/* line 84, ../../app/assets/stylesheets/tournaments.css.scss */
+.rsvp-tab {
+  background-color: #93D4FF;
+  color: #000;
+}
+
+/* line 89, ../../app/assets/stylesheets/tournaments.css.scss */
+.rsvp-tab:hover {
+  background-color: #B2DAFF;
+}
+
+/* line 93, ../../app/assets/stylesheets/tournaments.css.scss */
+.rsvp-content.tab-pane.active {
+  background-color: white;
+  border: solid 1px #ddd;
+  padding: 15px;
+  border-top-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* line 102, ../../app/assets/stylesheets/tournaments.css.scss */
+.tab-width {
+  width: 40%;
+}
+
+/* line 106, ../../app/assets/stylesheets/tournaments.css.scss */
+.input.select.optional.debater_level {
+  margin: 2.5em;
+}
+
+/* line 112, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-summary-field {
+  maxlength: 500;
+}
+
+/* line 115, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-name-field {
+  maxlength: 70;
+}
+
+/* line 122, ../../app/assets/stylesheets/tournaments.css.scss */
+.tournament-dashboard {
+  background-color: #ddd;
+  padding: 1em;
+}
