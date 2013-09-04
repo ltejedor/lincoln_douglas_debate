@@ -49,7 +49,7 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 group :production, :staging do
   gem 'activerecord-mysql2-adapter'
-  gem 'mysql2'
+  gem 'pg'
 end
 
 group :test, :development do
