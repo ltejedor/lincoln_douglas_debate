@@ -1,9 +1,8 @@
 class JudgeRegistration < ActiveRecord::Base
-  attr_accessible :division
+  attr_accessible :division_id
   belongs_to :judge
   belongs_to :tournament
-  
-  validates :division, :presence => true
+  belongs_to :division
 
 
   def self.create_judge_registration(user,tourney,division)
@@ -12,7 +11,6 @@ class JudgeRegistration < ActiveRecord::Base
       jr.tournament = tourney
       jr.division = division
     end
-    @jr
   end
-    
+
 end
