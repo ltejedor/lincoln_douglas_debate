@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903205725) do
+ActiveRecord::Schema.define(:version => 20130904235315) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -43,13 +43,13 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
 
   create_table "cases", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description",   :limit => 255
     t.text     "content"
     t.string   "response_type"
     t.boolean  "anon"
     t.integer  "resolution_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "cases", ["resolution_id"], :name => "index_cases_on_resolution_id"
