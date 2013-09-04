@@ -29,3 +29,9 @@
 .dashboard-carousel-bg{
   background-image:url('http://www.userlogos.org/files/backgrounds/macleod.mac/slate.jpg');
 }
+.dashboard-carousel.carousel-inner > .item {
+  background-size: auto 100%;
+  background-position: center top;
+  background-repeat: repeat;
+    background-attachment: fixed;
+}

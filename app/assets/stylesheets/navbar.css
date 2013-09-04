@@ -89,6 +89,11 @@ a:focus {
 }
 #messages-icon {
     position: absolute;
-    right: 234px;
+    right: 223px;
+    top: 5px;
+}
+#notifications-icon {
+    position: absolute;
+    right: 290px;
     top: 5px;
 }
