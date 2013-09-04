@@ -61,6 +61,7 @@ module Lincolndouglas
 
     config.autoload_paths += Dir["#{config.root}/app/models/**/"]
 
-
+    # Heroku requires this to be false
+    config.assets.initialize_on_precompile=false
   end
 end
