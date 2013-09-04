@@ -48,13 +48,11 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # gem 'debugger'
 
 group :production, :staging do
-  gem 'activerecord-mysql2-adapter'
   gem 'pg'
 end
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
-	gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
 end
 
 group :test do
