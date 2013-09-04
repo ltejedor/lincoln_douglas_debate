@@ -7652,14 +7652,55 @@ td.visible-print {
     display: none !important;
   }
 }
-/* line 128, ../../app/assets/stylesheets/application.css.scss */
+/* line 126, ../../app/assets/stylesheets/application.css.scss */
 .carousel-indicators {
   z-index: 14;
 }
 
-/* line 132, ../../app/assets/stylesheets/application.css.scss */
+/* line 130, ../../app/assets/stylesheets/application.css.scss */
 .simple_form label {
   width: auto;
+}
+/* line 8, ../../app/assets/stylesheets/cards.css.scss */
+.card-body {
+  font-size: 12px;
+}
+
+/* line 11, ../../app/assets/stylesheets/cards.css.scss */
+.card-author {
+  font-size: 12px;
+  color: #929292;
+}
+
+/* line 15, ../../app/assets/stylesheets/cards.css.scss */
+.card-date {
+  float: right;
+  font-size: 10px;
+}
+
+/* line 19, ../../app/assets/stylesheets/cards.css.scss */
+.card-expand {
+  font-size: 12px;
+}
+
+/* line 22, ../../app/assets/stylesheets/cards.css.scss */
+.card-title {
+  font-weight: bold;
+}
+
+/* line 26, ../../app/assets/stylesheets/cards.css.scss */
+.card-star {
+  float: right;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 31, ../../app/assets/stylesheets/cards.css.scss */
+.card-star:hover {
+  background-image: url("bullets/bullet_star_gold.png");
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-position: right top;
 }
 /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -7953,8 +7994,8 @@ body {
   background-image:url('http://www.absolutefiction.com/wp-content/uploads/2012/06/abraham-lincoln-vampire-hunter-13.jpg');
 }
 
-.profile-thumbnail-lg {
-  width: 7em;
+#profile-thumbnail-lg {
+  width: 9em;
 }
 
 .border {
@@ -7962,14 +8003,37 @@ body {
 }
 .dashboard-container {
   padding: 2em;
-  border-radius: 14px;
-  margin: 10px;
   height: 100em;
+  background-color: #FCFCFC;
 }
-
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+.dashboard {
+  max-width: 1500px;
+}
+.dashboard-container .user-container {
+  margin-bottom: 1.5em;
+}
+
+/* *********************  Left ******************* */
+
+.achievement-icon-sm span > img{
+  width: 4.7em;
+}
+.tournament-list{
+    list-style-image: url('bullets/bullet_trophy.png');
+}
+.user-container .list-group-item:hover {
+    background-color: #E2F6FF;
+}
+
+/* ********************** Right ****************** */
+
+.trending {
+    max-height: 48em;
+    overflow: auto;
 }
 .dashboard-carousel.caption-box{
   background: rgba(59, 58, 64, 0.6);
@@ -8001,6 +8065,12 @@ body {
 
 .dashboard-carousel-bg{
   background-image:url('http://www.userlogos.org/files/backgrounds/macleod.mac/slate.jpg');
+}
+.dashboard-carousel.carousel-inner > .item {
+  background-size: auto 100%;
+  background-position: center top;
+  background-repeat: repeat;
+    background-attachment: fixed;
 }
 /* line 1, ../../app/assets/stylesheets/forms.css.scss */
 .bracket-filler {
@@ -8209,7 +8279,12 @@ a:focus {
 }
 #messages-icon {
     position: absolute;
-    right: 234px;
+    right: 223px;
+    top: 5px;
+}
+#notifications-icon {
+    position: absolute;
+    right: 290px;
     top: 5px;
 }
 /* line 1, ../../app/assets/stylesheets/tournaments.css.scss */
@@ -8232,28 +8307,29 @@ a:focus {
   margin-bottom: 3em;
   height: 750px;
   overflow: auto;
+  overflow-y: hidden;
 }
 
-/* line 22, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 23, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-date {
   color: #838383;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-/* line 28, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 29, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-image {
   width: 100%;
   margin: 0;
 }
 
-/* line 33, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 34, ../../app/assets/stylesheets/tournaments.css.scss */
 .crop {
   width: 100%;
   overflow: hidden;
 }
 
-/* line 38, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 39, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-btn {
   background-color: #8d3e02 !important;
   background-repeat: repeat-x;
@@ -8272,7 +8348,7 @@ a:focus {
   margin: 10px;
 }
 
-/* line 55, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 56, ../../app/assets/stylesheets/tournaments.css.scss */
 .msg-btn {
   background-color: #0C5BC9 !important;
   background-repeat: repeat-x;
@@ -8291,12 +8367,12 @@ a:focus {
   margin: 10px;
 }
 
-/* line 73, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 74, ../../app/assets/stylesheets/tournaments.css.scss */
 .panel-group {
   margin-bottom: 15px;
 }
 
-/* line 77, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 78, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp {
   padding: 15px;
   background-color: #ddd;
@@ -8304,18 +8380,18 @@ a:focus {
   border-radius: 4px;
 }
 
-/* line 84, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 85, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-tab {
   background-color: #93D4FF;
   color: #000;
 }
 
-/* line 89, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 90, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-tab:hover {
   background-color: #B2DAFF;
 }
 
-/* line 93, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 94, ../../app/assets/stylesheets/tournaments.css.scss */
 .rsvp-content.tab-pane.active {
   background-color: white;
   border: solid 1px #ddd;
@@ -8326,27 +8402,27 @@ a:focus {
   border-top-right-radius: 5px;
 }
 
-/* line 102, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 103, ../../app/assets/stylesheets/tournaments.css.scss */
 .tab-width {
   width: 40%;
 }
 
-/* line 106, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 107, ../../app/assets/stylesheets/tournaments.css.scss */
 .input.select.optional.debater_level {
   margin: 2.5em;
 }
 
-/* line 112, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 113, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-summary-field {
   maxlength: 500;
 }
 
-/* line 115, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 116, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-name-field {
   maxlength: 70;
 }
 
-/* line 122, ../../app/assets/stylesheets/tournaments.css.scss */
+/* line 123, ../../app/assets/stylesheets/tournaments.css.scss */
 .tournament-dashboard {
   background-color: #ddd;
   padding: 1em;
