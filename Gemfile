@@ -49,7 +49,7 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # gem 'debugger'
 
 group :production, :staging do
-
+  gem 'mysql2'
 end
 
 group :test, :development do
