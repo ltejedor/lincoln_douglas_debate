@@ -49,8 +49,8 @@ respond.min.js: respond.min-7a7808578a3f95d6ddca496358471c4d.js
 respond/index.min.js: respond.min-7a7808578a3f95d6ddca496358471c4d.js
 uglify.js: uglify-20273b8087bb6a4d82b12d96042b3a6c.js
 uglify/index.js: uglify-20273b8087bb6a4d82b12d96042b3a6c.js
-application.css: application-9a89fd33cc6b1d76da4260320f18033e.css
-application/index.css: application-9a89fd33cc6b1d76da4260320f18033e.css
+application.css: application-9492c0e87bbc8352e8464e55d2531724.css
+application/index.css: application-9492c0e87bbc8352e8464e55d2531724.css
 cards.css: cards-672b105e77ac94ccb69c20f63b765848.css
 cards/index.css: cards-672b105e77ac94ccb69c20f63b765848.css
 carousel.css: carousel-2352b0c12217bc175e3ea6f9c6bff362.css
@@ -77,8 +77,8 @@ jquery-ui-timepicker-addon.css: jquery-ui-timepicker-addon-9b7b847cc43dc4bdd764d
 jquery-ui-timepicker-addon/index.css: jquery-ui-timepicker-addon-9b7b847cc43dc4bdd764d1a6bfe19e33.css
 judge_registrations.css: judge_registrations-1b13569e9620782f423d4cd3ce931750.css
 judge_registrations/index.css: judge_registrations-1b13569e9620782f423d4cd3ce931750.css
-navbar.css: navbar-43da369412deb4723f57e60f34e4d99e.css
-navbar/index.css: navbar-43da369412deb4723f57e60f34e4d99e.css
+navbar.css: navbar-0180030295319464611e93f008a15990.css
+navbar/index.css: navbar-0180030295319464611e93f008a15990.css
 resolutions.css: resolutions-1b13569e9620782f423d4cd3ce931750.css
 resolutions/index.css: resolutions-1b13569e9620782f423d4cd3ce931750.css
 sessions.css: sessions-1b13569e9620782f423d4cd3ce931750.css
