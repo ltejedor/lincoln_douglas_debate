@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'formtastic'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'uglifier'
 
 
 # Gems used only for assets and not required
