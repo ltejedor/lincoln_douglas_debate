@@ -4,19 +4,14 @@ li a {
 .profile-thumbnail {
   width: 30px;
 }
-#current-user {
-	margin-left: 10px;
-	margin-right: 10px;
-}
-#account-menu {
-	float:right;
-}
+
 .navbar-nav {
 	float: left;
 
 }
 
 /* NAV BAR FIXES */
+
 
 .navbar-nav > li > a:hover {
     background-color: inherit;
@@ -42,24 +37,6 @@ a:focus {
 	margin: 5px;
 }
 
-/* Sign-In Button or Account Menu */
-
-#signin-account {
-    position: absolute;
-    right: 30px;
-    top: 2px;
-}
-
-#profile-dropdown{
-	position: absolute;
-	right: 45px;
-	top: 2px
-}
-
-
-.signinbutton {
-    margin-top: 5px;
-}
 /* Logo */
 
 #logo {
@@ -68,6 +45,18 @@ a:focus {
 }
 #logo:hover {
     color: #FF8F00;
+}
+
+
+/* Right-Nav Bar */
+
+.nav.navbar-nav.nav-right {
+    float: right;
+}
+
+#profile-dropdown{
+    position: relative;
+    bottom: 3px;
 }
 
 /* Small screen menu icon bars */
@@ -83,17 +72,8 @@ a:focus {
     color:  white;
     border: none;
     color: #428BCA;
+    margin-left: 10px;
 }
 .messages-btn:hover {
     color: #FF8F00;
-}
-#messages-icon {
-    position: absolute;
-    right: 223px;
-    top: 5px;
-}
-#notifications-icon {
-    position: absolute;
-    right: 290px;
-    top: 5px;
 }

@@ -13,8 +13,7 @@
             </div>
             <div class="navbar-collapse collapse">
             	<!-- TODO: Change the "active" class each time a link is clicked-->
-              <ul class="nav navbar-nav">
-              	<!-- TODO: Replace dummy links with links to pages -->
+              <ul class="nav navbar-nav nav-left">
                 <li class="active"><a id="logo" href="/"><%= image_tag "logo_icon.png" %> LDD</a></li>
                 <% if current_user.nil? %>
 	                <li><%= link_to "About", "/#about" %></li>
@@ -24,7 +23,9 @@
                 <!-- TODO: Replace dummy links with links to pages -->
                 <li><%= link_to "Case Exchange", resolutions_path %></li>
                 <li><%= link_to "Card Exchange", topics_path %></li>
+              </ul>
 
+              <ul class="nav navbar-nav nav-right">
 				<% if current_user %>
                 <li id="notifications-icon"><button type="button" class="messages-btn"><span class="glyphicon glyphicon-flash"></span> · <span class="badge">5</span></button></li>
                 <li id="messages-icon"><button type="button" class="messages-btn"><span class="glyphicon glyphicon-comment"></span> · <span class="badge">14</span></button></li>
@@ -45,20 +46,15 @@
                   	<li><a href="<%= user_path(current_user) %>">View Profile</a></li>
                     <li><a href="<%= edit_user_path(current_user) %>">Edit Profile</a></li>
                     <hr>
-
-                    <!-- TODO: Replace dummy links with links to pages -->
                     <li><%= link_to "Sign out", signout_path %></li>
-
                  </ul>
 					<% else %>
 	             <li id="signin-account"><%= link_to image_tag("signin_button.png", class: "signinbutton", id: "signin-account"), "/auth/google_oauth2" %>
-					<% end %>
                 </li>
-                <!-- TODO: Replace dummy links with links to pages -->
+					<% end %>
               </ul>
             </div>
-          </div>
         </div>
-
       </div>
     </div>
+  </div>
