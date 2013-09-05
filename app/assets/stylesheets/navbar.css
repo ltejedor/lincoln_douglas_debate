@@ -59,6 +59,15 @@ a:focus {
     bottom: 3px;
 }
 
+#username {
+    margin-right: 10px;
+}
+
+@media (min-width: 765px) and (max-width: 1020px) {
+  #username {
+  display: none;
+}}
+
 /* Small screen menu icon bars */
 
 .icon-bar {
@@ -73,6 +82,7 @@ a:focus {
     border: none;
     color: #428BCA;
     margin-left: 10px;
+    margin-right: 10px;
 }
 .messages-btn:hover {
     color: #FF8F00;
