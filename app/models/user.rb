@@ -2,8 +2,10 @@ class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus,
                   :image, :last_name, :name, :provider, :uid, :verified_email,
                   :summary, :points, :judge_attributes,
-                  :facebook, :twitter, :social_email, :website
+                  :facebook, :twitter, :social_email, :website,
+                  :asset, :asset_url
   # TODO: Set time zone settings in Account Settings
+  has_attached_file :asset
   belongs_to :userable, polymorphic: true
 
   belongs_to :debater
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :judge
   belongs_to :organizer
 
-
+  # Set up permissions: only current user can edit their profile! Authorize
 
   belongs_to :author, polymorphic: true
 

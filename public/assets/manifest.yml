@@ -49,8 +49,8 @@ respond.min.js: respond.min-731b2f48646b1d7e96b605cba86b9367.js
 respond/index.min.js: respond.min-731b2f48646b1d7e96b605cba86b9367.js
 uglify.js: uglify-2c35689776882f5eb657ba73bc2d95ec.js
 uglify/index.js: uglify-2c35689776882f5eb657ba73bc2d95ec.js
-application.css: application-fa310f78e92eb9cee4b59f7b3d19b603.css
-application/index.css: application-fa310f78e92eb9cee4b59f7b3d19b603.css
+application.css: application-297335ceebbdb290e6a30c24a97cf56c.css
+application/index.css: application-297335ceebbdb290e6a30c24a97cf56c.css
 cards.css: cards-f02e49feff891ccd046965f82cda0304.css
 cards/index.css: cards-f02e49feff891ccd046965f82cda0304.css
 carousel.css: carousel-5fb124a4de919783d045c6beb55173a5.css
@@ -63,8 +63,8 @@ competitors.css: competitors-1b13569e9620782f423d4cd3ce931750.css
 competitors/index.css: competitors-1b13569e9620782f423d4cd3ce931750.css
 critiques.css: critiques-1b13569e9620782f423d4cd3ce931750.css
 critiques/index.css: critiques-1b13569e9620782f423d4cd3ce931750.css
-dashboard.css: dashboard-e31196d92b2f4b3c1fec4f8dd98116a0.css
-dashboard/index.css: dashboard-e31196d92b2f4b3c1fec4f8dd98116a0.css
+dashboard.css: dashboard-0f1b582eeb468488f665fc1c2468186c.css
+dashboard/index.css: dashboard-0f1b582eeb468488f665fc1c2468186c.css
 dashboard_carousel.css: dashboard_carousel-7fc06dd6d637fcf219bf9d0e85343e1b.css
 dashboard_carousel/index.css: dashboard_carousel-7fc06dd6d637fcf219bf9d0e85343e1b.css
 debaters.css: debaters-1b13569e9620782f423d4cd3ce931750.css
@@ -87,8 +87,8 @@ topics.css: topics-1b13569e9620782f423d4cd3ce931750.css
 topics/index.css: topics-1b13569e9620782f423d4cd3ce931750.css
 tournaments.css: tournaments-38a9c853aa34491aa89930654cffbe83.css
 tournaments/index.css: tournaments-38a9c853aa34491aa89930654cffbe83.css
-users.css: users-34bbf438b75d3ec6479fc68282335835.css
-users/index.css: users-34bbf438b75d3ec6479fc68282335835.css
+users.css: users-1736eaf2600e4883f2b260a5a4252f1c.css
+users/index.css: users-1736eaf2600e4883f2b260a5a4252f1c.css
 jquery.min.js: jquery.min-bdf751dfcd8d44bc83b3104825139be5.js
 jquery/index.min.js: jquery.min-bdf751dfcd8d44bc83b3104825139be5.js
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map

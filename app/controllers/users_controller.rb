@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @image = "empty_profile.png" if @user.image.blank?
+    @image = ("empty_profile.png" if @user.image.blank?) || @user.image
   end
 
   def update

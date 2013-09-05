@@ -51,7 +51,7 @@
     float: left;
     padding: 1em;
     padding-top: 2em;
-    height: 73em;
+    height: 93em;
     overflow: auto;
 }
 
@@ -91,6 +91,7 @@
 .social-input {
     float: left;
     margin-bottom: 1em;
+    width: 100%;
 }
 
 // *********** Center *******************
@@ -101,7 +102,7 @@
   margin-left: 1em;
   margin-right: 1em;
   margin-top: 1.5em;
-  width: 100%;
+  width: 97%;
 }
 .user{
   width: 90%;
@@ -132,9 +133,13 @@
 
 // ********* Edit User Profile ****************
 
+#update-tournament {
+  width: 100%;
+}
 .user-field textarea {
     width: 100%;
     padding: 10px;
+
 }
 
 .float-right {

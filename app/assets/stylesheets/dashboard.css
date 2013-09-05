@@ -43,3 +43,8 @@
     max-height: 48em;
     overflow: auto;
 }
+/* ********************** ABOUT ****************** */
+
+.about-container {
+  margin: 20px;
+}
