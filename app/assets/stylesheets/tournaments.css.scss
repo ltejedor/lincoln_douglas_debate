@@ -14,11 +14,12 @@
 // Tournament Listings
 
 .tournament-item {
-  margin-bottom: 3em;
-  height: 40em;
-  overflow: scroll;
+  height: 49em;
+  overflow: auto;
   overflow-x: hidden;
-  padding: 2em;
+  margin: 2em;
+  padding: 1em;
+  float:left;
 }
 
 .tournament-date {

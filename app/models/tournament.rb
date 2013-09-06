@@ -56,4 +56,23 @@ class Tournament < ActiveRecord::Base
     end
     @upcoming
   end
+
+  def self.current
+    @current = []
+    for tournament in Tournament.all
+      @current.push(tournament) if (tournament.starttime <= Time.now && tournament.endtime >= Time.now )
+    end
+    @current
+  end
+
+  def self.past
+    @past = []
+    for tournament in Tournament.all
+      @past.push(tournament) if tournament.endtime <= Time.now
+    end
+    @past
+  end
+
+
+
 end

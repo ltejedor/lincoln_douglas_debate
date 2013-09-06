@@ -1,4 +1,7 @@
 <div class="tournament-detail">
+	<div class="hide-this" id="hours-start"><%= (@hours if @hours >9) || '0' + @hours.to_s %></div>
+	<div class="hide-this" id="minutes-start"><%= (@minutes if @minutes > 9) || '0' + @minutes.to_s %></div>
+	<div class="hide-this" id="seconds-start"><%= (@seconds if @seconds > 9) || '0' + @seconds.to_s %></div>
 
 <% unless @tournament.organizer.nil? || @tournament.organizer.user != current_user %>
 	<div class="row">
@@ -30,9 +33,19 @@
 	</div>
 	<div class="col-md-9 col-sm-9">
 		<div class="lead"><%= simple_format @tournament.summary %></div>
-		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
-		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>
-		<p class="hint timezone"><%= current_user.time_zone %></p>
+		<p class="lead"><b>From</b> <%= @tournament.start_time %><br><b>Until</b> <%= @tournament.end_time %></p>
+		<% if @hours < 24 && @hours > 0 %>
+		<!-- Countdown -->
+			<p class="lead">Starting in...</p>
+			<div class="wrapper">
+				<div class="cell">
+					<div id="holder">
+						<div class="digits center-this"></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<p class="hint pull-right"><%= current_user.time_zone %></p>
 
 
 		<br><br>
@@ -123,6 +136,7 @@
 
 
 	<div class="col-md-4">
+
 		<div class="rsvp">
 			<span class="lead">Register</span>
 			<ul class="nav nav-tabs">
@@ -154,7 +168,5 @@
 		</div>
 	</div>
 
-
-</div>
 
 

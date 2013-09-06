@@ -1,10 +1,14 @@
 class TournamentsController < ApplicationController
   before_filter :find_tournament, :only => [:show, :edit, :update]
+  after_filter :sort_tournaments, :only => [:index_upcoming, :index_current, :index_past]
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.upcoming
+    @tournaments = Tournament.all
     @tournaments.sort! {|a,b| a.starttime <=> b.starttime }
+    @upcoming_tournaments = Tournament.upcoming
+    @past_tournaments = Tournament.past
+    @current_tournaments = Tournament.current
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tournaments }
@@ -14,6 +18,13 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1
   # GET /tournaments/1.json
   def show
+    time_diff = (@tournament.starttime - Time.now)
+    @hours = (time_diff / 3600).floor
+    partial_hour = (time_diff / 3600) - (time_diff / 3600).floor
+    @minutes = (partial_hour * 60).floor
+    partial_minute = (partial_hour * 60) - (partial_hour * 60).floor
+    @seconds = (partial_minute * 60).round
+
     default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"
     @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset_url || default_image
     # sort rounds by first bracket start time
@@ -23,7 +34,6 @@ class TournamentsController < ApplicationController
         round.brackets.sort! {|a,b| a.starttime <=> b.starttime} unless round.brackets.all? {|b| b.starttime.nil? }
       end
     end
-
 
     respond_to do |format|
       format.html # show.html.erb
@@ -121,5 +131,9 @@ class TournamentsController < ApplicationController
     utc_end = @tournament.endtime
     @tournament.starttime = utc_start - utc_diff
     @tournament.endtime = utc_end - utc_diff
+  end
+
+  def sort_tournaments
+    @tournaments.sort! {|a,b| a.starttime <=> b.starttime } unless @tournaments.nil?
   end
 end

@@ -148,5 +148,26 @@ $(document).ready(function() {
       }
     });
 
+    // Counter
+
+      hh = $('#hours-start').text();
+      mm = $('#minutes-start').text();
+      ss = $('#seconds-start').text();
+      counter_time = hh + ":" + mm + ":" +ss;
+    $(".digits").countdown({
+                    image: "countdown/digits.png",
+                    format: "hh:mm:ss",
+                    startTime: counter_time
+                  });
+
+    // Tabs
+
+    $('#tabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+
+  });
+
 
 
