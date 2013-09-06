@@ -21,27 +21,47 @@
             </li>
           </ul>
 
-    <p class="entry_info">
-      <%= f.label :entry_info, "Entry" %><br>
-      <%= f.text_area :entry_info %>
-    </p>
+
+   <div class="form-group">
+      <div class="col-md-2 control-label">
+        <%= f.label :entry_info, "Info and Guidelines Regarding Entry" %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :entry_info, rows: 8, cols: 70, class: "form-control" %>
+      </div>
+    </div>
+
+   <div class="form-group">
+      <div class="col-md-2 control-label">
+        <%= f.label :divisions_info, "Info and Guidelines Regarding Judges" %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :entry_info, rows: 8, cols: 70, class: "form-control" %>
+      </div>
+    </div>
 
 
-    <p class="divisions_info">
-      <%= f.label :divisions_info, "Divisions" %><br>
-      <%= f.text_area :divisions_info %>
-    </p>
+   <div class="form-group">
+      <div class="col-md-2 control-label">
+        <%= f.label :divisions_info, "Info and Guidelines Regarding Divisions" %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :divisions_info, rows: 8, cols: 70, class: "form-control" %>
+      </div>
+    </div>
 
-     <p class="rules_info">
-      <%= f.label :rules_info, "Rules" %><br>
-      <%= f.text_area :rules_info %>
-    </p>
+   <div class="form-group">
+      <div class="col-md-2 control-label">
+        <%= f.label :rules_info, "Rules" %>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :rules_info, rows: 8, cols: 70, class: "form-control" %>
+      </div>
+    </div>
 
-
-    <p class="judges_info">
-      <%= f.label :judges_info, "Judges" %><br>
-      <%= f.text_area :judges_info %>
-    </p>
-
-
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <a class="btn btn-large btn-primary" data-toggle="tab" href="#final-confirmation">NEXT: Review your Tournament and Provide all Additional Information</a>
+      </div>
+    </div>
 

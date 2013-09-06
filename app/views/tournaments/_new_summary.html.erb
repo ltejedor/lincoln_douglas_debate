@@ -1,35 +1,44 @@
     <h3>Tournament Summary</h3>
       <p>Summarize the main information of your tournament to show in the Tournament Listings.</p>
-    <p class="name">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, maxlength: 70 %>
-    </p>
-    <p class="starttime">
-      <%= f.label :starttime, "Start" %><br>
-      <%= f.datetime_select :starttime,
-        ampm: true,
-        starttime_year: Time.now.year,
-        :default => {:month => 7.days.from_now.month, :day => 7.days.from_now.day, :hour => 12, :minute => 00},
-        :order => [:month, :day, :year, :hour] %>
-    </p>
-    <p class="endtime">
-      <%= f.label :endtime, "End" %><br>
-      <%= f.datetime_select :endtime,
-        ampm: true,
-        starttime_year: Time.now.year,
-        :default => {:month => 14.days.from_now.month, :day => 14.days.from_now.day, :hour => 12, :minute => 00},
-        :order => [:month, :day, :year, :hour] %>
-    </p>
-    <p class="description">
-      <%= f.label :summary, "Summary" %><br>
-      <%= f.text_area :summary, rows: 8, maxlength: 500, cols: 70 %><br>
-      <span class="hint">Max 500 Characters</span><br />
-    </p>
-    <p class="asset">
-      <%= f.label :asset, "Upload a New Image" %><br />
-      We strongly recommend using a <b>square</b> image sized <b>224px by 224px</b> or greater.
-      A tall images will automatically have its bottom cropped out in listings.<br>
-      File Uploaded: <%= @tournament.asset_file_name || "none" %>
-      <%= f.file_field :asset %>
-    </p>
+
+
+    <div class="form-group">
+      <div class="col-lg-2 control-label">
+      <%= f.label :asset, "Upload an Image"%>
+        </div>
+      <div class="col-lg-10">
+        File Uploaded: <%= @tournament.asset_file_name || "none" %></p>
+        <p class="hint">We strongly recommend using a <b>square</b> image sized <b>224px by 224px</b> or greater.
+        A tall images will automatically have its bottom cropped out in listings.</p>
+
+        <%= f.file_field :asset, style: "margin-bottom: 3em" %>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name, class: "col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <%= f.text_field :name, maxlength: 70, class: "form-control" %>
+      </div>
+    </div>
+    <hr style="height: 2em">
+    <div class="form-group">
+      <div class="col-lg-2 control-label">
+        <%= f.label :summary, "Summary" %>
+        <p>A short snippet about your tournament to display on the Tournament Listings</p>
+        <div class="hint">Max 500 Characters</div><br />
+      </div>
+      <div class="col-lg-10">
+        <%= f.text_area :summary, rows: 8, maxlength: 500, cols: 70, class: "form-control" %>
+      </div>
+    </div>
+    <hr style="height: 2em">
+
+
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <a class="btn btn-large btn-primary" data-toggle="tab" href="#overview">NEXT: Set Tournament Details</a>
+      </div>
+    </div>
 

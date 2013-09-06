@@ -1,21 +1,15 @@
       <%= render 'new_summary', :f => f  %>
-      <a class="btn btn-large btn-primary" data-toggle="tab" href="#overview">NEXT: Set Tournament Details</a>
-
     </div>
 
     <div class="tab-pane fade" id="overview">
       <%= render 'new_overview', :f => f  %>
-      <a class="btn btn-large btn-primary" data-toggle="tab" href="#settings-guides">NEXT: Set Rules and Guidelines</a>
     </div>
 
     <div class="tab-pane fade" id="settings-guides">
       <%= render 'new_settings_guides', :f => f  %>
-      <a class="btn btn-large btn-primary" data-toggle="tab" href="#final-confirmation">NEXT: Review your Tournament and Provide all Additional Information</a>
     </div>
 
     <div class="tab-pane fade" id="final-confirmation">
       <%= render 'new_final_confirm', :f => f  %>
-      <p class="submit">
-        <%= f.submit %>
-      </p>
+
     </div>

@@ -17,6 +17,7 @@ gem 'formtastic'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'uglifier'
+gem 'formtastic-bootstrap', :git => 'git://github.com/nickl-/formtastic-bootstrap3'
 
 
 # Gems used only for assets and not required
