@@ -1,1 +1,0 @@
-function signinCallback(e){e.access_token?document.getElementById("signinButton").setAttribute("style","display: none"):e.error&&console.log("There was an error: "+e.error)}

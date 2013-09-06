@@ -54,7 +54,7 @@ class Tournament < ActiveRecord::Base
     for tournament in Tournament.all
       @upcoming.push(tournament) if tournament.starttime > Time.now
     end
-    @upcoming
+    @upcoming.sort! {|a,b| a.starttime <=> b.starttime}
   end
 
   def self.current
@@ -62,7 +62,7 @@ class Tournament < ActiveRecord::Base
     for tournament in Tournament.all
       @current.push(tournament) if (tournament.starttime <= Time.now && tournament.endtime >= Time.now )
     end
-    @current
+    @current.sort! {|a,b| a.starttime <=> b.starttime}
   end
 
   def self.past
@@ -70,7 +70,7 @@ class Tournament < ActiveRecord::Base
     for tournament in Tournament.all
       @past.push(tournament) if tournament.endtime <= Time.now
     end
-    @past
+    @past.sort! {|a,b| a.starttime <=> b.starttime}
   end
 
 

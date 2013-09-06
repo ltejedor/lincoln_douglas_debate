@@ -1,4 +1,3 @@
-html, body, .wrapper {
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -23,10 +22,9 @@ body {
 -------------------------------------------------- */
 
 /* Carousel base class */
+/* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
 .carousel {
   margin-bottom: 60px;
-
-  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
   margin-top: -90px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -124,7 +122,6 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
-
 }
 
 @media (min-width: 992px) {
@@ -141,7 +138,7 @@ body {
 }
 
 #carousel-image-home-2{
-	background-image:url('http://fineartamerica.com/images-simple-print/images-medium/abraham-lincoln-and-stephen-a-douglas-debating-at-charleston-robert-marshall-root.jpg');
+	background-image:url('http://nau.edu/uploadedImages/Administrative/Registrar/_Media/DSC_5086_720x350.jpg');
 }
 
 

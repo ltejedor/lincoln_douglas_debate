@@ -1,11 +1,9 @@
 class TournamentsController < ApplicationController
   before_filter :find_tournament, :only => [:show, :edit, :update]
-  after_filter :sort_tournaments, :only => [:index_upcoming, :index_current, :index_past]
   # GET /tournaments
   # GET /tournaments.json
   def index
-    @tournaments = Tournament.all
-    @tournaments.sort! {|a,b| a.starttime <=> b.starttime }
+    @tournaments = Tournament.all.sort! {|a,b| a.starttime <=> b.starttime }
     @upcoming_tournaments = Tournament.upcoming
     @past_tournaments = Tournament.past
     @current_tournaments = Tournament.current
@@ -133,7 +131,4 @@ class TournamentsController < ApplicationController
     @tournament.endtime = utc_end - utc_diff
   end
 
-  def sort_tournaments
-    @tournaments.sort! {|a,b| a.starttime <=> b.starttime } unless @tournaments.nil?
-  end
 end
