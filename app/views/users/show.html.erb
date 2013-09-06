@@ -7,6 +7,9 @@
     <section class="col-md-8 middle-user-panel user-panel">
     <%= link_to 'Edit Your Profile', edit_user_path(@user), class: 'float-right' if @user==current_user %>
       <%= render 'profile_ctr_1' %>
+      <div class="user-field">
+        <b><%=@user.first_name%>'s Current Time:</b><br><%=Time.now.in_time_zone(@user.time_zone).strftime("%D %l:%M%P")%> <%= @user.time_zone %><br>
+      </div>
       <div class="user-field user-summary">
         <h4>Self-Summary</h4>
     			<%= simple_format(@user.summary) %>

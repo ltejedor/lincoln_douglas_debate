@@ -16,6 +16,9 @@
 
 			<%= render 'profile_ctr_1' %>
 
+			<div class="user-field">
+				Set Your Time Zone: <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+			</div>
 
 	    <div class="user-field">
 	      <h4>Self-Summary</h4>

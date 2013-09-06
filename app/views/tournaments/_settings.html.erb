@@ -25,12 +25,12 @@
 
 		<%= f.input :starttime, label: 'Starts',
 		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-start' } %><br>
+		ampm: true, error: false %><br>
 		<!-- TODO: Datetime pickers -->
 
-		<%= f.input :endtime, label: 'Ends',
+		<%= f.input :endtime, label: 'Ends ',
 		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-end' } %>
+		ampm: true, error: false %>
 
 		<!-- TODO: Datetime pickers -->
 	</div>

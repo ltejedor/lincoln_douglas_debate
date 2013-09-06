@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130905002023) do
+ActiveRecord::Schema.define(:version => 20130906021104) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -198,6 +198,7 @@ ActiveRecord::Schema.define(:version => 20130905002023) do
     t.string   "facebook"
     t.string   "social_email"
     t.string   "website"
+    t.string   "time_zone"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"

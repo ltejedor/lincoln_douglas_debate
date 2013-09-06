@@ -28,13 +28,6 @@ $(document).ready(function() {
 		console.log('clicked');
 	})
 
-	// square off image on tournament during page refresh
-	// TODO: allow dynamic resizing
-	var cw = $('.tournament-image').width();
-	var w = cw + 'px';
-	$('.crop').css('height',w);
-
-});
 
 // Nested Forms
 

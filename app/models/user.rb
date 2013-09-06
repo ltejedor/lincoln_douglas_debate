@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
                   :image, :last_name, :name, :provider, :uid, :verified_email,
                   :summary, :points, :judge_attributes,
                   :facebook, :twitter, :social_email, :website,
-                  :asset, :asset_url
+                  :asset, :asset_url,
+                  :time_zone
   # TODO: Set time zone settings in Account Settings
   has_attached_file :asset
-  belongs_to :userable, polymorphic: true
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
   belongs_to :debater
   has_one :judge

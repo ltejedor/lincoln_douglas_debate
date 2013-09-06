@@ -54,6 +54,7 @@ class TournamentsController < ApplicationController
     build_default_rounds(varsity)
     novice = @tournament.divisions.build(:name => "Varsity LD")
     build_default_rounds(novice)
+    adjust_for_time_zone
 
     # TODO: Eventually change division default names as we expand
 
@@ -71,9 +72,10 @@ class TournamentsController < ApplicationController
   # PUT /tournaments/1
   # PUT /tournaments/1.json
   def update
-
     respond_to do |format|
       if @tournament.update_attributes(params[:tournament])
+        adjust_for_time_zone
+        @tournament.save
         format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
         format.json { head :no_content }
       else
@@ -111,5 +113,13 @@ class TournamentsController < ApplicationController
     div.rounds.build(:kind => "Quarterfinals")
     div.rounds.build(:kind => "Semifinals")
     div.rounds.build(:kind => "Finals")
+  end
+
+  def adjust_for_time_zone
+    utc_diff = Time.now.in_time_zone(current_user.time_zone).utc_offset
+    utc_start = @tournament.starttime
+    utc_end = @tournament.endtime
+    @tournament.starttime = utc_start - utc_diff
+    @tournament.endtime = utc_end - utc_diff
   end
 end
