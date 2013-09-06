@@ -1,3 +1,5 @@
+<% unless @tournament.endtime < Time.now %>
+
 <%= simple_form_for @tournament do |f| %>
 
 <!-- Errors -->
@@ -23,9 +25,13 @@
 		<h4>Basic Settings</h4>
 		<%= f.input :name, label: 'Name', error: false %><br>
 
-		<%= f.input :starttime, label: 'Starts',
-		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false %><br>
+		<% if @tournament.starttime > Time.now %>
+			<%= f.input :starttime, label: 'Starts',
+			:order => [:month, :day, :year, :hour],
+			ampm: true, error: false %><br>
+		<% else %>
+		<p id="tourney-start"><b>Started</b> <%= @tournament.start_time %></p>
+		<% end %>
 		<!-- TODO: Datetime pickers -->
 
 		<%= f.input :endtime, label: 'Ends ',
@@ -61,4 +67,6 @@
 
 <%= f.button :submit, :class => 'btn-danger', :id => 'update-tournament' %>
 <!-- TODO: Add a primary class to button-->
+<% end %>
+
 <% end %>

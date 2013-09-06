@@ -4,13 +4,12 @@ class Bracket < ActiveRecord::Base
   validate :format_datetime, :message => 'is incorrectly formatted. Should be in MM/DD/YY HH:MM(AM/PM) format.'
 
   def start_time
-    # TODO: Localize
-    self.starttime.strftime("%l:%M %P") if self.starttime
+        self.starttime.strftime("%l:%M %P")
   end
 
   def start_date
-    # TODO: Localize
-    self.starttime.strftime("%a %b %-d") if self.starttime
+        self.endtime.strftime("%a %b %-d")
+
   end
 
 

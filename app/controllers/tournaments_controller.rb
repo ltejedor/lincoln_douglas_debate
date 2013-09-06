@@ -19,7 +19,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1.json
   def show
     time_diff = (@tournament.starttime - Time.now)
-    @hours = (time_diff / 3600).floor
+    @hours = (time_diff / 3600).floor #to_i to catch nil cases
     partial_hour = (time_diff / 3600) - (time_diff / 3600).floor
     @minutes = (partial_hour * 60).floor
     partial_minute = (partial_hour * 60) - (partial_hour * 60).floor

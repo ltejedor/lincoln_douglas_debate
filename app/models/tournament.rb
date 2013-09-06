@@ -18,7 +18,7 @@ class Tournament < ActiveRecord::Base
 
 
   validate :ends_after_starting?
-  validate :starts_and_ends_in_future?
+  validate :starts_and_ends_in_future?, :on => :create # allow user to edit tournament schedule mid-tournament
 
   # TODO: Each tournament should be attached to a resolution.
 
@@ -27,11 +27,11 @@ class Tournament < ActiveRecord::Base
   # TODO: Localize the datetime of Start and End according to Time Zone
 
   def start_time
-    self.starttime.strftime("%a %b %-d, %Y at %l:%M%p") if self.starttime
+      self.starttime.strftime("%a %b %-d, %Y at %l:%M%p")
   end
 
   def end_time
-    self.endtime.strftime("%a %b %-d, %Y at %l:%M%p") if self.endtime
+      self.endtime.in_time_zone.strftime("%a %b %-d, %Y at %l:%M%p")
   end
 
   def ends_after_starting?

@@ -1,7 +1,7 @@
 <div class="tournament-detail">
-	<div class="hide-this" id="hours-start"><%= (@hours if @hours >9) || '0' + @hours.to_s %></div>
-	<div class="hide-this" id="minutes-start"><%= (@minutes if @minutes > 9) || '0' + @minutes.to_s %></div>
-	<div class="hide-this" id="seconds-start"><%= (@seconds if @seconds > 9) || '0' + @seconds.to_s %></div>
+	<div class="hide-this" id="hours-start"><%= (@hours if (@hours && @hours > 9)) || '0' + @hours.to_s %></div>
+	<div class="hide-this" id="minutes-start"><%= (@minutes if (@minutes && @minutes > 9)) || '0' + @minutes.to_s %></div>
+	<div class="hide-this" id="seconds-start"><%= (@seconds if (@seconds && @seconds > 9)) || '0' + @seconds.to_s %></div>
 
 <% unless @tournament.organizer.nil? || @tournament.organizer.user != current_user %>
 	<div class="row">
@@ -34,7 +34,7 @@
 	<div class="col-md-9 col-sm-9">
 		<div class="lead"><%= simple_format @tournament.summary %></div>
 		<p class="lead"><b>From</b> <%= @tournament.start_time %><br><b>Until</b> <%= @tournament.end_time %></p>
-		<% if @hours < 24 && @hours > 0 %>
+		<% if @hours && @hours < 24 && @hours > 0 %>
 		<!-- Countdown -->
 			<p class="lead">Starting in...</p>
 			<div class="wrapper">
