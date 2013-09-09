@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909080436) do
+ActiveRecord::Schema.define(:version => 20130909101622) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -97,9 +97,24 @@ ActiveRecord::Schema.define(:version => 20130909080436) do
   create_table "judges", :force => true do |t|
     t.text     "paradigm"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "level"
+    t.string   "experience"
+    t.string   "years_judging"
+    t.string   "season_judged_no"
+    t.string   "delivery_preference"
+    t.string   "delivery_weight"
+    t.string   "delivery_dealbreaker"
+    t.string   "criterion_weight"
+    t.string   "criterion_required"
+    t.string   "final_rebuttals_should_include"
+    t.string   "voting_issues_are"
+    t.string   "voting_issues_necessity"
+    t.string   "jargon_preference"
+    t.string   "decision_paradigm"
+    t.string   "evidence_necessity"
+    t.string   "notetaking_preference"
   end
 
   create_table "judges_tournaments", :force => true do |t|

@@ -153,16 +153,18 @@ $(document).ready(function() {
 
     // Counter
 
-      hh = $('#hours-start').text();
-      mm = $('#minutes-start').text();
-      ss = $('#seconds-start').text();
-      counter_time = hh + ":" + mm + ":" +ss;
-    $(".digits").countdown({
-                    image: "countdown/digits.png",
-                    format: "hh:mm:ss",
-                    startTime: counter_time
-                  });
+    if ($('#hours-start').text() !== "") {
+        hh = $('#hours-start').text();
+        mm = $('#minutes-start').text();
+        ss = $('#seconds-start').text();
+        counter_time = hh + ":" + mm + ":" +ss;
+      $(".digits").countdown({
+                      image: "countdown/digits.png",
+                      format: "hh:mm:ss",
+                      startTime: counter_time
+                    });
 
+    }
     // Tabs
 
     $('#tabs a').click(function (e) {

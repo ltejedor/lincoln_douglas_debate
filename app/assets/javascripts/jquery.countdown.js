@@ -9,6 +9,8 @@
  * https://github.com/eusonlito/jquery-countdown
  */
 
+$(document).ready(function() {
+
 jQuery.fn.countdown = function(userOptions)
 {
   // Default options
@@ -22,7 +24,7 @@ jQuery.fn.countdown = function(userOptions)
     digitWidth: 67,
     digitHeight: 90,
     timerEnd: function(){},
-    image: "digits.png",
+    image: "countdown/digits.png",
     continuous: false
   };
   var digits = [], intervals = [];
@@ -163,3 +165,4 @@ jQuery.fn.countdown = function(userOptions)
   intervals.main = setInterval(function(){ moveDigit(digits.length - 1); },
                                1000);
 };
+});

@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    judge_attrib = params[:user][:judge_attributes]
+    judge_attrib[:experience] = judge_attrib[:experience].reject(&:blank?).join(",")
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }

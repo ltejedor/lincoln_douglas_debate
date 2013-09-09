@@ -1,0 +1,49 @@
+<br>
+<p class="lead">Experience</p>
+<%= f.input :experience, label: 'What is your experience with LD Debate? Check all that apply.', collection: ['Current LD Coach', 'Former LD Coach', 'Former LD Competitor',
+'Summer LD Instructor', 'Experienced LD Judge', 'Former Policy Debater', 'Collegiate Policy Debater', 'Current Public Forum Coach or Judge', 'Speech Coach', 'Community Judge', 'No LD Experience'], as: :check_boxes %><br>
+
+<%= f.input :years_judging, label: 'I have judged LD debate for ___ years', collection: ['Less than 1', 2, 3, 4, '5 or more'], input_html: {class: 'form-control'} %>
+
+<%= f.input :season_judged_no, label: 'How many LD rounds have you judged this season?',
+collection: ['Fewer than 20', '20 to 40', '40 to 60', '60 or more'], input_html: {class: 'form-control'} %>
+<p class="lead">Delivery</p>
+<%= f.input :delivery_preference, label: 'What is your preferred rate of delivery?',
+collection: ['1 - Slow conversational Style', 2, 3, '4 - Typical conversational speed', 5, 6, '7 - Rapid conversational speed'], input_html: {class: 'form-control'} %>
+
+<%= f.input :delivery_weight, label: 'Does the rate of delivery weigh heavily in your decision?', collection: ['Yes', 'No'], input_html: {class: 'form-control'} %>
+
+<%= f.input :delivery_dealbreaker, label: 'Will you vote against a student solely for exceeding your preferred speed?', collection: ['Yes','No'], input_html: {class: 'form-control'} %>
+<p class="lead">Criterion</p>
+<%= f.input :criterion_weight, label: 'How important is the criterion in making your decision?', collection: [
+  'It is the primary means by which I make my decision.',
+  'It is a major factor in my evaluation.',
+  'It may be a factor depending on its use in the round.',
+  'It rarely informs my decision.'], input_html: {class: 'form-control'} %>
+
+<%= f.input :criterion_required, label: 'Do you feel that a value and criterion are required elements of a case?', collection: ['Yes','No'], input_html: {class: 'form-control'} %>
+<p class="lead">Rebuttals and Crystallization</p>
+<%= f.input :final_rebuttals_should_include, label: 'Final rebuttals should include...',
+collection: ['voting issues', 'line-by-line analysis', 'both voting issues and line-by-line analysis'], input_html: {class: 'form-control'} %>
+
+<%= f.input :voting_issues_necessity, label: 'Voting issues should be given...', collection: ['as the student moves down the flow.', 'at the end of the final speech.', 'either as the student moves down the flow or at the end of the final speech.'], input_html: {class: 'form-control'} %>
+
+<%= f.input :voting_issues_are, label: 'Voting issues are...', collection: [
+'absolutely necessary','not necessary'], input_html: {class: 'form-control'} %>
+
+<%= f.input :jargon_preference, label: 'The use of jargon or technical language ("extend", "cross-apply", "turn", etc.) during rebuttals is...', collection: [
+'acceptable', 'unacceptable', 'should be kept to a minimum'], input_html: {class: 'form-control'} %>
+
+<p class="lead">Decision-Making</p>
+<%= f.input :decision_paradigm, label: 'How do you decide the winner of the round? Choose the best answer.', collection: ['I decide who is the better speaker regardless of whether they won specific arguments.',
+'I decide who is the winner of the most arguments in the round.',
+'I decide who is the winner of the key arguments in the round.',
+'I decide who is the person who persuaded me more of his/her position overall.'], input_html: {class: 'form-control'} %>
+
+<%= f.input :evidence_necessity, label: 'How necessary do you feel the use of evidence (both analytical and empirical) is in the round?',
+collection: ['1 - Not necessary', 2, 3, '4 - Sometimes necessary', 5, 6, '7 - Always necessary'], input_html: {class: 'form-control'} %>
+
+<%= f.input :notetaking_preference, label: 'Please describe your personal note-taking during the round.',
+collection: ['I do not take notes.', "I only outline the important arguments of each debater's case.", 'I write down the key arguments throughout the round.', 'I keep detailed notes throughout the round.', 'I keep a rigorous flow.'], input_html: {class: 'form-control'} %>
+
+<%= f.input :paradigm, label: 'Comments', rows: 3, hint: 'Add any brief comments you feel are appropriate. You might want to include information about practices that you encourage or discourage in a round.', input_html: {class: 'form-control'} %>
