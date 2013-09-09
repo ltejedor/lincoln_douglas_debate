@@ -118,12 +118,15 @@ $(document).ready(function() {
 
     // Bracket time check valid datetime format
     $("form").on("keyup", "input.bracket-time", function() {
-      var re;
-      re = /\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}(am|AM|pm|PM)/;
-      if ($(this).val().match(re)) {
-        return $(this).parent().parent().next().addClass("hide-this");
-      } else {
-        return $(this).parent().parent().next().removeClass("hide-this");
+      var re = /\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}(am|AM|pm|PM)/;
+      var match = $(this).val().match(re)
+      if (match && match.index === 0) {
+        return $(this).parent().parent().next().addClass("hide-this")
+        .parent().parent().parent().prev().removeClass('danger');
+      }
+      else {
+        return $(this).parent().parent().next().removeClass("hide-this")
+        .parent().parent().parent().prev().addClass('danger');
       }
     });
 

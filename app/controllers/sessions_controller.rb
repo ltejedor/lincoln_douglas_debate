@@ -7,12 +7,18 @@ class SessionsController < ApplicationController
         user.name = auth["info"]["name"]
         user.first_name = auth["info"]["first_name"]
         user.last_name = auth["info"]["last_name"]
-        user.save
       end
-      if user.image != auth["info"]["image"]
+      # Update info if necessary
+      if user.image != auth["info"]["image"] && auth["info"]["image"] != ""
         user.image = auth["info"]["image"]
-        user.save
       end
+      if user.image.blank?
+        user.image = "empty_profile.png"
+      end
+      if auth["info"]["urls"].nil?
+        user.googleplus = ""
+      end
+      user.save
       session[:user_id] = user.id
     redirect_to root_url
 

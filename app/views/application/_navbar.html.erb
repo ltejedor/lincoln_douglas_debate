@@ -29,7 +29,7 @@
 				<% if current_user %>
                 <li id="notifications-icon"><button type="button" class="messages-btn"><span class="glyphicon glyphicon-flash"></span> · <span class="badge">5</span></button></li>
                 <li id="messages-icon"><button type="button" class="messages-btn"><span class="glyphicon glyphicon-comment"></span> · <span class="badge">14</span></button></li>
-                <li id="username"><a href="<%= user_path(current_user) %>"><%=current_user.name%> · <b style="color: #FD9800;"><%= current_user.points || 0 %> pts</b></a></li>
+                <li id="username"><a href="<%= root_path + '#dashboard' %>"><%=current_user.name%> · <b style="color: #FD9800;"><%= current_user.points || 0 %> pts</b></a></li>
                 <li class="dropdown" id="profile-dropdown">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">

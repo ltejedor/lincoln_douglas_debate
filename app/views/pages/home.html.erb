@@ -1,8 +1,9 @@
 <% if current_user %>
+<!-- TODO: Better responsive design -->
 	<%= render "dashboard_carousel" %>
 	<div style="height: 60px;" id="dashboard"></div>
 	<div class="row center dashboard">
-		<div class="col-md-3">
+		<div class="col-sm-4 col-md-3">
 			<div class="dashboard-container border">
 
 				<div class="user-image" id="profile-thumbnail-lg">
@@ -74,12 +75,12 @@
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-sm-8 col-md-6">
 			<div class="dashboard-container border">
 				<h3 class="lead">News Feed</h3>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-sm-offset-4 col-sm-8 col-md-offset-0 col-md-3">
 			<div class="dashboard-container border">
 				<div class="user-container">
 					<h3 class="lead">Trending</h3>

@@ -16,6 +16,7 @@ class TournamentsController < ApplicationController
   # GET /tournaments/1
   # GET /tournaments/1.json
   def show
+    # countdown
     time_diff = (@tournament.starttime - Time.now)
     @hours = (time_diff / 3600).floor #to_i to catch nil cases
     partial_hour = (time_diff / 3600) - (time_diff / 3600).floor
@@ -25,6 +26,8 @@ class TournamentsController < ApplicationController
 
     default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"
     @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset_url || default_image
+
+    @registered_num = @tournament.judge_registrations.length + @tournament.competitors.length
     # sort rounds by first bracket start time
     # sort brackets chronologically
     for division in @tournament.divisions
@@ -83,6 +86,7 @@ class TournamentsController < ApplicationController
     respond_to do |format|
       if @tournament.update_attributes(params[:tournament])
         adjust_for_time_zone
+        brackets_adjust
         @tournament.save
         format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
         format.json { head :no_content }
@@ -131,4 +135,15 @@ class TournamentsController < ApplicationController
     @tournament.endtime = utc_end - utc_diff
   end
 
+  def brackets_adjust
+    for division in @tournament.divisions
+      for round in division.rounds
+            round.brackets.each do |bracket|
+              bracket.get_UTC_starttime
+              adjusted_starttime = bracket.starttime_adjusted_for_time_zone(current_user.time_zone)
+              bracket.starttime = adjusted_starttime
+            end
+          end
+    end
+  end
 end

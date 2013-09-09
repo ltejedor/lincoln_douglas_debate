@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130906021104) do
+ActiveRecord::Schema.define(:version => 20130909080436) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -133,9 +133,8 @@ ActiveRecord::Schema.define(:version => 20130906021104) do
   end
 
   create_table "round_brackets", :force => true do |t|
-    t.datetime "starttime"
-    t.integer  "round_id"
-    t.integer  "bracket_id"
+    t.integer "round_id"
+    t.integer "bracket_id"
   end
 
   create_table "rounds", :force => true do |t|

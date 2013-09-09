@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
 
   def self.create_from_omniauth(auth)
-    create! do |user|
+    @user = create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.email = auth["info"]["email"]
@@ -37,10 +37,17 @@ class User < ActiveRecord::Base
       user.first_name = auth["info"]["first_name"]
       user.last_name = auth["info"]["last_name"]
       user.image = auth["info"]["image"]
-      user.googleplus = auth["info"]["urls"]["Google"]
+      user.googleplus = auth["info"]["urls"]["Google"] unless auth["info"]["urls"].nil?
       # TODO: Format birthday, use later for something (e.g., free credits)
       user.birthday = auth["extra"]["raw_info"]["birthday"]
+      user.time_zone ='Central Time (US & Canada)'
     end
+    if @user.image.blank?
+      @user.image = "empty_profile.png"
+    end
+    @user.save!
+    return @user
+
   end
 
   # --------------- ORGANIZER -----------------------

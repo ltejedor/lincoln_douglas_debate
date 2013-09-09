@@ -102,6 +102,7 @@
 	    </div>
 	  </div>
 	  <% end %>
+
 	  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
@@ -116,15 +117,73 @@
 			<% unless @tournament.rules_info.blank? %>
 		        <h3>Rules</h3>
 		        <%= simple_format @tournament.rules_info %>
-	        <% end %>
-	        <% unless @tournament.additional_info.blank? %>
+      <% end %>
+      <% unless @tournament.additional_info.blank? %>
 		        <h3>Additional Information</h3>
 	    	    <%= simple_format @tournament.additional_info %>
-	        <% end %>
+      <% end %>
 	      </div>
 	    </div>
 	  </div>
 	  <% end %>
+
+
+	  <% unless @registered_num == 0 || @tournament.divisions.nil? %>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+	          List of Registered Attendees (<%= @registered_num %>)
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseFour" class="panel-collapse collapse">
+	      <div class="panel-body">
+      	<% @tournament.divisions.each do |division| %>
+		      	<h3><%= division.name %></h3>
+		    <div class="attendees-li">
+		      <% unless division.competitors.blank? %>
+			      	<p class="lead">Competitors</p>
+			      	<ul class="attendee-li">
+			      		<% division.competitors.each do |competitor| %>
+
+			      			<li>
+			      				<a href="<%=user_path(competitor.debater.user)%>">
+			      					<%= image_tag competitor.debater.user.image || "empty_profile.png", class: 'profile-thumbnail'%>
+			      					<%= competitor.debater.user.name %>
+			      				</a>
+			      			</li>
+
+			      		<% end %>
+			      	</ul>
+	      	<% end %>
+
+	      	<% unless division.judge_registrations.blank? %>
+		      	<p class="lead">Judges</p>
+		      	<ul class="attendee-li">
+		      	<% for judge_registration in division.judge_registrations %>
+
+				      		<li>
+				      			<a href="<%=user_path(judge_registration.judge.user)%>">
+				      			<%= image_tag judge_registration.judge.user.image || "empty_profile.png", class: 'profile-thumbnail'%>
+			      					<%= judge_registration.judge.user.name %>
+			      				</a>
+				      		</li>
+
+			      	<% end %>
+		      	</ul>
+	      	<% end %>
+	      </div>
+	      <% end %>
+	      </div>
+	    </div>
+	  </div>
+
+	  <% end %>
+
+
+
 			<br><br><div class="hint timezone"><b>Time Zone:</b> <%= current_user.time_zone %>. It is currently <%=Time.now.in_time_zone(current_user.time_zone).strftime("%D %l:%M%P")%>. Change the time zone setting in your <%= link_to 'profile', edit_user_path(current_user)%>.
 		<br><br></div>
 
