@@ -13,22 +13,29 @@
 		</div>
 		</section>
 		<section class="col-md-8 middle-user-panel user-panel">
+
 			<%= render 'profile_ctr_1' %>
-	    <div class="user-field user-summary">
-	      <h4>Self-Summary</h4>
-					<%= f.text_area :summary, label: false, rows: '10' %>
+
+			<div class="user-field">
+				Set Your Time Zone: <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
+			</div>
+
+	    <div class="user-field">
+	      <h3>Self-Summary</h3>
+					<%= f.input :summary, label: false, rows: '10', input_html: {class: 'form-control'} %>
 			</div>
 			<% unless Judge.where(user_id: current_user.id).first.nil? %>
 			<hr class="divider">
-			<div class="user-field user-paradigm">
-				<h4>Judging Paradigm</h4>
-			  	<%= f.simple_fields_for :judge do |j| %>
-			  		<%= j.text_area :paradigm, label: false, rows: '10',
-					  		placeholder: 'Describe your judging preferences and how you evaluate debaters as a judge.' %>
+			<div class="user-field">
+				<h3>Judging Paradigm</h3>
+			  	<%= f.simple_fields_for :judge do |f| %>
+				  	<%= render 'judging_paradigm_form', f: f %>
 				  <%  end %>
 			</div>
 			<% end %>
-				<%= f.button :submit, :class => 'user-field btn-primary', :id => 'update-tournament' %>
+			<div class="user-field">
+				<%= f.button :submit, :class => 'btn-primary', :id => 'update-tournament' %>
+			</div>
 			<% end %>
 	  </section>
 	</div>

@@ -1,6 +1,18 @@
-      <h3>Tournament Overview</h3>
+
+   <div class="form-group">
+      <div class="col-md-2 control-label">
+        <%= f.label :description, "Tournament Overview" %><br>
+
       <p>This is the first thing debaters and judges read when they view your tournament. Give a broad overview of things to look forward to at your tournament without diving into the guidelines and rules just yet.</p>
-    <p class="description">
-      <%= f.label :description, "Tournament Overview" %><br>
-      <%= f.text_area :description %>
-    </p>
+      </div>
+      <div class="col-md-10">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+      <a class="btn btn-large btn-primary" data-toggle="tab" href="#settings-guides">NEXT: Set Rules and Guidelines</a>
+      </div>
+    </div>

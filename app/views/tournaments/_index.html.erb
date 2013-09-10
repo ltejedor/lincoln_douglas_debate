@@ -1,0 +1,57 @@
+
+<div id="tournaments-index">
+
+	<div class="row" id="tournament-list">
+
+		<div class="center-this"><%= image_tag 'honor_md.png' %><br><h2>Tournaments</h2></div><br>
+		<div class="center-this">
+			<div id="tabs">
+				<a href="#upcoming" data-toggle="tab" class="nav-links">Upcoming</a> |
+				<a href="#current" data-toggle="tab" class="nav-links">Current</a> |
+				<a href="#past" data-toggle="tab" class="nav-links">Past</a> |
+				<a href="#all" data-toggle="tab" class="nav-links">All</a>
+			</div>
+		</div>
+		<br><br>
+		<p class="lead center-this" style="font-size: 18px;">
+			Don't see a tournament you want to join?<br>
+			<%= link_to 'Create your own tournament', new_tournament_path%>.
+		</p>
+		<br><br>
+		<div class="hint center-this timezone"><%= current_user.time_zone %>. Current Time is <%=Time.now.in_time_zone(current_user.time_zone).strftime("%D %l:%M%P")%>. Set your time zone in your <%= link_to 'profile', edit_user_path(current_user)%>.
+			<br><br></div>
+
+		<div class="row tab-content">
+				<div id="upcoming" class="tab-pane fade in active">
+					<% unless @upcoming_tournaments.nil? %>
+					<% @upcoming_tournaments.each do |tournament| %>
+							<%= render 'tournament_item', tournament: tournament %>
+				    <% end %>
+			    <% end %>
+			  </div>
+			  <div id="current" class="tab-pane fade in">
+			  	<% unless @current_tournaments.nil? %>
+						<% @current_tournaments.each do |tournament| %>
+							<%= render 'tournament_item', tournament: tournament %>
+				    <% end %>
+				  <% end %>
+			  </div>
+			  <div id="past" class="tab-pane fade in">
+			  	<% unless @past_tournaments.nil? %>
+						<% @past_tournaments.each do |tournament| %>
+							<%= render 'tournament_item', tournament: tournament %>
+			    	<% end %>
+			    <% end %>
+			  </div>
+				<div id="all" class="tab-pane fade in">
+					<% unless @tournaments.nil? %>
+					<% @tournaments.each do |tournament| %>
+							<%= render 'tournament_item', tournament: tournament %>
+				    <% end %>
+			    <% end %>
+			  </div>
+
+		</div>
+	</div>
+</div>
+

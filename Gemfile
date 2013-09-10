@@ -14,6 +14,8 @@ gem 'simple_form'
 gem 'formtastic'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'uglifier'
+gem 'formtastic-bootstrap', :git => 'git://github.com/nickl-/formtastic-bootstrap3'
 
 
 # Gems used only for assets and not required
@@ -23,7 +25,9 @@ gem 'omniauth-google-oauth2'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+
   # gem 'therubyracer', :platforms => :ruby
+
 
 
 
@@ -53,6 +57,7 @@ end
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
+  gem 'sqlite3', '1.3.5'
 end
 
 group :test do

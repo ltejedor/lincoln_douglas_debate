@@ -1,3 +1,5 @@
+<% unless @tournament.endtime < Time.now %>
+
 <%= simple_form_for @tournament do |f| %>
 
 <!-- Errors -->
@@ -20,17 +22,21 @@
 
 <!-- Basic Settings -->
 	<div class="set-basics">
-		<h4>Basic Settings</h4>
+		<h3>Basic Settings</h3>
 		<%= f.input :name, label: 'Name', error: false %><br>
 
-		<%= f.input :starttime, label: 'Starts',
-		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-start' } %><br>
+		<% if @tournament.starttime > Time.now %>
+			<%= f.input :starttime, label: 'Starts',
+			:order => [:month, :day, :year, :hour],
+			ampm: true, error: false %><br>
+		<% else %>
+		<p id="tourney-start"><b>Started</b> <%= @tournament.start_time %></p>
+		<% end %>
 		<!-- TODO: Datetime pickers -->
 
-		<%= f.input :endtime, label: 'Ends',
+		<%= f.input :endtime, label: 'Ends ',
 		:order => [:month, :day, :year, :hour],
-		ampm: true, error: false, input_html: { id: 'datetimepicker-tournament-end' } %>
+		ampm: true, error: false %>
 
 		<!-- TODO: Datetime pickers -->
 	</div>
@@ -57,8 +63,21 @@
   	<%= link_to_add_fields '+New Division', f, :divisions %>
 </div><br><br>
 
+<hr class="field-divider">
+
+<!-- Registration -->
+<div class="set-basics">
+	<h3>Registration</h3>
+
+	<%= render 'registration'%>
+
+
+
+</div>
 
 
 <%= f.button :submit, :class => 'btn-danger', :id => 'update-tournament' %>
 <!-- TODO: Add a primary class to button-->
+<% end %>
+
 <% end %>

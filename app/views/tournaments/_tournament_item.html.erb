@@ -1,0 +1,17 @@
+    <div class="col-sm-4 col-lg-4">
+      <div class="tournament-item">
+            <h3 class="center-this"><%= link_to tournament.name, tournament_path(tournament) %></h3>
+        <p class="tournament-date center-this">
+            <%= (tournament.starttime.strftime("%a %b %-d at %l:%M%p") if tournament.starttime.year == Time.now.year) || tournament.starttime.strftime("%a %b %-d, %Y at %l:%M%p") %><br>-<br>
+            <%= (tournament.endtime.strftime("%a %b %-d at %l:%M%p") if tournament.endtime.year == Time.now.year) || tournament.endtime.strftime("%a %b %-d, %Y at %l:%M%p") %>
+          </p>
+            <% default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png" %>
+            <%@image = (tournament.asset.url if tournament.asset.url != "/assets/original/missing.png") || tournament.asset_url || default_image  %>
+            <%= link_to image_tag(@image, :class => "tournament-image"), tournament_path(tournament) %><br><br>
+
+        <p>
+          <%= tournament.summary %>
+        </p>
+          <p><%= link_to 'See More', tournament_path(tournament)%></p>
+      </div>
+    </div>

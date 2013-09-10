@@ -1,13 +1,20 @@
 class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :googleplus,
-                  :image, :last_name, :name, :provider, :uid, :verified_email
+                  :image, :last_name, :name, :provider, :uid, :verified_email,
+                  :summary, :points, :judge_attributes,
+                  :facebook, :twitter, :social_email, :website,
+                  :asset, :asset_url,
+                  :time_zone
   # TODO: Set time zone settings in Account Settings
-  belongs_to :userable, polymorphic: true
+  has_attached_file :asset
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
   belongs_to :debater
-  belongs_to :judge
+  has_one :judge
+  accepts_nested_attributes_for :judge
   belongs_to :organizer
 
+  # Set up permissions: only current user can edit their profile! Authorize
 
   belongs_to :author, polymorphic: true
 
@@ -21,7 +28,7 @@ class User < ActiveRecord::Base
 
 
   def self.create_from_omniauth(auth)
-    create! do |user|
+    @user = create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.email = auth["info"]["email"]
@@ -30,10 +37,17 @@ class User < ActiveRecord::Base
       user.first_name = auth["info"]["first_name"]
       user.last_name = auth["info"]["last_name"]
       user.image = auth["info"]["image"]
-      user.googleplus = auth["info"]["urls"]["Google"]
+      user.googleplus = auth["info"]["urls"]["Google"] unless auth["info"]["urls"].nil?
       # TODO: Format birthday, use later for something (e.g., free credits)
       user.birthday = auth["extra"]["raw_info"]["birthday"]
+      user.time_zone ='Central Time (US & Canada)'
     end
+    if @user.image.blank?
+      @user.image = "empty_profile.png"
+    end
+    @user.save!
+    return @user
+
   end
 
   # --------------- ORGANIZER -----------------------

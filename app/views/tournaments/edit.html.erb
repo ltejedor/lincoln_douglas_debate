@@ -2,7 +2,7 @@
 
 <% if current_user %>
 	<!-- TODO: Info on organizing a tournament -->
-	<%= form_for [@tournament], :html => { :multipart => true }, :class => "form" do |f| %>
+	<%= form_for [@tournament], :html => { :multipart => true }, :class => "form-horizontal", :role => "form" do |f| %>
 
 		<% if f.error_messages.match("error") %>
 			<div class="alert alert-danger"><%= f.error_messages %></div>

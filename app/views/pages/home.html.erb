@@ -1,102 +1,129 @@
 <% if current_user %>
+<!-- TODO: Better responsive design -->
 	<%= render "dashboard_carousel" %>
-
-	<div class="row center">
-		<div class="col-md-3">
+	<div style="height: 60px;" id="dashboard"></div>
+	<div class="row center dashboard">
+		<div class="col-sm-4 col-md-3">
 			<div class="dashboard-container border">
-	  		<% if current_user.image.nil? %>
-					<%= image_tag "empty_profile.png", class: "profile-thumbnail-lg" %>
-	      <% else %>
-	      	<%= image_tag current_user.image, class: "profile-thumbnail-lg" %>
-	    	<% end %>
 
-		      <p class="lead"><%= @user.name %></p>
+				<div class="user-image" id="profile-thumbnail-lg">
+		  		<% if current_user.image.nil? %>
+						<%= image_tag "empty_profile.png", class: "profile-thumbnail-lg" %>
+		      <% else %>
+		      	<%= image_tag current_user.image, class: "profile-thumbnail-lg" %>
+		    	<% end %>
+				</div>
+	    	<div class="user-basics">
+			    <h3><%= current_user.name %></h3>
+			    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+	    	</div>
+	    	<div class="user-container">
+			    <div class="points-bar btn-info"><h4><%= current_user.points || 0 %> points</h4></div>
+	    	</div>
 
+	    	<div class="user-container">
+					<ul class="list-group">
+					  <li class="list-group-item">
+					  	<span class="badge">14</span>
+					  	Messages
+					  </li>
+					  <li class="list-group-item">
+					  	<span class="badge">5</span>
+					  	Notifications
+					  </li>
+					  <li class="list-group-item">
+					  	<span class="badge">3</span>
+					  	Favorites
+					  </li>
+					</ul>
+				</div>
 
-				Edit Profile
-				No. Points
-				Recent Achievements
+				<div class="user-container">
+					<p class="lead">Recent Achievements</p>
+					<div class="achievement-icon-sm">
+			      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="1st Place Speaker"><%= image_tag 'symbly_gamification_badges/goblet.png', class: 'achievement-icon' %></span>
+			      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="Nuts for the Negative"><%= image_tag 'symbly_gamification_badges/acorn.png', class: 'achievement-icon' %></span>
+			      <span class="achievement" data-toggle="tooltip" data-placement="top" data-original-title="Midnight Researcher"><%= image_tag 'symbly_gamification_badges/coffee.png', class: 'achievement-icon' %></span>
+			    </div>
+				</div>
+				<div class="user-container">
+					<p class="lead">Upcoming Rounds</p>
+					None
+				</div>
+
+				<div class="user-container">
+					<p class="lead">Registered Tournaments</p>
+					None
+					<ul>
+						<li class="tournament-list">
+							<h4>Tournament 1</h4>
+							Starts ... <br>
+							Ends ...<br>
+						</li>
+						<li class="tournament-list">
+							<h4>Tournament 1</h4>
+							Starts ... <br>
+							Ends ...<br>
+						</li>
+						<li class="tournament-list">
+							<h4>Tournament 1</h4>
+							Starts ... <br>
+							Ends ...<br>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="dashboard-container">
-				News Feed
+
+		<div class="col-sm-8 col-md-6">
+			<div class="dashboard-container border">
+				<h3 class="lead">News Feed</h3>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-sm-offset-4 col-sm-8 col-md-offset-0 col-md-3">
 			<div class="dashboard-container border">
-				Trending and Others
+				<div class="user-container">
+					<h3 class="lead">Trending</h3>
+					<ul class="list-group trending">
+						<% 10.times do %>
+						<li class="list-group-item trending-card">
+							<div>
+								<%= image_tag 'bullets/bullet_star_empty.png', class: 'card-star' %>
+								<span class="card-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span>
+							</div>
+							<span class="card-author">Posted by Sarah Lee</span><br>
+							<p class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ...
+							</p>
+							<a class="card-expand" href="#">Expand</a>
+							<span class="card-date">23 Aug</span>
+						</li>
+						<% end %>
+						<!-- TODO: Infinite Scroll -->
+					</ul>
+					<a class="float-right" href="#">See all cards.</a><br>
+					<div class="connections-container">
+						<h3 class="lead">Connections</h3>
+						<!-- TODO: Filter for friends -->
+						<% User.all.each do |user| %>
+						<% user_image = ("empty_profile.png" if user.image.blank?) || user.image %>
+							<span class="connection" data-toggle="tooltip" data-placement="bottom" data-original-title="<%= user.name %>">
+								<%= link_to image_tag(user_image, alt: user.name, class: 'profile-thumbnail-md'), user_path(user) %>
+							</span>
+						<% end %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-	<div class="container col-sm-12">
-
-
-
-
-	<div class="row">
-		<div class="col-sm-2 col-md-2 first">
-			<h4>Profile</h4>
-			<div class="thumbnail"><img width = "150px" src= "<%= current_user.image %>" >
-			</div>
-
-			 <button class="btn btn-large btn-primary create-tournament tournament-btn">153 Points</button>
-			 <button class="btn btn-large btn-primary msg-btn">1 New Message</button>
-		</div>
-		<div class="col-sm-5 col-md-5"><br><br>
-			<h2><%= current_user.name %></h2>
-			<p><%= current_user.email %></p>
-
-
-			<p><img src="http://i.imgur.com/mVenBFn.png" width="70px">
-
-			<img src="http://i.imgur.com/Td7vreV.png" width="70px">
-
-			<img src="http://i.imgur.com/bPixPzK.png" width="70px"></p>
-		</div>
-
-</div>
-
-
-<br>
-<div class="row">
-	<div class="col-sm-1 col-md-1"></div>
-	<div class="col-sm-4 col-md-4 thumbnail">
-		<h3>Latest Activity</h3>
-
-			<ul>
-			<li>Leandra just received the Debeggtor Badge! <img src="http://i.imgur.com/Td7vreV.png" width="70px"></li>
-			<li>New Tournament Added, Sign up now! <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSlzjy7GHWAb4_priNMBwYxup-IIWb8S1OJ-P8B4kve57UZRPbETQ" width="60px"></li>
-		</ul>
-
-	</div>
-
-	<div class="col-sm-2 col-md-2"></div>
-
-
-		<div class="col-sm-4 col-md-4 thumbnail">
-				<h3>Trending</h3>
-
-			<ul>
-			<li>#moraliy #lincoln @amyhua check out this new links!</li>
-			<li>Can't wait to start my new case #critiqueatme #Ilovelincoln</li>
-			<li>Love the new forum feature! @leandra and @amyhua are so cool!</li>
-		</ul>
-		</div>
-		<div class="col-sm-1 col-md-1"></div>
-
-
-</div>
 
 <% else %>
 
-
-
+<!-- Non-signed in-->
 
   <%= render 'carousel' %>
+
   <center><h1>The Premier Web Service for Lincoln Douglas Debaters</h1></center>
+
   <hr class="featurette-divider">
   <%= render 'about' %>
 <% end %>

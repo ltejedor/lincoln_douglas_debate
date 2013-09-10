@@ -12,8 +12,11 @@
 						<% num_fillers = num_brackets.zero? ? 1 : num_brackets - num_brackets_in_round %>
 						<% f.object.brackets.each do |bracket| %>
 							<td>
-								<span class="start-date"><%= bracket.start_date %></span>
-								<span class="start-time"><%= bracket.start_time %></span></td>
+								<span class="start-date"><%= bracket.starttime.in_time_zone(current_user.time_zone).strftime("%a %b %-d")%></span>
+								<!-- In user's time zone -->
+								<span class="start-time"><%= bracket.starttime.in_time_zone(current_user.time_zone).strftime("%l:%M%P") %></span>
+								<!-- In user's time zone -->
+							</td>
 						<% end %>
 						<% num_fillers.times do %>
 							<td class="bracket-filler">None Assigned</td>
@@ -34,7 +37,7 @@
 				<%= render 'bracket_fields', f: bracket %>
 			<% end %>
 		</td>
-		<td class="new-bracket-link hide-this">
+		<td class="new-bracket-link">
 			<%= link_to_add_fields '+Bracket', f, :brackets %></fieldset>
 		</td>
 	</tr>

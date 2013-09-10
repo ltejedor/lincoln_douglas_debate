@@ -1,0 +1,138 @@
+/* ************* High Level ************* */
+.divider {
+  width: 100%;
+  float: left;
+}
+.user-profile {
+    position: relative;
+    top: -3.5em;
+    background-position: center top;
+    background-attachment: fixed;
+    padding-bottom: 5em;
+    background: rgb(222,239,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(222,239,255,1) 0%, rgba(152,190,222,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,239,255,1)), color-stop(100%,rgba(152,190,222,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* W3C */
+}
+
+.row.user {
+    border: solid 1px #ddd;
+    position: relative;
+    top: 3em;
+    background-color: #FFF;
+    box-shadow: 10px 10px 10px #608799;
+}
+
+.middle-user-panel {
+    border-left: solid 1px #ddd;
+    padding-left: 1em;
+    padding-right: 3em;
+    padding-bottom: 5em;
+    padding-top: 1em;
+}
+
+.user-container {
+  margin-bottom: 3em;
+  float: left;
+  width: 100%;
+}
+
+.user-panel {
+    float: left;
+    padding: 1em;
+    padding-top: 2em;
+    height: 93em;
+    overflow: auto;
+}
+
+
+/* *********** Left Panel *************** */
+
+.achievement-icon {
+  margin: 5px;
+}
+
+.points-bar{
+  width: 100%;
+  overflow: auto;
+  padding-left: 9px;
+  border-radius: 8px;
+}
+
+.icon {
+  width: 2em;
+  margin-right: 1em;
+}
+.user-social {
+  line-height: 2.5em;
+  width: 50%;
+  float: left;
+}
+.social-field {
+    width: 60%;
+    float: right;
+}
+
+// **** Left: Edit ****
+
+.social-fields {
+    float: left;
+}
+.social-input {
+    float: left;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+/* *********** Center ******************* */
+
+.user-field{
+  float: left;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1.5em;
+  width: 97%;
+}
+.user{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.user-image img {
+    width: 50%;
+    float: left;
+    margin: 1em;
+    max-width: 18em;
+}
+
+.user-basics {
+    width: 40%;
+    padding: 0;
+    float: left;
+}
+.user-summary {
+    width: 100%;
+    margin-left: 1em;
+}
+
+
+
+/* ********* Edit User Profile **************** */
+
+#update-tournament {
+  width: 100%;
+}
+.user-field textarea {
+    width: 100%;
+    padding: 10px;
+}
+.float-right {
+  float: right;
+}}

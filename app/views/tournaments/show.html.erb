@@ -1,6 +1,9 @@
 <div class="tournament-detail">
+	<div class="hide-this" id="hours-start"><%= (@hours if (@hours && @hours > 9)) || '0' + @hours.to_s %></div>
+	<div class="hide-this" id="minutes-start"><%= (@minutes if (@minutes && @minutes > 9)) || '0' + @minutes.to_s %></div>
+	<div class="hide-this" id="seconds-start"><%= (@seconds if (@seconds && @seconds > 9)) || '0' + @seconds.to_s %></div>
 
-<% unless @tournament.organizer.nil? %>
+<% unless @tournament.organizer.nil? || @tournament.organizer.user != current_user %>
 	<div class="row">
 		<div class="tournament-dashboard col-md-12">
 			<h3>Organizer Dashboard</h3>
@@ -29,11 +32,23 @@
 
 	</div>
 	<div class="col-md-9 col-sm-9">
-		<p class="lead"><%= simple_format @tournament.summary %></p>
+		<div class="lead"><%= simple_format @tournament.summary %></div>
+		<p class="lead"><b>From</b> <%= @tournament.start_time %><br><b>Until</b> <%= @tournament.end_time %></p>
+		<% if @hours && @hours < 24 && @hours > 0 %>
+		<!-- Countdown -->
+			<p class="lead">Starting in...</p>
+			<div class="wrapper">
+				<div class="cell">
+					<div id="holder">
+						<div class="digits center-this"></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<p class="hint pull-right"><%= current_user.time_zone %></p>
 
-		<p class="lead"><b>Starts</b> <%= @tournament.start_time %></p>
-		<p class="lead"><b>Ends</b> <%= @tournament.end_time %></p>
 
+		<br><br>
 	</div>
 </div>
 
@@ -87,6 +102,7 @@
 	    </div>
 	  </div>
 	  <% end %>
+
 	  <% unless @tournament.additional_info.blank? && @tournament.rules_info.blank? %>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
@@ -101,15 +117,77 @@
 			<% unless @tournament.rules_info.blank? %>
 		        <h3>Rules</h3>
 		        <%= simple_format @tournament.rules_info %>
-	        <% end %>
-	        <% unless @tournament.additional_info.blank? %>
+      <% end %>
+      <% unless @tournament.additional_info.blank? %>
 		        <h3>Additional Information</h3>
 	    	    <%= simple_format @tournament.additional_info %>
-	        <% end %>
+      <% end %>
 	      </div>
 	    </div>
 	  </div>
 	  <% end %>
+
+
+	  <% unless @registered_num == 0 || @tournament.divisions.nil? %>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+	          List of Registered Attendees (<%= @registered_num %>)
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseFour" class="panel-collapse collapse">
+	      <div class="panel-body">
+      	<% @tournament.divisions.each do |division| %>
+		      	<h3><%= division.name %></h3>
+		    <div class="attendees-li">
+		      <% unless division.competitors.blank? %>
+			      	<p class="lead">Competitors</p>
+			      	<ul class="attendee-li">
+			      		<% division.competitors.each do |competitor| %>
+
+			      			<li>
+			      				<a href="<%=user_path(competitor.debater.user)%>">
+			      					<%= image_tag competitor.debater.user.image || "empty_profile.png", class: 'profile-thumbnail'%>
+			      					<%= competitor.debater.user.name %>
+			      				</a>
+			      			</li>
+
+			      		<% end %>
+			      	</ul>
+	      	<% end %>
+
+	      	<% unless division.judge_registrations.blank? %>
+		      	<p class="lead">Judges</p>
+		      	<ul class="attendee-li">
+		      	<% for judge_registration in division.judge_registrations %>
+
+				      		<li>
+				      			<a href="<%=user_path(judge_registration.judge.user)%>">
+				      			<%= image_tag judge_registration.judge.user.image || "empty_profile.png", class: 'profile-thumbnail'%>
+			      					<%= judge_registration.judge.user.name %>
+			      				</a>
+				      		</li>
+
+			      	<% end %>
+		      	</ul>
+	      	<% end %>
+	      </div>
+	      <% end %>
+	      </div>
+	    </div>
+	  </div>
+
+	  <% end %>
+
+
+
+			<br><br><div class="hint timezone"><b>Time Zone:</b> <%= current_user.time_zone %>. It is currently <%=Time.now.in_time_zone(current_user.time_zone).strftime("%D %l:%M%P")%>. Change the time zone setting in your <%= link_to 'profile', edit_user_path(current_user)%>.
+		<br><br></div>
+
+
 	</div>
 
 
@@ -117,6 +195,7 @@
 
 
 	<div class="col-md-4">
+
 		<div class="rsvp">
 			<span class="lead">Register</span>
 			<ul class="nav nav-tabs">
@@ -148,7 +227,5 @@
 		</div>
 	</div>
 
-
-</div>
 
 

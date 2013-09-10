@@ -1,24 +1,4 @@
 Lincolndouglas::Application.routes.draw do
-  get "users/index"
-
-  get "users/edit"
-
-  get "users/update"
-
-  get "users/show"
-
-  get "users/destroy"
-
-  get "judge_registrations/create"
-
-  get "judge_registrations/destroy"
-
-  get "competitors/create"
-
-  get "debaters/create"
-
-  get "debaters/destroy"
-
   root :to => "pages#home"
 
   resources :tournaments do
@@ -38,6 +18,11 @@ Lincolndouglas::Application.routes.draw do
 
   resources :users
 
+  # Render scopes for Tournaments index
+
+  get '/upcoming-tournaments/', :to => "tournaments#index_upcoming", :as => 'upcoming_tournaments'
+  get '/current-tournaments/', :to => "tournaments#index_current", :as => 'current_tournaments'
+  get '/past-tournaments/', :to => "tournaments#index_past", :as => 'past_tournaments'
 
   # Render routes for static pages
 

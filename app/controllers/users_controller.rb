@@ -6,9 +6,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @image = ("empty_profile.png" if @user.image.blank?) || @user.image
   end
 
   def update
+    judge_attrib = params[:user][:judge_attributes]
+    judge_attrib[:experience] = judge_attrib[:experience].reject(&:blank?).join(",")
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
@@ -21,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @image = ("empty_profile.png" if @user.image.blank?) || @user.image
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

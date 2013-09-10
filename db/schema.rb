@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903205725) do
+ActiveRecord::Schema.define(:version => 20130909101622) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -43,13 +43,13 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
 
   create_table "cases", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description",   :limit => 255
     t.text     "content"
     t.string   "response_type"
     t.boolean  "anon"
     t.integer  "resolution_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "cases", ["resolution_id"], :name => "index_cases_on_resolution_id"
@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
     t.integer "debater_id"
     t.integer "tournament_id"
     t.string  "division"
-    t.integer "division_id"
   end
 
   create_table "critiques", :force => true do |t|
@@ -81,25 +80,39 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
-    t.integer  "tournament_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
+    t.string   "division"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "division_id"
   end
 
   create_table "judges", :force => true do |t|
     t.text     "paradigm"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "level"
+    t.string   "experience"
+    t.string   "years_judging"
+    t.string   "season_judged_no"
+    t.string   "delivery_preference"
+    t.string   "delivery_weight"
+    t.string   "delivery_dealbreaker"
+    t.string   "criterion_weight"
+    t.string   "criterion_required"
+    t.string   "final_rebuttals_should_include"
+    t.string   "voting_issues_are"
+    t.string   "voting_issues_necessity"
+    t.string   "jargon_preference"
+    t.string   "decision_paradigm"
+    t.string   "evidence_necessity"
+    t.string   "notetaking_preference"
   end
 
   create_table "judges_tournaments", :force => true do |t|
@@ -133,12 +146,12 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
   end
 
   create_table "round_brackets", :force => true do |t|
-    t.datetime "starttime"
-    t.integer  "round_id"
-    t.integer  "bracket_id"
+    t.integer "round_id"
+    t.integer "bracket_id"
   end
 
   create_table "rounds", :force => true do |t|
+    t.integer "tournament_id"
     t.integer "order"
     t.integer "division_id"
     t.string  "kind"
@@ -148,10 +161,10 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
   create_table "topics", :force => true do |t|
     t.string   "name"
     t.string   "string"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "source"
-    t.string   "body"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.text     "source",     :limit => 255
+    t.text     "body",       :limit => 255
     t.boolean  "starred"
   end
 
@@ -198,6 +211,7 @@ ActiveRecord::Schema.define(:version => 20130903205725) do
     t.string   "facebook"
     t.string   "social_email"
     t.string   "website"
+    t.string   "time_zone"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"
