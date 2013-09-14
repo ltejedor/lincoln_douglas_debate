@@ -6,8 +6,6 @@ gem 'dynamic_form', '1.1.4'
 
 gem 'paperclip', '2.7.0'
 
-gem "heroku"
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -27,7 +25,10 @@ gem 'formtastic-bootstrap', :git => 'git://github.com/nickl-/formtastic-bootstra
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :rubyheroku open
+
+  # gem 'therubyracer', :platforms => :ruby
+
+
 
 
 gem 'jquery-rails'
@@ -51,12 +52,12 @@ gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 # gem 'debugger'
 
 group :production, :staging do
-	gem 'pg'
+  gem 'pg'
 end
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.11'
-	gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+  gem 'sqlite3', '1.3.5'
 end
 
 group :test do
