@@ -44,10 +44,9 @@
     float: left;
     padding: 1em;
     padding-top: 2em;
-    height: 93em;
+    height: 103em;
     overflow: auto;
 }
-
 
 /* *********** Left Panel *************** */
 
@@ -122,8 +121,6 @@
     margin-left: 1em;
 }
 
-
-
 /* ********* Edit User Profile **************** */
 
 #update-tournament {
@@ -135,4 +132,20 @@
 }
 .float-right {
   float: right;
-}}
+}
+
+
+/* ****** Judging Paradigm ******* */
+
+.user-paradigm ul {
+    list-style: none;
+    margin-top: 0.25em;
+}
+.user-paradigm ul li {
+    margin-top: 0.5em;
+}
+
+.user-paradigm > ul > li {
+    margin-bottom: 3em;
+}
+

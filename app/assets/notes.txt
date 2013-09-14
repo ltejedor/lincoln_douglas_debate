@@ -1,0 +1,8 @@
+notes.txt
+
+* Google Maps v3 Overlays
+https://developers.google.com/maps/documentation/javascript/overlays
+- Adding and Removing Overlays (map objects tied to lat/long coordinates)
+- Single locations are displayed usng Markers, which may somtimes display custom icon images (called "icons" then). https://developers.google.com/maps/documentation/javascript/overlays#Markers
+- info window: overlay for displaying content (text/images) within a popup balloon on top of the map at a given location. https://developers.google.com/maps/documentation/javascript/overlays#InfoWindows
+-

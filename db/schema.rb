@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.string   "level"
+    t.string   "rebuttal_coments"
     t.string   "experience"
     t.string   "years_judging"
     t.string   "season_judged_no"
@@ -115,6 +116,12 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
     t.string   "decision_paradigm"
     t.string   "evidence_necessity"
     t.string   "notetaking_preference"
+    t.string   "experience_comments"
+    t.string   "delivery_comments"
+    t.string   "criterion_comments"
+    t.string   "rebuttal_comments"
+    t.string   "decision_comments"
+    t.string   "notetaking_comments"
   end
 
   create_table "judges_tournaments", :force => true do |t|
