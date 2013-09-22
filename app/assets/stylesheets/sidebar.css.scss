@@ -1,0 +1,25 @@
+
+#sidebar {
+  position: fixed;
+  z-index: 10;
+  border:none;
+
+  tr th {
+    padding: 1em;
+    border: solid 1px #F1F1F1;
+  }
+  tbody:hover .col2 {
+    visibility:  visible;
+  }
+  tbody {
+    background-color: #F8F7ED;
+  }
+  .col2 {
+    visibility: hidden;
+    font-weight: lighter;
+    color: #747474;
+  }
+  .col2:hover {
+    color: black;
+  }
+}

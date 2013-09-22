@@ -25,6 +25,10 @@
 	  See to-do under application.js to fix overlapping navbar  -->
 	<div id="empty-space" style="height: 50px;"></div>
 
+    <% if current_user %>
+    <%= render 'sidebar' %>
+<% end %>
+
 	<% flash.each do |key, value| %>
 		<div class='alert alert-info' id='<%= key %>'>
 			<%= value %>
