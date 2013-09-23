@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909101622) do
+ActiveRecord::Schema.define(:version => 20130923001851) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
     t.integer "debater_id"
     t.integer "tournament_id"
     t.string  "division"
+    t.integer "division_id"
   end
 
   create_table "critiques", :force => true do |t|
@@ -80,6 +81,13 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
 
   create_table "divisions", :force => true do |t|
     t.string   "name"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -87,9 +95,9 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
-    t.string   "division"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "division_id"
   end
 
   create_table "judges", :force => true do |t|
@@ -158,7 +166,6 @@ ActiveRecord::Schema.define(:version => 20130909101622) do
   end
 
   create_table "rounds", :force => true do |t|
-    t.integer "tournament_id"
     t.integer "order"
     t.integer "division_id"
     t.string  "kind"

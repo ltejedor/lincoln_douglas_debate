@@ -1,0 +1,50 @@
+<div id="nav">
+  <ul class="logo">
+    <li>
+      <a href="/"><%= image_tag "logo_icon.png", style: 'height: 20px' %></a>
+    </li>
+  </ul>
+  <ul class="nav-links">
+    <li>
+      <a alt="Tournaments" href="<%=tournaments_path%>">
+        <span class="glyphicon glyphicon-tower"></span>
+        <span class="icon-text tournaments"></span>
+      </a>
+    </li>
+    <li>
+      <a alt="Case Exchange" href="#">
+        <span class="glyphicon glyphicon-paperclip"></span>
+        <span class="icon-text cases"></span>
+      </a>
+    </li>
+    <li>
+      <a alt="Card Exchange" href="#">
+        <span class="glyphicon glyphicon-folder-open"></span>
+        <span class="icon-text cards"></span>
+      </a>
+    </li>
+    <li>
+      <a alt="Forums" href="#">
+        <span class="glyphicon glyphicon-transfer"></span>
+        <span class="icon-text forums"></span>
+      </a>
+    </li>
+  </ul>
+  <ul class="points pull-right">
+    <li class="reputation"><span><%=current_user.points || 0%></span> <small>rep</small>
+      <ul class="points-detail" id="reputation-history">
+        <li><span class="points-add">+10</span> Good Answer</li>
+        <li><span class="points-add">+10</span> Good Answer</li>
+        <li><span class="points-add">+10</span> Good Answer</li>
+        <li><span class="points-add">+30</span> Good Answer</li>
+      </ul>
+    </li>
+    <li class="rank"><span><%= current_user.points || 0%></span> <small>rank</small>
+      <ul class="points-detail" id="rank-history">
+        <li><span class="points-add">+50</span> Won vs. Lincoln North Star AH</li>
+        <li><span class="points-subtract">-10</span> Lost vs. Scarsdale AH</li>
+      </ul>
+    </li>
+  </ul>
+
+</div>

@@ -1,4 +1,6 @@
 Lincolndouglas::Application.routes.draw do
+  get "feedbacks/create"
+
   root :to => "pages#home"
 
   resources :tournaments do

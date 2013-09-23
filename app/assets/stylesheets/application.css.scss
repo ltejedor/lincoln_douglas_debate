@@ -12,6 +12,20 @@
  *= require_tree .
  */
 
+// import original bootstrap
+@import "twitter/bootstrap";
+
+.content {
+  position: relative;
+  top: 40px;
+  left: 50px;
+}
+a:hover {
+  text-decoration: none;
+  color: orange;
+
+}
+
 // can override vars to twitter boostrap here
 
 .signinbutton {
@@ -115,10 +129,6 @@ footer {
 .first{
   margin-left:100px;
 }
-
-
-// import original bootstrap
-@import "twitter/bootstrap";
 
 
 // override twitter bootstrap defaults here

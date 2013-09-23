@@ -1,0 +1,105 @@
+#nav {
+  position: fixed;
+  padding: 10px;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background-color: #F8F7ED;
+  border: solid 1px #F1F1F1;
+  > ul {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    > li {
+      float: left;
+      margin-right: 30px;
+      span {
+        margin-right: 5px;
+      }
+    }
+  }
+  ul.logo {
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 910px){
+  .tournaments.icon-text:before {
+  content: 'Tournaments';
+  }
+  .cases.icon-text:before{
+    content: 'Case Exchange';
+  }
+  .cards.icon-text:before{
+    content: 'Evidence Exchange';
+  }
+  .forums.icon-text:before{
+    content: 'Forums';
+  }
+}
+@media (max-width: 910px) and (min-width: 710px) {
+  .tournaments.icon-text:before{
+  content: 'Tourneys';
+  }
+  .cases.icon-text:before{
+    content: 'Cases';
+  }
+  .cards.icon-text:before{
+    content: 'Cards';
+  }
+  .forums.icon-text:before{
+   content: 'Forums';
+  }
+}
+@media (max-width: 709px){
+  .icon-text:before {
+    content: '';
+  }
+}
+
+
+@media (max-width: 709px) {
+  #nav ul.logo {
+    margin-right: 5%;
+  }
+  #nav ul li {
+    margin-right: 5px;
+  }
+}
+.points {
+  cursor: pointer;
+}
+.points > li > span{
+  font-weight: bold;
+  color: orangered;
+}
+
+.reputation:hover .points-detail, .rank:hover .points-detail {
+  visibility: visible;
+}
+
+.points li:hover {
+  font-weight: bold;
+}
+.points-detail {
+  font-weight: normal;
+  visibility:hidden;
+  list-style: none;
+  margin-left: 0;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  z-index: 20;
+  right: 30px;
+  top: 38px;
+  background-color: #F8F7ED;
+}
+.points-add {
+  color: green;
+}
+.points-subtract {
+  color: red;
+}

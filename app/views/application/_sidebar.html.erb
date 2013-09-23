@@ -1,38 +1,105 @@
-<table id="sidebar">
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-align-justify"></span></td><td class="col2">Collapse</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-bullhorn"></span></td><td class="col2">News</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-dashboard"></span></td><td class="col2">Dashboard</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-comment"></span></td><td class="col2">Messages</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-flash"></span></td><td class="col2">Notifications</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-heart"></span></td><td class="col2">Favorites</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-user"></span></td><td class="col2">People</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-tower"></span></td><td class="col2">Tournaments</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-calendar"></span></td><td class="col2">Schedule</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-question-sign"></span></td><td class="col2">Forums</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-cog"></span></td><td class="col2">Settings</td>
-  </tr>
-  <tr>
-    <td class="col1"><span class="glyphicon glyphicon-off"></span></td><td class="col2">Sign Out</td>
-  </tr>
-</table>
+<div class="sidebar">
+    <table id="sidebar-icons">
+      <tbody>
+          <tr>
+            <th class="col1">
+              <a href="#"><%= image_tag current_user.image, class: 'profile-thumbnail' %> </a>
+            </th>
+            <th class="col2">
+              <a href="<%=user_path(current_user) %>">Profile</a>
+            </th>
+          </tr>
+          <tr>
+            <th class="col1">
+              <a href="#collapse"><span class="glyphicon glyphicon-dashboard"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#collapse">Dashboard</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-comment"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#">Messages</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-flash"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#">Notifications</a>
+            </th>
+
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-heart"></span></a>
+            </th><th class="col2">
+            <a href="#">Favorites</a>
+          </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+            </th>
+            <th class="col2"><a href="#">People</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-tower"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#">My Tournaments</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-calendar"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#">Schedule</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-cog"></span></a>
+            </th>
+            <th class="col2"><a href="#">Settings</a>
+            </th>
+          </tr>
+
+          <tr>
+            <th class="col1">
+              <a href="#"><span class="glyphicon glyphicon-off"></span></a>
+            </th>
+            <th class="col2">
+              <a href="#">Sign Out</a>
+            </th>
+          </tr>
+
+          <tr class="filler-row">
+            <th class="col1"></th>
+            <th class="col2">
+              <small>We are actively<br>updating this site.<br><br>
+                How can we improve?<br>
+                <%= simple_form_for Feedback.new, :url => url_for(controller: 'feedbacks', action: 'create') do |f| %>
+                    <%= f.text_area :content, placeholder: 'Comments', cols: 'auto', rows: 'auto', label: false %><br><br>
+                    <small><%= f.submit 'Send feedback', class: 'btn btn-sm btn-primary'%></small>
+                <% end %>
+              </small>
+            </th>
+          </tr>
+      </tbody>
+    </table>
+</div>

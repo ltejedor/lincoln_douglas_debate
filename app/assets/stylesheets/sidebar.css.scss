@@ -1,11 +1,15 @@
-
-#sidebar {
+.sidebar {
   position: fixed;
+  top: 40px;
+  width: 50px;
+}
+.sidebar:hover {
   z-index: 10;
-  border:none;
+}
+#sidebar-icons {
 
   tr th {
-    padding: 1em;
+    padding: 10px;
     border: solid 1px #F1F1F1;
   }
   tbody:hover .col2 {
@@ -14,6 +18,9 @@
   tbody {
     background-color: #F8F7ED;
   }
+  .col1{
+    text-align: center;
+  }
   .col2 {
     visibility: hidden;
     font-weight: lighter;
@@ -21,5 +28,11 @@
   }
   .col2:hover {
     color: black;
+  }
+}
+.filler-row {
+  height: 1000px;
+  .col2 {
+    vertical-align: top;
   }
 }

@@ -17,17 +17,13 @@
 </head>
 <body style screen_captured_injected="true">
 
-	<%= render 'navbar' %>
+    <%= render 'navbar2'%>
 
 
-<!-- TODO: Currently using empty-space div to avoid content overlap
-	  with navbar, but will eventually need a jQuery solution.
-	  See to-do under application.js to fix overlapping navbar  -->
-	<div id="empty-space" style="height: 50px;"></div>
 
     <% if current_user %>
-    <%= render 'sidebar' %>
-<% end %>
+        <%= render 'sidebar' %>
+    <% end %>
 
 	<% flash.each do |key, value| %>
 		<div class='alert alert-info' id='<%= key %>'>
@@ -35,8 +31,9 @@
 		</div>
 	<% end %>
 
-
-	<%= yield %>
+    <div class="content">
+      <%= yield %>
+    </div>
 
   <hr id="footer-divider">
   <footer class="col-lg-12">
