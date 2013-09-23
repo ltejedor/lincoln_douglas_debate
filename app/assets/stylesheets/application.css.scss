@@ -15,17 +15,32 @@
 // import original bootstrap
 @import "twitter/bootstrap";
 
+.center {
+  margin: auto;
+  text-align: center;
+}
 .content {
   position: relative;
   top: 40px;
-  left: 50px;
+  left: 52px;
+  padding: 10px;
+}
+.row {
+  max-width: 100%;
 }
 a:hover {
   text-decoration: none;
   color: orange;
 
 }
+.pull-left {
+  float:left;
+}
 
+.form-control{
+  position:relative;
+  z-index:10;
+}
 // can override vars to twitter boostrap here
 
 .signinbutton {

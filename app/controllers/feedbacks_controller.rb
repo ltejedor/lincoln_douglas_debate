@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
   def create
-    @feedback = Feedback.new[:feedback]
+    @feedback = Feedback.new(params[:feedback])
     if @feedback.save
       redirect_to :back, notice: 'Thank you for your feedback!'
     else

@@ -28,8 +28,6 @@
 <div class="row">
 	<div class="col-md-3 col-sm-3">
 		<%= image_tag @image, class: "tournament-image" %>
-		<div id="empty-space" style="height: 50px;"></div>
-
 	</div>
 	<div class="col-md-9 col-sm-9">
 		<div class="lead"><%= simple_format @tournament.summary %></div>
@@ -45,9 +43,7 @@
 				</div>
 			</div>
 		<% end %>
-		<p class="hint pull-right"><%= current_user.time_zone %></p>
-
-
+		<p class="hint"><%= current_user.time_zone %></p>
 		<br><br>
 	</div>
 </div>
@@ -181,13 +177,6 @@
 	  </div>
 
 	  <% end %>
-
-
-
-			<br><br><div class="hint timezone"><b>Time Zone:</b> <%= current_user.time_zone %>. It is currently <%=Time.now.in_time_zone(current_user.time_zone).strftime("%D %l:%M%P")%>. Change the time zone setting in your <%= link_to 'profile', edit_user_path(current_user)%>.
-		<br><br></div>
-
-
 	</div>
 
 

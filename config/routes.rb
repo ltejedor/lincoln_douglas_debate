@@ -1,7 +1,8 @@
 Lincolndouglas::Application.routes.draw do
-  get "feedbacks/create"
+
 
   root :to => "pages#home"
+  resources :feedbacks
 
   resources :tournaments do
     resources :competitors
@@ -18,7 +19,9 @@ Lincolndouglas::Application.routes.draw do
     resources :cards
   end
 
-  resources :users
+  resources :users do
+    resources :judge
+  end
 
   # Render scopes for Tournaments index
 

@@ -1,21 +1,73 @@
-/* ************* High Level ************* */
+.profile {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+
+  header {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FCFBF4;
+    border: solid 1px #F5F5F5;
+  }
+  article {
+    padding: 10px;
+  }
+}
+
+.social a {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.icon {
+  width: 25px;
+}
+
+.user {
+  width: 40%;
+    img {
+      width: 100%;
+      max-width: 250px;
+    }
+    .points {
+        font-size: 28px;
+      text-align: center;
+    }
+    .rep {
+        color: orangered;
+    }
+    .rank {
+        color: orange;
+    }
+}
+.basics table {
+  list-style: none;
+  padding-left: 10px;
+  font-size: 12px;
+  width: 59%;
+  tr {
+    vertical-align: top;
+    th{
+      padding-left: 10px;
+      font-weight: normal;
+      color: #949494;
+      width: 125px;
+      padding-bottom: 10px;
+    }
+  }
+}
+.self-summary {
+  padding: 10px;
+  background-color: #ddd;
+  font-style: italic;
+}
+
+/*
+
 .divider {
   width: 100%;
   float: left;
-}
-.user-profile {
-    position: relative;
-    top: -3.5em;
-    background-position: center top;
-    background-attachment: fixed;
-    padding-bottom: 5em;
-    background: rgb(222,239,255); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(222,239,255,1) 0%, rgba(152,190,222,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,239,255,1)), color-stop(100%,rgba(152,190,222,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(222,239,255,1) 0%,rgba(152,190,222,1) 100%); /* W3C */
 }
 
 .row.user {
@@ -48,7 +100,7 @@
     overflow: auto;
 }
 
-/* *********** Left Panel *************** */
+
 
 .achievement-icon {
   margin: 5px;
@@ -75,7 +127,7 @@
     float: right;
 }
 
-// **** Left: Edit ****
+
 
 .social-fields {
     float: left;
@@ -86,7 +138,7 @@
     width: 100%;
 }
 
-/* *********** Center ******************* */
+
 
 .user-field{
   float: left;
@@ -104,13 +156,6 @@
   margin-bottom: 3em;
 }
 
-.user-image img {
-    width: 50%;
-    float: left;
-    margin: 1em;
-    max-width: 18em;
-}
-
 .user-basics {
     width: 40%;
     padding: 0;
@@ -121,7 +166,7 @@
     margin-left: 1em;
 }
 
-/* ********* Edit User Profile **************** */
+
 
 #update-tournament {
   width: 100%;
@@ -135,7 +180,7 @@
 }
 
 
-/* ****** Judging Paradigm ******* */
+
 
 .user-paradigm ul {
     list-style: none;
@@ -148,4 +193,4 @@
 .user-paradigm > ul > li {
     margin-bottom: 3em;
 }
-
+*/

@@ -25,14 +25,21 @@
         <%= render 'sidebar' %>
     <% end %>
 
-	<% flash.each do |key, value| %>
-		<div class='alert alert-info' id='<%= key %>'>
-			<%= value %>
-		</div>
-	<% end %>
-
     <div class="content">
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-12">
+          <% flash.each do |key, value| %>
+              <div class='alert alert-info' id='<%= key %>'>
+                <%= value %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
   <hr id="footer-divider">

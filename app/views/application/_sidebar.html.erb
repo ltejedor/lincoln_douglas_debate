@@ -93,7 +93,7 @@
             <th class="col2">
               <small>We are actively<br>updating this site.<br><br>
                 How can we improve?<br>
-                <%= simple_form_for Feedback.new, :url => url_for(controller: 'feedbacks', action: 'create') do |f| %>
+                <%= simple_form_for Feedback.new, :url => feedbacks_path, html: {method: :post}  do |f| %>
                     <%= f.text_area :content, placeholder: 'Comments', cols: 'auto', rows: 'auto', label: false %><br><br>
                     <small><%= f.submit 'Send feedback', class: 'btn btn-sm btn-primary'%></small>
                 <% end %>

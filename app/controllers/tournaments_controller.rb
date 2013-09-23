@@ -62,9 +62,7 @@ class TournamentsController < ApplicationController
     @tournament = Tournament.new(params[:tournament])
     @tournament.organizer = current_user.as_organizer
     varsity = @tournament.divisions.build(:name => "Novice LD")
-    build_default_rounds(varsity)
     novice = @tournament.divisions.build(:name => "Varsity LD")
-    build_default_rounds(novice)
     adjust_for_time_zone
 
     # TODO: Eventually change division default names as we expand
