@@ -1,0 +1,44 @@
+ #splash {
+  padding-top: 45px;
+  padding-left: 5%;
+  font-size: 20px;
+   header {
+     font-size: 24px;
+     font-weight: bold;
+     padding-bottom: 20px;
+   }
+   .spoof div {
+       padding-bottom: 24px;
+     }
+   .teaser {
+     max-width: 400px;
+   }
+   #teaser{
+     padding-bottom: 24px;
+     padding-right: 24px;
+     max-width: 100%;
+   }
+   .sign-in {
+     font-size: 14px;
+   }
+   .thumbnail {
+     height: 75px;
+     border: none;
+   }
+   .member {
+     float:left;
+     text-align: center;
+     small {
+       font-size: 12px;
+       width: 100%;
+     }
+   }
+}
+.orange {
+  color: orangered;
+}
+@media (min-width: 900px) {
+  #splash{
+    padding-left: 45px;
+  }
+}

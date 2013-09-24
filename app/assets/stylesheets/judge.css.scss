@@ -1,0 +1,35 @@
+// Place all the styles related to the judge controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Form styles
+
+.judge {
+  label {
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 20px;
+    width: 300px;
+    padding-right: 20px;
+    vertical-align: top;
+  }
+  label.checkbox {
+    margin-left: 40px;
+    font-weight: lighter;
+    width: 100%;
+  }
+  .input {
+    margin-bottom: 14px;
+  }
+  select, input, textarea {
+    margin-left: 10px;
+  }
+  textarea {
+    display: inline-block;
+    width: 50%;
+    height: 150px;
+    padding: 10px;
+
+  }
+
+}

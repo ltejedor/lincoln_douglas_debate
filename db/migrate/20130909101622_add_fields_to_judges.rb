@@ -15,12 +15,12 @@ class AddFieldsToJudges < ActiveRecord::Migration
     add_column :judges, :decision_paradigm, :string
     add_column :judges, :evidence_necessity, :string
     add_column :judges, :notetaking_preference, :string
-    add_column :judges, :experience_comments, :string
-    add_column :judges, :delivery_comments, :string
-    add_column :judges, :criterion_comments, :string
-    add_column :judges, :rebuttal_comments, :string
-    add_column :judges, :decision_comments, :string
-    add_column :judges, :notetaking_comments, :string
+    add_column :judges, :experience_comments, :text
+    add_column :judges, :delivery_comments, :text
+    add_column :judges, :criterion_comments, :text
+    add_column :judges, :rebuttal_comments, :text
+    add_column :judges, :decision_comments, :text
+    add_column :judges, :notetaking_comments, :text
 
   end
 end

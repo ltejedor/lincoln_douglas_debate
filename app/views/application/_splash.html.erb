@@ -1,0 +1,40 @@
+<div id="splash">
+  <div class="row">
+    <div class="col-md-12">
+      <header>
+        Lincoln Douglas Debate
+      </header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 teaser">
+        <div><%=image_tag 'http://24.media.tumblr.com/tumblr_mdd2qeMzpo1r7j58vo1_400.gif', id: 'teaser' %></div>
+    </div>
+    <div class="col-md-7 spoof">
+        <span>Collaborate, practice, discuss, and exchange resources with other debaters across the country.</span><br><br>
+        Built for the sake of making debate a more <b>accessible</b>,
+        <b>open</b>, and <b>educationally rewarding</b> activity
+        <b>for all</b>.<br><br>
+        <div class="sign-in">
+          Sign in with your real identity to participate in virtual tournaments, exchanges, and forums.<br>
+          Google+ sign-in is required for our Google+ Hangout integrated features in virtual tournaments.<br><br>
+          <%= link_to image_tag("signin_button.png", class: "signinbutton", id: "signin-account"), "/auth/google_oauth2" %>
+        </div>
+    </div>
+  </div>
+  <div class="joined row">
+    <div class="col-md-12">
+      <h4>Members who Recently Joined</h4>
+          <% for user in User.recently_joined %>
+          <div class="member">
+            <a href="<%= user_path(user)%>">
+                <% @image = ("empty_profile.png" if user.image.blank?) || user.image %>
+                <%= image_tag @image, class: 'thumbnail' %>
+                <small><%= user.name %></small>
+            </a>
+          </div>
+          <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<section>
+  <div class="row">
+    <div class="col-sm-12">
+      <header>Judging Paradigm</header>
+      <article>
+        <% unless @user.judge.experience.blank? %>
+            <h4>Experience</h4>
+            <ul>
+              <li><b><%=@user.judge.experience.sub(",",", ")%></b>.</li>
+              <li>Has been judging debate for <b><%=@user.judge.years_judging%></b> years.</li>
+              <li>Judged <b><%=@user.judge.season_judged_no%></b> rounds this season so far.</li>
+              <li><%=@user.judge.experience_comments%></li>
+            </ul>
+        <% end %>
+        <h4>Delivery</h4>
+        <ul>
+          <li>On a scale from 1 (slow conversational style) to 4 (typical conversational speed) to 7 (rapid conversational speed), I prefer a <b><%=@user.judge.delivery_preference%></b> out of 7.</li>
+          <li>The rate of delivery <b><%= ("does" if @user.judge.delivery_weight == "Yes") || ("does not" if @user.judge.delivery_weight == "No") %></b> weight heavily in my decision.</li>
+          <li>I <b><%= ("will" if @user.judge.delivery_dealbreaker == "Yes") || ("will not" if @user.judge.delivery_dealbreaker == "No") %></b> vote against a student solely for exceeding my preferred speed.</li>
+          <li><%=@user.judge.delivery_comments%></li>
+        </ul>
+        <h4>Criterion</h4>
+        <ul>
+          <li>The criterion <b><%= @user.judge.criterion_weight.sub("It ","")%></b></li>
+          <li>I feel that a value and criterion are <b><%= ("required" if @user.judge.criterion_required == "Yes") || ("not required" if @user.judge.criterion_required == "No") %></b> elements of a case.</li>
+          <li><%=@user.judge.criterion_comments%></li>
+        </ul>
+
+        <h4>Rebuttals and Crystallization</h4>
+        <ul>
+          <li>Final rebuttals should include <b><%=@user.judge.final_rebuttals_should_include%></b>.</li>
+          <li>Voting issues should be given <b><%=@user.judge.voting_issues_necessity%></b></li>
+          <li>Voting issues are <b><%=@user.judge.voting_issues_are%>.</b></li>
+          <li>The use of jargon or technical language ("extend", "cross-apply", "turn", etc.) during rebuttal is <b><%=@user.judge.jargon_preference%></b>.</li>
+          <li><%=@user.judge.rebuttal_comments%></li>
+        </ul>
+
+        <h4>Decision-Making</h4>
+        <ul>
+          <li>In deciding the winner of the round, <b><%= @user.judge.decision_paradigm%></b></li>
+          <li>On a scale of 1 (not necessary) to 4 (sometimes necessary) to 7 (always necesary), I feel that the use of evidence (both analytical and empirical) in the round is a <b><%= @user.judge.evidence_necessity%></b> out of 7.</li>
+          <li><%=@user.judge.decision_comments%></li>
+        </ul>
+
+        <h4>Note-taking</h4>
+        <ul>
+          <li>During the round, <b><%=@user.judge.notetaking_preference%></b></li>
+          <li><%=@user.judge.notetaking_comments%></li>
+        </ul>
+
+        <h4>Additional</h4>
+        <ul>
+          <li><%= simple_format(@user.judge.paradigm) %></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

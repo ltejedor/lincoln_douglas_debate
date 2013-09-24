@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   height: 40px;
-  background-color: #F8F7ED;
+  background-color: black;
   border: solid 1px #F1F1F1;
   > ul {
     float: left;
@@ -23,6 +23,12 @@
   }
   ul.logo {
     margin-right: 50px;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: orange;
   }
 }
 

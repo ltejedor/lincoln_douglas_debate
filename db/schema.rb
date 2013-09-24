@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
   create_table "competitors", :force => true do |t|
     t.integer "debater_id"
     t.integer "tournament_id"
-    t.string  "division"
     t.integer "division_id"
+    t.string  "division"
   end
 
   create_table "critiques", :force => true do |t|
@@ -95,9 +95,9 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
   create_table "judge_registrations", :force => true do |t|
     t.integer  "judge_id"
     t.integer  "tournament_id"
+    t.integer  "division_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "division_id"
   end
 
   create_table "judges", :force => true do |t|
@@ -106,7 +106,6 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.string   "level"
-    t.string   "rebuttal_coments"
     t.string   "experience"
     t.string   "years_judging"
     t.string   "season_judged_no"
@@ -122,12 +121,12 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
     t.string   "decision_paradigm"
     t.string   "evidence_necessity"
     t.string   "notetaking_preference"
-    t.string   "experience_comments"
-    t.string   "delivery_comments"
-    t.string   "criterion_comments"
-    t.string   "rebuttal_comments"
-    t.string   "decision_comments"
-    t.string   "notetaking_comments"
+    t.text     "experience_comments"
+    t.text     "delivery_comments"
+    t.text     "criterion_comments"
+    t.text     "rebuttal_comments"
+    t.text     "decision_comments"
+    t.text     "notetaking_comments"
   end
 
   create_table "judges_tournaments", :force => true do |t|
@@ -168,8 +167,6 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
   create_table "rounds", :force => true do |t|
     t.integer "order"
     t.integer "division_id"
-    t.string  "kind"
-    t.string  "subtype"
   end
 
   create_table "topics", :force => true do |t|
@@ -217,15 +214,17 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
     t.string   "googleplus"
     t.string   "verified_email"
     t.string   "birthday"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "time_zone"
     t.text     "summary"
     t.integer  "points"
+    t.integer  "rep_points"
+    t.integer  "rank_points"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "twitter"
     t.string   "facebook"
     t.string   "social_email"
     t.string   "website"
-    t.string   "time_zone"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"

@@ -30,6 +30,7 @@
       </a>
     </li>
   </ul>
+  <% if current_user %>
   <ul class="points pull-right">
     <li class="reputation"><span><%=current_user.points || 0%></span> <small>rep</small>
       <ul class="points-detail" id="reputation-history">
@@ -46,5 +47,6 @@
       </ul>
     </li>
   </ul>
+  <% end %>
 
 </div>

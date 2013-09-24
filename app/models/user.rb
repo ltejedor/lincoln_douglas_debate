@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
                   :asset, :asset_url,
                   :time_zone
   # TODO: Set time zone settings in Account Settings
+  scope :recently_joined, lambda { order("created_at").limit(50) }
   has_attached_file :asset
   validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
