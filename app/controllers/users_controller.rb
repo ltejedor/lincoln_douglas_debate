@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # TODO: Allow users to edit their profiles
-  before_filter :find_user, :only => [:show, :edit, :update]
+  before_filter :find_user, :only => [:show, :edit, :update, :submit_summary]
 
   def index
   end
@@ -9,9 +9,16 @@ class UsersController < ApplicationController
     @image = ("empty_profile.png" if @user.image.blank?) || @user.image
   end
 
+  def submit_summary
+    if @user.update_attributes(summary: params[:summary])
+      redirect_to @user, notice: 'Self-summary was successfully updated.'
+    else
+      redirect_to @user, alert: 'Self-summary could not be saved.'
+    end
+
+  end
+
   def update
-    judge_attrib = params[:user][:judge_attributes]
-    judge_attrib[:experience] = judge_attrib[:experience].reject(&:blank?).join(",")
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }

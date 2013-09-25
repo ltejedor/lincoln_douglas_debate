@@ -1,5 +1,12 @@
+.sidebar + div {
+  margin-left: 52px;
+}
+.sidebar ~ footer {
+  margin-left: 52px;
+}
 .sidebar {
   position: fixed;
+  z-index: 10;
   top: 40px;
   width: 50px;
 }
@@ -25,9 +32,6 @@
     visibility: hidden;
     font-weight: lighter;
     color: #747474;
-  }
-  .col2:hover {
-    color: black;
   }
 }
 .filler-row {

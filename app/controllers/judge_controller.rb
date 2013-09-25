@@ -6,7 +6,7 @@ class JudgeController < ApplicationController
   def create
     @judge = Judge.new(params[:judge])
     if @judge.save
-      redirect_to @judge, notice: 'You successfully created your judging paradigm.'
+      redirect_to user_judge_path(@judge), notice: 'You successfully created your judging paradigm.'
     end
   end
 
@@ -15,9 +15,10 @@ class JudgeController < ApplicationController
   end
 
   def update
+    params[:judge][:experience] = params[:judge][:experience].reject(&:blank?).join(",")
     @judge = Judge.find(params[:id])
     if @judge.update_attributes(params[:judge])
-      redirect_to @judge, notice: 'You successfully updated your judging paradigm.'
+      redirect_to user_judge_path(@judge), notice: 'You successfully updated your judging paradigm.'
     else
       render action: 'edit'
     end

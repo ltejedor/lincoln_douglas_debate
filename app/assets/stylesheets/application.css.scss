@@ -15,6 +15,7 @@
 // import original bootstrap
 @import "twitter/bootstrap";
 
+
 .center {
   margin: auto;
   text-align: center;
@@ -22,11 +23,14 @@
 .content {
   position: relative;
   top: 40px;
-  left: 52px;
-  padding: 10px;
 }
 .row {
   max-width: 100%;
+  margin: 0;
+}
+footer {
+  margin-top: 50px;
+  text-align: center;
 }
 a:hover {
   text-decoration: none;
@@ -122,13 +126,6 @@ footer {
 	padding-left: 25px;
 }
 
-
-footer {
-  position: relative;
-  width: 100%;
-  bottom: 0;
-}
-
 .card{
   width:300px;
   height: auto;
@@ -140,18 +137,21 @@ footer {
   margin-left:100px;
 }
 
+// Pictures
 
+.thumbnail-med {
+  height: 75px;
+  border: none;
+}
+.subheader > img {
+  height: 42px;
+  padding-right: 10px;
+}
 // override twitter bootstrap defaults here
 
 .carousel-indicators {
     z-index: 14;
 }
-
-.center-this {
-  text-align: center;
-  margin: auto;
-}
-
 
 
 // **************** GLOBAL STYLES

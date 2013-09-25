@@ -1,17 +1,21 @@
 #nav {
   position: fixed;
   padding: 10px;
-  z-index: 99;
+  z-index: 10;
   width: 100%;
   top: 0;
   left: 0;
   height: 40px;
-  background-color: black;
+  background-color: #F8F7ED;
   border: solid 1px #F1F1F1;
+  box-shadow: 0px 3px 5px #AFAFAF;
+  -moz-box-shadow: 0px 3px 5px #AFAFAF;
+  -webkit-box-shadow:0px 3px 5px #AFAFAF;
   > ul {
     float: left;
     list-style-type: none;
     padding: 0;
+    color: black;
     margin: 0;
     > li {
       float: left;
@@ -19,16 +23,19 @@
       span {
         margin-right: 5px;
       }
+      span.glyphicon {
+        color: orange;
+      }
     }
   }
   ul.logo {
     margin-right: 50px;
   }
-  a {
-    color: white;
-  }
   a:hover {
     color: orange;
+  }
+  a {
+    color: black;
   }
 }
 
@@ -45,6 +52,9 @@
   .forums.icon-text:before{
     content: 'Forums';
   }
+  .people.icon-text:before {
+    content: 'People';
+  }
 }
 @media (max-width: 910px) and (min-width: 710px) {
   .tournaments.icon-text:before{
@@ -58,6 +68,9 @@
   }
   .forums.icon-text:before{
    content: 'Forums';
+  }
+  .people.icon-text:before {
+    content: 'People';
   }
 }
 @media (max-width: 709px){

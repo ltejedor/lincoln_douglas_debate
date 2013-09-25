@@ -15,13 +15,15 @@
     padding: 10px;
   }
 }
-
-.social a {
-  padding-left: 15px;
-  padding-right: 15px;
+.social {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.social > a {
+  padding-right: 30px;
 }
 .icon {
-  width: 25px;
+  width: 22px;
 }
 
 .user {
@@ -41,27 +43,72 @@
         color: orange;
     }
 }
-.basics table {
-  list-style: none;
-  padding-left: 10px;
-  font-size: 12px;
-  width: 59%;
-  tr {
-    vertical-align: top;
-    th{
-      padding-left: 10px;
-      font-weight: normal;
-      color: #949494;
-      width: 125px;
-      padding-bottom: 10px;
+
+.right-half {
+  width: 60%;
+  div {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+    form {
+      padding-top: 30px;
+    }
+  }
+  table {
+    list-style: none;
+    padding-left: 10px;
+    font-size: 12px;
+    width: 100%;
+    tr {
+      vertical-align: top;
+      th{
+        padding-left: 10px;
+        font-weight: normal;
+        color: #949494;
+        width: 125px;
+        padding-bottom: 10px;
+      }
     }
   }
 }
 .self-summary {
   padding: 10px;
   background-color: #ddd;
-  font-style: italic;
+  font-size: 12px;
+  max-height: 260px;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
 }
+.self-summary:focus {
+  outline-color: #63553D;
+}
+
+.self-summary + small {
+  color: #969696;
+}
+.saved {
+  color: grey;
+  font-weight: bold;
+}
+.orange-link {
+  color: orange;
+}
+.orange-link:hover {
+  text-decoration: underline;
+}
+
+/* Social Media Form */
+
+.social-media-edit-form {
+  display: none;
+  margin-top: 40px;
+  padding: 20px;
+  border: solid 1px #ddd;
+  font-size: 12px;
+}
+
 
 /*
 

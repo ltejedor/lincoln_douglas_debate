@@ -1,6 +1,6 @@
 Lincolndouglas::Application.routes.draw do
 
-
+  post '/submit-summary', to: "users#submit_summary"
   root :to => "pages#home"
   resources :feedbacks
 
@@ -24,7 +24,7 @@ Lincolndouglas::Application.routes.draw do
   end
 
   # Render scopes for Tournaments index
-
+  get '/judges', to: "judge#index", as: 'judges'
   get '/upcoming-tournaments/', :to => "tournaments#index_upcoming", :as => 'upcoming_tournaments'
   get '/current-tournaments/', :to => "tournaments#index_current", :as => 'current_tournaments'
   get '/past-tournaments/', :to => "tournaments#index_past", :as => 'past_tournaments'

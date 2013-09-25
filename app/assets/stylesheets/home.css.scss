@@ -1,7 +1,19 @@
  #splash {
-  padding-top: 45px;
-  padding-left: 5%;
+   padding: 20px;
+   padding-bottom: 100px;
+   background-color: #ddd;
   font-size: 20px;
+   .wrapper {
+     width: 1000px;
+     margin:  auto;
+     border: solid 1px #ddd;
+     margin-top: 25px;
+     padding: 50px;
+     background-color: white;
+     box-shadow: 7px 7px 6px 2px #AFAFAF;
+     -moz-box-shadow: 7px 7px 6px 2px #AFAFAF;
+     -webkit-box-shadow: 7px 7px 6px 2px #AFAFAF;
+   }
    header {
      font-size: 24px;
      font-weight: bold;
@@ -20,10 +32,6 @@
    }
    .sign-in {
      font-size: 14px;
-   }
-   .thumbnail {
-     height: 75px;
-     border: none;
    }
    .member {
      float:left;

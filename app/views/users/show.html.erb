@@ -4,70 +4,93 @@
     <div class ="row">
       <div class="col-sm-12">
         <h3><%= @user.name %></h3>
+        <% if current_user %>
+        <% end %>
       </div>
     </div>
-        <div class="row">
+        <div class="row user-info">
           <div class="col-sm-6 pull-left clearfix">
             <section class="basics">
-              <article>
                 <div class="user pull-left">
                   <%= image_tag @image %>
                   <div class="points rep"><%= @user.points || 0 %> rep</div>
                   <div class="points rank"><%= @user.points || 0 %> rank</div>
                 </div>
-                <table>
-                  <tr><th >Team</th><td>Lincoln North Star High School</td></tr>
-                  <tr><th >Location</th><td>Lincoln, Nebraska</td></tr>
-                  <tr><th >Member since</th><td>4 weeks ago</td></tr>
-                  <tr><th >Last logged in</th><td>3 min ago</td></tr>
-                  <tr><th >Profile Views</th><td>43</td></tr>
-                  <% unless @user.judge.nil? %>
-                    <tr>
-                      <th >Judging Paradigm</th>
-                      <td>
-                        <%= @user.judge.nil? ? 'Not Available' : 'Available'%>
-                        <%= link_to '(Edit)', edit_user_judge_path(@user) if @user == current_user %>
-                      </td>
-                    </tr>
+
+                <div class="right-half pull-right">
+                  <table>
+                    <tr><th >Team</th><td>Lincoln North Star High School</td></tr>
+                    <tr><th >Location</th><td>Lincoln, Nebraska</td></tr>
+                    <tr><th >Member since</th><td>4 weeks ago</td></tr>
+                    <tr><th >Last logged in</th><td>3 min ago</td></tr>
+                    <tr><th >Profile Views</th><td>43</td></tr>
+                    <% unless @user.judge.nil? %>
+                        <tr>
+                          <th >Judging Paradigm</th>
+                          <td>
+                            <%= @user.judge.nil? ? 'Not Available' : 'Available'%>
+                            <%= link_to '(Edit)', edit_user_judge_path(@user, @user.judge), class: 'orange-link' if (current_user && @user == current_user && @user.judge) %>
+                          </td>
+                        </tr>
+                    <% end %>
+                  </table>
+                  <div class="social">
+                    <% unless @user.googleplus.blank? %>
+                        <a href="<%= @user.googleplus%>">
+                          <%= image_tag 'googleplus_icon_black.png', class: 'icon' %>
+                        </a>
+                    <% end %>
+                    <% unless @user.facebook.blank? %>
+                        <a href="<%= @user.facebook%>">
+                          <%= image_tag 'facebook_icon_black.png', class: 'icon' %>
+                        </a>
+                    <% end %>
+                    <% unless @user.twitter.blank? %>
+                        <a href="<%= @user.twitter%>">
+                          <%= image_tag 'twitter_icon_black.png', class: 'icon' %>
+                        </a>
+                    <% end %>
+                    <% unless @user.social_email.blank? %>
+                        <a href="mailto:<%= @user.social_email%>">
+                          <%= image_tag 'email_icon_black.png', class: 'icon' %>
+                        </a>
+                    <% end %>
+                    <% unless @user.website.blank? %>
+                        <a href="<%= @user.website%>">
+                          <%= image_tag 'website_icon_black.png', class: 'icon' %>
+                        </a>
+                    <% end %>
+
+                  </div>
+                  <% if (current_user && @user == current_user) %>
+                      <small><a class="pull-right orange-link save-social-media" href="#">edit/add links</a></small>
                   <% end %>
-                </table>
-              </article>
+                  <div class="social-media-edit-form">
+                    <%= simple_form_for @user do |f| %>
+                        <%= f.input :googleplus, label: 'Google+' %>
+                        <%= f.input :facebook %>
+                        <%= f.input :twitter %>
+                        <%= f.input :social_email, label: 'Email Address' %>
+                        <%= f.input :website, label: 'Personal Website' %><br>
+                        <%= f.submit val: 'Update', class: 'btn btn-primary' %>
+                    <% end %>
+                  </div>
+                </div>
             </section>
           </div>
           <div class="col-sm-6 pull-left clearfix">
             <section>
-              <article class="center">
-                <div class="social">
-                  <% unless @user.googleplus.nil? %>
-                      <a href="<%= @user.googleplus%>">
-                        <%= image_tag 'googleplus_icon_black.png', class: 'icon' %>
-                      </a>
-                  <% end %>
-                  <% unless @user.facebook.nil? %>
-                      <a href="<%= @user.facebook%>">
-                        <%= image_tag 'facebook_icon_black.png', class: 'icon' %>
-                      </a>
-                  <% end %>
-                  <% unless @user.twitter.nil? %>
-                      <a href="<%= @user.twitter%>">
-                        <%= image_tag 'twitter_icon_black.png', class: 'icon' %>
-                      </a>
-                  <% end %>
-                  <% unless @user.social_email.nil? %>
-                      <a href="mailto:<%= @user.social_email%>">
-                        <%= image_tag 'email_icon_black.png', class: 'icon' %>
-                      </a>
-                  <% end %>
-                  <% unless @user.website.nil? %>
-                      <a href="<%= @user.website%>">
-                        <%= image_tag 'website_icon_black.png', class: 'icon' %>
-                      </a>
-                  <% end %>
-                </div>
+              <article class="self-summary" <%= 'contenteditable=true' if (current_user && @user == current_user) %> >
+                  <%= (@user.summary.html_safe if @user.summary)%>
               </article>
-              <article class="self-summary">
-                <%= simple_format(@user.summary)%>
-              </article>
+              <% if (current_user && @user==current_user) %>
+                <small>
+                  <div class="pull-left">Click above to edit your self-summary.</div>
+                  <div class="pull-right">
+                    <a href="#" data-user="<%= @user.id %>" class="orange-link reset"> clear all</a> |
+                    <a href="#" data-user="<%=@user.id%>" class="orange-link save">save edits </a>
+                  </div></small>
+              <% end %>
             </section>
           </div>
         </div>
@@ -94,65 +117,5 @@
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="row">
-      <div class="col-sm-12">
-        <header>Judging Paradigm</header>
-        <article>
-          <% unless @user.judge.experience.blank? %>
-              <h4>Experience</h4>
-              <ul>
-                <li><b><%=@user.judge.experience.sub(",",", ")%></b>.</li>
-                <li>Has been judging debate for <b><%=@user.judge.years_judging%></b> years.</li>
-                <li>Judged <b><%=@user.judge.season_judged_no%></b> rounds this season so far.</li>
-                <li><%=@user.judge.experience_comments%></li>
-              </ul>
-          <% end %>
-          <h4>Delivery</h4>
-          <ul>
-            <li>On a scale from 1 (slow conversational style) to 4 (typical conversational speed) to 7 (rapid conversational speed), I prefer a <b><%=@user.judge.delivery_preference%></b> out of 7.</li>
-            <li>The rate of delivery <b><%= ("does" if @user.judge.delivery_weight == "Yes") || ("does not" if @user.judge.delivery_weight == "No") %></b> weight heavily in my decision.</li>
-            <li>I <b><%= ("will" if @user.judge.delivery_dealbreaker == "Yes") || ("will not" if @user.judge.delivery_dealbreaker == "No") %></b> vote against a student solely for exceeding my preferred speed.</li>
-            <li><%=@user.judge.delivery_comments%></li>
-          </ul>
-          <h4>Criterion</h4>
-          <ul>
-            <li>The criterion <b><%= @user.judge.criterion_weight.sub("It ","")%></b></li>
-            <li>I feel that a value and criterion are <b><%= ("required" if @user.judge.criterion_required == "Yes") || ("not required" if @user.judge.criterion_required == "No") %></b> elements of a case.</li>
-            <li><%=@user.judge.criterion_comments%></li>
-          </ul>
-
-          <h4>Rebuttals and Crystallization</h4>
-          <ul>
-            <li>Final rebuttals should include <b><%=@user.judge.final_rebuttals_should_include%></b>.</li>
-            <li>Voting issues should be given <b><%=@user.judge.voting_issues_necessity%></b></li>
-            <li>Voting issues are <b><%=@user.judge.voting_issues_are%>.</b></li>
-            <li>The use of jargon or technical language ("extend", "cross-apply", "turn", etc.) during rebuttal is <b><%=@user.judge.jargon_preference%></b>.</li>
-            <li><%=@user.judge.rebuttal_comments%></li>
-          </ul>
-
-          <h4>Decision-Making</h4>
-          <ul>
-            <li>In deciding the winner of the round, <b><%= @user.judge.decision_paradigm%></b></li>
-            <li>On a scale of 1 (not necessary) to 4 (sometimes necessary) to 7 (always necesary), I feel that the use of evidence (both analytical and empirical) in the round is a <b><%= @user.judge.evidence_necessity%></b> out of 7.</li>
-            <li><%=@user.judge.decision_comments%></li>
-          </ul>
-
-          <h4>Note-taking</h4>
-          <ul>
-            <li>During the round, <b><%=@user.judge.notetaking_preference%></b></li>
-            <li><%=@user.judge.notetaking_comments%></li>
-          </ul>
-
-          <h4>Additional</h4>
-          <ul>
-            <li><%= simple_format(@user.judge.paradigm) %></li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
 
 </div>

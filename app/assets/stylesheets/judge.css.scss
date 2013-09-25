@@ -33,3 +33,29 @@
   }
 
 }
+
+// Show styles
+
+
+.judge article{
+  header {
+    width: 100%;
+    float: left;
+  }
+  ul {
+    width: 50%;
+    float: left;
+    + .comments {
+      width: 50%;
+    }
+  }
+
+}
+.comments {
+  float: left;
+  font-style: italic;
+  padding-left: 40px;
+  padding-right: 40px;
+
+
+}

@@ -9,7 +9,7 @@
       <%= f.input :years_judging, label: 'I have judged LD debate for ___ years', collection: ['Less than 1', 2, 3, 4, '5 or more'] %>
 
       <%= f.input :season_judged_no, label: 'How many LD rounds have you judged this season?',
-                  collection: ['Fewer than 20', '20 to 40', '40 to 60', '60 or more'] %>
+                  collection: ['fewer than 20', '20 to 40', '40 to 60', '60 or more'] %>
 
       <%= f.input :experience_comments, label: 'Comments' %>
 
@@ -32,7 +32,7 @@
 
       <%= f.input :criterion_required, label: 'Do you feel that a value and criterion are required elements of a case?', collection: ['Yes','No'] %>
 
-      <%= f.textarea :criterion_comments, label: 'Comments' %>
+      <%= f.input :criterion_comments, label: 'Comments' %>
 
       <header class="lead">Rebuttals and Crystallization</header>
       <%= f.input :final_rebuttals_should_include, label: 'Final rebuttals should include...',
@@ -67,8 +67,8 @@
 
       <header class="lead">Final Comments</header>
       <%= f.input :paradigm, label: 'Add any brief comments you feel are appropriate. You might want to include information about practices that you encourage or discourage in a round.' %>
-
-      <%= f.submit %>
+        <br><br>
+      <%= f.submit 'Update Judging Paradigm', class: 'pull-right btn btn-primary'%>
 
 
 <% end %>

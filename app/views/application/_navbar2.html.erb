@@ -1,4 +1,22 @@
 <div id="nav">
+  <% if current_user %>
+      <ul class="points pull-right">
+        <li class="reputation"><span><%=current_user.points || 0%></span> <small>rep</small>
+          <ul class="points-detail" id="reputation-history">
+            <li><span class="points-add">+10</span> Good Answer</li>
+            <li><span class="points-add">+10</span> Good Answer</li>
+            <li><span class="points-add">+10</span> Good Answer</li>
+            <li><span class="points-add">+30</span> Good Answer</li>
+          </ul>
+        </li>
+        <li class="rank"><span><%= current_user.points || 0%></span> <small>rank</small>
+          <ul class="points-detail" id="rank-history">
+            <li><span class="points-add">+50</span> Won vs. Lincoln North Star AH</li>
+            <li><span class="points-subtract">-10</span> Lost vs. Scarsdale AH</li>
+          </ul>
+        </li>
+      </ul>
+  <% end %>
   <ul class="logo">
     <li>
       <a href="/"><%= image_tag "logo_icon.png", style: 'height: 20px' %></a>
@@ -29,24 +47,13 @@
         <span class="icon-text forums"></span>
       </a>
     </li>
-  </ul>
-  <% if current_user %>
-  <ul class="points pull-right">
-    <li class="reputation"><span><%=current_user.points || 0%></span> <small>rep</small>
-      <ul class="points-detail" id="reputation-history">
-        <li><span class="points-add">+10</span> Good Answer</li>
-        <li><span class="points-add">+10</span> Good Answer</li>
-        <li><span class="points-add">+10</span> Good Answer</li>
-        <li><span class="points-add">+30</span> Good Answer</li>
-      </ul>
-    </li>
-    <li class="rank"><span><%= current_user.points || 0%></span> <small>rank</small>
-      <ul class="points-detail" id="rank-history">
-        <li><span class="points-add">+50</span> Won vs. Lincoln North Star AH</li>
-        <li><span class="points-subtract">-10</span> Lost vs. Scarsdale AH</li>
-      </ul>
+    <li>
+      <a alt="People" href="#">
+        <span class="glyphicon glyphicon-user"></span>
+        <span class="icon-text people"></span>
+      </a>
     </li>
   </ul>
-  <% end %>
+
 
 </div>

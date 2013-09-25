@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923001851) do
+ActiveRecord::Schema.define(:version => 20130924090106) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20130923001851) do
   create_table "rounds", :force => true do |t|
     t.integer "order"
     t.integer "division_id"
+    t.string  "kind"
   end
 
   create_table "topics", :force => true do |t|
