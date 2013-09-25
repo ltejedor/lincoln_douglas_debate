@@ -1,1 +1,12 @@
-<%= render 'form' %>
+<section class="content-container judge">
+
+  <article>
+    <%=link_to 'See the list of all judges', judges_path, class: 'pull-right orange-link' %>
+    <h2>Judging Paradigm</h2>
+    <h3 class="subheader"><%= image_tag @judge.user.image%><%=link_to @judge.user.name, user_path(@judge.user), class: 'orange-link'%> <span style="color: #ddd">LD debate judge</span></h3>
+
+    <%= render 'form' %>
+
+  </article>
+
+</section>

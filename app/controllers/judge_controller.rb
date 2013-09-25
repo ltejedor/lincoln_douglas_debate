@@ -30,5 +30,6 @@ class JudgeController < ApplicationController
   end
 
   def index
+    @judges = Judge.all.sort! {|a,b| a.user.last_name <=> b.user.last_name}
   end
 end

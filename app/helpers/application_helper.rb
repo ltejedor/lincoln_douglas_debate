@@ -41,4 +41,10 @@ module ApplicationHelper
 
   end
 
+  def unless_blank(string)
+    unless string.blank?
+      string
+    end
+  end
+
 end

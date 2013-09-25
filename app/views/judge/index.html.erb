@@ -1,1 +1,19 @@
-<h2>Judges</h2>
+<div class="content-container">
+  <h2>Judges</h2><br>
+  <div class="row">
+    <% for judge in @judges %>
+        <div class="col-md-6">
+          <div class="block clearfix">
+            <%= link_to (image_tag judge.user.image, class: 'thumbnail-med pull-left'), user_path(judge.user) %>
+            <div class="aside-lg pull-left">
+              <b class="subheader"><%=link_to judge.user.name, user_path(judge.user), class: 'no-color' %></b><br>
+              <small class="subheader"><%= judge.paradigm_blank? ?
+                                                   'paradigm unavailable' :
+                                                   (link_to 'See paradigm', user_judge_path(judge.user, judge), class: 'orange-link') %></small>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+

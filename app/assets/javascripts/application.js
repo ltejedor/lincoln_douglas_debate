@@ -216,6 +216,12 @@ $(document).ready(function() {
         $('.social-media-edit-form').fadeToggle();
     })
 
+    // Judging Paradigm Check Experience checkboxes
+    var experiences = $('#experience-string').text().split(',');
+    for (var i=0; i < experiences.length; i++) {
+        $('.judge_experience input[value="' + experiences[i] + '"]').prop('checked',true);
+    }
+
 });
 
 

@@ -28,8 +28,8 @@
                         <tr>
                           <th >Judging Paradigm</th>
                           <td>
-                            <%= @user.judge.nil? ? 'Not Available' : 'Available'%>
-                            <%= link_to '(Edit)', edit_user_judge_path(@user, @user.judge), class: 'orange-link' if (current_user && @user == current_user && @user.judge) %>
+                            <%= @user.judge.paradigm_blank? ? 'Unavailable' : (link_to 'Available', user_judge_path(@user, @user.judge))%>
+                            <%= link_to '(Add/Edit)', edit_user_judge_path(@user, @user.judge), class: 'orange-link' if (current_user && @user == current_user && @user.judge) %>
                           </td>
                         </tr>
                     <% end %>

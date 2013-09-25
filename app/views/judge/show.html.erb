@@ -3,55 +3,63 @@
       <article>
         <%=link_to 'See the list of all judges', judges_path, class: 'pull-right orange-link' %>
         <h2>Judging Paradigm</h2>
-        <h3 class="subheader"><%= image_tag @judge.user.image%><%= @judge.user.name%></h3>
-        <% unless @judge.experience.blank? %>
-            <header>Experience</header>
-            <ul>
-              <% for experience in @judge.experience.split(',') %>
-              <li><b><%=experience%></b>.</li>
-              <% end %>
-              <li>Has been judging debate for <b><%=@judge.years_judging || '__'%></b> years.</li>
-              <li>Judged <b><%=@judge.season_judged_no || '__' %></b> rounds this season so far.</li>
-            </ul>
-            <div class="comments"><%=@judge.experience_comments%></div>
-      <% end %>
-        <header>Delivery</header>
+        <h3 class="subheader"><%= link_to (image_tag @judge.user.image, class: 'subheader-img'), user_path(@judge.user)%><%=link_to @judge.user.name, user_path(@judge.user), class: 'orange-link'%> <span style="color: #ddd">LD debate judge</span></h3>
+        <header>Experience<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#experience', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
+
         <ul>
-          <li>On a scale from 1 (slow conversational style) to 4 (typical conversational speed) to 7 (rapid conversational speed), I prefer a <b><%=@judge.delivery_preference || "___"%></b> out of 7.</li>
+              <% for experience in @judge.experience.split(',') %>
+                  <li><b><%=experience%></b></li>
+            <% end %>
+              <li>Has been judging debate for <b><%=(unless_blank @judge.years_judging) || '__'%></b> years.</li>
+              <li>Judged <b><%=(unless_blank @judge.season_judged_no) || "___" %></b> rounds this season so far.</li>
+            </ul>
+        <div class="comments"><%=@judge.experience_comments%></div>
+        <header>Delivery<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#delivery', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
+
+        <ul>
+          <li>On a scale from 1 (slow conversational style) to 4 (typical conversational speed) to 7 (rapid conversational speed), I prefer a <b><%=(unless_blank @judge.delivery_preference) || "___"%></b> out of 7.</li>
           <li>The rate of delivery <b><%= ("does" if @judge.delivery_weight == "Yes") || ("does not" if @judge.delivery_weight == "No") || "___" %></b> weight heavily in my decision.</li>
           <li>I <b><%= ("will" if @judge.delivery_dealbreaker == "Yes") || ("will not" if @judge.delivery_dealbreaker == "No") || "___" %></b> vote against a student solely for exceeding my preferred speed.</li>
         </ul>
         <div class="comments"><%=@judge.delivery_comments%></div>
-        <header>Criterion</header>
+
+        <header>Criterion<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#criterion', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
+
         <ul>
-          <li>The criterion <b><%= @judge.criterion_weight.sub("It ","") || "___" %></b></li>
+          <li>The criterion <b><%= (unless_blank @judge.criterion_weight.sub("It ","")) || "___" %></b>.</li>
           <li>I feel that a value and criterion are <b><%= ("required" if @judge.criterion_required == "Yes") || ("not required" if @judge.criterion_required == "No") || "___" %></b> elements of a case.</li>
         </ul>
         <div class="comments"><%=@judge.criterion_comments%></div>
+        <header>Rebuttals and Crystallization<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#rebuttals-and-crystallization', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
 
-        <header>Rebuttals and Crystallization</header>
         <ul>
-          <li>Final rebuttals should include <b><%=@judge.final_rebuttals_should_include || "___" %></b>.</li>
-          <li>Voting issues should be given <b><%=@judge.voting_issues_necessity || "___" %></b></li>
-          <li>Voting issues are <b><%=@judge.voting_issues_are || "___" %>.</b></li>
-          <li>The use of jargon or technical language ("extend", "cross-apply", "turn", etc.) during rebuttal is <b><%=@judge.jargon_preference || "___" %></b>.</li>
+          <li>Final rebuttals should include <b><%=(unless_blank @judge.final_rebuttals_should_include) || "___" %></b>.</li>
+          <li>Voting issues should be given <b><%=(unless_blank @judge.voting_issues_necessity) || "___" %>.</b></li>
+          <li>Voting issues are <b><%=(unless_blank @judge.voting_issues_are) || "___" %>.</b></li>
+          <li>The use of jargon or technical language ("extend", "cross-apply", "turn", etc.) during rebuttal is <b><%=(unless_blank @judge.jargon_preference) || "___" %></b>.</li>
         </ul>
         <div class="comments"><%=@judge.rebuttal_comments%></div>
 
-        <header>Decision-Making</header>
+        <header>Decision-Making<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#decision-making',
+                                                  class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %>
+        </small></header>
+
         <ul>
-          <li>In deciding the winner of the round, <b><%= @judge.decision_paradigm%></b></li>
-          <li>On a scale of 1 (not necessary) to 4 (sometimes necessary) to 7 (always necesary), I feel that the use of evidence (both analytical and empirical) in the round is a <b><%= @judge.evidence_necessity || "___" %></b> out of 7.</li>
+          <li>In deciding the winner of the round, <b><%= (unless_blank @judge.decision_paradigm) || "___"%>.</b></li>
+          <li>On a scale of 1 (not necessary) to 4 (sometimes necessary) to 7 (always necesary),
+            I feel that the use of evidence (both analytical and empirical) in the round is a
+            <b><%= (unless_blank @judge.evidence_necessity) || "___" %></b> out of 7.</li>
         </ul>
         <div class="comments"><%=@judge.decision_comments%></div>
+        <header>Notetaking<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#notetaking', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
 
-        <header>Note-taking</header>
         <ul>
-          <li>During the round, <b><%=@judge.notetaking_preference || "___" %></b></li>
+          <li>During the round, <b><%=(unless_blank @judge.notetaking_preference) || "___" %></b>.</li>
         </ul>
         <div class="comments"><%=@judge.notetaking_comments%></div>
 
-        <header>Additional</header>
+        <header>Additional<small><%= link_to 'edit', edit_user_judge_path(@judge)+'#additional', class: 'pull-right orange-link' if (current_user && current_user == @judge.user) %></small></header>
+
         <div class="comments">
           <%= simple_format(@judge.paradigm) %>
         </div>

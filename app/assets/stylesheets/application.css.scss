@@ -15,7 +15,9 @@
 // import original bootstrap
 @import "twitter/bootstrap";
 
-
+.no-color{
+  color: inherit;
+}
 .center {
   margin: auto;
   text-align: center;
@@ -39,6 +41,11 @@ a:hover {
 }
 .subheader {
   color: rgba(87, 86, 93, 0.87);
+
+}
+.subheader-img {
+  height: 42px;
+  padding-right: 10px;
 }
 .pull-left {
   float:left;
@@ -143,14 +150,17 @@ footer {
   height: 75px;
   border: none;
 }
-.subheader > img {
-  height: 42px;
-  padding-right: 10px;
-}
 // override twitter bootstrap defaults here
 
 .carousel-indicators {
     z-index: 14;
+}
+
+// Asides
+
+.aside-lg {
+  padding: 10px;
+  width: 75%;
 }
 
 
