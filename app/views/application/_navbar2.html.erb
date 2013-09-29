@@ -1,7 +1,7 @@
 <div id="nav">
   <% if current_user %>
       <ul class="points pull-right">
-        <li class="reputation"><span><%=current_user.points || 0%></span> <small>rep</small>
+        <li class="reputation"><span><%=current_user.rep || 0%></span> <small>rep</small>
           <ul class="points-detail" id="reputation-history">
             <li><span class="points-add">+10</span> Good Answer</li>
             <li><span class="points-add">+10</span> Good Answer</li>
@@ -9,7 +9,7 @@
             <li><span class="points-add">+30</span> Good Answer</li>
           </ul>
         </li>
-        <li class="rank"><span><%= current_user.points || 0%></span> <small>rank</small>
+        <li class="rank"><span><%= current_user.rank || 0%></span> <small>rank</small>
           <ul class="points-detail" id="rank-history">
             <li><span class="points-add">+50</span> Won vs. Lincoln North Star AH</li>
             <li><span class="points-subtract">-10</span> Lost vs. Scarsdale AH</li>

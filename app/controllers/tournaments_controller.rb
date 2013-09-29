@@ -25,7 +25,7 @@ class TournamentsController < ApplicationController
     @seconds = (partial_minute * 60).round
 
     default_image = "https://cdn2.iconfinder.com/data/icons/huge-basic-vector-icons-part-3-3/512/awards_award_star_gold_medal-512.png"
-    @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset_url || default_image
+    @image = (@tournament.asset.url if @tournament.asset.url != "/assets/original/missing.png") || @tournament.asset.url || default_image
 
     @registered_num = @tournament.judge_registrations.length + @tournament.competitors.length
     # sort rounds by first bracket start time
@@ -63,6 +63,8 @@ class TournamentsController < ApplicationController
     @tournament.organizer = current_user.as_organizer
     varsity = @tournament.divisions.build(:name => "Novice LD")
     novice = @tournament.divisions.build(:name => "Varsity LD")
+    build_default_rounds(varsity)
+    build_default_rounds(novice)
     adjust_for_time_zone
 
     # TODO: Eventually change division default names as we expand

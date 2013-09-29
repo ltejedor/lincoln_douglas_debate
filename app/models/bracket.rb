@@ -2,7 +2,7 @@ class Bracket < ActiveRecord::Base
   attr_accessible :name, :starttime, :start_time_string # is in user's time zone
   belongs_to :division
   belongs_to :round
-  # validate :format_datetime, :message => 'is incorrectly formatted. Should be in MM/DD/YY HH:MM(AM/PM) format with no spaces before or after.'
+  validate :format_datetime, :message => 'is incorrectly formatted. Should be in MM/DD/YY HH:MM(AM/PM) format with no spaces before or after.'
 
 
   def starttime_adjusted_for_time_zone(time_zone)

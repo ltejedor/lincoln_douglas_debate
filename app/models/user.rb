@@ -1,13 +1,37 @@
 class User < ActiveRecord::Base
+
+
   attr_accessible :birthday, :email, :first_name, :googleplus,
                   :image, :last_name, :name, :provider, :uid, :verified_email,
-                  :summary, :points, :judge_attributes,
+                  :summary, :judge_attributes,
                   :facebook, :twitter, :social_email, :website,
                   :asset, :asset_url,
-                  :time_zone
+                  :time_zone,
+
+                  :member_since, :last_logged_in,
+                  :profile_views, #counts views from OTHER users
+                  :location,
+                  :rep, :rank,
+                  :is_judge, :is_debater, :is_coach, :is_instructor, :is_organizer, :is_contributor,
+                  :roles, #adhoc form variable,
+                  :ip, :longitude, :latitude
+
+
   # TODO: Set time zone settings in Account Settings
+
+  geocoded_by :ip, :latitude => :latitude, :longitude => :longitude
+  reverse_geocoded_by :latitude, :longitude do |user, results|
+    if geo = results.first
+      user.location = geo.city + ', ' + geo.state + ', ' + geo.country
+    end
+  end
+  after_validation :geocode, :reverse_geocode
+  has_many :teammates
+  has_many :teams, through: :teammates
+
   scope :recently_joined, lambda { order("created_at").limit(50) }
   has_attached_file :asset
+  # TODO: verify file format in image format
   validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
 
   belongs_to :debater
@@ -20,6 +44,9 @@ class User < ActiveRecord::Base
   belongs_to :author, polymorphic: true
 
   has_many :cards
+
+  has_many :teams, through: :teammates
+  has_many :teammates
 
   # --------------- OMNIAUTH -----------------------
 
@@ -42,6 +69,7 @@ class User < ActiveRecord::Base
       # TODO: Format birthday, use later for something (e.g., free credits)
       user.birthday = auth["extra"]["raw_info"]["birthday"]
       user.time_zone ='Central Time (US & Canada)'
+      user.member_since = Time.now
     end
     if @user.image.blank?
       @user.image = "empty_profile.png"
@@ -50,6 +78,31 @@ class User < ActiveRecord::Base
     return @user
 
   end
+
+
+  # --------------- USER PROFILE VARIABLES ----------
+
+  def roles
+    roles = {
+        Judge: self.is_judge,
+        Debater: self.is_debater,
+        Coach: self.is_coach,
+        Instructor: self.is_instructor,
+        Organizer: self.is_organizer,
+        Contributor: self.is_contributor}
+    desc = []
+    roles.each do |key, value|
+      if value
+        desc.push(key.to_s)
+      end
+    end
+    return desc.join(", ")
+  end
+
+  def joined?(team)
+    self.teams.any? {|t| t == team}
+  end
+
 
   # --------------- ORGANIZER -----------------------
 

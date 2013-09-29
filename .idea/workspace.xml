@@ -2,19 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d036b9-e106-44c2-b6e6-318628ffe311" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/teams/show.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/judge/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/judge/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tournaments/_index.html.erb" afterPath="$PROJECT_DIR$/app/views/tournaments/_index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/application/_navbar2.html.erb" afterPath="$PROJECT_DIR$/app/views/application/_navbar2.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tournaments/_round_fields.html.erb" afterPath="$PROJECT_DIR$/app/views/tournaments/_round_fields.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/application/_sidebar.html.erb" afterPath="$PROJECT_DIR$/app/views/application/_sidebar.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/bracket.rb" afterPath="$PROJECT_DIR$/app/models/bracket.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/judge/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/judge/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/judge/index.html.erb" afterPath="$PROJECT_DIR$/app/views/judge/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/judge.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/judge.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/judge.rb" afterPath="$PROJECT_DIR$/app/models/judge.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/judge_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/judge_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/judge/new.html.erb" afterPath="$PROJECT_DIR$/app/views/judge/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/judge/show.html.erb" afterPath="$PROJECT_DIR$/app/views/judge/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/navbar2.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/navbar2.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/sidebar.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/sidebar.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tournaments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tournaments_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lincoln_douglas_debate.iws" />
@@ -22,22 +34,22 @@
     <file path="/Dummy.txt" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379996149079" ignored="false" />
     <file path="/application.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380012242426" ignored="false" />
     <file path="/_sidebar.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380092763847" ignored="false" />
-    <file path="/sidebar.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380069569274" ignored="false" />
-    <file path="/_navbar2.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380092818305" ignored="false" />
-    <file path="/navbar2.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380092936028" ignored="false" />
-    <file path="/home.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379972628413" ignored="false" />
+    <file path="/sidebar.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380253781666" ignored="false" />
+    <file path="/_navbar2.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380238757730" ignored="false" />
+    <file path="/navbar2.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380254057295" ignored="false" />
+    <file path="/home.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380244525003" ignored="false" />
     <file path="/application.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380099645797" ignored="false" />
     <file path="/feedbacks_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379901923438" ignored="false" />
-    <file path="/routes.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380093330608" ignored="false" />
-    <file path="/show.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380100025814" ignored="false" />
+    <file path="/routes.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380392153370" ignored="false" />
+    <file path="/show.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380347987302" ignored="false" />
     <file path="/users.css" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379911239931" ignored="false" />
-    <file path="/users.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380089237834" ignored="false" />
+    <file path="/users.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380248614846" ignored="false" />
     <file path="/_settings.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379960800308" ignored="false" />
     <file path="/new.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380096949211" ignored="false" />
     <file path="/_judging_paradigm_form.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379966502190" ignored="false" />
-    <file path="/_form.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380097174783" ignored="false" />
+    <file path="/_form.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380308315525" ignored="false" />
     <file path="/a.dummy" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379968794101" ignored="false" />
-    <file path="/judge.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380098734198" ignored="false" />
+    <file path="/judge.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380255793251" ignored="false" />
     <file path="/20130909101622_add_fields_to_judges.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379970434531" ignored="false" />
     <file path="/20130827063338_create_users.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379970878332" ignored="false" />
     <file path="/20130829230545_add_associations_for_divisions.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379970745292" ignored="false" />
@@ -45,16 +57,32 @@
     <file path="/20130829024211_create_judge_registrations.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379970788200" ignored="false" />
     <file path="/_splash.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380092433810" ignored="false" />
     <file path="/home.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380092403013" ignored="false" />
-    <file path="/users_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380063332225" ignored="false" />
-    <file path="/user.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1379976702995" ignored="false" />
-    <file path="/edit.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380099892596" ignored="false" />
-    <file path="/application.js" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380096654838" ignored="false" />
+    <file path="/users_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380250183617" ignored="false" />
+    <file path="/user.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380347982388" ignored="false" />
+    <file path="/edit.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380255768234" ignored="false" />
+    <file path="/application.js" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380413006752" ignored="false" />
     <file path="$PROJECT_DIR$/../ticketee/app/views/tickets/_form.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380063776367" ignored="false" />
     <file path="/judge_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380095762170" ignored="false" />
-    <file path="/index.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380099633165" ignored="false" />
+    <file path="/index.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380413389491" ignored="false" />
     <file path="/judge.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380095493625" ignored="false" />
-    <file path="/application_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380097418041" ignored="false" />
+    <file path="/application_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380254884499" ignored="false" />
     <file path="/application_helper.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380097448136" ignored="false" />
+    <file path="/_index.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380146491287" ignored="false" />
+    <file path="/20130926233220_add_fields_to_users.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380239266472" ignored="false" />
+    <file path="/Gemfile" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380241386568" ignored="false" />
+    <file path="/sessions_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380242288780" ignored="false" />
+    <file path="/20130927002347_add_latitude_and_longitude_to_users.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380245483818" ignored="false" />
+    <file path="/20130927031417_create_teammates.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380251674920" ignored="false" />
+    <file path="/team.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380348916565" ignored="false" />
+    <file path="/teams_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380408587480" ignored="false" />
+    <file path="/20130927033333_create_teams.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380309122450" ignored="false" />
+    <file path="/teams.css.scss" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380411120319" ignored="false" />
+    <file path="/tournaments_controller.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380354981255" ignored="false" />
+    <file path="/20130927031532_create_teammates.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380322824435" ignored="false" />
+    <file path="/teammate.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380322852566" ignored="false" />
+    <file path="/users_helper.rb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380348053112" ignored="false" />
+    <file path="/show.js.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380413316337" ignored="false" />
+    <file path="/_show.html.erb" changelist="61d036b9-e106-44c2-b6e6-318628ffe311" time="1380411536421" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,91 +107,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="46" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7288401">
+            <state line="30" column="35" selection-start="758" selection-end="758" vertical-scroll-proportion="-7.0833335">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="judge.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/judge.css.scss">
+      <file leaf-file-name="_settings.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tournaments/_settings.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="43" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+            <state line="50" column="88" selection-start="1301" selection-end="1301" vertical-scroll-proportion="-3.75">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/teams/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="41" selection-start="804" selection-end="804" vertical-scroll-proportion="-5.423077">
+            <state line="73" column="17" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.6959459">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/judge/_form.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="62" selection-start="3944" selection-end="3944" vertical-scroll-proportion="-9.083333">
+            <state line="286" column="6" selection-start="10533" selection-end="10533" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/judge/new.html.erb">
+      <file leaf-file-name="teams_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="52" selection-start="407" selection-end="407" vertical-scroll-proportion="-6.25">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/judge/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="92" selection-start="282" selection-end="282" vertical-scroll-proportion="-1.5">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/judge/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="102" selection-start="435" selection-end="435" vertical-scroll-proportion="-5.0">
+            <state line="38" column="26" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/judge/edit.html.erb">
+      <file leaf-file-name="show.js.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/teams/show.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="61" selection-start="266" selection-end="266" vertical-scroll-proportion="-3.75">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="0" column="78" selection-start="78" selection-end="78" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/teams/_show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="116" selection-start="0" selection-end="116" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teams.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/teams.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="24" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -186,30 +199,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/application/_navbar2.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/navbar2.css.scss" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/models/judge.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/judge_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/judge/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/judge/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/judge.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/judge/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/judge/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/judge/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/tournaments/_round_fields.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/team.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/tournaments_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/bracket.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/teams/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/teams.css.scss" />
+        <option value="$PROJECT_DIR$/app/controllers/teams_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/teams/_show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/views/teams/show.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/teams/index.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="28" />
-    <option name="y" value="22" />
-    <option name="width" value="1394" />
-    <option name="height" value="823" />
+    <option name="x" value="238" />
+    <option name="y" value="44" />
+    <option name="width" value="1177" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -283,6 +296,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,6 +406,28 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tournaments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -394,7 +447,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="teams" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,6 +625,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lincoln_douglas_debate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="RailsProjectView">
@@ -595,7 +670,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="options.lastSelected" value="editor" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../live_plugin" />
     <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -862,18 +937,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="28" y="22" width="1394" height="823" extended-state="0" />
+    <frame x="238" y="44" width="1177" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917038" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32794118" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295562" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944071" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20400594" sideWeight="0.6708296" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14058356" sideWeight="0.5720588" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14058356" sideWeight="0.42647058" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -946,122 +1021,116 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/helpers/topics_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="5" selection-start="3164" selection-end="3164" vertical-scroll-proportion="2.4562798">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tournaments/_division_fields.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="150" selection-end="150" vertical-scroll-proportion="22.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/bracket.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="47" selection-start="896" selection-end="896" vertical-scroll-proportion="0.5113636">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="528" selection-end="528" vertical-scroll-proportion="0.5777778">
+        <state line="22" column="31" selection-start="398" selection-end="398" vertical-scroll-proportion="0.5246423">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/application/_sidebar.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/tournaments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="74" selection-start="1392" selection-end="1392" vertical-scroll-proportion="-13.083333">
+        <state line="37" column="0" selection-start="1586" selection-end="1586" vertical-scroll-proportion="0.7077922">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/home.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/models/team.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="4" selection-start="716" selection-end="716" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.11923689">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/judge_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="36" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
+        <state line="30" column="35" selection-start="758" selection-end="758" vertical-scroll-proportion="-7.0833335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="53" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tournaments/_settings.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="88" selection-start="1301" selection-end="1301" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/teams.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="24" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/teams_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="26" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="272" selection-end="272" vertical-scroll-proportion="0.09063444">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/judge/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="52" selection-start="407" selection-end="407" vertical-scroll-proportion="-6.25">
+        <state line="286" column="6" selection-start="10533" selection-end="10533" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/teams/show.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="12" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.95555556">
+        <state line="0" column="78" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/judge.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/teams/_show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="43" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
+        <state line="0" column="116" selection-start="0" selection-end="116" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/judge.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/teams/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="39" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.7111111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="804" selection-end="804" vertical-scroll-proportion="-5.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/judge/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="62" selection-start="3944" selection-end="3944" vertical-scroll-proportion="-9.083333">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/judge/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="92" selection-start="282" selection-end="282" vertical-scroll-proportion="-1.5">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/judge/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="102" selection-start="435" selection-end="435" vertical-scroll-proportion="-5.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/judge/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="61" selection-start="266" selection-end="266" vertical-scroll-proportion="-3.75">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h3#0;n#article#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="46" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.7288401">
+        <state line="73" column="17" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.6959459">
           <folding />
         </state>
       </provider>

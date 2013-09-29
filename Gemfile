@@ -9,7 +9,7 @@ gem 'paperclip', '2.7.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+gem 'geocoder'
 gem 'simple_form'
 gem 'formtastic'
 gem 'omniauth'

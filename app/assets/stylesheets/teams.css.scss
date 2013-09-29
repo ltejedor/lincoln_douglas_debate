@@ -1,0 +1,94 @@
+// Place all the styles related to the teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#create-team-form form {
+  padding: 20px;
+  input {
+    width: 66%;
+    border-radius: 5px;
+    border: solid 1px #ddd;
+    display: inline;
+  }
+  input.file {
+    border: none;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  textarea{
+    width: 66%;
+    height: 100px;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+  }
+  label {
+    width: 33%;
+  }
+  .input {
+    margin-bottom: 16px;
+  }
+}
+
+
+// Index
+
+.upper-border{
+  border: solid 1px #ddd;
+  border-bottom: none;
+}
+.lower-border {
+  border: solid 1px #ddd;
+  border-top: none;
+}
+.space-bottom {
+  margin-bottom: 20px;
+}
+.team{
+  margin-top: 20px;
+  width: 100%;
+  border: solid 1px #ddd;
+ tr {
+  th {
+    width: 15%;
+  }
+   td, th {
+    padding: 10px;
+    vertical-align: top;
+    margin-bottom: 10px;
+  }
+  .image {
+    img {
+      max-width: 100%;
+      max-height: 100px;
+    }
+  }
+  .header {
+    min-width: 200px;
+    .name {
+      font-weight: bold;
+    }
+
+  }
+  .members {
+    margin-bottom: 40px;
+  }
+  .header, .description {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+   .links {
+     min-width: 135px;
+     text-align: right;
+     a, button {
+       margin-right: 3px;
+       float: right;
+     }
+   }
+ }
+}
+.lt-yellow-bg{
+  background-color: #FFFFBE;
+}
+.white-bg{
+  background-color: white;
+}

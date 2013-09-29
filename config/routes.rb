@@ -1,9 +1,30 @@
 Lincolndouglas::Application.routes.draw do
 
-  post '/submit-summary', to: "users#submit_summary"
-  root :to => "pages#home"
-  resources :feedbacks
+  resources :teams
 
+
+  get "teams/index"
+
+  get "teams/new"
+
+  get "teams/create"
+
+  get "teams/edit"
+
+  get "teams/update"
+
+  get "teams/destroy"
+
+
+  post '/submit-summary', to: "users#submit_summary"
+  post '/update-ip', to: "users#update_ip"
+  post '/join-team', to: "teams#join"
+  post '/leave-team', to: "teams#leave"
+  get '/show-team', to: 'teams#show'
+
+  root :to => "pages#home"
+
+  resources :feedbacks
   resources :tournaments do
     resources :competitors
     resources :judge_registrations

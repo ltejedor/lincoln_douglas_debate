@@ -3,9 +3,12 @@
       <header id="experience" class="lead">Experience</header>
       <div id="experience-string" style="display: none"><%= @judge.experience %></div>
       <%= f.input :experience, label: 'What is your experience with LD Debate? Check all that apply.',
-                  collection: ['Current LD Coach', 'Former LD Coach', 'Former LD Competitor','Summer LD Instructor',
-                               'Experienced LD Judge', 'Former Policy Debater', 'Collegiate Policy Debater',
-                               'Current Public Forum Coach or Judge', 'Speech Coach', 'Community Judge', 'No LD Experience'], as: :check_boxes %><br>
+                  collection: ['Current LD Coach', 'Former LD Coach', 'Current LD Competitor', 'Former LD Competitor','Summer LD Instructor',
+                               'Experienced LD Judge', 'Current Policy Debater', 'Former Policy Debater', 'Collegiate Policy Debater',
+                               'Current Policy Coach or Judge',
+                               'Current PF Debater', 'Former PF Debater',
+                               'Current PF Coach or Judge',
+                               'Speech Coach', 'Community Judge', 'No LD Experience'], as: :check_boxes %><br>
 
       <%= f.input :years_judging, label: 'I have judged LD debate for ___ years', collection: ['Less than 1', 2, 3, 4, '5 or more'] %>
 

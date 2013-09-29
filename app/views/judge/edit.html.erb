@@ -3,10 +3,13 @@
   <article>
     <%=link_to 'See the list of all judges', judges_path, class: 'pull-right orange-link' %>
     <h2>Judging Paradigm</h2>
+    <p>Describe your judging paradigm to debaters!
+    Designed according to the 2013 National Forensics League Judge Paradigm form.</p>
     <h3 class="subheader">
       <%= link_to (image_tag @judge.user.image, class: 'subheader-img'), user_path(@judge.user)%><%=link_to @judge.user.name, user_path(@judge.user), class: 'orange-link'%> <span style="color: #ddd">LD debate judge</span></h3>
 
-    <%= render 'form' %>
+      <%= render 'form' %>
+
 
   </article>
 

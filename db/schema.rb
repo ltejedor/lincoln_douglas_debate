@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924090106) do
+ActiveRecord::Schema.define(:version => 20130927033333) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -170,6 +170,26 @@ ActiveRecord::Schema.define(:version => 20130924090106) do
     t.string  "kind"
   end
 
+  create_table "teammates", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.text     "description"
+    t.string   "asset"
+    t.string   "asset_url"
+    t.string   "asset_file_name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "topics", :force => true do |t|
     t.string   "name"
     t.string   "string"
@@ -217,7 +237,6 @@ ActiveRecord::Schema.define(:version => 20130924090106) do
     t.string   "birthday"
     t.string   "time_zone"
     t.text     "summary"
-    t.integer  "points"
     t.integer  "rep_points"
     t.integer  "rank_points"
     t.datetime "created_at",     :null => false
@@ -226,6 +245,21 @@ ActiveRecord::Schema.define(:version => 20130924090106) do
     t.string   "facebook"
     t.string   "social_email"
     t.string   "website"
+    t.datetime "member_since"
+    t.datetime "last_logged_in"
+    t.integer  "profile_views"
+    t.string   "location"
+    t.integer  "rep"
+    t.integer  "rank"
+    t.boolean  "is_judge"
+    t.boolean  "is_debater"
+    t.boolean  "is_coach"
+    t.boolean  "is_instructor"
+    t.boolean  "is_organizer"
+    t.boolean  "is_contributor"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "ip"
   end
 
   add_index "users", ["provider"], :name => "index_users_on_provider"

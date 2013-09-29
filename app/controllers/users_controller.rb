@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # TODO: Allow users to edit their profiles
-  before_filter :find_user, :only => [:show, :edit, :update, :submit_summary]
+  before_filter :find_user, :only => [:show, :edit, :update, :submit_summary, :update_ip]
+  after_filter :update_roles, :only => [:update]
 
   def index
   end
@@ -10,12 +11,13 @@ class UsersController < ApplicationController
   end
 
   def submit_summary
-    if @user.update_attributes(summary: params[:summary])
-      redirect_to @user, notice: 'Self-summary was successfully updated.'
-    else
-      redirect_to @user, alert: 'Self-summary could not be saved.'
-    end
+   @user.update_attributes(summary: params[:summary])
+   render nothing: true
+  end
 
+  def update_ip
+    @user.update_attributes(ip: params[:ip])
+    render nothing: true
   end
 
   def update
@@ -32,9 +34,16 @@ class UsersController < ApplicationController
 
   def show
     @image = ("empty_profile.png" if @user.image.blank?) || @user.image
+    unless @user == current_user
+      if @user.profile_views.nil?
+        @user.profile_views = 1
+      else
+        @user.profile_views = @user.profile_views + 1
+      end
+      @user.save
+    end
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @user }
     end
 
   end
@@ -46,6 +55,12 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def update_roles
+    if @user.is_judge
+      @user.as_judge
+    end
   end
 
 end

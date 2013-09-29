@@ -67,6 +67,8 @@
         font-weight: normal;
         color: #949494;
         width: 125px;
+      }
+      td {
         padding-bottom: 10px;
       }
     }
@@ -78,8 +80,6 @@
   font-size: 12px;
   max-height: 260px;
   overflow: auto;
-  word-break: break-all;
-  word-wrap: break-word;
 }
 .self-summary:focus {
   outline-color: #63553D;
@@ -101,12 +101,14 @@
 
 /* Social Media Form */
 
-.social-media-edit-form {
-  display: none;
-  margin-top: 40px;
+#edit-links-form {
+  max-width: 400px;
+  margin: auto;
   padding: 20px;
-  border: solid 1px #ddd;
   font-size: 12px;
+  input {
+    margin-bottom: 12px;
+  }
 }
 
 

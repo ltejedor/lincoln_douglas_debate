@@ -94,7 +94,7 @@ $(document).ready(function() {
         return event.preventDefault();
     });
 
-    // Round collapse, unique ID fix for +Round in New Divisions
+    // Round collapse, unique ID fix for +Round in New Divisions. Change Unique ID per round collapse
     $('form').on('click', '.round-row', function(event) {
         var time;
         time = new Date().getTime();
@@ -172,12 +172,26 @@ $(document).ready(function() {
         $(this).tab('show')
     })
 
-    // AJAX Setup
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+
+    // Get IP
+
+    if($('#user').length > 0) {
+        $.ajax({
+            dataType: 'json',
+            url: 'http://jsonip.com',
+            success: function(result) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/update-ip',
+                    beforeSend:function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+                    dataType: 'json',
+                    data: {ip: result.ip, id: $('#user').data('user')},
+                    success: console.log('IP updated')
+                });
+                console.log('IP is ' + result.ip);
+            }
+        });
+    }
 
 
     // Self-Summary Save
@@ -188,6 +202,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "/submit-summary",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             dataType: "json",
             data: {summary: summary, id: $(this).data('user')},
             success: $(this).after('<span class="saved">...saved</span>').fadeIn()
@@ -202,6 +217,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "/submit-summary",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
             dataType: "json",
             data: {summary: "", id: $(this).data('user')},
             success: $(this).after('<span class="saved">...cleared</span>').fadeIn()
@@ -221,6 +237,71 @@ $(document).ready(function() {
     for (var i=0; i < experiences.length; i++) {
         $('.judge_experience input[value="' + experiences[i] + '"]').prop('checked',true);
     }
+
+    // Join or leave a team, AJAX
+
+    function joinTeam(join) {
+        $.ajax({
+            type: "POST",
+            url: "/join-team",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            dataType: "json",
+            data: {user_id: join.data('user'), id: join.data('team')},
+            success: join.text('leave').removeClass('join').addClass('leave')
+    });
+    }
+
+    function leaveTeam(el) {
+        $.ajax({
+            type: "POST",
+            url: "/leave-team",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            dataType: "json",
+            data: {user_id: el.data('user'), id: el.data('team')},
+            success: el.text('join').removeClass('leave').addClass('join')
+        });
+    }
+
+    function showTeam(el, id) {
+        var id = el.data('team')
+        var url = '/teams/' + id
+        $.ajax({
+            type: "GET",
+            url: url,
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            dataType: "html",
+            success: function(result){
+                console.log(result)
+            }
+        });
+    }
+
+    $('.links').on('click', '.join', function(e) {
+        e.preventDefault();
+        var join = $(this);
+        $.when(joinTeam(join)).then(function(){
+            join.parent().parent().css('background-color','#FFFFBE')
+        })
+
+
+    })
+
+    $('.links').on('click', '.leave', function(e) {
+        e.preventDefault();
+        var leave = $(this);
+        $.when(leaveTeam(leave)).then(function(){
+            leave.parent().parent().css('background-color','white')
+        })
+    })
+
+    $('.links').on('click', '.hide-link', function(e){
+        e.preventDefault()
+
+    })
+
+
+
+
 
 });
 

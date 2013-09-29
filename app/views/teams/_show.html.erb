@@ -1,0 +1,25 @@
+<tr id="members-<%=@team.id%>" class="lower-border <%= current_user.joined?(@team) ? 'lt-yellow-bg' : 'white-bg'%>">
+<th></th>
+<td class="members header" colspan="5">
+  <b>Members (<%=@team.users.length %>)</b><br>
+  <% if @team.users.length < 20 %>
+      <% for user in @team.users %>
+          <a href="<%=user_path(user)%>">
+                  <span>
+                    <%= image_tag user.image, class: 'thumbnail-med' %>
+                  </span>
+          </a>
+      <% end %>
+  <% else %>
+      <% for user in @team.users %>
+          <a href="<%=user_path(user)%>">
+                  <span>
+                    <%= image_tag user.image, class: 'profile-thumbnail' %>
+                  </span>
+          </a>
+      <% end %>
+  <% end %>
+</td>
+</tr>
+
+

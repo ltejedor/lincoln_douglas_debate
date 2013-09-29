@@ -72,6 +72,7 @@ GEM
     ffi (1.9.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    geocoder (1.1.8)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -196,6 +197,7 @@ DEPENDENCIES
   factory_girl (= 2.6.4)
   formtastic
   formtastic-bootstrap!
+  geocoder
   jquery-rails
   launchy
   omniauth

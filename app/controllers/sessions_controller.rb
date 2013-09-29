@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
       if auth["info"]["urls"].nil?
         user.googleplus = ""
       end
+      user.ip = request.remote_ip
       user.save
       session[:user_id] = user.id
     redirect_to root_url

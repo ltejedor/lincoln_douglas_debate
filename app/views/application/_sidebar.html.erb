@@ -3,7 +3,7 @@
       <tbody>
           <tr>
             <th class="col1">
-              <a href="#"><%= image_tag current_user.image, class: 'profile-thumbnail' %> </a>
+              <a href="<%=user_path(current_user) %>"><%= image_tag current_user.image, class: 'profile-thumbnail' %> </a>
             </th>
             <th class="col2">
               <a href="<%=user_path(current_user) %>">Profile</a>
